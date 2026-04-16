@@ -13,5 +13,9 @@ def login():
         return f"Hello {name}, POST request received."
     return render_template('name.html')
 
+@app.route('/base')
+def base():
+    return render_template('base.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
