@@ -29,6 +29,13 @@ def upload():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             return redirect(url_for('download_file', name=filename))
         
+        # TODO:
+        # run ML analysis of uploaded image
+        # deepforest(file) or something like that (?)
+
+        # The idea here is to upload the image and then run the analysis automatically
+        # This will more than likely use a fair amount of compute to run, so optimisation will be *key*
+        
     return render_template('home.html')
 
 @app.route('/uploads/<name>')
