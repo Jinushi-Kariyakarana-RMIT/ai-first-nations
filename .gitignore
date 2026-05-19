@@ -4,3 +4,6 @@
 *.png
 *.tif
 *.tiff
+
+# second layer of security
+/ai-first-nations-data
