@@ -6,4 +6,5 @@
 *.tiff
 
 # second layer of security
-/ai-first-nations-data
+/ai-first-nations-data/*
+/flask-application/uploads/*
