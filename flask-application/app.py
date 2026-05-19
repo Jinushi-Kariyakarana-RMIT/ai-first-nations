@@ -2,11 +2,10 @@ from flask import Flask, request, render_template, flash, redirect, url_for, sen
 import os
 from werkzeug.utils import secure_filename
 
-UPLOAD_FOLDER = 'flask-application\\uploads'
 ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg', 'tiff']
 
 app = Flask(__name__)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'uploads')
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -25,9 +24,10 @@ def upload():
             return redirect(request.url)
         
         if file and allowed_file(file.filename):
+            assert file.filename is not None
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('download_file', name=filename))
+            return redirect(url_for('uploads', name=filename))
         
         # TODO:
         # run ML analysis of uploaded image
@@ -38,9 +38,17 @@ def upload():
         
     return render_template('home.html')
 
+@app.route('/files/<name>')
+def serve_file(name):
+    return send_from_directory(app.config['UPLOAD_FOLDER'], name)
+
 @app.route('/uploads/<name>')
-def download_file(name):
-    return send_from_directory(app.config["UPLOAD_FOLDER"], name)
+def uploads(name):
+    print(os.path.join(app.config["UPLOAD_FOLDER"], name))
+    return render_template(
+        'uploaded.html', 
+        image_url=url_for('serve_file', name=name)
+        )
 
 @app.route('/base')
 def base():
