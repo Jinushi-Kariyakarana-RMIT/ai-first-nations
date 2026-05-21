@@ -64,7 +64,7 @@
 </div>
 
 <div style="text-align: center; margin-top: 30px;">
-    <a href="{{ url_for('upload') }}" style="display: inline-block; background-color: #27ae60; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background-color 0.3s ease; margin-right: 10px;" onmouseover="this.style.backgroundColor='#229954'" onmouseout="this.style.backgroundColor='#27ae60'">📤 Analyze Another</a>
-    <a href="{{ url_for('serve_file', name=filename) }}" download="{{ filename }}" style="display: inline-block; background-color: #3498db; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#2980b9'" onmouseout="this.style.backgroundColor='#3498db'">💾 Download Image</a>
+    <a href="{{ url_for('upload') }}" style="display: inline-block; background-color: #27ae60; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background-color 0.3s ease; margin-right: 10px;" onmouseover="this.style.backgroundColor='#229954'" onmouseout="this.style.backgroundColor='#27ae60'">Analyze Another</a>
+    <a href="{{ url_for('serve_file', name=filename) }}" download="{{ filename }}" style="display: inline-block; background-color: #3498db; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#2980b9'" onmouseout="this.style.backgroundColor='#3498db'">Download Image</a>
 </div>
 {% endblock %}
