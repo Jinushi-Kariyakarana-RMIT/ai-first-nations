@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h3>Analysis Results</h3>
+<p class="subtitle">Mangrove detection analysis complete</p>
+
+{% if error %}
+<div style="background-color: #fadbd8; border: 1px solid #f5b7b1; border-radius: 6px; padding: 15px; margin-bottom: 20px;">
+    <h4 style="color: #c0392b; margin-top: 0;">Analysis Error</h4>
+    <p style="color: #922b21; margin: 0;">{{ error }}</p>
+</div>
+{% elif result %}
+<div class="info-section" style="background-color: {% if result.prediction == 'Mangrove Detected' %}#d5f4e6{% else %}#fadbd8{% endif %}; border-left-color: {% if result.prediction == 'Mangrove Detected' %}#27ae60{% else %}#e74c3c{% endif %};">
+    <h4 style="color: {% if result.prediction == 'Mangrove Detected' %}#27ae60{% else %}#c0392b{% endif %}; margin-top: 0;">
+        {% if result.prediction == 'Mangroves Detected' %}Mangrove Detected{% else %}No Mangroves Detected{% endif %}
+    </h4>
+    <p style="margin: 0;">{{ result.prediction }}</p>
+</div>
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0;">
+    <div style="background-color: #f8f9fa; padding: 15px; border-radius: 6px; border-top: 3px solid #27ae60;">
+        <strong style="color: #27ae60; display: block; margin-bottom: 8px;">Confidence</strong>
+        <span style="font-size: 1.8rem; font-weight: bold; color: #2c3e50;">{{ "%.1f" | format(result.confidence * 100) }}%</span>
+    </div>
+    <div style="background-color: #f8f9fa; padding: 15px; border-radius: 6px; border-top: 3px solid #3498db;">
+        <strong style="color: #3498db; display: block; margin-bottom: 8px;">Ideal confidence</strong>
+        <span style="font-size: 0.9rem; color: #555;">The ideal confidence level to trust the analysis is above 80%</span>
+    </div>
+</div>
+
+<div style="background-color: #ecf0f1; padding: 20px; border-radius: 6px; margin: 20px 0;">
+    <h4 style="color: #2c3e50; margin-top: 0; margin-bottom: 15px;">Probabilities</h4>
+    <div style="margin-bottom: 12px;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+            <span style="color: #2c3e50; font-weight: 500;">Mangrove</span>
+            <span style="color: #27ae60; font-weight: 600;">{{ "%.2f" | format(result.mangrove_probability * 100) }}%</span>
+        </div>
+        <div style="background-color: #bdc3c7; border-radius: 4px; height: 24px; overflow: hidden;">
+            <div style="background-color: #27ae60; height: 100%; width: {{ result.mangrove_probability * 100 }}%; transition: width 0.3s ease;"></div>
+        </div>
+    </div>
+    <div>
+        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+            <span style="color: #2c3e50; font-weight: 500;">Non-Mangrove</span>
+            <span style="color: #e74c3c; font-weight: 600;">{{ "%.2f" | format(result.non_mangrove_probability * 100) }}%</span>
+        </div>
+        <div style="background-color: #bdc3c7; border-radius: 4px; height: 24px; overflow: hidden;">
+            <div style="background-color: #e74c3c; height: 100%; width: {{ result.non_mangrove_probability * 100 }}%; transition: width 0.3s ease;"></div>
+        </div>
+    </div>
+</div>
+
+{% else %}
+<div style="background-color: #ecf0f1; border: 1px solid #bdc3c7; border-radius: 6px; padding: 20px; text-align: center;">
+    <p style="color: #555;">Analysis results not available</p>
+</div>
+{% endif %}
+
+<img src="{{ image_url }}" alt="Analyzed image">
+
+<div style="background-color: #f8f9fa; padding: 15px; border-radius: 6px; margin-top: 20px; border-left: 4px solid #3498db;">
+    <h4 style="color: #2c3e50; margin-top: 0; margin-bottom: 8px;">About This Analysis</h4>
+    <p style="margin: 0; font-size: 0.9rem; color: #555;">TODO: Talk about the machine learning model and how it was trained</p>
+</div>
+
+<div style="text-align: center; margin-top: 30px;">
+    <a href="{{ url_for('upload') }}" style="display: inline-block; background-color: #27ae60; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background-color 0.3s ease; margin-right: 10px;" onmouseover="this.style.backgroundColor='#229954'" onmouseout="this.style.backgroundColor='#27ae60'">Analyze Another</a>
+    <a href="{{ url_for('serve_file', name=filename) }}" download="{{ filename }}" style="display: inline-block; background-color: #3498db; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#2980b9'" onmouseout="this.style.backgroundColor='#3498db'">Download Image</a>
+</div>
+{% endblock %}

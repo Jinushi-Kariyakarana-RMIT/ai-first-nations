@@ -1,11 +1,29 @@
-from flask import Flask, request, render_template, flash, redirect, url_for, send_from_directory
+from flask import Flask, request, render_template, flash, redirect, url_for, send_from_directory, jsonify
 import os
 from werkzeug.utils import secure_filename
+from PIL import Image
+import json
+from ml_model import load_or_train_model, predict_mangrove
 
-ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg', 'tiff']
+ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg', 'tiff', 'tif']
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'uploads')
+app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50MB max file size
+app.secret_key = 'mangrove-detection-secret-key-change-in-production'
+
+# Ensure upload folder exists
+os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
+
+# Load ML model on startup
+print("Initializing ML model...")
+try:
+    model = load_or_train_model()
+    if model is None:
+        print("Warning: Could not load ML model")
+except Exception as e:
+    print(f"Warning: Error loading ML model: {e}")
+    model = None
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -26,21 +44,55 @@ def upload():
         if file and allowed_file(file.filename):
             assert file.filename is not None
             filename = secure_filename(file.filename)
-            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            return redirect(url_for('uploads', name=filename))
-        
-        # TODO:
-        # run ML analysis of uploaded image
-        # deepforest(file) or something like that (?)
-
-        # The idea here is to upload the image and then run the analysis automatically
-        # This will more than likely use a fair amount of compute to run, so optimisation will be *key*
+            filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+            file.save(filepath)
+            
+            # Run ML analysis
+            flash(f'File uploaded successfully: {filename}')
+            return redirect(url_for('analyze', name=filename))
+        else:
+            flash('Invalid file type. Allowed: PNG, JPG, JPEG, TIFF')
+            return redirect(request.url)
         
     return render_template('home.html')
 
 @app.route('/files/<name>')
 def serve_file(name):
     return send_from_directory(app.config['UPLOAD_FOLDER'], name)
+
+@app.route('/analyze/<name>')
+def analyze(name):
+    """Analyze uploaded image with ML model"""
+    filepath = os.path.join(app.config['UPLOAD_FOLDER'], name)
+    
+    if not os.path.exists(filepath):
+        flash(f'File not found: {name}')
+        return redirect(url_for('upload'))
+    
+    analysis_result = None
+    error_message = None
+    
+    if model is not None:
+        try:
+            analysis_result, _, error = predict_mangrove(filepath, model)
+            if error:
+                error_message = error
+                print(f"Analysis error: {error}")
+        except Exception as e:
+            error_message = f"Error during analysis: {str(e)}"
+            print(f"Exception during analysis: {e}")
+    else:
+        error_message = "ML model not available. Analysis cannot be performed."
+    
+    image_url = url_for('serve_file', name=name)
+    
+    return render_template(
+        'analysis_results.html',
+        image_url=image_url,
+        filename=name,
+        result=analysis_result,
+        error=error_message
+    )
 
 @app.route('/uploads/<name>')
 def uploads(name):

@@ -1,11 +1,32 @@
 {% extends 'base.html' %}
 
 {% block body %}
-<h3>Upload Map</h3>
-<form method="post" enctype="multipart/form-data">
-    <input type="file" name="orthomosaic" required>
-    <br><br>
-    <input type="submit" value="Upload">
-</form>
+<h3>Mangrove Detection - AI First Nations </h3>
+<p class="subtitle">Upload drone imagery to detect mangroves within the image</p> <!-- Update as functionality is implemented-->
 
+<div class="info-section">
+    <h4>What is this tool?</h4>
+    <p>This system uses machine learning to classify mangrove trees from drone imagery. Mangroves are critical coastal ecosystems that provide valuable carbon recapture. A feature that is becoming increasingly important for environmental monitoring and conservation.</p>
+</div>
+
+<div class="features">
+    <div class="feature-item">
+        <strong>Accurate Detection</strong>
+        <span>AI-trained models capable of classifying mangroves with a precision of over 80%</span> <!-- Replace with actual accuracy later-->
+    </div>
+    <div class="feature-item">
+        <strong>Designed for Conservation</strong>
+        <span>The system allows for monitoring of mangrove forest health, and can be scaled to automatically highlight changes over time.</span>
+    </div>
+</div>
+
+<div class="info-section">
+    <h4>How to use:</h4>
+    <p>Select and upload an image (PNG, JPG, JPEG, or TIFF/TIF format) and click "Analyze" to begin processing. The system will return a classification indicating the species of mangrove detected..</p>
+</div>
+
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="orthomosaic" accept=".png,.jpg,.jpeg,.tiff,.tif" required>
+    <input type="submit" value="Analyze Image">
+</form>
 {% endblock %}

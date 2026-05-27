@@ -1,0 +1,6 @@
+flask
+tifffile
+scikit-image
+scikit-learn
+tensorflow
+numpy

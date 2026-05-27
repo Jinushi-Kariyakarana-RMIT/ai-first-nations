@@ -1,8 +1,17 @@
 {% extends 'base.html' %}
 
 {% block body %}
+<h3>✅ Analysis Complete</h3>
+<p class="subtitle">Your orthomosaic has been processed successfully</p>
 
-<h3>Uploaded Map</h3>
-<img src="{{ image_url }}" alt="Uploaded map">
+<div class="info-section">
+    <h4>Results</h4>
+    <p>The image below shows the analysis of your uploaded orthomosaic. The detected mangrove areas have been identified and highlighted for your review.</p>
+</div>
 
+<img src="{{ image_url }}" alt="Uploaded map analysis">
+
+<div style="text-align: center; margin-top: 30px;">
+    <a href="{{ url_for('upload') }}" style="display: inline-block; background-color: #27ae60; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#229954'" onmouseout="this.style.backgroundColor='#27ae60'">↻ Analyze Another Image</a>
+</div>
 {% endblock %}
