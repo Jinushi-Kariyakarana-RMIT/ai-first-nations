@@ -1,8 +1,10 @@
 flask
 joblib
 json
+matplotlib
 numpy
 scikit-image
 scikit-learn
+seaborn
 tensorflow
 tifffile
