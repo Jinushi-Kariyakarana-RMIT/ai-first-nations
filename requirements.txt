@@ -1,6 +1,8 @@
 flask
-tifffile
+joblib
+json
+numpy
 scikit-image
 scikit-learn
 tensorflow
-numpy
+tifffile

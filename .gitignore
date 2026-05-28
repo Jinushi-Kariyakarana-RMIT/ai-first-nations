@@ -8,3 +8,6 @@
 # second layer of security
 /ai-first-nations-data/*
 /flask-application/uploads/*
+
+# cache files
+*/__pycache__/*
