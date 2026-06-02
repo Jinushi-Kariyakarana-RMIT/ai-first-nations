@@ -3,7 +3,7 @@ import os
 from werkzeug.utils import secure_filename
 from PIL import Image
 import json
-from ml_model import load_or_train_model, predict_mangrove
+from ml_model import load_model, predict_mangrove
 
 ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg', 'tiff', 'tif']
 
@@ -18,12 +18,12 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 # Load ML model on startup
 print("Initializing ML model...")
 try:
-    model = load_or_train_model()
-    if model is None:
-        print("Warning: Could not load ML model")
+    model, mangrove_type, gpu = load_model()
 except Exception as e:
     print(f"Warning: Error loading ML model: {e}")
     model = None
+    mangrove_type = None
+    gpu = None
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -74,7 +74,7 @@ def analyze(name):
     
     if model is not None:
         try:
-            analysis_result, _, error = predict_mangrove(filepath, model)
+            analysis_result, _, error = predict_mangrove(filepath, model, mangrove_type, gpu)
             if error:
                 error_message = error
                 print(f"Analysis error: {error}")

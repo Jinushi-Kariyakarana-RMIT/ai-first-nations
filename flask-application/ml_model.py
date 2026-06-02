@@ -69,12 +69,19 @@ def extract_test(img, transform, tile_size=512, overlap=64):
     w, h = img.size
     step = tile_size - overlap
     test_images, positions = [], []
+
+    if w < tile_size or h < tile_size:
+        test_images.append(transform(img))
+        positions.append((0, 0, w, h))
+        return torch.stack(test_images), positions
+
     for top in range(0, h - tile_size + 1, step):
         for left in range(0, w - tile_size + 1, step):
             box = (left, top, left + tile_size, top + tile_size)
             tile = img.crop(box)
             test_images.append(transform(tile))
             positions.append(box)
+
     return torch.stack(test_images), positions
 
 
@@ -93,6 +100,55 @@ def predicting_test(image_path, model, transform, mangrove_type, gpu, batch_size
     pred_idx   = np.argmax(avg_probs)
     confidence = avg_probs[pred_idx]
     return mangrove_type[pred_idx], float(confidence), avg_probs
+
+INFERENCE_TRANSFORM = transforms.Compose([
+    transforms.Resize((224, 224)),
+    transforms.ToTensor(),
+    transforms.Normalize([0.485, 0.456, 0.406],
+                         [0.229, 0.224, 0.225])
+])
+
+def get_class_names():
+    if DATASET_PATH.exists():
+        dataset = datasets.ImageFolder(root=str(DATASET_PATH))
+        return dataset.classes
+    return ['orange', 'red', 'yellow']  # Temporary fallback if dataset is not found
+
+def load_model():
+    gpu = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    mangrove_type = get_class_names()
+
+    model = bmodel(num_classes=len(mangrove_type), freeze_base=False).to(gpu)
+
+    if not MODEL_PATH.exists():
+        raise FileNotFoundError(f"Model file not found: {MODEL_PATH}")
+
+    model.load_state_dict(torch.load(str(MODEL_PATH), map_location=gpu))
+    model.eval()
+    return model, mangrove_type, gpu
+
+def predict_mangrove(image_path, model, mangrove_type, gpu):
+    try:
+        pred_class, confidence, avg_probs = predicting_test(
+            image_path=image_path,
+            model=model,
+            transform=INFERENCE_TRANSFORM,
+            mangrove_type=mangrove_type,
+            gpu=gpu
+        )
+
+        result = {
+            'predicted_class': pred_class,
+            'confidence': confidence,
+            'probabilities': {
+                mangrove_type[i]: float(avg_probs[i]) for i in range(len(mangrove_type))
+            }
+        }
+
+        return result, pred_class, None
+
+    except Exception as e:
+        return None, None, str(e)
 
 if __name__ == '__main__':
 
@@ -191,7 +247,7 @@ if __name__ == '__main__':
 
         if val_acc > val_cc:
             val_cc = val_acc
-            torch.save(model.state_dict(), 'best_mangrove_model.pth')
+            torch.save(model.state_dict(), str(MODEL_PATH))
             pat_counter = 0
         else:
             pat_counter += 1
@@ -219,7 +275,7 @@ if __name__ == '__main__':
         print(f"Epoch {epoch+1:02d}/{50} | "f"training loss: {train_loss:.4f} accuracy: {train_acc:.4f} | "f"validation loss: {val_loss:.4f} accuracy: {val_acc:.4f}")
         if val_acc > val_cc:
             val_cc = val_acc
-            torch.save(model.state_dict(), 'best_mangrove_model.pth')
+            torch.save(model.state_dict(), str(MODEL_PATH))
             pat_counter = 0
         else:
             pat_counter += 1
@@ -229,7 +285,7 @@ if __name__ == '__main__':
 
     #Model evaluation using the training, testing and validation set
     print("\nEvaluating on validation datset")
-    model.load_state_dict(torch.load('best_mangrove_model.pth'))
+    model.load_state_dict(torch.load(str(MODEL_PATH), map_location=gpu))
     model.eval()
     y_true, y_pred = [], []
     with torch.no_grad():
@@ -265,7 +321,9 @@ if __name__ == '__main__':
         images = [f for f in os.listdir(class_dir) if f.lower().endswith(file_formats)]
         for fname in images:
             path = os.path.join(class_dir, fname)
-            pred_class, confidence, avg_probs = predicting_test(path)
+            pred_class, confidence, avg_probs = predicting_test(
+                path, model, transform, mangrove_type, gpu
+            )
             y_true.append(mangrove_type.index(true_class))
             y_pred.append(mangrove_type.index(pred_class))
             results.append({
