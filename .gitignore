@@ -1,9 +1,9 @@
 # any image files
-*.jpg
-*.jpeg
-*.png
-*.tif
-*.tiff
+#*.jpg
+#*.jpeg
+#*.png
+#*.tif
+#*.tiff
 
 # second layer of security
 /ai-first-nations-data/*
