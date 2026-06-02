@@ -154,12 +154,12 @@ if __name__ == '__main__':
 
     #configurations before running any primary code
     directory = DATASET_PATH
-    gpu = torch.device('cuda' if torch.cuda.is_available() else 'cpu') #using my 3070 for training, will most likely have to edit this for cpu use in main repo
+    gpu = torch.device('cuda' if torch.cuda.is_available() else 'cpu') # Use GPU if available, otherwise fallback to CPU - This might need to change in the future to make sure it works on all machines
     testing_dir = BASE_DIR / 'test'
     mangrove_type = ['orange', 'red', 'yellow']
 
     #Loading images (they have already been pre-processed and split into smaller images)
-    image_dataset = datasets.ImageFolder(root=str(DATASET_PATH)) # Updated this line to take names directly from the folder names, which should be the same as the mangrove types
+    image_dataset = datasets.ImageFolder(root=str(DATASET_PATH)) # Takes names directly from the folder names, which should be the same as the mangrove types
     mangrove_type  = image_dataset.classes
 
     #splitting the dataset into a 80/20 train/validation split
@@ -198,7 +198,7 @@ if __name__ == '__main__':
     val_set.dataset.transform   = val_transform
     print(f"Total train set size: {len(train_set)} | Total validation set size: {len(val_set)}")
 
-    #Couting the number of images in each class for the training set to handle class imbalance with a weighted sampler
+    #Counting the number of images in each class for the training set to handle class imbalance with a weighted sampler
     training_label = [image_dataset.targets[i] for i in train_set.indices]
     counting_class = np.bincount(training_label)
     class_weights = 1.0 / counting_class
