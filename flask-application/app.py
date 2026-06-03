@@ -1,9 +1,7 @@
-from flask import Flask, request, render_template, flash, redirect, url_for, send_from_directory, jsonify
+from flask import Flask, request, render_template, flash, redirect, url_for, send_from_directory
 import os
 from werkzeug.utils import secure_filename
-from PIL import Image
-import json
-from ml_model import load_model, predict_mangrove
+from ml_model import load_or_train_model, predict_mangrove
 
 ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg', 'tiff', 'tif']
 
@@ -12,66 +10,78 @@ app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'uploads')
 app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024  # 50MB max file size
 app.secret_key = 'mangrove-detection-secret-key-change-in-production'
 
-# Ensure upload folder exists
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
-# Load ML model on startup
-print("Initializing ML model...")
-try:
-    model, mangrove_type, gpu = load_model()
-except Exception as e:
-    print(f"Warning: Error loading ML model: {e}")
-    model = None
-    mangrove_type = None
-    gpu = None
+model = None
+mangrove_type = None
+gpu = None
+
+
+def initialize_model():
+    global model, mangrove_type, gpu
+    print("Initializing ML model...")
+    try:
+        model, mangrove_type, gpu = load_or_train_model()
+        print("ML model ready.")
+    except Exception as e:
+        print(f"Warning: Error preparing ML model: {e}")
+        model = None
+        mangrove_type = None
+        gpu = None
+
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/',  methods=['GET', 'POST'])
+
+# Prevent double initialization in Flask reloader
+if os.environ.get("WERKZEUG_RUN_MAIN") == "true" or not app.debug:
+    initialize_model()
+
+
+@app.route('/', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
         if 'orthomosaic' not in request.files:
             flash('No file part')
             return redirect(request.url)
-        
+
         file = request.files['orthomosaic']
-        
+
         if file.filename == '':
             flash('No selected file')
             return redirect(request.url)
-        
+
         if file and allowed_file(file.filename):
-            assert file.filename is not None
             filename = secure_filename(file.filename)
             filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             file.save(filepath)
-            
-            # Run ML analysis
+
             flash(f'File uploaded successfully: {filename}')
             return redirect(url_for('analyze', name=filename))
         else:
             flash('Invalid file type. Allowed: PNG, JPG, JPEG, TIFF')
             return redirect(request.url)
-        
+
     return render_template('home.html')
+
 
 @app.route('/files/<name>')
 def serve_file(name):
     return send_from_directory(app.config['UPLOAD_FOLDER'], name)
 
+
 @app.route('/analyze/<name>')
 def analyze(name):
-    """Analyze uploaded image with ML model"""
     filepath = os.path.join(app.config['UPLOAD_FOLDER'], name)
-    
+
     if not os.path.exists(filepath):
         flash(f'File not found: {name}')
         return redirect(url_for('upload'))
-    
+
     analysis_result = None
     error_message = None
-    
+
     if model is not None:
         try:
             analysis_result, _, error = predict_mangrove(filepath, model, mangrove_type, gpu)
@@ -83,9 +93,9 @@ def analyze(name):
             print(f"Exception during analysis: {e}")
     else:
         error_message = "ML model not available. Analysis cannot be performed."
-    
+
     image_url = url_for('serve_file', name=name)
-    
+
     return render_template(
         'analysis_results.html',
         image_url=image_url,
@@ -94,17 +104,19 @@ def analyze(name):
         error=error_message
     )
 
+
 @app.route('/uploads/<name>')
 def uploads(name):
-    print(os.path.join(app.config["UPLOAD_FOLDER"], name))
     return render_template(
-        'uploaded.html', 
+        'uploaded.html',
         image_url=url_for('serve_file', name=name)
-        )
+    )
+
 
 @app.route('/base')
 def base():
     return render_template('base.html')
 
+
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, use_reloader=False)

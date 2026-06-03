@@ -1,9 +1,12 @@
 # any image files
-#*.jpg
-#*.jpeg
-#*.png
-#*.tif
-#*.tiff
+*.jpg
+*.jpeg
+*.png
+*.tif
+*.tiff
+
+# Ignore vscode settings
+.vscode/
 
 # second layer of security
 /ai-first-nations-data/*
