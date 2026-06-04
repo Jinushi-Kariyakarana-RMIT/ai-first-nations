@@ -1,341 +1,353 @@
-# Ive mostly just taken Jakes work in 'mangroves.ipynb' and added it to one long .py file and changed stuff so it works with flask
-
-import numpy as np
-import tifffile
-import joblib
-# import os
+import os
 from pathlib import Path
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import Pipeline
-from sklearn.model_selection import train_test_split
-from skimage.feature import graycomatrix, graycoprops
+
+import matplotlib.pyplot as plt
+import numpy as np
+import seaborn as sns
+import torch
+import torch.nn as nn
 from PIL import Image
-# from io import BytesIO
+from sklearn.metrics import classification_report, confusion_matrix
+from torch.utils.data import DataLoader, WeightedRandomSampler
+from torchvision import datasets, transforms, models
+from tqdm import tqdm
 
-zero_value = 0.0
-seed = 42
-image_shape = (256, 256, 7)
-
-# directory = Path('PhDMangroveDataset')
-# mangrove_class = ['mangroves', 'nonmangroves']
-# labbeled_class = {'mangroves': 1, 'nonmangroves': 0}
-
-# Base directory to find the model if saved
 BASE_DIR = Path(__file__).parent
-MODEL_PATH = BASE_DIR / 'mangrove_model.joblib'
+PROJECT_ROOT = BASE_DIR.parent
 
-# The website currently trains a new model on startup if it cant find a saved model ('mangrove_model.joblib'), so the dataset should be in the same directory as this file for it to work.
-# In production, we would want to train the model separately and have it saved, so the dataset could be stored elsewhere and not included in the deployment.
-# To retrain the model, delete the 'mangrove_model.joblib' file and restart the Flask app. It will look for the dataset, train a new model, and save it as 'mangrove_model.joblib' for future use.
-
-# Training data location and class labels
-directory = BASE_DIR.parent / 'PhDMangroveDataset'
-mangrove_class = ['Mangroves', 'NonMangroves']
-labbeled_class = {'Mangroves': 1, 'NonMangroves': 0}
-
-DATASET_PATH = directory
-MANGROVE_CLASS = mangrove_class
-LABELED_CLASS = labbeled_class
+MODEL_PATH = BASE_DIR / 'best_mangrove_model.pth'
+DATASET_PATH = PROJECT_ROOT / 'TrainingData'
+TESTING_DIR = PROJECT_ROOT / 'test'
 
 
-# for cls in mangrove_class:
-#     folder = directory / cls
+def bmodel(num_classes=3, freeze_base=True):
+    model = models.efficientnet_b0(weights='IMAGENET1K_V1')
+    if freeze_base:
+        for param in model.parameters():
+            param.requires_grad = False
 
-def corruption_check(path: str) -> str:
-    try:
-        #this is reading the file using tifffile (originally i used the OS method after i couldnt get tifffile to work however i reversed engineered someones kaggle code on this dataset to learn)
-        data = tifffile.imread(path).astype(np.float32)
-        if data.ndim == 2:
-            data = data[..., np.newaxis] #this is adding a new axis so it goes from 2d to 3d + colour
-        elif data.shape[0] < data.shape[-1]:
-            data = data.transpose(1, 2, 0) #transposing the data so it goes from (bands, height, width) to (height, width, bands) 256x256x7
-        valid = data[data != zero_value]
-        if valid.size == 0:
-            return 'dark'
-        mean = float(valid.mean())
-        std = float(valid.std())
-        if mean < 0.01:
-            return 'dark'
-        if std < 0.001:
-            return 'uniform'
-        return 'valid'
-    except Exception as e:
-        return f'error: {e}'
+    feat = model.classifier[1].in_features
+    model.classifier = nn.Sequential(
+        nn.Dropout(0.3),
+        nn.Linear(feat, 128),
+        nn.ReLU(),
+        nn.Dropout(0.3),
+        nn.Linear(128, num_classes)
+    )
+    return model
 
 
-def extract_statistical_features(band, no_data=0.0): #this is extracting statistical features from the image band such as mean, std, min, max, percentiles and IQR
-    valid = band[band != no_data]
-    if valid.size == 0:
-        return [0.0] * 8
-    p25, median, p75 = np.percentile(valid, [25, 50, 75])
-    return [
-        float(valid.mean()), float(valid.std()), float(valid.min()),
-        float(valid.max()), p25, median, p75, float(p75 - p25)
-    ]
+def train_epoch(model, loader, optimizer, criterion, gpu):
+    model.train()
+    total_loss, correct, total = 0, 0, 0
+
+    for images, labels in tqdm(loader, leave=False):
+        images, labels = images.to(gpu), labels.to(gpu)
+        optimizer.zero_grad()
+        outputs = model(images)
+        loss = criterion(outputs, labels)
+        loss.backward()
+        optimizer.step()
+
+        total_loss += loss.item() * images.size(0)
+        correct += (outputs.argmax(1) == labels).sum().item()
+        total += images.size(0)
+
+    return total_loss / total, correct / total
 
 
-def extract_glcm_features(band, no_data=0.0, n_levels=32): #this is extracting texture features GLCM (Gray Level Co-occurrence Matrix) features from the image band
-    valid_mask = band != no_data
-    if valid_mask.sum() == 0:
-        return [0.0] * 6
-    b_min, b_max = band[valid_mask].min(), band[valid_mask].max() #
-    if b_max == b_min:
-        return [0.0] * 6
-    normalized = np.zeros_like(band, dtype=np.uint8)
-    normalized[valid_mask] = (
-        (band[valid_mask] - b_min) / (b_max - b_min) * (n_levels - 1)
-    ).astype(np.uint8)
-    glcm = graycomatrix(
-        normalized, distances=[1],
-        angles=[0, np.pi/4, np.pi/2, 3*np.pi/4],
-        levels=n_levels, symmetric=True, normed=True
-    ) #calcuating the GLCM matrix for the normalized band with specified distances and angles, levels, symmetric and normed parameters
-    props = ['contrast', 'dissimilarity', 'homogeneity', 'energy', 'correlation', 'ASM']  #these are the 6 GLCM properties we are extracting
-    return [float(graycoprops(glcm, p).mean()) for p in props] #this is calculating the mean of each GLCM property
+def val_epoch(model, loader, criterion, gpu):
+    model.eval()
+    total_loss, correct, total = 0, 0, 0
+
+    with torch.no_grad():
+        for images, labels in loader:
+            images, labels = images.to(gpu), labels.to(gpu)
+            outputs = model(images)
+            loss = criterion(outputs, labels)
+
+            total_loss += loss.item() * images.size(0)
+            correct += (outputs.argmax(1) == labels).sum().item()
+            total += images.size(0)
+
+    return total_loss / total, correct / total
 
 
-def extract_features_from_path(tif_path: str):
-    try:
-        data = tifffile.imread(tif_path).astype(np.float32) #same reading  annotation as described before
-        if data.ndim == 2:
-            data = data[..., np.newaxis]
-        elif data.shape[0] < data.shape[-1]:
-            data = data.transpose(1, 2, 0)
-        features = []
-        for c in range(data.shape[-1]):
-            band = data[:, :, c]
-            features.extend(extract_statistical_features(band, zero_value)) #this is extracting the statistical features for each band and adding them to the features list
-            features.extend(extract_glcm_features(band, zero_value))  #this is extracting the GLCM features for each band and adding them to the features list
-        return np.array(features, dtype=np.float32) #this is returning the features as a numpy array of type float32
-    except Exception as e:
-        print(f'Could not read {tif_path}: {e}')
-        return None
+def extract_test(img, transform, tile_size=512, overlap=64):
+    w, h = img.size
+    step = tile_size - overlap
+    test_images, positions = [], []
+
+    if w < tile_size or h < tile_size:
+        test_images.append(transform(img))
+        positions.append((0, 0, w, h))
+        return torch.stack(test_images), positions
+
+    for top in range(0, h - tile_size + 1, step):
+        for left in range(0, w - tile_size + 1, step):
+            box = (left, top, left + tile_size, top + tile_size)
+            tile = img.crop(box)
+            test_images.append(transform(tile))
+            positions.append(box)
+
+    return torch.stack(test_images), positions
 
 
-def extract_features_from_pil_image(image, bands=None):
-    try:
-        # Convert PIL Image to numpy array if needed
-        if isinstance(image, Image.Image):
-            data = np.array(image).astype(np.float32)
-        else:
-            data = image.astype(np.float32)
+def predicting_test(image_path, model, transform, mangrove_type, gpu, batch_size=64):
+    img = Image.open(image_path).convert('RGB')
+    tiles, _ = extract_test(img, transform, 512, 64)
+    all_probs = []
 
-        # Handle different image formats
-        if data.ndim == 2:
-            data = data[..., np.newaxis]
-        elif data.ndim == 3 and data.shape[0] < data.shape[-1]:
-            data = data.transpose(1, 2, 0)
+    with torch.no_grad():
+        for i in range(0, len(tiles), batch_size):
+            batch = tiles[i:i + batch_size].to(gpu)
+            outputs = model(batch)
+            probs = torch.softmax(outputs, dim=1)
+            all_probs.append(probs.cpu().numpy())
 
-        # Extract features from available bands
-        features = []
-        for c in range(min(data.shape[-1], bands or 7)):
-            band = data[:, :, c]
-            features.extend(extract_statistical_features(band, zero_value)) #this is extracting the statistical features for each band and adding them to the features list
-            features.extend(extract_glcm_features(band, zero_value))  #this is extracting the GLCM features for each band and adding them to the features list
+    all_probs = np.concatenate(all_probs, axis=0)
+    avg_probs = np.mean(all_probs, axis=0)
+    pred_idx = np.argmax(avg_probs)
+    confidence = avg_probs[pred_idx]
 
-        return np.array(features, dtype=np.float32) #this is returning the features as a numpy array of type float32
-    except Exception as e:
-        print(f'Could not read uploaded image: {e}')
-        return None
+    return mangrove_type[pred_idx], float(confidence), avg_probs
 
 
-#this section of code is essentially going through every image and deciding which image is valido or not in mangroves and nonmangroves and printing the valid and invalid of each class
-def load_training_data(max_samples=None):
-    print('Determining which images are non valid')
+INFERENCE_TRANSFORM = transforms.Compose([
+    transforms.Resize((224, 224)),
+    transforms.ToTensor(),
+    transforms.Normalize([0.485, 0.456, 0.406],
+                         [0.229, 0.224, 0.225])
+])
 
-    # valid_paths, valid_labels = [], [] #this is creating empty lists to store the paths and labels of the valid images
-    # removed = {cls: 0 for cls in mangrove_class}
-    # for path, label in zip(valid_paths, valid_labels):
-    #     tag = corruption(path) #determing if the file is valid or not
-    #     cls = [k for k, v in labbeled_class.items() if v == label][0] #this is finding the class name based on the label (1 for mangroves and 0 for non-mangroves)
-    #     if tag == 'valid':
-    #         valid_paths.append(path)
-    #         valid_labels.append(label)
-    #     else:
-    #         removed[cls] += 1
 
+def get_class_names():
     if not DATASET_PATH.exists():
-        print(f"Error: Dataset path does not exist: {DATASET_PATH}")
-        print(f"Expected at: {DATASET_PATH.absolute()}")
-        return np.array([]), np.array([])
+        print(f"⚠️ Dataset path not found: {DATASET_PATH}")
+        return ['orange', 'red', 'yellow']
 
-    print('Filtering corrupted images')
-    valid_paths, valid_labels = [], []
-    removed = {cls: 0 for cls in mangrove_class}
-    for cls in mangrove_class:
-        folder = directory / cls
-        if not folder.exists():
-            print(f"Warning: {folder} does not exist")
-            continue
+    valid_ext = {'.jpg', '.jpeg', '.png', '.tif', '.tiff', '.bmp', '.webp'}
+    valid_classes = []
 
-        tifs = sorted(folder.glob('*.tif'))
-        for tif in tifs:
-            if max_samples and len(valid_paths) >= max_samples:
-                break
-            tag = corruption_check(str(tif))
-            if tag == 'valid':
-                valid_paths.append(str(tif))
-                valid_labels.append(labbeled_class[cls])
+    for folder in sorted(DATASET_PATH.iterdir()):
+        if folder.is_dir():
+            has_images = any(
+                f.is_file() and f.suffix.lower() in valid_ext
+                for f in folder.iterdir()
+            )
+            if has_images:
+                valid_classes.append(folder.name)
+                print(f"Verified class: {folder.name}")
             else:
-                removed[cls] += 1
+                print(f"Skipped empty/corrupt folder: {folder.name}")
 
-    valid_paths = np.array(valid_paths)
-    all_labels = np.array(valid_labels, dtype=np.int32)
+    if not valid_classes:
+        print("No valid classes found. Falling back to defaults.")
+        return ['orange', 'red', 'yellow']
 
-    print(f'\nRemoved:')
-    for cls, count in removed.items():
-        print(f'  {cls}: {count} corrupt images removed')
-    total = len(all_labels)
-    n_pos = int(all_labels.sum())
-    n_neg = total - n_pos
-    # ratio = n_pos / n_neg if n_neg else float('inf')
-    if total > 0:
-        print(f'Mangrove  (1) : {n_pos:,}  ({100 * n_pos / total:.1f} %)')
-        print(f'Non-mang. (0) : {n_neg:,}  ({100 * n_neg / total:.1f} %)')
-    else:
-        print('No valid images found')
-
-    return valid_paths, all_labels
+    try:
+        dataset = datasets.ImageFolder(root=str(DATASET_PATH))
+        return dataset.classes
+    except RuntimeError as e:
+        print(f"⚠️ ImageFolder fallback: {e}")
+        return valid_classes
 
 
-def loading_of_features(paths, labels, desc='', expected_len=None): #this is loading the features from the paths and labels and is also padding the features to the same length if expected_len is provided
-    X, y, lengths = [], [], []
-    for i, (path, label) in enumerate(zip(paths, labels)):
-        if i % 100 == 0:
-            print(f'  {desc}: {i}/{len(paths)}', end='\r')
-        feats = extract_features_from_path(path)
-        if feats is not None:
-            X.append(feats)
-            y.append(label)
-            lengths.append(len(feats))
-    print(f'  {desc}: {len(X)}/{len(paths)} loaded')
-    print(f'  Feature lengths seen: {sorted(set(lengths))}' if lengths else f'  Feature lengths seen: []')
+def load_model():
+    gpu = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    mangrove_type = get_class_names()
 
-    if not X:
-        return None, None, 0
+    model = bmodel(num_classes=len(mangrove_type), freeze_base=True).to(gpu)
 
-    #Pad all vectors to the same length
-    max_len = expected_len or max(lengths) #determing maximum lenght of featrures to pad to
-    X_padded = np.zeros((len(X), max_len), dtype=np.float32)
-    for i, feats in enumerate(X):
-        X_padded[i, :len(feats)] = feats
+    if not MODEL_PATH.exists():
+        raise FileNotFoundError(f"Model file not found: {MODEL_PATH}")
 
-    return X_padded, np.array(y), max_len
+    model.load_state_dict(torch.load(str(MODEL_PATH), map_location=gpu, weights_only=True))
+    model.eval()
+    return model, mangrove_type, gpu
 
 
-def train_model(save=True):
-    print("Loading training data...")
-    valid_paths, all_labels = load_training_data()
+def train_model(num_epochs_stage1=50, num_epochs_stage2=50, save_model=True):
+    if not DATASET_PATH.exists():
+        raise FileNotFoundError(f"Dataset path not found: {DATASET_PATH}")
 
-    if len(valid_paths) == 0:
-        print("Error: No valid training data found!")
-        return None
+    gpu = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
-    # Splitting the data insto training, validation and testing using stratified, lastly the split is 70% training, 15% validation and 15% testing
-    X_train_paths, X_tmp, y_train, y_tmp = train_test_split(
-        valid_paths, all_labels, test_size=0.30, stratify=all_labels, random_state=seed
-    )
-    X_val_paths, X_test_paths, y_val, y_test = train_test_split(
-        X_tmp, y_tmp, test_size=0.50, stratify=y_tmp, random_state=seed
+    image_dataset = datasets.ImageFolder(root=str(DATASET_PATH))
+    mangrove_type = image_dataset.classes
+
+    total = len(image_dataset)
+    if total == 0:
+        raise ValueError("Training dataset is empty.")
+
+    training = int(0.8 * total)
+    validating = total - training
+
+    train_set, val_set = torch.utils.data.random_split(
+        image_dataset,
+        [training, validating],
+        generator=torch.Generator().manual_seed(42)
     )
 
-    print("Loading features...")
-    X_train, y_train, max_len = loading_of_features(X_train_paths, y_train, 'Train')
-    X_val,   y_val,   _       = loading_of_features(X_val_paths,   y_val,   'Val  ', max_len)
-    X_test,  y_test,  _       = loading_of_features(X_test_paths,  y_test,  'Test ', max_len)
-
-    if X_train is None or X_val is None or X_test is None:
-        print("Error: Could not load features!")
-        return None
-
-    #validation set merge with the training set
-    X_train_full = np.vstack([X_train, X_val])
-    y_train_full = np.concatenate([y_train, y_val])
-
-    #randomforest model pipline
-    pipeline = Pipeline([
-        ('scaler', StandardScaler()),
-        ('rf', RandomForestClassifier(
-            n_estimators=200,
-            max_depth=None,
-            min_samples_leaf=4,
-            max_features='sqrt',
-            class_weight='balanced',
-            random_state=seed,
-            n_jobs=-1,
-            verbose=1))
+    train_transform = transforms.Compose([
+        transforms.Resize((224, 224)),
+        transforms.RandomHorizontalFlip(),
+        transforms.RandomVerticalFlip(),
+        transforms.RandomRotation(20),
+        transforms.ColorJitter(brightness=0.2, contrast=0.2),
+        transforms.ToTensor(),
+        transforms.Normalize([0.485, 0.456, 0.406],
+                             [0.229, 0.224, 0.225])
     ])
-    print('Fitting Random Forest')
-    pipeline.fit(X_train_full, y_train_full)
-    y_pred       = pipeline.predict(X_test)
-    y_pred_proba = pipeline.predict_proba(X_test)[:, 1]
 
-    from sklearn.metrics import accuracy_score, roc_auc_score, classification_report
+    val_transform = transforms.Compose([
+        transforms.Resize((224, 224)),
+        transforms.ToTensor(),
+        transforms.Normalize([0.485, 0.456, 0.406],
+                             [0.229, 0.224, 0.225])
+    ])
 
-    test_acc = accuracy_score(y_test, y_pred)
-    test_auc = roc_auc_score(y_test, y_pred_proba)
-    print(f'Test accuracy : {test_acc:.4f}')
-    print(f'Test AUC      : {test_auc:.4f}')
-    print('\nClassification Report:')
-    print(classification_report(y_test, y_pred, target_names=['Non-Mangrove', 'Mangrove'], digits=4))
+    train_set.dataset.transform = train_transform
+    val_set.dataset.transform = val_transform
 
-    if save:
-        joblib.dump(pipeline, str(MODEL_PATH))
-        print(f"Model saved to {MODEL_PATH}")
+    print(f"Total train set size: {len(train_set)} | Total validation set size: {len(val_set)}")
 
-    return pipeline
+    training_label = [image_dataset.targets[i] for i in train_set.indices]
+    counting_class = np.bincount(training_label)
+    class_weights = 1.0 / counting_class
+    weights = [class_weights[l] for l in training_label]
+
+    sampler = WeightedRandomSampler(
+        weights=weights,
+        num_samples=len(weights),
+        replacement=True
+    )
+
+    train_loader = DataLoader(
+        train_set,
+        batch_size=32,
+        sampler=sampler,
+        num_workers=0,
+        pin_memory=True
+    )
+
+    val_loader = DataLoader(
+        val_set,
+        batch_size=32,
+        shuffle=False,
+        num_workers=0,
+        pin_memory=True
+    )
+
+    model = bmodel(num_classes=len(mangrove_type), freeze_base=True).to(gpu)
+
+    criterion = nn.CrossEntropyLoss()
+    optimizer = torch.optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), lr=1e-3)
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=3)
+
+    best_val_acc = 0
+    patience_counter = 0
+
+    print("Starting stage 1 training...")
+    for epoch in range(num_epochs_stage1):
+        train_loss, train_acc = train_epoch(model, train_loader, optimizer, criterion, gpu)
+        val_loss, val_acc = val_epoch(model, val_loader, criterion, gpu)
+        scheduler.step(val_loss)
+
+        print(
+            f"Stage 1 Epoch {epoch+1:02d}/{num_epochs_stage1} | "
+            f"train loss: {train_loss:.4f} acc: {train_acc:.4f} | "
+            f"val loss: {val_loss:.4f} acc: {val_acc:.4f}"
+        )
+
+        if val_acc > best_val_acc:
+            best_val_acc = val_acc
+            if save_model:
+                torch.save(model.state_dict(), str(MODEL_PATH))
+            patience_counter = 0
+        else:
+            patience_counter += 1
+            if patience_counter >= 5:
+                print("Early stopping stage 1")
+                break
+
+    for param in model.parameters():
+        param.requires_grad = False
+    for param in list(model.features.parameters())[-20:]:
+        param.requires_grad = True
+    for param in model.classifier.parameters():
+        param.requires_grad = True
+
+    optimizer = torch.optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), lr=1e-5)
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, patience=3)
+    patience_counter = 0
+
+    print("Starting stage 2 fine-tuning...")
+    for epoch in range(num_epochs_stage2):
+        train_loss, train_acc = train_epoch(model, train_loader, optimizer, criterion, gpu)
+        val_loss, val_acc = val_epoch(model, val_loader, criterion, gpu)
+        scheduler.step(val_loss)
+
+        print(
+            f"Stage 2 Epoch {epoch+1:02d}/{num_epochs_stage2} | "
+            f"train loss: {train_loss:.4f} acc: {train_acc:.4f} | "
+            f"val loss: {val_loss:.4f} acc: {val_acc:.4f}"
+        )
+
+        if val_acc > best_val_acc:
+            best_val_acc = val_acc
+            if save_model:
+                torch.save(model.state_dict(), str(MODEL_PATH))
+            patience_counter = 0
+        else:
+            patience_counter += 1
+            if patience_counter >= 5:
+                print("Early stopping stage 2")
+                break
+
+    if save_model and MODEL_PATH.exists():
+        model.load_state_dict(torch.load(str(MODEL_PATH), map_location=gpu, weights_only=True))
+
+    model.eval()
+    return model, mangrove_type, gpu
 
 
 def load_or_train_model():
-    if MODEL_PATH.exists():
-        print(f"Loading model from {MODEL_PATH}")
-        return joblib.load(str(MODEL_PATH))
-    else:
-        print(f"Model not found at {MODEL_PATH}, training new model...")
-        return train_model(save=True)
-
-
-def predict_mangrove(image_path_or_array, model=None):
-    if model is None:
-        model = load_or_train_model()
-
-    if model is None:
-        return None, None, "Error: Model could not be loaded or trained"
-
-    # Extract features
-    if isinstance(image_path_or_array, str):
-        features = extract_features_from_path(image_path_or_array)
-    else:
-        features = extract_features_from_pil_image(image_path_or_array)
-
-    if features is None:
-        return None, None, "Error: Could not extract features from image"
-
-    # Pad features to match training
     try:
-        model_features = model.named_steps['scaler'].mean_.shape[0]
-        if len(features) < model_features:
-            padded = np.zeros(model_features, dtype=np.float32)
-            padded[:len(features)] = features
-            features = padded
-        else:
-            features = features[:model_features]
+        return load_model()
+    except FileNotFoundError:
+        print("No saved model found. Training a new model...")
+        return train_model()
     except Exception as e:
-        print(f"Warning: Could not pad features: {e}")
+        print(f"Error loading model: {e}")
+        print("Attempting to train a new model...")
+        return train_model()
 
-    # Predict
+
+def predict_mangrove(image_path, model, mangrove_type, gpu):
     try:
-        features_2d = features.reshape(1, -1)
-        prediction = model.predict(features_2d)[0]
-        confidence = model.predict_proba(features_2d)[0]
+        pred_class, confidence, avg_probs = predicting_test(
+            image_path=image_path,
+            model=model,
+            transform=INFERENCE_TRANSFORM,
+            mangrove_type=mangrove_type,
+            gpu=gpu
+        )
 
         result = {
-            'prediction': 'Mangrove Detected' if prediction == 1 else 'Non-Mangrove',
-            'confidence': float(confidence[prediction]),
-            'mangrove_probability': float(confidence[1]),
-            'non_mangrove_probability': float(confidence[0])
+            'predicted_class': pred_class,
+            'confidence': confidence,
+            'probabilities': {
+                mangrove_type[i]: float(avg_probs[i]) for i in range(len(mangrove_type))
+            }
         }
-        return result, features, None
+
+        return result, pred_class, None
+
     except Exception as e:
-        return None, None, f"Error during prediction: {str(e)}"
+        return None, None, str(e)
+
+
+if __name__ == '__main__':
+    model, mangrove_type, gpu = load_or_train_model()
+    print("Model ready.")

@@ -5,6 +5,9 @@
 *.tif
 *.tiff
 
+# Ignore vscode settings
+.vscode/
+
 # second layer of security
 /ai-first-nations-data/*
 /flask-application/uploads/*
