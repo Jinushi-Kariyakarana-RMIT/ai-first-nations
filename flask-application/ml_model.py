@@ -379,6 +379,47 @@ def predict_mangrove(image_path, model, mangrove_type, gpu):
         return None, None, str(e)
 
 
+def predict_combined(image_path, binary_model, model, mangrove_type, gpu):
+    """
+    Combined pipeline: binary mangrove detection first, then multi-class
+    classification only if mangrove is detected.
+
+    Returns a dict with:
+        - binary: binary detection result
+        - multi_class: multi-class result (or None if no mangrove detected)
+    """
+    from binary_detector import predict_binary
+
+    # Step 1: Binary detection
+    binary_result = predict_binary(image_path, binary_model)
+
+    # Step 2: If mangrove detected, run multi-class classification
+    multi_class_result = None
+    if binary_result['prediction'] == 'Mangrove' and binary_result['confidence'] > 0.5:
+        try:
+            pred_class, confidence, avg_probs = predicting_test(
+                image_path=image_path,
+                model=model,
+                transform=INFERENCE_TRANSFORM,
+                mangrove_type=mangrove_type,
+                gpu=gpu
+            )
+            multi_class_result = {
+                'predicted_class': pred_class,
+                'confidence': confidence,
+                'probabilities': {
+                    mangrove_type[i]: float(avg_probs[i]) for i in range(len(mangrove_type))
+                }
+            }
+        except Exception as e:
+            print(f"Multi-class prediction error: {e}")
+
+    return {
+        'binary': binary_result,
+        'multi_class': multi_class_result
+    }
+
+
 if __name__ == '__main__':
     model, mangrove_type, gpu = load_or_train_model()
     print("Model ready.")
