@@ -22,11 +22,11 @@
 
 <div class="info-section">
     <h4>How to use:</h4>
-    <p>Select and upload an image (PNG, JPG, JPEG, or TIFF/TIF format) and click "Analyze" to begin processing. The system will classify the mangrove health into one of three categories: <strong>Orange</strong>, <strong>Red</strong>, or <strong>Yellow</strong>.</p>
+    <p>Select and upload an image (PNG, JPG, JPEG) and click "Analyze" to begin processing. The system will classify the mangrove health into one of three categories: <strong>Orange</strong>, <strong>Red</strong>, or <strong>Yellow</strong>.</p>
 </div>
 
 <form method="post" enctype="multipart/form-data">
-    <input type="file" name="orthomosaic" accept=".png,.jpg,.jpeg,.tiff,.tif" required>
+    <input type="file" name="orthomosaic" accept=".png,.jpg,.jpeg," required>
     <input type="submit" value="Analyze Image">
 </form>
 {% endblock %}

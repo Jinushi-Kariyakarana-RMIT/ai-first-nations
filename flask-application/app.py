@@ -1,7 +1,8 @@
 from flask import Flask, request, render_template, flash, redirect, url_for, send_from_directory
 import os
 from werkzeug.utils import secure_filename
-from ml_model import load_or_train_model, predict_mangrove
+from ml_model import load_or_train_model, predict_mangrove, predict_combined
+from binary_detector import load_binary_model
 
 ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg', 'tiff', 'tif']
 
@@ -15,19 +16,30 @@ os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 model = None
 mangrove_type = None
 gpu = None
+binary_model = None
 
 
-def initialize_model():
-    global model, mangrove_type, gpu
-    print("Initializing ML model...")
+def initialize_models():
+    global model, mangrove_type, gpu, binary_model
+    print("Initializing ML models...")
+
+    # Load multi-class model
     try:
         model, mangrove_type, gpu = load_or_train_model()
-        print("ML model ready.")
+        print("Multi-class ML model ready.")
     except Exception as e:
-        print(f"Warning: Error preparing ML model: {e}")
+        print(f"Warning: Error preparing multi-class ML model: {e}")
         model = None
         mangrove_type = None
         gpu = None
+
+    # Load binary mangrove detector
+    try:
+        binary_model = load_binary_model()
+        print("Binary mangrove detector ready.")
+    except Exception as e:
+        print(f"Warning: Error loading binary mangrove detector: {e}")
+        binary_model = None
 
 
 def allowed_file(filename):
@@ -36,7 +48,7 @@ def allowed_file(filename):
 
 # Prevent double initialization in Flask reloader
 if os.environ.get("WERKZEUG_RUN_MAIN") == "true" or not app.debug:
-    initialize_model()
+    initialize_models()
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -60,7 +72,7 @@ def upload():
             flash(f'File uploaded successfully: {filename}')
             return redirect(url_for('analyze', name=filename))
         else:
-            flash('Invalid file type. Allowed: PNG, JPG, JPEG, TIFF')
+            flash('Invalid file type. Allowed: PNG, JPG, JPEG')
             return redirect(request.url)
 
     return render_template('home.html')
@@ -82,7 +94,13 @@ def analyze(name):
     analysis_result = None
     error_message = None
 
-    if model is not None:
+    if model is not None and binary_model is not None:
+        try:
+            analysis_result = predict_combined(filepath, binary_model, model, mangrove_type, gpu)
+        except Exception as e:
+            error_message = f"Error during analysis: {str(e)}"
+            print(f"Exception during analysis: {e}")
+    elif model is not None:
         try:
             analysis_result, _, error = predict_mangrove(filepath, model, mangrove_type, gpu)
             if error:
@@ -92,7 +110,7 @@ def analyze(name):
             error_message = f"Error during analysis: {str(e)}"
             print(f"Exception during analysis: {e}")
     else:
-        error_message = "ML model not available. Analysis cannot be performed."
+        error_message = "ML models not available. Analysis cannot be performed."
 
     image_url = url_for('serve_file', name=name)
 
