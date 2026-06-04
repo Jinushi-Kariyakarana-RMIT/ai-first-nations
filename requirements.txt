@@ -3,8 +3,12 @@ joblib
 json
 matplotlib
 numpy
+Pillow
 scikit-image
 scikit-learn
 seaborn
 tensorflow
 tifffile
+torch
+torchvision
+tqdm

@@ -10,11 +10,14 @@
     <p style="color: #922b21; margin: 0;">{{ error }}</p>
 </div>
 {% elif result %}
-<div class="info-section" style="background-color: {% if result.prediction == 'Mangrove Detected' %}#d5f4e6{% else %}#fadbd8{% endif %}; border-left-color: {% if result.prediction == 'Mangrove Detected' %}#27ae60{% else %}#e74c3c{% endif %};">
-    <h4 style="color: {% if result.prediction == 'Mangrove Detected' %}#27ae60{% else %}#c0392b{% endif %}; margin-top: 0;">
-        {% if result.prediction == 'Mangroves Detected' %}Mangrove Detected{% else %}No Mangroves Detected{% endif %}
+{% set colors = ['#e74c3c', '#f39c12', '#27ae60'] %}
+{% set predicted_class = result.predicted_class %}
+
+<div class="info-section" style="background-color: #d5f4e6; border-left-color: #27ae60;">
+    <h4 style="color: #27ae60; margin-top: 0;">
+        Predicted Class: {{ predicted_class }}
     </h4>
-    <p style="margin: 0;">{{ result.prediction }}</p>
+    <p style="margin: 0;">Confidence: {{ "%.1f" | format(result.confidence * 100) }}%</p>
 </div>
 
 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0;">
@@ -29,25 +32,20 @@
 </div>
 
 <div style="background-color: #ecf0f1; padding: 20px; border-radius: 6px; margin: 20px 0;">
-    <h4 style="color: #2c3e50; margin-top: 0; margin-bottom: 15px;">Probabilities</h4>
+    <h4 style="color: #2c3e50; margin-top: 0; margin-bottom: 15px;">Class Probabilities</h4>
+    {% for class_name, probability in result.probabilities.items() %}
+    {% set idx = loop.index0 %}
+    {% set color = colors[idx % colors|length] %}
     <div style="margin-bottom: 12px;">
         <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-            <span style="color: #2c3e50; font-weight: 500;">Mangrove</span>
-            <span style="color: #27ae60; font-weight: 600;">{{ "%.2f" | format(result.mangrove_probability * 100) }}%</span>
+            <span style="color: #2c3e50; font-weight: 500;">{{ class_name }}{% if class_name == predicted_class %} ✓{% endif %}</span>
+            <span style="color: {{ color }}; font-weight: 600;">{{ "%.2f" | format(probability * 100) }}%</span>
         </div>
         <div style="background-color: #bdc3c7; border-radius: 4px; height: 24px; overflow: hidden;">
-            <div style="background-color: #27ae60; height: 100%; width: {{ result.mangrove_probability * 100 }}%; transition: width 0.3s ease;"></div>
+            <div style="background-color: {{ color }}; height: 100%; width: {{ probability * 100 }}%; transition: width 0.3s ease;"></div>
         </div>
     </div>
-    <div>
-        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-            <span style="color: #2c3e50; font-weight: 500;">Non-Mangrove</span>
-            <span style="color: #e74c3c; font-weight: 600;">{{ "%.2f" | format(result.non_mangrove_probability * 100) }}%</span>
-        </div>
-        <div style="background-color: #bdc3c7; border-radius: 4px; height: 24px; overflow: hidden;">
-            <div style="background-color: #e74c3c; height: 100%; width: {{ result.non_mangrove_probability * 100 }}%; transition: width 0.3s ease;"></div>
-        </div>
-    </div>
+    {% endfor %}
 </div>
 
 {% else %}
