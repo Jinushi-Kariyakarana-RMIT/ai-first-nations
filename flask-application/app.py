@@ -119,4 +119,4 @@ def base():
 
 
 if __name__ == '__main__':
-    app.run(debug=False, use_reloader=False)
+    app.run(debug=True)

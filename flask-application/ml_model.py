@@ -92,9 +92,40 @@ def extract_test(img, transform, tile_size=512, overlap=64):
 
     return torch.stack(test_images), positions
 
+# This function is needed because PIL cannot open GeoTIFFs directly, and we want to support them since they are a common format
+def _load_image_as_pil(image_path):
+    try:
+        return Image.open(image_path).convert('RGB')
+    except Exception:
+        pass
+    # Fallback: use tifffile + numpy for GeoTIFFs or other unsupported formats
+    try:
+        import tifffile
+        arr = tifffile.imread(image_path)
+        if arr.ndim == 2:
+            # Grayscale -> RGB
+            img = Image.fromarray(arr, mode='L')
+            return img.convert('RGB')
+        elif arr.ndim == 3:
+            if arr.shape[2] == 4:
+                img = Image.fromarray(arr, mode='RGBA')
+                return img.convert('RGB')
+            elif arr.shape[2] == 3:
+                # RGB -> convert to correct mode (tifffile may load as BGR-like)
+                img = Image.fromarray(arr, mode='RGB')
+                return img.convert('RGB')
+            else:
+                # Take first 3 channels
+                img = Image.fromarray(arr[:, :, :3], mode='RGB')
+                return img.convert('RGB')
+        else:
+            raise ValueError(f"Unexpected array dimensions: {arr.shape}")
+    except Exception as e:
+        raise IOError(f"Cannot open image '{image_path}': {e}")
+
 
 def predicting_test(image_path, model, transform, mangrove_type, gpu, batch_size=64):
-    img = Image.open(image_path).convert('RGB')
+    img = _load_image_as_pil(image_path)
     tiles, _ = extract_test(img, transform, 512, 64)
     all_probs = []
 
