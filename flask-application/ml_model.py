@@ -1,9 +1,7 @@
 import os
 from pathlib import Path
 
-import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sns
 import torch
 import torch.nn as nn
 from PIL import Image
