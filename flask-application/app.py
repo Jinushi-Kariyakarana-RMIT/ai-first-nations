@@ -4,7 +4,7 @@ from werkzeug.utils import secure_filename
 from ml_model import load_or_train_model, predict_mangrove, predict_combined
 from binary_detector import load_binary_model
 
-ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg', 'tiff', 'tif']
+ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg']
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'uploads')
