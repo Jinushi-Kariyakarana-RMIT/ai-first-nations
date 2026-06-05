@@ -90,15 +90,14 @@ def extract_test(img, transform, tile_size=512, overlap=64):
 
     return torch.stack(test_images), positions
 
-# This function is needed because PIL cannot open GeoTIFFs directly, and we want to support them since they are a common format
+# Robust image loading that can handle various formats and potential issues
 def _load_image_as_pil(image_path):
     try:
         return Image.open(image_path).convert('RGB')
     except Exception:
         pass
-    # Fallback: use tifffile + numpy for GeoTIFFs or other unsupported formats
     try:
-        import tifffile
+        import tifffile # We used to support tiff images but decided to stop, keeping this here just in case we want to add support back in the future
         arr = tifffile.imread(image_path)
         if arr.ndim == 2:
             # Grayscale -> RGB
