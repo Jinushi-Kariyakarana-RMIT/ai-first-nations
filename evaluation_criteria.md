@@ -7,8 +7,8 @@
 | Metric | Target | Description | 
 |--------|--------|-------------|
 | **Accuracy** | >= 90% | Overall correctness of mangrove vs. non-mangrove classification |
-| **Precision ** | >= 88% | Out of all tiles predicted as mangrove, how many are truly mangrove |
-| **Recall ** | >= 88% | Out of all actual mangrove tiles, how many were correctly detected |
+| **Precision** | >= 88% | Out of all tiles predicted as mangrove, how many are truly mangrove |
+| **Recall** | >= 88% | Out of all actual mangrove tiles, how many were correctly detected |
 | **F1-Score** | >= 88% | Combination of precision and recall |
 | **AUC-ROC** | >= 0.92 | Area under the Receiver Operating Characteristic curve |
 
