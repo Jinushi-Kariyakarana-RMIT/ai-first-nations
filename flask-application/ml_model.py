@@ -1,9 +1,7 @@
 import os
 from pathlib import Path
 
-import matplotlib.pyplot as plt
 import numpy as np
-import seaborn as sns
 import torch
 import torch.nn as nn
 from PIL import Image
@@ -92,15 +90,14 @@ def extract_test(img, transform, tile_size=512, overlap=64):
 
     return torch.stack(test_images), positions
 
-# This function is needed because PIL cannot open GeoTIFFs directly, and we want to support them since they are a common format
+# Robust image loading that can handle various formats and potential issues
 def _load_image_as_pil(image_path):
     try:
         return Image.open(image_path).convert('RGB')
     except Exception:
         pass
-    # Fallback: use tifffile + numpy for GeoTIFFs or other unsupported formats
     try:
-        import tifffile
+        import tifffile # We used to support tiff images but decided to stop, keeping this here just in case we want to add support back in the future
         arr = tifffile.imread(image_path)
         if arr.ndim == 2:
             # Grayscale -> RGB
@@ -377,6 +374,47 @@ def predict_mangrove(image_path, model, mangrove_type, gpu):
 
     except Exception as e:
         return None, None, str(e)
+
+
+def predict_combined(image_path, binary_model, model, mangrove_type, gpu):
+    """
+    Combined pipeline: binary mangrove detection first, then multi-class
+    classification only if mangrove is detected.
+
+    Returns a dict with:
+        - binary: binary detection result
+        - multi_class: multi-class result (or None if no mangrove detected)
+    """
+    from binary_detector import predict_binary
+
+    # Step 1: Binary detection
+    binary_result = predict_binary(image_path, binary_model)
+
+    # Step 2: If mangrove detected, run multi-class classification
+    multi_class_result = None
+    if binary_result['prediction'] == 'Mangrove' and binary_result['confidence'] > 0.5:
+        try:
+            pred_class, confidence, avg_probs = predicting_test(
+                image_path=image_path,
+                model=model,
+                transform=INFERENCE_TRANSFORM,
+                mangrove_type=mangrove_type,
+                gpu=gpu
+            )
+            multi_class_result = {
+                'predicted_class': pred_class,
+                'confidence': confidence,
+                'probabilities': {
+                    mangrove_type[i]: float(avg_probs[i]) for i in range(len(mangrove_type))
+                }
+            }
+        except Exception as e:
+            print(f"Multi-class prediction error: {e}")
+
+    return {
+        'binary': binary_result,
+        'multi_class': multi_class_result
+    }
 
 
 if __name__ == '__main__':

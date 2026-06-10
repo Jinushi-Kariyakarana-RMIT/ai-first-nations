@@ -10,43 +10,55 @@
     <p style="color: #922b21; margin: 0;">{{ error }}</p>
 </div>
 {% elif result %}
-{% set colors = ['#e74c3c', '#f39c12', '#27ae60'] %}
-{% set predicted_class = result.predicted_class %}
 
-<div class="info-section" style="background-color: #d5f4e6; border-left-color: #27ae60;">
-    <h4 style="color: #27ae60; margin-top: 0;">
-        Predicted Class: {{ predicted_class }}
-    </h4>
-    <p style="margin: 0;">Confidence: {{ "%.1f" | format(result.confidence * 100) }}%</p>
-</div>
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin: 20px 0;">
-    <div style="background-color: #f8f9fa; padding: 15px; border-radius: 6px; border-top: 3px solid #27ae60;">
-        <strong style="color: #27ae60; display: block; margin-bottom: 8px;">Confidence</strong>
-        <span style="font-size: 1.8rem; font-weight: bold; color: #2c3e50;">{{ "%.1f" | format(result.confidence * 100) }}%</span>
-    </div>
-    <div style="background-color: #f8f9fa; padding: 15px; border-radius: 6px; border-top: 3px solid #3498db;">
-        <strong style="color: #3498db; display: block; margin-bottom: 8px;">Ideal confidence</strong>
-        <span style="font-size: 0.9rem; color: #555;">The ideal confidence level to trust the analysis is above 80%</span>
+<!-- No mangrove detected - show error message -->
+{% if not result.multi_class %}
+{% set binary = result.binary %}
+<div style="background-color: #fadbd8; border-left: 4px solid #e74c3c; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+    <h4 style="color: #c0392b; margin-top: 0; margin-bottom: 5px;">No Mangrove Detected</h4>
+    <p style="margin: 0 0 10px 0; color: #922b21;">This image does not contain detectable mangrove vegetation.</p>
+    <div style="font-size: 0.85rem; color: #555;">
+        Binary detector result: <strong>{{ binary.prediction }}</strong> ({{ "%.1f" | format(binary.confidence * 100) }}% confidence across {{ binary.n_tiles }} tiles)
     </div>
 </div>
 
-<div style="background-color: #ecf0f1; padding: 20px; border-radius: 6px; margin: 20px 0;">
-    <h4 style="color: #2c3e50; margin-top: 0; margin-bottom: 15px;">Class Probabilities</h4>
-    {% for class_name, probability in result.probabilities.items() %}
-    {% set idx = loop.index0 %}
-    {% set color = colors[idx % colors|length] %}
-    <div style="margin-bottom: 12px;">
-        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
-            <span style="color: #2c3e50; font-weight: 500;">{{ class_name }}{% if class_name == predicted_class %} ✓{% endif %}</span>
-            <span style="color: {{ color }}; font-weight: 600;">{{ "%.2f" | format(probability * 100) }}%</span>
+<!-- Multi-Class Classification Result (only if mangrove detected) -->
+{% else %}
+{% set mc = result.multi_class %}
+{% set class_colors = {'Orange': '#e67e22', 'Red': '#e74c3c', 'Yellow': '#f1c40f'} %}
+
+<div style="background-color: #d5f4e6; border-left: 4px solid #27ae60; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
+    <h4 style="color: #27ae60; margin-top: 0; margin-bottom: 10px;">Mangrove Type Classification</h4>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <span style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">
+                Type: {{ mc.predicted_class }}
+            </span>
         </div>
-        <div style="background-color: #bdc3c7; border-radius: 4px; height: 24px; overflow: hidden;">
-            <div style="background-color: {{ color }}; height: 100%; width: {{ probability * 100 }}%; transition: width 0.3s ease;"></div>
+        <div style="text-align: right;">
+            <span style="font-size: 1.4rem; font-weight: bold; color: #27ae60;">
+                {{ "%.1f" | format(mc.confidence * 100) }}%
+            </span>
+            <span style="font-size: 0.8rem; color: #7f8c8d; display: block;">confidence</span>
         </div>
     </div>
-    {% endfor %}
+    <!-- Multi-class probabilities -->
+    <div style="margin-top: 12px;">
+        {% for class_name, probability in mc.probabilities.items() %}
+        {% set color = class_colors.get(class_name, '#95a5a6') %}
+        <div style="margin-bottom: 8px;">
+            <div style="display: flex; justify-content: space-between; margin-bottom: 3px; font-size: 0.85rem;">
+                <span style="color: #2c3e50; font-weight: 500;">{{ class_name }}{% if class_name == mc.predicted_class %} ✓{% endif %}</span>
+                <span style="color: {{ color }}; font-weight: 600;">{{ "%.1f" | format(probability * 100) }}%</span>
+            </div>
+            <div style="background-color: #bdc3c7; border-radius: 3px; height: 8px; overflow: hidden;">
+                <div style="background-color: {{ color }}; height: 100%; width: {{ probability * 100 }}%; transition: width 0.3s ease;"></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
+{% endif %}
 
 {% else %}
 <div style="background-color: #ecf0f1; border: 1px solid #bdc3c7; border-radius: 6px; padding: 20px; text-align: center;">
@@ -58,7 +70,11 @@
 
 <div style="background-color: #f8f9fa; padding: 15px; border-radius: 6px; margin-top: 20px; border-left: 4px solid #3498db;">
     <h4 style="color: #2c3e50; margin-top: 0; margin-bottom: 8px;">About This Analysis</h4>
-    <p style="margin: 0; font-size: 0.9rem; color: #555;">TODO: Talk about the machine learning model and how it was trained</p>
+    <p style="margin: 0; font-size: 0.9rem; color: #555;">
+        <strong>Two-stage pipeline:</strong> First, a binary detector determines if mangrove vegetation is present.
+        If mangrove is detected, a multi-class classifier identifies the mangrove type (orange, red, or yellow).
+        The image is tiled into patches for analysis to handle large orthomosaic images.
+    </p>
 </div>
 
 <div style="text-align: center; margin-top: 30px;">
