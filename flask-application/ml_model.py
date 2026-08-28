@@ -9,7 +9,6 @@ from sklearn.metrics import classification_report, confusion_matrix
 from torch.utils.data import DataLoader, WeightedRandomSampler
 from torchvision import datasets, transforms, models
 from tqdm import tqdm
-from image_tiler import tile_image_for_model
 
 BASE_DIR = Path(__file__).parent
 PROJECT_ROOT = BASE_DIR.parent
@@ -72,6 +71,25 @@ def val_epoch(model, loader, criterion, gpu):
     return total_loss / total, correct / total
 
 
+def extract_test(img, transform, tile_size=512, overlap=64):
+    w, h = img.size
+    step = tile_size - overlap
+    test_images, positions = [], []
+
+    if w < tile_size or h < tile_size:
+        test_images.append(transform(img))
+        positions.append((0, 0, w, h))
+        return torch.stack(test_images), positions
+
+    for top in range(0, h - tile_size + 1, step):
+        for left in range(0, w - tile_size + 1, step):
+            box = (left, top, left + tile_size, top + tile_size)
+            tile = img.crop(box)
+            test_images.append(transform(tile))
+            positions.append(box)
+
+    return torch.stack(test_images), positions
+
 # Robust image loading that can handle various formats and potential issues
 def _load_image_as_pil(image_path):
     try:
@@ -105,7 +123,7 @@ def _load_image_as_pil(image_path):
 
 def predicting_test(image_path, model, transform, mangrove_type, gpu, batch_size=64):
     img = _load_image_as_pil(image_path)
-    tiles, _ = tile_image_for_model(img, transform, 512, 64)
+    tiles, _ = extract_test(img, transform, 512, 64)
     all_probs = []
 
     with torch.no_grad():
