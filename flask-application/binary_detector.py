@@ -11,6 +11,7 @@ import torch.nn as nn
 from pathlib import Path
 from PIL import Image
 from torchvision import transforms, models
+from image_tiler import tile_image_for_model
 
 BASE_DIR = Path(__file__).parent
 BINARY_MODEL_PATH = BASE_DIR / 'bestBinary.pth'
@@ -60,31 +61,6 @@ def load_binary_model():
     return model
 
 
-def extract_tiles(img: Image.Image, tile_size: int = 512, overlap: int = 64):
-    """
-    Slice a large image into overlapping tiles for prediction.
-    Returns a tensor of tiles and their positions.
-    """
-    W, H = img.size
-    step = tile_size - overlap
-    tiles, positions = [], []
-
-    for top in range(0, max(H - tile_size + 1, 1), step):
-        for left in range(0, max(W - tile_size + 1, 1), step):
-            box = (left, top,
-                   min(left + tile_size, W),
-                   min(top + tile_size, H))
-            tile = img.crop(box)
-            if tile.size != (tile_size, tile_size):
-                padded = Image.new('RGB', (tile_size, tile_size), (0, 0, 0))
-                padded.paste(tile, (0, 0))
-                tile = padded
-            tiles.append(INFERENCE_TRANSFORM(tile))
-            positions.append(box)
-
-    return torch.stack(tiles), positions
-
-
 def predict_binary(image_path: str, model, tile_size: int = 512,
                    overlap: int = 64, batch_size: int = 64,
                    confidence_threshold: float = 0.0) -> dict:
@@ -98,7 +74,7 @@ def predict_binary(image_path: str, model, tile_size: int = 512,
         - n_tiles: number of tiles used
     """
     img = Image.open(image_path).convert('RGB')
-    tiles, _ = extract_tiles(img, tile_size, overlap)
+    tiles, _ = tile_image_for_model(img, INFERENCE_TRANSFORM, tile_size, overlap)
     probability = []
 
     with torch.no_grad():
