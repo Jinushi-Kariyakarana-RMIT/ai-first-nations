@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<h3>About This Tool</h3>
+<p class="subtitle">How the Mangrove Detection system works</p>
+
+<div class="info-section">
+    <h4>What is this tool?</h4>
+    <p>This system uses machine learning to classify mangrove species from drone imagery. Mangroves are critical coastal ecosystems that provide valuable carbon recapture. A feature that is becoming increasingly important for environmental monitoring and conservation.</p>
+</div>
+
+<div class="features">
+    <div class="feature-item">
+        <strong>Accurate Detection</strong>
+        <span>AI-trained models capable of classifying mangrove health with a precision of over 80%</span>
+    </div>
+    <div class="feature-item">
+        <strong>Designed for Conservation</strong>
+        <span>This tool is designed with the end goal of monitoring the health of mangrove forests, with the long term goal of taking this technology and scaling it to automatically highlight changes over time.</span>
+    </div>
+</div>
+
+<div class="info-section">
+    <h4>How to use:</h4>
+    <p>Select and upload an image (PNG, JPG, JPEG) and click "Analyze Image" to begin processing. The system will first check if a mangrove is present, and if so, classify the mangroves in the image into one of three categories: <strong>Orange</strong>, <strong>Red</strong>, or <strong>Yellow</strong>.</p>
+</div>
+
+<div style="text-align: center; margin-top: 30px;">
+    <a href="{{ url_for('upload') }}" class="btn-link">Go to Upload</a>
+</div>
+{% endblock %}
