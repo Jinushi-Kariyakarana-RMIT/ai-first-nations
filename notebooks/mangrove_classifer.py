@@ -13,8 +13,23 @@ from PIL import Image
 from collections import Counter
 
 #building the base model using imagenet pre-trained weights and replacing the final layer to fit the 3 classes
-def bmodel(num_classes=3, freeze_base=True):
-    model = models.efficientnet_b0(weights='IMAGENET1K_V1')
+IMAGENET_BACKBONE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                      'efficientnet_b0_imagenet.pth')
+
+
+def bmodel(num_classes=3, freeze_base=True, pretrained_backbone=True):
+    model = models.efficientnet_b0(weights=None)
+    if pretrained_backbone:
+        # Prefer a local copy of the ImageNet weights so training works
+        # behind an SSL-inspecting proxy; fall back to the download.
+        if os.path.exists(IMAGENET_BACKBONE_PATH):
+            model.load_state_dict(torch.load(IMAGENET_BACKBONE_PATH,
+                                             map_location='cpu', weights_only=True))
+            print(f"Loaded local ImageNet backbone from {IMAGENET_BACKBONE_PATH}")
+        else:
+            pretrained = models.efficientnet_b0(
+                weights=models.EfficientNet_B0_Weights.IMAGENET1K_V1)
+            model.load_state_dict(pretrained.state_dict())
     if freeze_base:
         for param in model.parameters():
             param.requires_grad = False

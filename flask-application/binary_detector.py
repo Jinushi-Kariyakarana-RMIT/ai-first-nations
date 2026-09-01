@@ -27,9 +27,21 @@ INFERENCE_TRANSFORM = transforms.Compose([
 ])
 
 
-def build_binary_model(freeze_backbone: bool = True) -> nn.Module:
-    """Build the binary mangrove detection model using EfficientNet-B0."""
-    model = models.efficientnet_b0(weights='IMAGENET1K_V1')
+def build_binary_model(freeze_backbone: bool = True,
+                       pretrained_backbone: bool = False) -> nn.Module:
+    """Build the binary mangrove detection model using EfficientNet-B0.
+
+    pretrained_backbone=False builds the architecture with randomly
+    initialised weights and no network access. This is what you want for
+    inference: the saved checkpoint in bestBinary.pth contains every
+    backbone parameter, so downloading ImageNet weights first would only
+    be overwritten by load_state_dict().
+
+    Set pretrained_backbone=True only when training a new model from
+    scratch, where the ImageNet initialisation actually matters.
+    """
+    weights = models.EfficientNet_B0_Weights.IMAGENET1K_V1 if pretrained_backbone else None
+    model = models.efficientnet_b0(weights=weights)
     if freeze_backbone:
         for param in model.parameters():
             param.requires_grad = False
@@ -52,7 +64,7 @@ def load_binary_model():
             "Please train and save the binary model first."
         )
 
-    model = build_binary_model(freeze_backbone=True).to(GPU)
+    model = build_binary_model(freeze_backbone=True, pretrained_backbone=False).to(GPU)
     model.load_state_dict(
         torch.load(str(BINARY_MODEL_PATH), map_location=GPU, weights_only=True)
     )

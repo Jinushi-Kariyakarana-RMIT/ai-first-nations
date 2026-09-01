@@ -14,12 +14,51 @@ BASE_DIR = Path(__file__).parent
 PROJECT_ROOT = BASE_DIR.parent
 
 MODEL_PATH = BASE_DIR / 'best_mangrove_model.pth'
+# Optional local copy of the torchvision ImageNet weights, used only when
+# training a new model. Not needed to run the app.
+IMAGENET_BACKBONE_PATH = BASE_DIR / 'efficientnet_b0_imagenet.pth'
 DATASET_PATH = PROJECT_ROOT / 'TrainingData'
 TESTING_DIR = PROJECT_ROOT / 'test'
 
 
-def bmodel(num_classes=3, freeze_base=True):
-    model = models.efficientnet_b0(weights='IMAGENET1K_V1')
+def _load_imagenet_backbone(model):
+    """Initialise an EfficientNet-B0 with ImageNet weights without hitting
+    the network, if a local copy has been placed next to this file.
+
+    Falls back to the torchvision download, and raises a clear error if
+    that is unavailable (e.g. behind an SSL-inspecting proxy). Only
+    training needs this - inference loads a full checkpoint instead.
+    """
+    if IMAGENET_BACKBONE_PATH.exists():
+        state = torch.load(str(IMAGENET_BACKBONE_PATH), map_location='cpu', weights_only=True)
+        model.load_state_dict(state)
+        print(f"Loaded local ImageNet backbone from {IMAGENET_BACKBONE_PATH}")
+        return model
+
+    try:
+        pretrained = models.efficientnet_b0(weights=models.EfficientNet_B0_Weights.IMAGENET1K_V1)
+    except Exception as e:
+        raise RuntimeError(
+            "ImageNet weights are not available locally and could not be "
+            f"downloaded ({e}). Save them once on a machine with working "
+            f"internet and place the file at {IMAGENET_BACKBONE_PATH}."
+        ) from e
+
+    model.load_state_dict(pretrained.state_dict())
+    return model
+
+
+def bmodel(num_classes=3, freeze_base=True, pretrained_backbone=False):
+    """Build the multi-class model.
+
+    pretrained_backbone=False (the default) builds the architecture with
+    random weights and no network access - correct for inference, since
+    best_mangrove_model.pth already contains every backbone parameter.
+    Training passes True so transfer learning still starts from ImageNet.
+    """
+    model = models.efficientnet_b0(weights=None)
+    if pretrained_backbone:
+        _load_imagenet_backbone(model)
     if freeze_base:
         for param in model.parameters():
             param.requires_grad = False
@@ -267,7 +306,8 @@ def train_model(num_epochs_stage1=50, num_epochs_stage2=50, save_model=True):
         pin_memory=True
     )
 
-    model = bmodel(num_classes=len(mangrove_type), freeze_base=True).to(gpu)
+    model = bmodel(num_classes=len(mangrove_type), freeze_base=True,
+                   pretrained_backbone=True).to(gpu)
 
     criterion = nn.CrossEntropyLoss()
     optimizer = torch.optim.Adam(filter(lambda p: p.requires_grad, model.parameters()), lr=1e-3)
