@@ -8,7 +8,11 @@
 </head>
 <body>
     <header>
-        <a href="{{ url_for('upload') }}">🌳 Mangrove Detection and Classification System</a>
+        <a href="{{ url_for('upload') }}" class="brand">🌳 Mangrove Detection and Classification System</a>
+        <nav class="nav-tabs">
+            <a href="{{ url_for('about') }}" class="nav-tab {{ 'nav-tab-active' if request.endpoint == 'about' else '' }}">About</a>
+            <a href="{{ url_for('upload') }}" class="nav-tab {{ 'nav-tab-active' if request.endpoint == 'upload' else '' }}">Upload</a>
+        </nav>
     </header>
     
     <div class="container">
