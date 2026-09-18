@@ -14,11 +14,14 @@
 <!-- No mangrove detected - show error message -->
 {% if not result.multi_class %}
 {% set binary = result.binary %}
-<div style="background-color: #fadbd8; border-left: 4px solid #e74c3c; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
-    <h4 style="color: #c0392b; margin-top: 0; margin-bottom: 5px;">No Mangrove Detected</h4>
+<div class="notice-box notice-danger">
+    <h4 class="result-card-title" style="color: #c0392b;">No Mangrove Detected</h4>
     <p style="margin: 0 0 10px 0; color: #922b21;">This image does not contain detectable mangrove vegetation.</p>
-    <div style="font-size: 0.85rem; color: #555;">
+    <div style="font-size: 0.85rem; color: #555; margin-bottom: 6px;">
         Binary detector result: <strong>{{ binary.prediction }}</strong> ({{ "%.1f" | format(binary.confidence * 100) }}% confidence across {{ binary.n_tiles }} tiles)
+    </div>
+    <div class="confidence-meter confidence-meter-small">
+        <div class="confidence-meter-fill confidence-meter-fill-danger" style="width: {{ binary.confidence * 100 }}%;"></div>
     </div>
 </div>
 
@@ -26,9 +29,18 @@
 {% else %}
 {% set mc = result.multi_class %}
 {% set class_colors = {'Orange': '#e67e22', 'Red': '#e74c3c', 'Yellow': '#f1c40f'} %}
+{% set low_confidence = mc.confidence < 0.6 %}
+{% set conf_pct = mc.confidence * 100 %}
 
-<div style="background-color: #d5f4e6; border-left: 4px solid #27ae60; padding: 15px; border-radius: 6px; margin-bottom: 20px;">
-    <h4 style="color: #27ae60; margin-top: 0; margin-bottom: 10px;">Mangrove Type Classification</h4>
+{% if low_confidence %}
+<div class="notice-box notice-warning">
+    <strong>Low confidence result</strong>
+    <p>This prediction fell below 60% confidence. Consider treating it as inconclusive and reviewing the source image manually.</p>
+</div>
+{% endif %}
+
+<div class="result-card {{ 'result-card-warning' if low_confidence else 'result-card-success' }}">
+    <h4 class="result-card-title {{ 'result-card-title-warning' if low_confidence else '' }}">Mangrove Type Classification</h4>
     <div style="display: flex; justify-content: space-between; align-items: center;">
         <div>
             <span style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">
@@ -36,14 +48,20 @@
             </span>
         </div>
         <div style="text-align: right;">
-            <span style="font-size: 1.4rem; font-weight: bold; color: #27ae60;">
-                {{ "%.1f" | format(mc.confidence * 100) }}%
+            <span class="confidence-value {{ 'confidence-value-warning' if low_confidence else '' }}">
+                {{ "%.1f" | format(conf_pct) }}%
             </span>
             <span style="font-size: 0.8rem; color: #7f8c8d; display: block;">confidence</span>
         </div>
     </div>
+
+    <!-- Overall confidence meter -->
+    <div class="confidence-meter">
+        <div class="confidence-meter-fill {{ 'confidence-meter-fill-warning' if low_confidence else '' }}" style="width: {{ conf_pct }}%;"></div>
+    </div>
+
     <!-- Multi-class probabilities -->
-    <div style="margin-top: 12px;">
+    <div style="margin-top: 16px;">
         {% for class_name, probability in mc.probabilities.items() %}
         {% set color = class_colors.get(class_name, '#95a5a6') %}
         <div style="margin-bottom: 8px;">

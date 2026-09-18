@@ -105,4 +105,22 @@
         });
     })();
 </script>
+
+{% if recent_uploads %}
+<div class="recent-uploads">
+    <h4>Recent Uploads</h4>
+    <ul class="recent-list">
+        {% for item in recent_uploads %}
+        <li class="recent-item">
+            <a href="{{ url_for('analyze', name=item.filename) }}" class="recent-link">
+                <span class="recent-status recent-status-{{ item.status }}"></span>
+                <span class="recent-filename">{{ item.filename }}</span>
+                <span class="recent-summary">{{ item.summary }}</span>
+                <span class="recent-time">{{ item.timestamp }}</span>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
 {% endblock %}

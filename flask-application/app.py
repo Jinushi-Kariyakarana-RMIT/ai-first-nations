@@ -1,12 +1,14 @@
 from flask import Flask, request, render_template, flash, redirect, url_for, send_from_directory
 import os
 import secrets
+from datetime import datetime
 from werkzeug.utils import secure_filename
 from PIL import Image, UnidentifiedImageError
 from ml_model import load_or_train_model, predict_mangrove, predict_combined
 from binary_detector import load_binary_model
 
 ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg']
+MAX_RECENT_UPLOADS = 6
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = os.path.join(app.root_path, 'uploads')
@@ -28,6 +30,42 @@ model = None
 mangrove_type = None
 gpu = None
 binary_model = None
+
+# In-memory history of recent uploads for display on the upload page.
+# Not persisted across restarts - fine for local/demo use, but this would
+# need a real store (DB, or even a JSON file) to survive a server restart
+# or run across multiple worker processes in production.
+recent_uploads = []
+
+
+def record_upload(filename, result, error):
+    """Add an entry to the recent-uploads list (most recent first)."""
+    if error:
+        summary = 'Analysis error'
+        status = 'error'
+    elif not result:
+        summary = 'No result'
+        status = 'error'
+    elif result.get('multi_class'):
+        mc = result['multi_class']
+        summary = f"{mc['predicted_class']} ({mc['confidence'] * 100:.0f}%)"
+        status = 'ok'
+    elif 'predicted_class' in result:
+        # Fallback single-model path (predict_mangrove) returns the
+        # classification dict directly rather than nested under multi_class.
+        summary = f"{result['predicted_class']} ({result['confidence'] * 100:.0f}%)"
+        status = 'ok'
+    else:
+        summary = 'No mangrove detected'
+        status = 'none'
+
+    recent_uploads.insert(0, {
+        'filename': filename,
+        'summary': summary,
+        'status': status,
+        'timestamp': datetime.now().strftime('%d %b, %H:%M'),
+    })
+    del recent_uploads[MAX_RECENT_UPLOADS:]
 
 
 def initialize_models():
@@ -74,7 +112,7 @@ if os.environ.get("WERKZEUG_RUN_MAIN") == "true" or not DEBUG_MODE:
     initialize_models()
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/upload', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
         if 'orthomosaic' not in request.files:
@@ -103,10 +141,10 @@ def upload():
             flash('Invalid file type. Allowed: PNG, JPG, JPEG')
             return redirect(request.url)
 
-    return render_template('home.html')
+    return render_template('home.html', recent_uploads=recent_uploads)
 
 
-@app.route('/about')
+@app.route('/')
 def about():
     return render_template('about.html')
 
@@ -146,6 +184,8 @@ def analyze(name):
         error_message = "ML models not available. Analysis cannot be performed."
 
     image_url = url_for('serve_file', name=name)
+
+    record_upload(name, analysis_result, error_message)
 
     return render_template(
         'analysis_results.html',
