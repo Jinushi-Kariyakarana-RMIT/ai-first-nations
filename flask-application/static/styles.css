@@ -551,11 +551,167 @@ img {
     max-width: 100%;
 }
 
+.results-header {
+    margin-bottom: 26px;
+}
+
+.results-header h1 {
+    margin-bottom: 7px;
+}
+
+.result-filename {
+    color: var(--text);
+    font-weight: 700;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.result-status {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.result-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.analysis-card {
+    border: 1px solid var(--border);
+    border-top: 4px solid var(--primary);
+    min-height: 230px;
+    padding: 20px;
+}
+
+.card-label {
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: 750;
+    margin-bottom: 13px;
+    text-transform: uppercase;
+}
+
+.analysis-card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+}
+
+.metric-value {
+    color: var(--primary-dark);
+    font-size: 2.2rem;
+    font-weight: 780;
+    line-height: 1.1;
+    margin: 0;
+}
+
+.metric-label,
+.card-note {
+    color: var(--muted);
+    font-size: 0.84rem;
+    margin: 4px 0 0;
+}
+
+.classification-heading {
+    align-items: baseline;
+    display: flex;
+    justify-content: space-between;
+}
+
+.metric-inline {
+    color: var(--primary-dark);
+    font-size: 1.25rem;
+    font-weight: 780;
+}
+
+.metric-warning {
+    color: var(--warning);
+}
+
+.probability-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    margin-top: 18px;
+}
+
+.probability-row > div:first-child {
+    display: flex;
+    font-size: 0.78rem;
+    justify-content: space-between;
+}
+
+.probability-track {
+    background: #dce3df;
+    height: 7px;
+    margin-top: 3px;
+    overflow: hidden;
+}
+
+.probability-track span {
+    background: var(--primary);
+    display: block;
+    height: 100%;
+}
+
+.image-analysis {
+    border-top: 1px solid var(--border);
+    margin-top: 34px;
+    padding-top: 30px;
+}
+
+.image-analysis figure {
+    margin: 0;
+}
+
+.image-analysis figcaption {
+    color: var(--muted);
+    font-size: 0.84rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.image-analysis img {
+    background: #edf1ef;
+    border: 1px solid var(--border);
+    display: block;
+    margin: 0;
+    max-height: 680px;
+    object-fit: contain;
+    width: 100%;
+}
+
+.result-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.analysis-details {
+    border-top: 1px solid var(--border);
+    margin-top: 32px;
+    padding-top: 22px;
+}
+
+.analysis-details summary {
+    color: var(--primary-dark);
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.analysis-details p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin: 12px 0 0;
+}
+
 @media (max-width: 760px) {
     header { padding: 10px 16px; }
     .container { margin: 18px 12px 40px; padding: 28px 22px; }
     h1 { font-size: 1.95rem; }
     .capability-grid { grid-template-columns: 1fr; }
+    .result-grid { grid-template-columns: 1fr; }
     .capability-item { min-height: 0; }
     .workflow-list { align-items: flex-start; flex-direction: column; gap: 18px; }
     .workflow-list li:not(:last-child)::after { content: "↓"; margin-left: 14px; position: absolute; top: 22px; }
@@ -573,4 +729,5 @@ img {
     .btn-primary { align-self: stretch; }
     .recent-link { align-items: flex-start; flex-wrap: wrap; }
     .recent-time { margin-left: 19px; }
+    .result-actions { align-items: stretch; flex-direction: column; }
 }

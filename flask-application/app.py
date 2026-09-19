@@ -5,7 +5,7 @@ from datetime import datetime
 from werkzeug.utils import secure_filename
 from PIL import Image, UnidentifiedImageError
 from ml_model import load_or_train_model, predict_mangrove, predict_combined
-from binary_detector import load_binary_model
+from binary_detector import load_binary_model, predict_binary
 
 ALLOWED_EXTENSIONS = ['png', 'jpg', 'jpeg']
 MAX_RECENT_UPLOADS = 6
@@ -136,7 +136,6 @@ def upload():
                 flash('That file is not a valid image (extension did not match content).')
                 return redirect(request.url)
 
-            flash(f'File uploaded successfully: {filename}')
             return redirect(url_for('analyze', name=filename))
         else:
             flash('Invalid file type. Allowed: PNG, JPG, JPEG')
@@ -170,19 +169,30 @@ def analyze(name):
         try:
             analysis_result = predict_combined(filepath, binary_model, model, mangrove_type, gpu)
         except Exception as e:
-            error_message = f"Error during analysis: {str(e)}"
+            error_message = "Analysis could not be completed. Please try another image."
             print(f"Exception during analysis: {e}")
+    elif binary_model is not None:
+        try:
+            analysis_result = {
+                'binary': predict_binary(filepath, binary_model),
+                'multi_class': None,
+            }
+        except Exception as e:
+            error_message = "Analysis could not be completed. Please try another image."
+            print(f"Binary analysis exception: {e}")
     elif model is not None:
         try:
-            analysis_result, _, error = predict_mangrove(filepath, model, mangrove_type, gpu)
+            classification, _, error = predict_mangrove(filepath, model, mangrove_type, gpu)
             if error:
-                error_message = error
+                error_message = "Mangrove classification could not be completed."
                 print(f"Analysis error: {error}")
+            else:
+                analysis_result = {'binary': None, 'multi_class': classification}
         except Exception as e:
-            error_message = f"Error during analysis: {str(e)}"
+            error_message = "Mangrove classification could not be completed."
             print(f"Exception during analysis: {e}")
     else:
-        error_message = "ML models not available. Analysis cannot be performed."
+        error_message = "Analysis models are currently unavailable. Please contact the project team."
 
     image_url = url_for('serve_file', name=name)
 
@@ -208,6 +218,12 @@ def uploads(name):
 @app.route('/base')
 def base():
     return render_template('base.html')
+
+
+@app.errorhandler(413)
+def file_too_large(_error):
+    flash('Image is too large. Please upload an image smaller than 50 MB.')
+    return redirect(url_for('upload'))
 
 
 if __name__ == '__main__':

@@ -1,102 +1,87 @@
 {% extends 'base.html' %}
 
+{% block title %}Analysis Results{% endblock %}
+
 {% block body %}
-<h3>Analysis Results</h3>
-<p class="subtitle">Mangrove detection analysis complete</p>
+<section class="results-header">
+    <h1>Analysis Results</h1>
+    <p class="result-filename">{{ filename }}</p>
+    <p class="result-status">{{ 'Analysis completed with a warning' if error else 'Analysis completed successfully' }}</p>
+</section>
 
 {% if error %}
-<div style="background-color: #fadbd8; border: 1px solid #f5b7b1; border-radius: 6px; padding: 15px; margin-bottom: 20px;">
-    <h4 style="color: #c0392b; margin-top: 0;">Analysis Error</h4>
-    <p style="color: #922b21; margin: 0;">{{ error }}</p>
+<div class="notice-box notice-danger" role="alert">
+    <h2>Analysis could not be completed</h2>
+    <p>{{ error }}</p>
 </div>
 {% elif result %}
+{% set binary = result.binary if result.binary is defined else none %}
+{% set classification = result.multi_class if result.multi_class is defined else none %}
 
-<!-- No mangrove detected - show error message -->
-{% if not result.multi_class %}
-{% set binary = result.binary %}
-<div class="notice-box notice-danger">
-    <h4 class="result-card-title" style="color: #c0392b;">No Mangrove Detected</h4>
-    <p style="margin: 0 0 10px 0; color: #922b21;">This image does not contain detectable mangrove vegetation.</p>
-    <div style="font-size: 0.85rem; color: #555; margin-bottom: 6px;">
-        Binary detector result: <strong>{{ binary.prediction }}</strong> ({{ "%.1f" | format(binary.confidence * 100) }}% confidence across {{ binary.n_tiles }} tiles)
-    </div>
-    <div class="confidence-meter confidence-meter-small">
-        <div class="confidence-meter-fill confidence-meter-fill-danger" style="width: {{ binary.confidence * 100 }}%;"></div>
-    </div>
-</div>
+<section class="result-grid" aria-label="Model results">
+    <article class="analysis-card">
+        <p class="card-label">Mangrove Detection</p>
+        {% if binary %}
+            {% set mangrove_detected = binary.prediction == 'Mangrove' %}
+            <h2>{{ '✓ Mangrove Detected' if mangrove_detected else 'No Mangrove Detected' }}</h2>
+            <p class="metric-value">{{ "%.1f" | format(binary.confidence * 100) }}%</p>
+            <p class="metric-label">confidence across {{ binary.n_tiles }} tiles</p>
+        {% else %}
+            <h2>Unavailable</h2>
+            <p class="card-note">The mangrove detection model was not available for this analysis.</p>
+        {% endif %}
+    </article>
 
-<!-- Multi-Class Classification Result (only if mangrove detected) -->
-{% else %}
-{% set mc = result.multi_class %}
-{% set class_colors = {'Orange': '#e67e22', 'Red': '#e74c3c', 'Yellow': '#f1c40f'} %}
-{% set low_confidence = mc.confidence < 0.6 %}
-{% set conf_pct = mc.confidence * 100 %}
-
-{% if low_confidence %}
-<div class="notice-box notice-warning">
-    <strong>Low confidence result</strong>
-    <p>This prediction fell below 60% confidence. Consider treating it as inconclusive and reviewing the source image manually.</p>
-</div>
-{% endif %}
-
-<div class="result-card {{ 'result-card-warning' if low_confidence else 'result-card-success' }}">
-    <h4 class="result-card-title {{ 'result-card-title-warning' if low_confidence else '' }}">Mangrove Type Classification</h4>
-    <div style="display: flex; justify-content: space-between; align-items: center;">
-        <div>
-            <span style="font-size: 1.2rem; font-weight: bold; color: #2c3e50;">
-                Type: {{ mc.predicted_class }}
-            </span>
-        </div>
-        <div style="text-align: right;">
-            <span class="confidence-value {{ 'confidence-value-warning' if low_confidence else '' }}">
-                {{ "%.1f" | format(conf_pct) }}%
-            </span>
-            <span style="font-size: 0.8rem; color: #7f8c8d; display: block;">confidence</span>
-        </div>
-    </div>
-
-    <!-- Overall confidence meter -->
-    <div class="confidence-meter">
-        <div class="confidence-meter-fill {{ 'confidence-meter-fill-warning' if low_confidence else '' }}" style="width: {{ conf_pct }}%;"></div>
-    </div>
-
-    <!-- Multi-class probabilities -->
-    <div style="margin-top: 16px;">
-        {% for class_name, probability in mc.probabilities.items() %}
-        {% set color = class_colors.get(class_name, '#95a5a6') %}
-        <div style="margin-bottom: 8px;">
-            <div style="display: flex; justify-content: space-between; margin-bottom: 3px; font-size: 0.85rem;">
-                <span style="color: #2c3e50; font-weight: 500;">{{ class_name }}{% if class_name == mc.predicted_class %} ✓{% endif %}</span>
-                <span style="color: {{ color }}; font-weight: 600;">{{ "%.1f" | format(probability * 100) }}%</span>
+    <article class="analysis-card">
+        <p class="card-label">Mangrove Classification</p>
+        {% if classification %}
+            {% set low_confidence = classification.confidence < 0.6 %}
+            <div class="classification-heading">
+                <h2>{{ classification.predicted_class | title }}</h2>
+                <span class="metric-inline {{ 'metric-warning' if low_confidence else '' }}">{{ "%.1f" | format(classification.confidence * 100) }}%</span>
             </div>
-            <div style="background-color: #bdc3c7; border-radius: 3px; height: 8px; overflow: hidden;">
-                <div style="background-color: {{ color }}; height: 100%; width: {{ probability * 100 }}%; transition: width 0.3s ease;"></div>
+            <p class="metric-label">prediction confidence{% if low_confidence %} · review recommended{% endif %}</p>
+            <div class="probability-list" aria-label="Classification probabilities">
+                {% for class_name, probability in classification.probabilities.items() %}
+                <div class="probability-row">
+                    <div><span>{{ class_name | title }}</span><span>{{ "%.1f" | format(probability * 100) }}%</span></div>
+                    <div class="probability-track"><span style="width: {{ probability * 100 }}%"></span></div>
+                </div>
+                {% endfor %}
             </div>
-        </div>
-        {% endfor %}
-    </div>
-</div>
-{% endif %}
-
+        {% elif binary and binary.prediction != 'Mangrove' %}
+            <h2>Not performed</h2>
+            <p class="card-note">No mangrove vegetation was detected.</p>
+        {% else %}
+            <h2>Unavailable</h2>
+            <p class="card-note">The classification model did not return a result.</p>
+        {% endif %}
+    </article>
+</section>
 {% else %}
-<div style="background-color: #ecf0f1; border: 1px solid #bdc3c7; border-radius: 6px; padding: 20px; text-align: center;">
-    <p style="color: #555;">Analysis results not available</p>
+<div class="notice-box notice-danger" role="alert">
+    <h2>Results unavailable</h2>
+    <p>No analysis result was returned for this image.</p>
 </div>
 {% endif %}
 
-<img src="{{ image_url }}" alt="Analyzed image">
+<section class="image-analysis" aria-labelledby="image-analysis-title">
+    <h2 id="image-analysis-title">Image Analysis</h2>
+    <figure>
+        <figcaption>Uploaded Image</figcaption>
+        <a href="{{ image_url }}" target="_blank" rel="noopener" aria-label="Open uploaded image at full size">
+            <img src="{{ image_url }}" alt="Uploaded aerial image named {{ filename }}">
+        </a>
+    </figure>
+</section>
 
-<div style="background-color: #f8f9fa; padding: 15px; border-radius: 6px; margin-top: 20px; border-left: 4px solid #3498db;">
-    <h4 style="color: #2c3e50; margin-top: 0; margin-bottom: 8px;">About This Analysis</h4>
-    <p style="margin: 0; font-size: 0.9rem; color: #555;">
-        <strong>Two-stage pipeline:</strong> First, a binary detector determines if mangrove vegetation is present.
-        If mangrove is detected, a multi-class classifier identifies the mangrove type (orange, red, or yellow).
-        The image is tiled into patches for analysis to handle large orthomosaic images.
-    </p>
+<div class="result-actions">
+    <a href="{{ url_for('serve_file', name=filename) }}" download="{{ filename }}" class="btn btn-primary">Download Result</a>
+    <a href="{{ url_for('upload') }}" class="btn btn-secondary">Analyse Another Image</a>
 </div>
 
-<div style="text-align: center; margin-top: 30px;">
-    <a href="{{ url_for('upload') }}" style="display: inline-block; background-color: #27ae60; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background-color 0.3s ease; margin-right: 10px;" onmouseover="this.style.backgroundColor='#229954'" onmouseout="this.style.backgroundColor='#27ae60'">Analyze Another</a>
-    <a href="{{ url_for('serve_file', name=filename) }}" download="{{ filename }}" style="display: inline-block; background-color: #3498db; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: background-color 0.3s ease;" onmouseover="this.style.backgroundColor='#2980b9'" onmouseout="this.style.backgroundColor='#3498db'">Download Image</a>
-</div>
+<details class="analysis-details">
+    <summary>About This Analysis</summary>
+    <p>The system divides large imagery into tiles, checks whether mangrove vegetation is present and, when appropriate, applies the available mangrove classification model. Orange, Red and Yellow are retained as dataset categories; they are not described as biological species without supporting dataset documentation.</p>
+</details>
 {% endblock %}
