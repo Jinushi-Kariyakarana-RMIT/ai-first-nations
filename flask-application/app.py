@@ -66,6 +66,7 @@ def record_upload(filename, result, error):
         summary = binary['prediction'] if binary else 'No result'
         status = 'none'
 
+    recent_uploads[:] = [item for item in recent_uploads if item['filename'] != filename]
     recent_uploads.insert(0, {
         'filename': filename,
         'summary': summary,
