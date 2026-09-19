@@ -89,3 +89,27 @@ We will consider our model as successful if it meets the targets set below in 2.
 - A Confusion Matrix provides us with more detail about the models predictions, and can allow us to identify where the model is going wrong.
 
 ---
+
+## 5. Experimental Tree Counter
+
+The standalone tree counter is evaluated as both an object detector and an
+image-level counter. It counts all visible trees independently of the mangrove
+classification result.
+
+| Metric | Baseline Test Result | Interpretation |
+|--------|---------------------:|----------------|
+| Precision | 0.789 | Proportion of predicted crowns matched to labels |
+| Recall | 0.739 | Proportion of labelled crowns detected |
+| mAP50 | 0.779 | Detection quality at IoU 0.50 |
+| mAP50-95 | 0.324 | Localization quality across stricter IoU thresholds |
+| Count MAE | 15.56 trees/image | Mean absolute image-level count error |
+| Count RMSE | 24.25 trees/image | Count error with greater penalty for large misses |
+| Count MAPE | 15.74% | Mean absolute percentage count error |
+| Mean Count Bias | -14.89 trees/image | Systematic undercounting on the test split |
+
+These values come from an untouched test split of nine 640 x 640 images and
+759 labelled crowns. The confidence threshold (`0.15`) was selected using the
+validation split. Because the dataset is small and dense scenes are
+undercounted, the model must remain labelled **Experimental**.
+
+See `notebooks/evaluate_tree_counter_model.ipynb` for executable evidence.
