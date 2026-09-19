@@ -14,3 +14,9 @@
 
 # cache files
 */__pycache__/*
+
+# Generated tree-counter training artifacts
+/runs/
+/yolo11n.pt
+/tree-counting-model/best_tree_counter.pt
+*.cache

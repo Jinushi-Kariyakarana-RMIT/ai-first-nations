@@ -22,6 +22,8 @@ diagnostics; the module does not expose GIS coordinates.
 
 Copy the selected checkpoint to
 `tree-counting-model/best_tree_counter.pt` after evaluation.
+Model weights are generated artifacts and are intentionally not committed;
+each environment must place the evaluated checkpoint at that path.
 
 ## Count
 
@@ -33,3 +35,7 @@ Copy the selected checkpoint to
 
 The output includes `estimated_trees`, `detected_crowns`, `tiles_processed`,
 `average_confidence`, and the optional `overlay_path`.
+
+The default confidence threshold is `0.15`, selected on the validation split
+for count accuracy. The first model is experimental and tends to undercount
+dense crowns; see `notebooks/evaluate_tree_counter_model.ipynb` for evidence.

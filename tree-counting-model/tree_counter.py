@@ -135,7 +135,7 @@ def count_trees(
     model_path=DEFAULT_MODEL_PATH,
     tile_size=640,
     overlap=64,
-    confidence=0.25,
+    confidence=0.15,
     iou=0.45,
     overlay_path=None,
     model=None,
@@ -205,7 +205,7 @@ def main():
     count_parser.add_argument("--model", default=str(DEFAULT_MODEL_PATH))
     count_parser.add_argument("--tile-size", type=int, default=640)
     count_parser.add_argument("--overlap", type=int, default=64)
-    count_parser.add_argument("--confidence", type=float, default=0.25)
+    count_parser.add_argument("--confidence", type=float, default=0.15)
     count_parser.add_argument("--iou", type=float, default=0.45)
     count_parser.add_argument("--overlay")
 
