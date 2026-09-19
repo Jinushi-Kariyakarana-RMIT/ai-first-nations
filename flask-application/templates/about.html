@@ -1,31 +1,37 @@
 {% extends 'base.html' %}
 
+{% block title %}About{% endblock %}
+
 {% block body %}
-<h3>About This Tool</h3>
-<p class="subtitle">How the Mangrove Detection system works</p>
+<section class="hero">
+    <h1>About Mangrove AI</h1>
+    <p>A practical AI First Nations tool for analysing drone and aerial imagery in support of mangrove monitoring and environmental work.</p>
+</section>
 
-<div class="info-section">
-    <h4>What is this tool?</h4>
-    <p>This system uses machine learning to classify mangrove species from drone imagery. Mangroves are critical coastal ecosystems that provide valuable carbon recapture. A feature that is becoming increasingly important for environmental monitoring and conservation.</p>
-</div>
+<section class="page-section">
+    <h2>What It Does</h2>
+    <p>Mangrove AI uses a staged machine-learning pipeline to detect mangrove vegetation and classify supported mangrove categories. A standalone tree-counting module is being developed to estimate visible trees across aerial imagery.</p>
+</section>
 
-<div class="features">
-    <div class="feature-item">
-        <strong>Accurate Detection</strong>
-        <span>AI-trained models capable of classifying mangrove health with a precision of over 80%</span>
+<section class="page-section">
+    <h2>Analysis Capabilities</h2>
+    <div class="capability-grid">
+        <article class="capability-item"><h3>Mangrove Detection</h3><p>Checks whether mangrove vegetation is visible.</p></article>
+        <article class="capability-item"><h3>Mangrove Classification</h3><p>Reports one of the currently supported dataset categories.</p></article>
+        <article class="capability-item"><h3>Tree Counting</h3><p>Estimates visible trees independently of classification.</p><span class="status-label">In Development</span></article>
     </div>
-    <div class="feature-item">
-        <strong>Designed for Conservation</strong>
-        <span>This tool is designed with the end goal of monitoring the health of mangrove forests, with the long term goal of taking this technology and scaling it to automatically highlight changes over time.</span>
-    </div>
-</div>
+</section>
 
-<div class="info-section">
-    <h4>How to use:</h4>
-    <p>Select and upload an image (PNG, JPG, JPEG) and click "Analyze Image" to begin processing. The system will first check if a mangrove is present, and if so, classify the mangroves in the image into one of three categories: <strong>Orange</strong>, <strong>Red</strong>, or <strong>Yellow</strong>.</p>
-</div>
+<section class="page-section workflow">
+    <h2>How It Works</h2>
+    <ol class="workflow-list" aria-label="Analysis workflow">
+        <li>Upload</li><li>Tile</li><li>Detect</li><li>Classify</li><li>Results</li>
+    </ol>
+</section>
 
-<div style="text-align: center; margin-top: 30px;">
-    <a href="{{ url_for('upload') }}" class="btn-link">Go to Upload</a>
-</div>
+<section class="page-section">
+    <h2>Environmental Application</h2>
+    <p>Consistent analysis of drone imagery can support vegetation monitoring, restoration assessment and future change-detection or carbon/GIS studies. Results remain model estimates and should be interpreted alongside field knowledge.</p>
+    <a href="{{ url_for('upload') }}" class="btn btn-primary">Analyse an Image</a>
+</section>
 {% endblock %}

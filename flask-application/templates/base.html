@@ -3,22 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mangrove detection - ai-first-nations</title>
+    <title>{% block title %}Mangrove AI{% endblock %} | AI First Nations</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"/>
 </head>
 <body>
     <header>
-        <a href="{{ url_for('about') }}" class="brand">🌳 Mangrove Detection and Classification System</a>
+        <a href="{{ url_for('upload') }}" class="brand" aria-label="Mangrove AI home">
+            <span class="brand-mark" aria-hidden="true">🌿</span>
+            <span><strong>Mangrove AI</strong><small>AI First Nations</small></span>
+        </a>
         <nav class="nav-tabs">
             <a href="{{ url_for('about') }}" class="nav-tab {{ 'nav-tab-active' if request.endpoint == 'about' else '' }}">About</a>
-            <a href="{{ url_for('upload') }}" class="nav-tab {{ 'nav-tab-active' if request.endpoint == 'upload' else '' }}">Upload</a>
+            <a href="{{ url_for('upload') }}" class="nav-tab {{ 'nav-tab-active' if request.endpoint == 'upload' else '' }}">Analyse</a>
         </nav>
     </header>
     
     <div class="container">
         {% with messages = get_flashed_messages() %}
             {% if messages %}
-                <div class="alert">
+                <div class="alert" role="status" aria-live="polite">
                     {% for message in messages %}
                         <p>{{ message }}</p>
                     {% endfor %}

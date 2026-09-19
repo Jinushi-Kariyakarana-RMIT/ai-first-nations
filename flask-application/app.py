@@ -112,7 +112,8 @@ if os.environ.get("WERKZEUG_RUN_MAIN") == "true" or not DEBUG_MODE:
     initialize_models()
 
 
-@app.route('/upload', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/analyse', methods=['GET', 'POST'])
 def upload():
     if request.method == 'POST':
         if 'orthomosaic' not in request.files:
@@ -144,7 +145,7 @@ def upload():
     return render_template('home.html', recent_uploads=recent_uploads)
 
 
-@app.route('/')
+@app.route('/about')
 def about():
     return render_template('about.html')
 
