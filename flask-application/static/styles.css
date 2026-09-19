@@ -575,7 +575,7 @@ img {
 .result-grid {
     display: grid;
     gap: 18px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .analysis-card {
@@ -591,6 +591,16 @@ img {
     font-weight: 750;
     margin-bottom: 13px;
     text-transform: uppercase;
+}
+
+.card-label-row {
+    align-items: flex-start;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-label-row .status-label {
+    margin: 0;
 }
 
 .analysis-card h2 {
@@ -655,6 +665,37 @@ img {
     height: 100%;
 }
 
+.tree-count-value {
+    color: var(--primary-dark);
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1;
+    margin: 4px 0 18px;
+}
+
+.diagnostic-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.diagnostic-list div {
+    display: flex;
+    font-size: 0.78rem;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.diagnostic-list dt {
+    color: var(--muted);
+}
+
+.diagnostic-list dd {
+    color: var(--text);
+    font-weight: 700;
+    text-align: right;
+}
+
 .image-analysis {
     border-top: 1px solid var(--border);
     margin-top: 34px;
@@ -663,6 +704,16 @@ img {
 
 .image-analysis figure {
     margin: 0;
+}
+
+.image-comparison {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.image-comparison-single {
+    grid-template-columns: 1fr;
 }
 
 .image-analysis figcaption {
@@ -712,6 +763,7 @@ img {
     h1 { font-size: 1.95rem; }
     .capability-grid { grid-template-columns: 1fr; }
     .result-grid { grid-template-columns: 1fr; }
+    .image-comparison { grid-template-columns: 1fr; }
     .capability-item { min-height: 0; }
     .workflow-list { align-items: flex-start; flex-direction: column; gap: 18px; }
     .workflow-list li:not(:last-child)::after { content: "↓"; margin-left: 14px; position: absolute; top: 22px; }

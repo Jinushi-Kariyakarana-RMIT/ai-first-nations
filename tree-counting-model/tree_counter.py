@@ -153,7 +153,8 @@ def count_trees(
         overlap=overlap,
         pad=True,
     )
-    sources = [np.asarray(tile) for tile in tiles]
+    # Keep PIL sources in RGB so preprocessing matches file-path evaluation.
+    sources = tiles
     results = model.predict(
         source=sources,
         imgsz=tile_size,

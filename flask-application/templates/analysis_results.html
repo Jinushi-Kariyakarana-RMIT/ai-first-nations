@@ -17,6 +17,7 @@
 {% elif result %}
 {% set binary = result.binary if result.binary is defined else none %}
 {% set classification = result.multi_class if result.multi_class is defined else none %}
+{% set tree_count = result.tree_count if result.tree_count is defined else none %}
 
 <section class="result-grid" aria-label="Model results">
     <article class="analysis-card">
@@ -57,6 +58,28 @@
             <p class="card-note">The classification model did not return a result.</p>
         {% endif %}
     </article>
+
+    <article class="analysis-card tree-count-card">
+        <div class="card-label-row">
+            <p class="card-label">Tree Count</p>
+            <span class="status-label">Experimental</span>
+        </div>
+        {% if tree_count and tree_count.status == 'available' %}
+            <h2>Estimated Trees</h2>
+            <p class="tree-count-value">{{ tree_count.estimated_trees }}</p>
+            <dl class="diagnostic-list">
+                <div><dt>Detected crowns</dt><dd>{{ tree_count.detected_crowns }}</dd></div>
+                <div><dt>Tiles analysed</dt><dd>{{ tree_count.tiles_processed }}</dd></div>
+                <div><dt>Average detection confidence</dt><dd>{{ "%.1f" | format(tree_count.average_confidence * 100) }}%</dd></div>
+            </dl>
+        {% elif tree_count and tree_count.status == 'error' %}
+            <h2>Could not complete</h2>
+            <p class="card-note">{{ tree_count.message }}</p>
+        {% else %}
+            <h2>Unavailable</h2>
+            <p class="card-note">{{ tree_count.message if tree_count else 'The tree-counting model was not available.' }}</p>
+        {% endif %}
+    </article>
 </section>
 {% else %}
 <div class="notice-box notice-danger" role="alert">
@@ -67,21 +90,34 @@
 
 <section class="image-analysis" aria-labelledby="image-analysis-title">
     <h2 id="image-analysis-title">Image Analysis</h2>
-    <figure>
-        <figcaption>Uploaded Image</figcaption>
-        <a href="{{ image_url }}" target="_blank" rel="noopener" aria-label="Open uploaded image at full size">
-            <img src="{{ image_url }}" alt="Uploaded aerial image named {{ filename }}">
-        </a>
-    </figure>
+    <div class="image-comparison {{ 'image-comparison-single' if not tree_count or not tree_count.overlay_url else '' }}">
+        <figure>
+            <figcaption>Original Image</figcaption>
+            <a href="{{ image_url }}" target="_blank" rel="noopener" aria-label="Open uploaded image at full size">
+                <img src="{{ image_url }}" alt="Uploaded aerial image named {{ filename }}">
+            </a>
+        </figure>
+        {% if tree_count and tree_count.overlay_url %}
+        <figure>
+            <figcaption>Tree-Crown Detection Overlay</figcaption>
+            <a href="{{ tree_count.overlay_url }}" target="_blank" rel="noopener" aria-label="Open tree detection overlay at full size">
+                <img src="{{ tree_count.overlay_url }}" alt="Experimental tree-crown detections for {{ filename }}">
+            </a>
+        </figure>
+        {% endif %}
+    </div>
 </section>
 
 <div class="result-actions">
     <a href="{{ url_for('serve_file', name=filename) }}" download="{{ filename }}" class="btn btn-primary">Download Result</a>
+    {% if tree_count and tree_count.overlay_url %}
+    <a href="{{ tree_count.overlay_url }}" download class="btn btn-primary">Download Annotated Image</a>
+    {% endif %}
     <a href="{{ url_for('upload') }}" class="btn btn-secondary">Analyse Another Image</a>
 </div>
 
 <details class="analysis-details">
     <summary>About This Analysis</summary>
-    <p>The system divides large imagery into tiles, checks whether mangrove vegetation is present and, when appropriate, applies the available mangrove classification model. Orange, Red and Yellow are retained as dataset categories; they are not described as biological species without supporting dataset documentation.</p>
+    <p>The system divides large imagery into tiles, checks whether mangrove vegetation is present and, when appropriate, applies the available mangrove classification model. The experimental tree counter runs independently and estimates all visible trees. Orange, Red and Yellow are retained as dataset categories; they are not described as biological species without supporting dataset documentation.</p>
 </details>
 {% endblock %}
