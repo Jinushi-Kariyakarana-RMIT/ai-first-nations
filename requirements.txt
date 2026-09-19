@@ -11,3 +11,4 @@ tifffile
 torch
 torchvision
 tqdm
+ultralytics>=8.4,<9
