@@ -54,8 +54,12 @@ header {
     text-decoration: none;
 }
 
-.brand-mark {
-    font-size: 1.4rem;
+.brand-logo {
+    border-radius: 4px;
+    flex: 0 0 44px;
+    height: 44px;
+    object-fit: cover;
+    width: 44px;
 }
 
 .brand strong,
@@ -771,6 +775,7 @@ img {
 
 @media (max-width: 520px) {
     header { min-height: 64px; }
+    .brand-logo { flex-basis: 38px; height: 38px; width: 38px; }
     .brand small { display: none; }
     .brand strong { font-size: 1rem; }
     .nav-tab { font-size: 0.84rem; padding: 8px; }
