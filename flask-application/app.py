@@ -41,7 +41,7 @@ recent_uploads = []
 
 
 def record_upload(filename, result, error):
-    """Add an entry to the recent-uploads list (most recent first)."""
+    """Add an entry to the recent analyses list (most recent first)."""
     if error:
         summary = 'Analysis error'
         status = 'error'
@@ -50,28 +50,40 @@ def record_upload(filename, result, error):
         status = 'error'
     elif result.get('multi_class'):
         mc = result['multi_class']
-        summary = f"{mc['predicted_class']} ({mc['confidence'] * 100:.0f}%)"
+        category = str(mc['predicted_class']).replace('_', ' ').title()
+        summary = f"{category} · {mc['confidence'] * 100:.0f}% confidence"
         status = 'ok'
     elif result.get('tree_count', {}).get('status') == 'available':
         tree_count = result['tree_count']['estimated_trees']
-        summary = f"Estimated {tree_count} trees"
+        summary = f"{tree_count} {'tree' if tree_count == 1 else 'trees'}"
         status = 'ok'
     elif 'predicted_class' in result:
         # Fallback single-model path (predict_mangrove) returns the
         # classification dict directly rather than nested under multi_class.
-        summary = f"{result['predicted_class']} ({result['confidence'] * 100:.0f}%)"
+        category = str(result['predicted_class']).replace('_', ' ').title()
+        summary = f"{category} · {result['confidence'] * 100:.0f}% confidence"
         status = 'ok'
     else:
         binary = result.get('binary') if result else None
-        summary = binary['prediction'] if binary else 'No result'
+        summary = str(binary['prediction']).replace('_', ' ').title() if binary else 'No result'
         status = 'none'
+
+    filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+    file_size = os.path.getsize(filepath) if os.path.exists(filepath) else 0
+    if file_size >= 1024 * 1024:
+        size_label = f"{file_size / (1024 * 1024):.1f} MB"
+    else:
+        size_label = f"{max(file_size / 1024, 0.1):.1f} KB"
+    analysed_at = datetime.now()
 
     recent_uploads[:] = [item for item in recent_uploads if item['filename'] != filename]
     recent_uploads.insert(0, {
         'filename': filename,
         'summary': summary,
         'status': status,
-        'timestamp': datetime.now().strftime('%d %b, %H:%M'),
+        'date': analysed_at.strftime('%d %b'),
+        'time': analysed_at.strftime('%H:%M'),
+        'size': size_label,
     })
     del recent_uploads[MAX_RECENT_UPLOADS:]
 

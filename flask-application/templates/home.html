@@ -4,18 +4,19 @@
 
 {% block body %}
 <section class="hero" aria-labelledby="page-title">
-    <h1 id="page-title">AI-Powered Mangrove Analysis</h1>
-    <p>Analyse drone imagery using computer vision for mangrove detection, classification and tree-level environmental analysis.</p>
+    <h1 id="page-title">Analyse Mangrove Imagery</h1>
+    <p>Upload aerial imagery to detect, classify and count mangrove vegetation.</p>
 </section>
 
 <form method="post" enctype="multipart/form-data" id="upload-form" class="upload-panel">
-    <label for="orthomosaic" class="file-label">Choose a drone or aerial image</label>
+    <label for="orthomosaic" class="file-label">Upload a drone or aerial image</label>
     <div id="drop-zone" class="drop-zone">
         <input type="file" name="orthomosaic" id="orthomosaic" accept=".png,.jpg,.jpeg" required aria-describedby="upload-hint">
         <div class="drop-zone-content">
             <span class="drop-zone-icon" aria-hidden="true">↑</span>
-            <span class="drop-zone-text"><strong>Click to browse</strong> or drag an image here</span>
-            <span id="upload-hint" class="drop-zone-hint">PNG, JPG, JPEG up to 50 MB</span>
+            <span class="drop-zone-text"><strong>Drag and drop an image here</strong></span>
+            <span class="drop-zone-text">or click to browse</span>
+            <span id="upload-hint" class="drop-zone-hint">JPG / PNG / JPEG · Maximum 50 MB</span>
         </div>
     </div>
 
@@ -43,42 +44,54 @@
     <h2 id="capabilities-title">Analysis Capabilities</h2>
     <div class="capability-grid">
         <article class="capability-item">
-            <span class="capability-icon" aria-hidden="true">⌕</span>
+            <span class="capability-icon" aria-hidden="true">01</span>
             <h3>Mangrove Detection</h3>
-            <p>Determines whether uploaded aerial imagery contains mangroves.</p>
+            <p>Identify whether an aerial image contains mangrove vegetation.</p>
+            <span class="status-label status-available">Available</span>
         </article>
         <article class="capability-item">
-            <span class="capability-icon" aria-hidden="true">🌿</span>
-            <h3>Mangrove Classification</h3>
-            <p>Classifies detected mangrove imagery into the currently supported categories.</p>
+            <span class="capability-icon" aria-hidden="true">02</span>
+            <h3>Species Classification</h3>
+            <p>Classify detected mangrove imagery into supported species or categories.</p>
+            <span class="status-label status-available">Available</span>
         </article>
         <article class="capability-item">
-            <span class="capability-icon" aria-hidden="true">🌳</span>
+            <span class="capability-icon" aria-hidden="true">03</span>
             <h3>Tree Counting</h3>
-            <p>Estimates the number of visible trees using crown detections.</p>
+            <p>Estimate visible tree crowns from aerial imagery.</p>
             <span class="status-label">Experimental</span>
         </article>
     </div>
 </section>
 
 <section class="page-section workflow" aria-labelledby="workflow-title">
-    <h2 id="workflow-title">How It Works</h2>
+    <h2 id="workflow-title">How Analysis Works</h2>
     <ol class="workflow-list" aria-label="Analysis workflow">
-        <li>Upload</li><li>Tile</li><li>Detect</li><li>Classify</li><li>Count</li><li>Results</li>
+        <li class="is-current"><span>01</span><strong>Upload</strong></li>
+        <li><span>02</span><strong>Tile</strong></li>
+        <li><span>03</span><strong>Detect</strong></li>
+        <li><span>04</span><strong>Classify</strong></li>
+        <li><span>05</span><strong>Count</strong></li>
+        <li><span>06</span><strong>Results</strong></li>
     </ol>
 </section>
 
 {% if recent_uploads %}
 <section class="recent-uploads" aria-labelledby="recent-title">
-    <h2 id="recent-title">Recent Uploads</h2>
+    <h2 id="recent-title">Recent Analyses</h2>
     <ul class="recent-list">
         {% for item in recent_uploads %}
         <li class="recent-item">
             <a href="{{ url_for('analyze', name=item.filename) }}" class="recent-link">
-                <span class="recent-status recent-status-{{ item.status }}" aria-hidden="true"></span>
-                <span class="recent-filename">{{ item.filename }}</span>
-                <span class="recent-summary">{{ item.summary }}</span>
-                <span class="recent-time">{{ item.timestamp }}</span>
+                <img class="recent-thumbnail" src="{{ url_for('serve_file', name=item.filename) }}" alt="">
+                <span class="recent-details">
+                    <span class="recent-filename" title="{{ item.filename }}">{{ item.filename }}</span>
+                    <span class="recent-meta">{{ item.date }} · {{ item.time }} · {{ item.size }}</span>
+                </span>
+                <span class="recent-result">
+                    <span class="recent-summary"><i class="recent-status recent-status-{{ item.status }}" aria-hidden="true"></i>{{ item.summary }}</span>
+                    <span class="recent-view">View results →</span>
+                </span>
             </a>
         </li>
         {% endfor %}
@@ -100,6 +113,7 @@
         const clearBtn = document.getElementById('preview-clear');
         const submitBtn = document.getElementById('submit-btn');
         const loadingState = document.getElementById('loading-state');
+        const workflowSteps = Array.from(document.querySelectorAll('.workflow-list li'));
 
         function formatSize(bytes) {
             if (bytes < 1024) return bytes + ' B';
@@ -165,6 +179,16 @@
             submitBtn.disabled = true;
             submitBtn.textContent = 'Analysing...';
             loadingState.hidden = false;
+            let activeStep = 0;
+            workflowSteps.forEach(function (step) { step.classList.remove('is-current', 'is-complete'); });
+            workflowSteps[0].classList.add('is-current');
+            window.setInterval(function () {
+                if (activeStep >= workflowSteps.length - 2) return;
+                workflowSteps[activeStep].classList.remove('is-current');
+                workflowSteps[activeStep].classList.add('is-complete');
+                activeStep += 1;
+                workflowSteps[activeStep].classList.add('is-current');
+            }, 900);
         });
     })();
 </script>
