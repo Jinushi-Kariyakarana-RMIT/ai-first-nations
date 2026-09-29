@@ -7,16 +7,20 @@
 
 # Ignore vscode settings
 .vscode/
+.DS_Store
 
 # second layer of security
 /ai-first-nations-data/*
 /flask-application/uploads/*
 
 # cache files
-*/__pycache__/*
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
 
 # Generated tree-counter training artifacts
 /runs/
+/screenshots/
 /yolo11n.pt
 /tree-counting-model/best_tree_counter.pt
 *.cache
