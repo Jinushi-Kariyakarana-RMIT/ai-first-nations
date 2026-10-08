@@ -112,4 +112,4 @@ These values come from an untouched test split of nine 640 x 640 images and
 validation split. Because the dataset is small and dense scenes are
 undercounted, the model must remain labelled **Experimental**.
 
-See `notebooks/evaluate_tree_counter_model.ipynb` for executable evidence.
+See `evaluations/notebooks/evaluate_tree_counter_model.ipynb` for executable evidence.

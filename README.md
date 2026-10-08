@@ -57,7 +57,7 @@ Current defaults:
   suppression.
 
 The executed tiler evaluation is in
-`notebooks/evaluate_image_tiler.ipynb`.
+`evaluations/notebooks/evaluate_image_tiler.ipynb`.
 
 ## Tree Counter
 
@@ -73,7 +73,7 @@ python tree-counting-model/tree_counter.py train \
 The checked dataset contains 64 training, 18 validation and 9 test images,
 with 7,526 labelled crowns. All images are 640 x 640. Structural checks found
 no missing image-label pairs, malformed rows, empty labels or duplicate image
-hashes. See `notebooks/evaluate_tree_counter_dataset.ipynb`.
+hashes. See `evaluations/notebooks/evaluate_tree_counter_dataset.ipynb`.
 
 ### Experimental Baseline Results
 
@@ -93,7 +93,10 @@ The untouched nine-image test split produced:
 The `0.15` inference threshold was selected using validation count MAE before
 test evaluation. The model undercounts dense scenes, so it is labelled
 **Experimental** in the application. The full reproducible evaluation is in
-`notebooks/evaluate_tree_counter_model.ipynb`.
+`evaluations/notebooks/evaluate_tree_counter_model.ipynb`.
+
+All model results, evaluation criteria and known evidence gaps are summarized
+in `evaluations/README.md`.
 
 ## Testing
 

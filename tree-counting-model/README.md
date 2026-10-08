@@ -38,4 +38,5 @@ The output includes `estimated_trees`, `detected_crowns`, `tiles_processed`,
 
 The default confidence threshold is `0.15`, selected on the validation split
 for count accuracy. The first model is experimental and tends to undercount
-dense crowns; see `notebooks/evaluate_tree_counter_model.ipynb` for evidence.
+dense crowns; see `evaluations/notebooks/evaluate_tree_counter_model.ipynb`
+for evidence.
