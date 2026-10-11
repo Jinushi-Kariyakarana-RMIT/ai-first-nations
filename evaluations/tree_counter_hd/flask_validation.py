@@ -84,7 +84,7 @@ def run(serve=False, current=False):
             identical_overlay=overlay_path.exists() and digest(overlay_path)==digest(expected_overlay)
             passed=response.status_code==200 and count==direct['estimated_trees'] and dimensions_match and identical_overlay
             record(f'{kind} upload #{repeat+1}: count and overlay parity',
-                   f"HTTP 200; count={direct['estimated_trees']}; exact rendered-overlay checksum", 
+                   f"HTTP 200; count={direct['estimated_trees']}; exact rendered-overlay checksum",
                    dict(http=response.status_code,count=count,dimensions_match=dimensions_match,overlay_identical=identical_overlay),passed)
             timings.append(dict(kind=kind,repeat=repeat+1,width=Image.open(path).width,height=Image.open(path).height,
                                 seconds=elapsed,process_peak_rss_mb=max(rss+[rss_start,process.memory_info().rss])/1024**2,

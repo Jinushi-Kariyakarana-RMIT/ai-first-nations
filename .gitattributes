@@ -1,0 +1,3 @@
+
+# Keep generated evaluation tables consistent across platforms.
+*.csv text eol=lf
