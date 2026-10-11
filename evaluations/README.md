@@ -1,5 +1,14 @@
 # Model Evaluation Guide
 
+## Additional external photo benchmark
+
+The [tree-counter evaluation pack](../tree-counting-model/evaluation_pack/README.md)
+contains 194 real NEON photographs with 6,633 published crown annotations and
+970 labelled stress variants. See its [completed results](../tree-counting-model/evaluation_pack/results/RESULTS.md).
+This separate external benchmark uses the application's actual tiled counting
+path. It does not replace the historical notebook results below and is not a
+Mourilyan-specific accuracy evaluation.
+
 This folder is the single source of truth for Mangrove AI evaluation. It keeps
 the evaluation criteria, executed evidence and known gaps together so another
 team member can understand what has been tested without reading the training
@@ -72,4 +81,3 @@ Do not overwrite the recorded model results until the replacement evaluation:
 2. preserves an untouched external test set;
 3. records the exact model checksum and inference thresholds; and
 4. evaluates the same tiled inference path used by the web application.
-

@@ -24,3 +24,11 @@ __pycache__/
 /yolo11n.pt
 /tree-counting-model/best_tree_counter.pt
 *.cache
+
+# Local drone survey files and preparation cache
+/Mourilyan_Harbour_Fresh_Test_Images/
+/evaluations/tree_counter_preparation/
+
+# Generated dataset configs contain local absolute paths
+/tree-counting-model/evaluation_pack/**/data.yaml
+/tree-counting-model/mock_dataset/data.yaml

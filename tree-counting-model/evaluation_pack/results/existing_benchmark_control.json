@@ -1,0 +1,54 @@
+{
+  "purpose": "Control: existing repository test set via unchanged app inference",
+  "images": 9,
+  "expected": 759,
+  "predicted": 572,
+  "mae": 20.77777777777778,
+  "results": [
+    {
+      "image": "bp_262118_4_174541_4_19_jpg.rf.83019ff6f2b13a182d37ac45375e012f.jpeg",
+      "expected": 86,
+      "predicted": 82
+    },
+    {
+      "image": "bs_261926_4_174326_4_19_jpg.rf.7ef43d7affcd9fa599adedc52e911211.jpeg",
+      "expected": 7,
+      "predicted": 6
+    },
+    {
+      "image": "cd_261945_4_174271_4_19_jpg.rf.75be230ab197842281564fb6447e7428.jpeg",
+      "expected": 64,
+      "predicted": 62
+    },
+    {
+      "image": "cl_261910_4_174455_4_19_jpg.rf.bee3769739f7df98507f42e023b155e8.jpeg",
+      "expected": 105,
+      "predicted": 59
+    },
+    {
+      "image": "cr_261969_4_174264_4_19_jpg.rf.de93c98ffc682d16dd91d862ff1d636c.jpeg",
+      "expected": 109,
+      "predicted": 54
+    },
+    {
+      "image": "el_262187_4_174500_4_19_jpg.rf.001f03055ad8808501e9208e15f3764b.jpeg",
+      "expected": 175,
+      "predicted": 136
+    },
+    {
+      "image": "vp_262092_4_174270_4_19_jpg.rf.b32574f90638f187c1a5812fa3bab06f.jpeg",
+      "expected": 74,
+      "predicted": 65
+    },
+    {
+      "image": "vp_262096_4_174270_4_19_jpg.rf.334b9ef442e980c50d5d79f4a9128a7c.jpeg",
+      "expected": 50,
+      "predicted": 33
+    },
+    {
+      "image": "wm_262126_4_174161_4_19_jpg.rf.d1c09d453b2f8be2fe5749caba56d022.jpeg",
+      "expected": 89,
+      "predicted": 75
+    }
+  ]
+}

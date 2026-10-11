@@ -1,0 +1,1023 @@
+{
+  "source_revision": "96b29d566ca7ea9f604de3e1235c503ab101cb8a",
+  "real_images": 194,
+  "mock_variants": 970,
+  "source_sites": {
+    "SJER": 61,
+    "TEAK": 51,
+    "ABBY": 2,
+    "BART": 2,
+    "BLAN": 2,
+    "BONA": 4,
+    "CLBJ": 2,
+    "DELA": 2,
+    "DSNY": 6,
+    "HARV": 3,
+    "JERC": 6,
+    "LENO": 2,
+    "MLBS": 8,
+    "NIWO": 12,
+    "ONAQ": 1,
+    "OSBS": 14,
+    "SCBI": 2,
+    "SERC": 2,
+    "SOAP": 2,
+    "TALL": 2,
+    "UNDE": 3,
+    "WREF": 5
+  },
+  "source_tree_annotations": 6633,
+  "count_min": 1,
+  "count_max": 292,
+  "empty_images": 0,
+  "exact_duplicate_originals": 0,
+  "exact_matches_existing_dataset": 0,
+  "existing_images_checked": 91,
+  "nearest_existing_dhash": [
+    {
+      "image": "real_test/images/2018_SJER_3_252000_4104000_image_628.png",
+      "nearest_existing": "dataset1/train/images/cr_261973_4_174264_4_19_jpg.rf.d2f75555fc55ff03b2b17337bead83f2.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_252000_4106000_image_234.png",
+      "nearest_existing": "dataset1/train/images/cr_261973_4_174260_4_19_jpg.rf.4a414f71dad8d4afd8ae8327b4368bf3.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_252000_4106000_image_326.png",
+      "nearest_existing": "dataset1/train/images/is_262000_4_174274_4_19_jpg.rf.6dc8925825909551f18d3d71b7021310.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_252000_4106000_image_66.png",
+      "nearest_existing": "dataset1/train/images/fn_261892_4_174161_4_19_jpg.rf.8a59107bc6566dab40ca805a491abf41.jpeg",
+      "dhash_distance": 19
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_252000_4107000_image_372.png",
+      "nearest_existing": "dataset1/valid/images/rp_261743_4_174479_4_19_jpg.rf.7af4f0ab4f260ec6d6a7231429ce60d3.jpeg",
+      "dhash_distance": 19
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_252000_4107000_image_477.png",
+      "nearest_existing": "dataset1/train/images/fn_261892_4_174161_4_19_jpg.rf.8a59107bc6566dab40ca805a491abf41.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_252000_4108000_image_517.png",
+      "nearest_existing": "dataset1/train/images/vp_262096_4_174266_4_19_jpg.rf.68c778d3a96218a9f5be0922e291d3e6.jpeg",
+      "dhash_distance": 17
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_252000_4112000_image_451.png",
+      "nearest_existing": "dataset1/train/images/cd_261941_4_174267_4_19_jpg.rf.b5ebea921bf04f03aa81e2001d73a794.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_252000_4113000_image_323.png",
+      "nearest_existing": "dataset1/train/images/hn_262078_4_174234_4_19_jpg.rf.70f35dd5ee5bbe8f1f07857878e775b5.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_253000_4104000_image_637.png",
+      "nearest_existing": "dataset1/valid/images/kg_261733_4_174522_4_19_jpg.rf.f5a9a0a6052a663f89c245464769254a.jpeg",
+      "dhash_distance": 19
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_253000_4105000_image_303.png",
+      "nearest_existing": "dataset1/train/images/bp_262118_4_174545_4_19_jpg.rf.e13b958d6de09b3c22b83af535d6649b.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_253000_4105000_image_72.png",
+      "nearest_existing": "dataset1/valid/images/hh_261904_4_174211_4_19_jpg.rf.ed0184ffbb30ac792381537e32be187e.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_253000_4107000_image_532.png",
+      "nearest_existing": "dataset1/train/images/fn_261892_4_174161_4_19_jpg.rf.8a59107bc6566dab40ca805a491abf41.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_253000_4107000_image_637.png",
+      "nearest_existing": "dataset1/train/images/bs_261922_4_174326_4_19_jpg.rf.52ea7e691f00b8b76e0e794fea7dc344.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_253000_4109000_image_573.png",
+      "nearest_existing": "dataset1/train/images/cd_261945_4_174267_4_19_jpg.rf.3528c8527573e06a5a0ce95b793e9356.jpeg",
+      "dhash_distance": 18
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_253000_4112000_image_581.png",
+      "nearest_existing": "dataset1/train/images/cr_261969_4_174260_4_19_jpg.rf.4b04b440fe329478f7454af50bd42a05.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_254000_4104000_image_163.png",
+      "nearest_existing": "dataset1/train/images/rc_261710_4_174452_4_19_jpg.rf.a307839df77cd28486fa67c7112e993d.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_254000_4105000_image_703.png",
+      "nearest_existing": "dataset1/valid/images/wb_261498_4_174683_4_19_jpg.rf.62ff0aa54158e6c9d848ee0a2e161a0d.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_254000_4107000_image_670.png",
+      "nearest_existing": "dataset1/test/images/el_262187_4_174500_4_19_jpg.rf.001f03055ad8808501e9208e15f3764b.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_254000_4108000_image_188.png",
+      "nearest_existing": "dataset1/train/images/ng_261978_4_174541_4_19_jpg.rf.afd66ccb7bdc913a683ff9b8254c728d.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_254000_4108000_image_700.png",
+      "nearest_existing": "dataset1/train/images/cr_261969_4_174260_4_19_jpg.rf.4b04b440fe329478f7454af50bd42a05.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_254000_4109000_image_337.png",
+      "nearest_existing": "dataset1/train/images/fn_261892_4_174161_4_19_jpg.rf.8a59107bc6566dab40ca805a491abf41.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_254000_4112000_image_145.png",
+      "nearest_existing": "dataset1/test/images/wm_262126_4_174161_4_19_jpg.rf.d1c09d453b2f8be2fe5749caba56d022.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_255000_4105000_image_142.png",
+      "nearest_existing": "dataset1/train/images/is_262000_4_174274_4_19_jpg.rf.6dc8925825909551f18d3d71b7021310.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_255000_4107000_image_298.png",
+      "nearest_existing": "dataset1/train/images/td_261698_4_174474_4_19_jpg.rf.ab95a77b1e6a8addd04b73567c127cf7.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_255000_4107000_image_369.png",
+      "nearest_existing": "dataset1/valid/images/bp_262122_4_174541_4_19_jpg.rf.fb4b9be196e6f3d3f6a9d7359405faf6.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_255000_4108000_image_224.png",
+      "nearest_existing": "dataset1/test/images/cl_261910_4_174455_4_19_jpg.rf.bee3769739f7df98507f42e023b155e8.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_255000_4108000_image_256.png",
+      "nearest_existing": "dataset1/train/images/cd_261945_4_174267_4_19_jpg.rf.3528c8527573e06a5a0ce95b793e9356.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_255000_4108000_image_267.png",
+      "nearest_existing": "dataset1/train/images/el_262183_4_174496_4_19_jpg.rf.bf92bfcda7d5935dd2446bb8be167b4d.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/2018_SJER_3_255000_4108000_image_93.png",
+      "nearest_existing": "dataset1/train/images/st_261968_4_174517_4_19_jpg.rf.8fb8c0944387cebe604bad53c3945f02.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_314000_4099000_image_334.png",
+      "nearest_existing": "dataset1/test/images/wm_262126_4_174161_4_19_jpg.rf.d1c09d453b2f8be2fe5749caba56d022.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_314000_4108000_image_86.png",
+      "nearest_existing": "dataset1/train/images/ng_261974_4_174545_4_19_jpg.rf.88a37629a53c11f3146131147c9c3cea.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_315000_4096000_image_163.png",
+      "nearest_existing": "dataset1/train/images/sr_262183_4_174547_4_19_jpg.rf.1c8990c040c37ce768b52b344ac8d90d.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_315000_4101000_image_600.png",
+      "nearest_existing": "dataset1/valid/images/rc_261714_4_174452_4_19_jpg.rf.8fc1040c3aff944c3625c73745b40d32.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_315000_4103000_image_87.png",
+      "nearest_existing": "dataset1/train/images/bs_261922_4_174330_4_19_jpg.rf.a37944dd4397317100ee15b36af5ebd1.jpeg",
+      "dhash_distance": 25
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_315000_4107000_image_237.png",
+      "nearest_existing": "dataset1/train/images/hh_261904_4_174207_4_19_jpg.rf.1f4426ab13eda7f4adc38299d2510fe6.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_316000_4091000_image_446.png",
+      "nearest_existing": "dataset1/valid/images/bp_262122_4_174541_4_19_jpg.rf.fb4b9be196e6f3d3f6a9d7359405faf6.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_316000_4092000_image_620.png",
+      "nearest_existing": "dataset1/train/images/fn_261892_4_174161_4_19_jpg.rf.8a59107bc6566dab40ca805a491abf41.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_316000_4093000_image_59.png",
+      "nearest_existing": "dataset1/train/images/cr_261969_4_174260_4_19_jpg.rf.4b04b440fe329478f7454af50bd42a05.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_316000_4095000_image_397.png",
+      "nearest_existing": "dataset1/train/images/kg_261737_4_174522_4_19_jpg.rf.97b50fd7852b1ce9b33c227bc50989e8.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_316000_4097000_image_35.png",
+      "nearest_existing": "dataset1/test/images/cr_261969_4_174264_4_19_jpg.rf.de93c98ffc682d16dd91d862ff1d636c.jpeg",
+      "dhash_distance": 19
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_316000_4097000_image_493.png",
+      "nearest_existing": "dataset1/train/images/wb_261494_4_174683_4_19_jpg.rf.a9c94bcc4c35508bbc0b8934e57b91cd.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_317000_4105000_image_542.png",
+      "nearest_existing": "dataset1/valid/images/bp_262122_4_174541_4_19_jpg.rf.fb4b9be196e6f3d3f6a9d7359405faf6.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_318000_4102000_image_483.png",
+      "nearest_existing": "dataset1/train/images/wm_262130_4_174157_4_19_jpg.rf.e6b63433dade42e3591fce38fdc6ee1e.jpeg",
+      "dhash_distance": 18
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_318000_4103000_image_261.png",
+      "nearest_existing": "dataset1/train/images/el_262183_4_174496_4_19_jpg.rf.bf92bfcda7d5935dd2446bb8be167b4d.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_318000_4106000_image_165.png",
+      "nearest_existing": "dataset1/valid/images/kg_261733_4_174522_4_19_jpg.rf.f5a9a0a6052a663f89c245464769254a.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_318000_4107000_image_416.png",
+      "nearest_existing": "dataset1/train/images/st_261968_4_174521_4_19_jpg.rf.755e4fc599271a252d0a68afbd82ee25.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_318000_4107000_image_718.png",
+      "nearest_existing": "dataset1/train/images/el_262183_4_174496_4_19_jpg.rf.bf92bfcda7d5935dd2446bb8be167b4d.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_319000_4095000_image_175.png",
+      "nearest_existing": "dataset1/test/images/bp_262118_4_174541_4_19_jpg.rf.83019ff6f2b13a182d37ac45375e012f.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_319000_4102000_image_281.png",
+      "nearest_existing": "dataset1/train/images/ng_261974_4_174545_4_19_jpg.rf.88a37629a53c11f3146131147c9c3cea.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_320000_4093000_image_222.png",
+      "nearest_existing": "dataset1/valid/images/vp_262092_4_174266_4_19_jpg.rf.6efbfb7c6b0f27db14f18283a6355126.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_320000_4094000_image_587.png",
+      "nearest_existing": "dataset1/valid/images/rc_261714_4_174452_4_19_jpg.rf.8fc1040c3aff944c3625c73745b40d32.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_320000_4095000_image_616.png",
+      "nearest_existing": "dataset1/train/images/fn_261892_4_174161_4_19_jpg.rf.8a59107bc6566dab40ca805a491abf41.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_321000_4101000_image_689.png",
+      "nearest_existing": "dataset1/train/images/rp_261743_4_174483_4_19_jpg.rf.c4054a62b0903883c241b4f268b73fbd.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_322000_4096000_image_368.png",
+      "nearest_existing": "dataset1/train/images/rc_261710_4_174452_4_19_jpg.rf.a307839df77cd28486fa67c7112e993d.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_322000_4097000_image_216.png",
+      "nearest_existing": "dataset1/test/images/bs_261926_4_174326_4_19_jpg.rf.7ef43d7affcd9fa599adedc52e911211.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_322000_4102000_image_495.png",
+      "nearest_existing": "dataset1/train/images/fn_261892_4_174165_4_19_jpg.rf.038aac8c610675a920e87310b90a2b01.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_322000_4103000_image_50.png",
+      "nearest_existing": "dataset1/train/images/td_261702_4_174478_4_19_jpg.rf.5bc53a551b4dc572c1e2298715cc7795.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_322000_4107000_image_518.png",
+      "nearest_existing": "dataset1/valid/images/bp_262122_4_174541_4_19_jpg.rf.fb4b9be196e6f3d3f6a9d7359405faf6.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_323000_4093000_image_159.png",
+      "nearest_existing": "dataset1/train/images/sg_262074_4_174314_4_19_jpg.rf.ae8a64c6c508866abe50b5abde36cc22.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_323000_4098000_image_691.png",
+      "nearest_existing": "dataset1/test/images/vp_262096_4_174270_4_19_jpg.rf.334b9ef442e980c50d5d79f4a9128a7c.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_323000_4101000_image_415.png",
+      "nearest_existing": "dataset1/train/images/td_261702_4_174478_4_19_jpg.rf.5bc53a551b4dc572c1e2298715cc7795.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/2018_TEAK_3_324000_4095000_image_275.png",
+      "nearest_existing": "dataset1/valid/images/cd_261941_4_174271_4_19_jpg.rf.f6cdbea4b7ad3e9aee4ef217174de4a1.jpeg",
+      "dhash_distance": 18
+    },
+    {
+      "image": "real_test/images/ABBY_063_2019.png",
+      "nearest_existing": "dataset1/valid/images/rc_261714_4_174452_4_19_jpg.rf.8fc1040c3aff944c3625c73745b40d32.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/ABBY_076_2019.png",
+      "nearest_existing": "dataset1/train/images/fn_261896_4_174165_4_19_jpg.rf.884a8ca87e2a01dd3ea19ecd4a65d3c9.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/BART_036_2019.png",
+      "nearest_existing": "dataset1/train/images/rc_261710_4_174452_4_19_jpg.rf.a307839df77cd28486fa67c7112e993d.jpeg",
+      "dhash_distance": 19
+    },
+    {
+      "image": "real_test/images/BART_050_2019.png",
+      "nearest_existing": "dataset1/train/images/st_261968_4_174521_4_19_jpg.rf.755e4fc599271a252d0a68afbd82ee25.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/BLAN_005_2019.png",
+      "nearest_existing": "dataset1/train/images/wb_261498_4_174687_4_19_jpg.rf.eefe99debc23bb850545464388382ee1.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/BLAN_009_2019.png",
+      "nearest_existing": "dataset1/train/images/td_261698_4_174478_4_19_jpg.rf.9c8b0763a33f514898829286643c7021.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/BONA_005_2019.png",
+      "nearest_existing": "dataset1/train/images/kg_261737_4_174522_4_19_jpg.rf.97b50fd7852b1ce9b33c227bc50989e8.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/BONA_012_2019.png",
+      "nearest_existing": "dataset1/test/images/wm_262126_4_174161_4_19_jpg.rf.d1c09d453b2f8be2fe5749caba56d022.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/BONA_014_2019.png",
+      "nearest_existing": "dataset1/train/images/ng_261978_4_174545_4_19_jpg.rf.9b55a62025b9725c7ccb593b87b56dd7.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/BONA_018_2019.png",
+      "nearest_existing": "dataset1/train/images/sr_262183_4_174547_4_19_jpg.rf.1c8990c040c37ce768b52b344ac8d90d.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/CLBJ_040_2018.png",
+      "nearest_existing": "dataset1/train/images/kg_261737_4_174522_4_19_jpg.rf.97b50fd7852b1ce9b33c227bc50989e8.jpeg",
+      "dhash_distance": 17
+    },
+    {
+      "image": "real_test/images/CLBJ_042_2018.png",
+      "nearest_existing": "dataset1/test/images/bs_261926_4_174326_4_19_jpg.rf.7ef43d7affcd9fa599adedc52e911211.jpeg",
+      "dhash_distance": 19
+    },
+    {
+      "image": "real_test/images/DELA_015_2019.png",
+      "nearest_existing": "dataset1/train/images/bs_261922_4_174330_4_19_jpg.rf.a37944dd4397317100ee15b36af5ebd1.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/DELA_047_2019.png",
+      "nearest_existing": "dataset1/train/images/el_262183_4_174496_4_19_jpg.rf.bf92bfcda7d5935dd2446bb8be167b4d.jpeg",
+      "dhash_distance": 18
+    },
+    {
+      "image": "real_test/images/DSNY_002_2018.png",
+      "nearest_existing": "dataset1/train/images/bp_262122_4_174545_4_19_jpg.rf.29b768493925fdb593746bc25f007aaf.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/DSNY_005_2018.png",
+      "nearest_existing": "dataset1/train/images/rc_261710_4_174452_4_19_jpg.rf.a307839df77cd28486fa67c7112e993d.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/DSNY_006_2018.png",
+      "nearest_existing": "dataset1/train/images/cr_261969_4_174260_4_19_jpg.rf.4b04b440fe329478f7454af50bd42a05.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/DSNY_007_2018.png",
+      "nearest_existing": "dataset1/train/images/fn_261896_4_174161_4_19_jpg.rf.9668e3ca701ee79e11a643a0bfb7bd37.jpeg",
+      "dhash_distance": 19
+    },
+    {
+      "image": "real_test/images/DSNY_012_2018.png",
+      "nearest_existing": "dataset1/train/images/bp_262118_4_174545_4_19_jpg.rf.e13b958d6de09b3c22b83af535d6649b.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/DSNY_025_2018.png",
+      "nearest_existing": "dataset1/test/images/cr_261969_4_174264_4_19_jpg.rf.de93c98ffc682d16dd91d862ff1d636c.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/HARV_037_2018.png",
+      "nearest_existing": "dataset1/valid/images/hh_261904_4_174211_4_19_jpg.rf.ed0184ffbb30ac792381537e32be187e.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/HARV_040_2018.png",
+      "nearest_existing": "dataset1/train/images/ng_261978_4_174541_4_19_jpg.rf.afd66ccb7bdc913a683ff9b8254c728d.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/HARV_041_2018.png",
+      "nearest_existing": "dataset1/train/images/sr_262183_4_174543_4_19_jpg.rf.1d94e3f8b3fe056dce60ae220a5ea618.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/JERC_047_2018.png",
+      "nearest_existing": "dataset1/train/images/is_261996_4_174270_4_19_jpg.rf.0256f188237354981c0590e82044499e.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/JERC_048_2018.png",
+      "nearest_existing": "dataset1/train/images/cd_261945_4_174267_4_19_jpg.rf.3528c8527573e06a5a0ce95b793e9356.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/JERC_055_2018.png",
+      "nearest_existing": "dataset1/train/images/sc_261908_4_174255_4_19_jpg.rf.8a598b255739c431d278832a0662fa4b.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/JERC_056_2018.png",
+      "nearest_existing": "dataset1/train/images/el_262183_4_174496_4_19_jpg.rf.bf92bfcda7d5935dd2446bb8be167b4d.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/JERC_058_2018.png",
+      "nearest_existing": "dataset1/train/images/cl_261910_4_174459_4_19_jpg.rf.5b3596ed898f11b9a6cb4dc7cc1e79ba.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/JERC_059_2018.png",
+      "nearest_existing": "dataset1/train/images/sc_261908_4_174259_4_19_jpg.rf.fc4fbf01022d88ad5122c0a41ff3fac4.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/LENO_016_2019.png",
+      "nearest_existing": "dataset1/train/images/fn_261892_4_174161_4_19_jpg.rf.8a59107bc6566dab40ca805a491abf41.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/LENO_066_2019.png",
+      "nearest_existing": "dataset1/train/images/hh_261904_4_174207_4_19_jpg.rf.1f4426ab13eda7f4adc38299d2510fe6.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/MLBS_061_2018.png",
+      "nearest_existing": "dataset1/train/images/hh_261904_4_174207_4_19_jpg.rf.1f4426ab13eda7f4adc38299d2510fe6.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/MLBS_062_2018.png",
+      "nearest_existing": "dataset1/train/images/ng_261974_4_174545_4_19_jpg.rf.88a37629a53c11f3146131147c9c3cea.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/MLBS_063_2018.png",
+      "nearest_existing": "dataset1/train/images/cr_261973_4_174260_4_19_jpg.rf.4a414f71dad8d4afd8ae8327b4368bf3.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/MLBS_064_2018.png",
+      "nearest_existing": "dataset1/train/images/fn_261896_4_174165_4_19_jpg.rf.884a8ca87e2a01dd3ea19ecd4a65d3c9.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/MLBS_069_2018.png",
+      "nearest_existing": "dataset1/train/images/hn_262082_4_174230_4_19_jpg.rf.b62182ee3c3af448e2da57a224d85918.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/MLBS_071_2018.png",
+      "nearest_existing": "dataset1/train/images/bs_261922_4_174326_4_19_jpg.rf.52ea7e691f00b8b76e0e794fea7dc344.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/MLBS_073_2018.png",
+      "nearest_existing": "dataset1/train/images/wm_262130_4_174161_4_19_jpg.rf.14b2b7c40de7477e0de0dc705f7892f8.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/MLBS_074_2018.png",
+      "nearest_existing": "dataset1/test/images/bp_262118_4_174541_4_19_jpg.rf.83019ff6f2b13a182d37ac45375e012f.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/NIWO_001_2018.png",
+      "nearest_existing": "dataset1/train/images/rc_261710_4_174456_4_19_jpg.rf.f1fc663c4971fa4cc08a4c6368b2bb6e.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/NIWO_002_2018.png",
+      "nearest_existing": "dataset1/train/images/wm_262130_4_174161_4_19_jpg.rf.14b2b7c40de7477e0de0dc705f7892f8.jpeg",
+      "dhash_distance": 19
+    },
+    {
+      "image": "real_test/images/NIWO_004_2018.png",
+      "nearest_existing": "dataset1/train/images/el_262183_4_174500_4_19_jpg.rf.2a8dae181e5725335d976fcf0e7f10ef.jpeg",
+      "dhash_distance": 25
+    },
+    {
+      "image": "real_test/images/NIWO_005_2018.png",
+      "nearest_existing": "dataset1/train/images/td_261698_4_174478_4_19_jpg.rf.9c8b0763a33f514898829286643c7021.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/NIWO_010_2018.png",
+      "nearest_existing": "dataset1/train/images/kg_261733_4_174526_4_19_jpg.rf.c15a5bd1c6a8ebd255c1b61c48a6c6ca.jpeg",
+      "dhash_distance": 18
+    },
+    {
+      "image": "real_test/images/NIWO_011_2018.png",
+      "nearest_existing": "dataset1/train/images/el_262183_4_174496_4_19_jpg.rf.bf92bfcda7d5935dd2446bb8be167b4d.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/NIWO_012_2018.png",
+      "nearest_existing": "dataset1/train/images/cd_261945_4_174267_4_19_jpg.rf.3528c8527573e06a5a0ce95b793e9356.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/NIWO_014_2018.png",
+      "nearest_existing": "dataset1/train/images/sg_262074_4_174318_4_19_jpg.rf.314612fa697eea23f5d34a91335e44c7.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/NIWO_015_2018.png",
+      "nearest_existing": "dataset1/valid/images/rp_261739_4_174479_4_19_jpg.rf.92008c6f1b9ba3b81acd78a8618d8fa4.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/NIWO_016_2018.png",
+      "nearest_existing": "dataset1/train/images/cr_261973_4_174264_4_19_jpg.rf.d2f75555fc55ff03b2b17337bead83f2.jpeg",
+      "dhash_distance": 25
+    },
+    {
+      "image": "real_test/images/NIWO_017_2018.png",
+      "nearest_existing": "dataset1/train/images/sg_262074_4_174318_4_19_jpg.rf.314612fa697eea23f5d34a91335e44c7.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/NIWO_042_2018.png",
+      "nearest_existing": "dataset1/train/images/hn_262078_4_174230_4_19_jpg.rf.bd2a62120ea354ed9baaa14866c4336b.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/ONAQ_021_2019.png",
+      "nearest_existing": "dataset1/train/images/bs_261922_4_174326_4_19_jpg.rf.52ea7e691f00b8b76e0e794fea7dc344.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/OSBS_003_2019.png",
+      "nearest_existing": "dataset1/valid/images/hh_261908_4_174207_4_19_jpg.rf.09f9becfb6b95a264e02a624c2bbf0fb.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/OSBS_008_2019.png",
+      "nearest_existing": "dataset1/test/images/vp_262092_4_174270_4_19_jpg.rf.b32574f90638f187c1a5812fa3bab06f.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/OSBS_011_2019.png",
+      "nearest_existing": "dataset1/valid/images/ng_261974_4_174541_4_19_jpg.rf.915c30544a4e17be56cfc1ea15b3899e.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/OSBS_015_2019.png",
+      "nearest_existing": "dataset1/train/images/cr_261973_4_174264_4_19_jpg.rf.d2f75555fc55ff03b2b17337bead83f2.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/OSBS_022_2019.png",
+      "nearest_existing": "dataset1/train/images/rc_261714_4_174456_4_19_jpg.rf.1f075a7e5665a70a00212314ec6416b8.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/OSBS_023_2019.png",
+      "nearest_existing": "dataset1/train/images/sc_261908_4_174259_4_19_jpg.rf.fc4fbf01022d88ad5122c0a41ff3fac4.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/OSBS_028_2019.png",
+      "nearest_existing": "dataset1/train/images/ng_261978_4_174541_4_19_jpg.rf.afd66ccb7bdc913a683ff9b8254c728d.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/OSBS_029_2019.png",
+      "nearest_existing": "dataset1/train/images/hn_262078_4_174234_4_19_jpg.rf.70f35dd5ee5bbe8f1f07857878e775b5.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/OSBS_032_2019.png",
+      "nearest_existing": "dataset1/train/images/kn_261731_4_174542_4_19_jpg.rf.106aea525f0e114e5895646c99fe6bcc.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/OSBS_033_2019.png",
+      "nearest_existing": "dataset1/train/images/fn_261892_4_174161_4_19_jpg.rf.8a59107bc6566dab40ca805a491abf41.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/OSBS_037_2019.png",
+      "nearest_existing": "dataset1/train/images/bp_262122_4_174545_4_19_jpg.rf.29b768493925fdb593746bc25f007aaf.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/OSBS_039_2019.png",
+      "nearest_existing": "dataset1/train/images/kg_261733_4_174526_4_19_jpg.rf.c15a5bd1c6a8ebd255c1b61c48a6c6ca.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/OSBS_040_2019.png",
+      "nearest_existing": "dataset1/train/images/wb_261498_4_174687_4_19_jpg.rf.eefe99debc23bb850545464388382ee1.jpeg",
+      "dhash_distance": 18
+    },
+    {
+      "image": "real_test/images/OSBS_051_2019.png",
+      "nearest_existing": "dataset1/test/images/cd_261945_4_174271_4_19_jpg.rf.75be230ab197842281564fb6447e7428.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/SCBI_046_2019.png",
+      "nearest_existing": "dataset1/train/images/st_261968_4_174517_4_19_jpg.rf.8fb8c0944387cebe604bad53c3945f02.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/SCBI_047_2019.png",
+      "nearest_existing": "dataset1/train/images/kn_261731_4_174546_4_19_jpg.rf.90e6a1d31bdc893927f4d74a0a32406b.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/SERC_004_2019.png",
+      "nearest_existing": "dataset1/train/images/el_262183_4_174496_4_19_jpg.rf.bf92bfcda7d5935dd2446bb8be167b4d.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/SERC_062_2019.png",
+      "nearest_existing": "dataset1/train/images/wb_261494_4_174683_4_19_jpg.rf.a9c94bcc4c35508bbc0b8934e57b91cd.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/SJER_002_2018.png",
+      "nearest_existing": "dataset1/valid/images/vp_262092_4_174266_4_19_jpg.rf.6efbfb7c6b0f27db14f18283a6355126.jpeg",
+      "dhash_distance": 19
+    },
+    {
+      "image": "real_test/images/SJER_003_2018.png",
+      "nearest_existing": "dataset1/train/images/wb_261498_4_174687_4_19_jpg.rf.eefe99debc23bb850545464388382ee1.jpeg",
+      "dhash_distance": 19
+    },
+    {
+      "image": "real_test/images/SJER_004_2018.png",
+      "nearest_existing": "dataset1/train/images/ng_261978_4_174545_4_19_jpg.rf.9b55a62025b9725c7ccb593b87b56dd7.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/SJER_005_2018.png",
+      "nearest_existing": "dataset1/train/images/sc_261908_4_174259_4_19_jpg.rf.fc4fbf01022d88ad5122c0a41ff3fac4.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/SJER_009_2018.png",
+      "nearest_existing": "dataset1/train/images/wb_261498_4_174687_4_19_jpg.rf.eefe99debc23bb850545464388382ee1.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/SJER_010_2018.png",
+      "nearest_existing": "dataset1/train/images/is_262000_4_174274_4_19_jpg.rf.6dc8925825909551f18d3d71b7021310.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/SJER_012_2018.png",
+      "nearest_existing": "dataset1/train/images/td_261698_4_174478_4_19_jpg.rf.9c8b0763a33f514898829286643c7021.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/SJER_015_2018.png",
+      "nearest_existing": "dataset1/test/images/el_262187_4_174500_4_19_jpg.rf.001f03055ad8808501e9208e15f3764b.jpeg",
+      "dhash_distance": 25
+    },
+    {
+      "image": "real_test/images/SJER_016_2018.png",
+      "nearest_existing": "dataset1/valid/images/kn_261727_4_174546_4_19_jpg.rf.ddaf45e19c4e0f1123643641110b53e0.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/SJER_021_2018.png",
+      "nearest_existing": "dataset1/train/images/bs_261926_4_174330_4_19_jpg.rf.72542b2a66725c1ae328c78f77c4c85e.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/SJER_022_2018.png",
+      "nearest_existing": "dataset1/test/images/wm_262126_4_174161_4_19_jpg.rf.d1c09d453b2f8be2fe5749caba56d022.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/SJER_025_2018.png",
+      "nearest_existing": "dataset1/train/images/el_262183_4_174496_4_19_jpg.rf.bf92bfcda7d5935dd2446bb8be167b4d.jpeg",
+      "dhash_distance": 16
+    },
+    {
+      "image": "real_test/images/SJER_026_2018.png",
+      "nearest_existing": "dataset1/train/images/bp_262118_4_174545_4_19_jpg.rf.e13b958d6de09b3c22b83af535d6649b.jpeg",
+      "dhash_distance": 19
+    },
+    {
+      "image": "real_test/images/SJER_045_2018.png",
+      "nearest_existing": "dataset1/train/images/kn_261727_4_174542_4_19_jpg.rf.dbfc043ba3c6157b689dac4457c156eb.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/SJER_046_2018.png",
+      "nearest_existing": "dataset1/test/images/cd_261945_4_174271_4_19_jpg.rf.75be230ab197842281564fb6447e7428.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/SJER_048_2018.png",
+      "nearest_existing": "dataset1/valid/images/wb_261498_4_174683_4_19_jpg.rf.62ff0aa54158e6c9d848ee0a2e161a0d.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/SJER_049_2018.png",
+      "nearest_existing": "dataset1/train/images/kg_261733_4_174526_4_19_jpg.rf.c15a5bd1c6a8ebd255c1b61c48a6c6ca.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/SJER_050_2018.png",
+      "nearest_existing": "dataset1/train/images/cr_261973_4_174264_4_19_jpg.rf.d2f75555fc55ff03b2b17337bead83f2.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/SJER_051_2018.png",
+      "nearest_existing": "dataset1/train/images/hn_262082_4_174230_4_19_jpg.rf.b62182ee3c3af448e2da57a224d85918.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/SJER_052_2018.png",
+      "nearest_existing": "dataset1/train/images/sg_262074_4_174318_4_19_jpg.rf.314612fa697eea23f5d34a91335e44c7.jpeg",
+      "dhash_distance": 19
+    },
+    {
+      "image": "real_test/images/SJER_053_2018.png",
+      "nearest_existing": "dataset1/train/images/hn_262078_4_174234_4_19_jpg.rf.70f35dd5ee5bbe8f1f07857878e775b5.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/SJER_054_2018.png",
+      "nearest_existing": "dataset1/test/images/vp_262092_4_174270_4_19_jpg.rf.b32574f90638f187c1a5812fa3bab06f.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/SJER_055_2018.png",
+      "nearest_existing": "dataset1/train/images/cr_261973_4_174264_4_19_jpg.rf.d2f75555fc55ff03b2b17337bead83f2.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/SJER_056_2018.png",
+      "nearest_existing": "dataset1/train/images/cr_261969_4_174260_4_19_jpg.rf.4b04b440fe329478f7454af50bd42a05.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/SJER_057_2018.png",
+      "nearest_existing": "dataset1/train/images/sc_261904_4_174255_4_19_jpg.rf.d6c901772a38352c73d58707c34dd38c.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/SJER_058_2018.png",
+      "nearest_existing": "dataset1/train/images/wb_261498_4_174687_4_19_jpg.rf.eefe99debc23bb850545464388382ee1.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/SJER_059_2018.png",
+      "nearest_existing": "dataset1/test/images/cr_261969_4_174264_4_19_jpg.rf.de93c98ffc682d16dd91d862ff1d636c.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/SJER_060_2018.png",
+      "nearest_existing": "dataset1/train/images/hn_262078_4_174234_4_19_jpg.rf.70f35dd5ee5bbe8f1f07857878e775b5.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/SJER_062_2018.png",
+      "nearest_existing": "dataset1/train/images/wb_261494_4_174683_4_19_jpg.rf.a9c94bcc4c35508bbc0b8934e57b91cd.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/SJER_063_2018.png",
+      "nearest_existing": "dataset1/train/images/cr_261969_4_174260_4_19_jpg.rf.4b04b440fe329478f7454af50bd42a05.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/SJER_064_2018.png",
+      "nearest_existing": "dataset1/train/images/wb_261494_4_174687_4_19_jpg.rf.e3123b65b326175a278b22c51d786474.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/SOAP_031_2019.png",
+      "nearest_existing": "dataset1/train/images/el_262187_4_174496_4_19_jpg.rf.70ee8c11b2a8212ba2689ca3a8a3ec52.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/SOAP_056_2019.png",
+      "nearest_existing": "dataset1/train/images/fn_261892_4_174161_4_19_jpg.rf.8a59107bc6566dab40ca805a491abf41.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/TALL_017_2019.png",
+      "nearest_existing": "dataset1/train/images/hn_262078_4_174230_4_19_jpg.rf.bd2a62120ea354ed9baaa14866c4336b.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/TALL_043_2019.png",
+      "nearest_existing": "dataset1/train/images/is_262000_4_174270_4_19_jpg.rf.43acf0e4319221458d23363ec66ef010.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/TEAK_043_2018.png",
+      "nearest_existing": "dataset1/test/images/bs_261926_4_174326_4_19_jpg.rf.7ef43d7affcd9fa599adedc52e911211.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/TEAK_044_2018.png",
+      "nearest_existing": "dataset1/train/images/st_261968_4_174521_4_19_jpg.rf.755e4fc599271a252d0a68afbd82ee25.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/TEAK_045_2018.png",
+      "nearest_existing": "dataset1/valid/images/sc_261904_4_174259_4_19_jpg.rf.b309104e9a55e9bff2ba0143bc433953.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/TEAK_046_2018.png",
+      "nearest_existing": "dataset1/test/images/bp_262118_4_174541_4_19_jpg.rf.83019ff6f2b13a182d37ac45375e012f.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/TEAK_047_2018.png",
+      "nearest_existing": "dataset1/test/images/wm_262126_4_174161_4_19_jpg.rf.d1c09d453b2f8be2fe5749caba56d022.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/TEAK_049_2018.png",
+      "nearest_existing": "dataset1/valid/images/hh_261904_4_174211_4_19_jpg.rf.ed0184ffbb30ac792381537e32be187e.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/TEAK_050_2018.png",
+      "nearest_existing": "dataset1/train/images/is_262000_4_174274_4_19_jpg.rf.6dc8925825909551f18d3d71b7021310.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/TEAK_051_2018.png",
+      "nearest_existing": "dataset1/test/images/el_262187_4_174500_4_19_jpg.rf.001f03055ad8808501e9208e15f3764b.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/TEAK_052_2018.png",
+      "nearest_existing": "dataset1/train/images/td_261698_4_174478_4_19_jpg.rf.9c8b0763a33f514898829286643c7021.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/TEAK_053_2018.png",
+      "nearest_existing": "dataset1/train/images/fn_261892_4_174161_4_19_jpg.rf.8a59107bc6566dab40ca805a491abf41.jpeg",
+      "dhash_distance": 15
+    },
+    {
+      "image": "real_test/images/TEAK_054_2018.png",
+      "nearest_existing": "dataset1/test/images/vp_262096_4_174270_4_19_jpg.rf.334b9ef442e980c50d5d79f4a9128a7c.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/TEAK_055_2018.png",
+      "nearest_existing": "dataset1/train/images/wm_262130_4_174161_4_19_jpg.rf.14b2b7c40de7477e0de0dc705f7892f8.jpeg",
+      "dhash_distance": 24
+    },
+    {
+      "image": "real_test/images/TEAK_057_2018.png",
+      "nearest_existing": "dataset1/train/images/el_262183_4_174496_4_19_jpg.rf.bf92bfcda7d5935dd2446bb8be167b4d.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/TEAK_058_2018.png",
+      "nearest_existing": "dataset1/train/images/kn_261731_4_174542_4_19_jpg.rf.106aea525f0e114e5895646c99fe6bcc.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/TEAK_059_2018.png",
+      "nearest_existing": "dataset1/train/images/wb_261498_4_174687_4_19_jpg.rf.eefe99debc23bb850545464388382ee1.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/TEAK_060_2018.png",
+      "nearest_existing": "dataset1/train/images/rc_261710_4_174452_4_19_jpg.rf.a307839df77cd28486fa67c7112e993d.jpeg",
+      "dhash_distance": 20
+    },
+    {
+      "image": "real_test/images/TEAK_061_2018.png",
+      "nearest_existing": "dataset1/train/images/el_262183_4_174496_4_19_jpg.rf.bf92bfcda7d5935dd2446bb8be167b4d.jpeg",
+      "dhash_distance": 18
+    },
+    {
+      "image": "real_test/images/TEAK_062_2018.png",
+      "nearest_existing": "dataset1/train/images/ng_261974_4_174545_4_19_jpg.rf.88a37629a53c11f3146131147c9c3cea.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/UNDE_001_2017.png",
+      "nearest_existing": "dataset1/train/images/sc_261904_4_174255_4_19_jpg.rf.d6c901772a38352c73d58707c34dd38c.jpeg",
+      "dhash_distance": 16
+    },
+    {
+      "image": "real_test/images/UNDE_006_2017.png",
+      "nearest_existing": "dataset1/train/images/cl_261906_4_174459_4_19_jpg.rf.a9a327073aefad52c2973dfca46786cb.jpeg",
+      "dhash_distance": 19
+    },
+    {
+      "image": "real_test/images/UNDE_065_2017.png",
+      "nearest_existing": "dataset1/train/images/cd_261945_4_174267_4_19_jpg.rf.3528c8527573e06a5a0ce95b793e9356.jpeg",
+      "dhash_distance": 23
+    },
+    {
+      "image": "real_test/images/WREF_070_2019.png",
+      "nearest_existing": "dataset1/train/images/kg_261733_4_174526_4_19_jpg.rf.c15a5bd1c6a8ebd255c1b61c48a6c6ca.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/WREF_072_2019.png",
+      "nearest_existing": "dataset1/valid/images/rp_261739_4_174479_4_19_jpg.rf.92008c6f1b9ba3b81acd78a8618d8fa4.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/WREF_075_2019.png",
+      "nearest_existing": "dataset1/train/images/fn_261896_4_174161_4_19_jpg.rf.9668e3ca701ee79e11a643a0bfb7bd37.jpeg",
+      "dhash_distance": 21
+    },
+    {
+      "image": "real_test/images/WREF_083_2019.png",
+      "nearest_existing": "dataset1/valid/images/st_261964_4_174517_4_19_jpg.rf.53abeb1a92e18ee683b067af15ac5ce6.jpeg",
+      "dhash_distance": 22
+    },
+    {
+      "image": "real_test/images/WREF_084_2019.png",
+      "nearest_existing": "dataset1/test/images/bs_261926_4_174326_4_19_jpg.rf.7ef43d7affcd9fa599adedc52e911211.jpeg",
+      "dhash_distance": 24
+    }
+  ],
+  "possible_near_duplicates": [],
+  "source_box_clipping": [],
+  "caveat": "Hash checks do not prove geographic independence or exclude unknown pretraining exposure.",
+  "unique_source_images": 194,
+  "pair_validation": {
+    "pairs_checked": 1164,
+    "checks": [
+      "image decodability",
+      "pixel checksums",
+      "label checksums",
+      "label count equals expected count",
+      "normalized bounding box bounds"
+    ],
+    "status": "passed"
+  }
+}
