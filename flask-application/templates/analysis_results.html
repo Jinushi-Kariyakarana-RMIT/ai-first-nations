@@ -62,7 +62,7 @@
     <article class="analysis-card tree-count-card">
         <div class="card-label-row">
             <p class="card-label">Tree Count</p>
-            <span class="status-label">Experimental</span>
+            <span class="status-label{{ ' status-available' if tree_count and tree_count.status == 'available' else '' }}">{% if tree_count and tree_count.status == 'available' %}Count complete{% elif tree_count and tree_count.status == 'error' %}Analysis failed{% else %}Unavailable{% endif %}</span>
         </div>
         {% if tree_count and tree_count.status == 'available' %}
             <h2>Estimated Trees</h2>
@@ -72,6 +72,7 @@
                 <div><dt>Tiles analysed</dt><dd>{{ tree_count.tiles_processed }}</dd></div>
                 <div><dt>Average detection confidence</dt><dd>{{ "%.1f" | format(tree_count.average_confidence * 100) }}%</dd></div>
             </dl>
+            <p class="card-note">Estimated visible tree crowns across all tree types. Review the marked crowns when a verified count is needed. Detection confidence indicates model certainty, not measured accuracy.</p>
         {% elif tree_count and tree_count.status == 'error' %}
             <h2>Could not complete</h2>
             <p class="card-note">{{ tree_count.message }}</p>
@@ -101,7 +102,7 @@
         <figure>
             <figcaption>Tree-Crown Detection Overlay</figcaption>
             <a href="{{ tree_count.overlay_url }}" target="_blank" rel="noopener" aria-label="Open tree detection overlay at full size">
-                <img src="{{ tree_count.overlay_url }}" alt="Experimental tree-crown detections for {{ filename }}">
+                <img src="{{ tree_count.overlay_url }}" alt="Estimated tree-crown detections for {{ filename }}">
             </a>
         </figure>
         {% endif %}
@@ -118,6 +119,6 @@
 
 <details class="analysis-details">
     <summary>About This Analysis</summary>
-    <p>The system divides large imagery into tiles, checks whether mangrove vegetation is present and, when appropriate, applies the available mangrove classification model. The experimental tree counter runs independently and estimates all visible trees. Orange, Red and Yellow are retained as dataset categories; they are not described as biological species without supporting dataset documentation.</p>
+    <p>The system divides large imagery into tiles, checks whether mangrove vegetation is present and, when appropriate, applies the available mangrove classification model. The tree counter runs independently and estimates visible tree crowns. The counting workflow is operational; results still require manual review because accuracy on new mangrove surveys has not been established. Orange, Red and Yellow are retained as dataset categories; they are not described as biological species without supporting dataset documentation.</p>
 </details>
 {% endblock %}

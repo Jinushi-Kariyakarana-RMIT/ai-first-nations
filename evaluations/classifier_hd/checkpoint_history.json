@@ -1,0 +1,21 @@
+{
+  "checkpoints": [
+    {
+      "model": "binary",
+      "revision": "5eef0d4",
+      "historical_path": "flask-application/bestBinary.pth",
+      "sha256": "4b3b3e547eb38e7f9f338e51eb5e5d05b7b0d4a39400a6c9b11a6cfab7ca575c",
+      "identical_to_deployed": true
+    },
+    {
+      "model": "species",
+      "revision": "694419e",
+      "historical_path": "notebooks/best_mangrove_model.pth",
+      "sha256": "c525471b7dc59418b3dc378a6c5749e0ec659dd956410bd0a8509a0d42bfceca",
+      "identical_to_deployed": true
+    }
+  ],
+  "report_sha256": "257d6014544f5b12971f935c33ac5a8d936518b96e6fdb9145e6f3b20ed39108",
+  "search_scope": "Fetched origin branches and all reachable local Git history; both Desktop project copies; relevant dataset folder names beneath Desktop, Downloads and Documents; relevant downloaded archives.",
+  "recovered_satellite_manifest_rows": 904
+}

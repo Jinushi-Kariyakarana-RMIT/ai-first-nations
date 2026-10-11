@@ -1,0 +1,36 @@
+test_confident_wrong (test_classifier_metrics.ClassifierMetricTests.test_confident_wrong) ... ok
+test_empty_labels_rejected (test_classifier_metrics.ClassifierMetricTests.test_empty_labels_rejected) ... ok
+test_invalid_probabilities_rejected (test_classifier_metrics.ClassifierMetricTests.test_invalid_probabilities_rejected) ... ok
+test_missing_class_is_not_zero (test_classifier_metrics.ClassifierMetricTests.test_missing_class_is_not_zero) ... ok
+test_multiclass_brier_convention (test_classifier_metrics.ClassifierMetricTests.test_multiclass_brier_convention) ... ok
+test_perfect_binary (test_classifier_metrics.ClassifierMetricTests.test_perfect_binary) ... ok
+test_training_augmentation_does_not_change_validation (test_classifier_training.TrainingTransformTests.test_training_augmentation_does_not_change_validation) ... ok
+test_empty_predictions_and_labels (test_evaluation_pack.EvaluationPackTests.test_empty_predictions_and_labels) ... ok
+test_multiple_predictions_cannot_match_same_tree (test_evaluation_pack.EvaluationPackTests.test_multiple_predictions_cannot_match_same_tree) ... ok
+test_transformed_box_follows_pixels_on_non_square_image (test_evaluation_pack.EvaluationPackTests.test_transformed_box_follows_pixels_on_non_square_image) ... ok
+test_unmatched_prediction_and_missed_tree_are_both_counted (test_evaluation_pack.EvaluationPackTests.test_unmatched_prediction_and_missed_tree_are_both_counted) ... ok
+test_empty_truth_relative_error_is_undefined_not_zero (test_hd_metrics.HDMetricTests.test_empty_truth_relative_error_is_undefined_not_zero) ... ok
+test_nonoverlapping_detection_has_zero_ap (test_hd_metrics.HDMetricTests.test_nonoverlapping_detection_has_zero_ap) ... ok
+test_perfect_detection_has_perfect_ap (test_hd_metrics.HDMetricTests.test_perfect_detection_has_perfect_ap) ... ok
+test_changed_pixels_reject_review (test_new_benchmark.BenchmarkTests.test_changed_pixels_reject_review) ... ok
+test_cross_split_site_rejected (test_new_benchmark.BenchmarkTests.test_cross_split_site_rejected) ... /Users/joseph/Desktop/DS Proejct/ai-first-nations/evaluations/new_benchmark/benchmark.py:62: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/pz/pgl2z_5s6kx1bls0rwsk45kh0000gn/T/tmpa1gi9hwd/import.csv' mode='r' encoding='UTF-8'>
+  rows=list(csv.DictReader(Path(manifest).open()))
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_export_keeps_review_provenance (test_new_benchmark.BenchmarkTests.test_export_keeps_review_provenance) ... /Users/joseph/Desktop/DS Proejct/ai-first-nations/tests/test_new_benchmark.py:50: ResourceWarning: unclosed file <_io.TextIOWrapper name='/var/folders/pz/pgl2z_5s6kx1bls0rwsk45kh0000gn/T/tmpv6ed9za8/reviewed_manifest.csv' mode='r' encoding='UTF-8'>
+  row=list(csv.DictReader((self.root/'reviewed_manifest.csv').open()))[0]
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_final_test_requires_reviewed_classes (test_new_benchmark.BenchmarkTests.test_final_test_requires_reviewed_classes) ... ok
+test_frozen_labels_are_immutable (test_new_benchmark.BenchmarkTests.test_frozen_labels_are_immutable) ... ok
+test_no_initial_pseudo_labels (test_new_benchmark.BenchmarkTests.test_no_initial_pseudo_labels) ... ok
+test_paths_cannot_escape_workspace (test_new_benchmark.BenchmarkTests.test_paths_cannot_escape_workspace) ... ok
+test_review_requires_consistent_labels_and_provenance (test_new_benchmark.BenchmarkTests.test_review_requires_consistent_labels_and_provenance) ... ok
+test_reviewed_binary_scoring_uses_reference_labels (test_new_benchmark.BenchmarkTests.test_reviewed_binary_scoring_uses_reference_labels) ... ok
+test_count_uses_shared_tiles_and_removes_cross_tile_duplicate (test_tree_counter.TreeCounterTests.test_count_uses_shared_tiles_and_removes_cross_tile_duplicate) ... ok
+test_nms_keeps_highest_confidence_duplicate (test_tree_counter.TreeCounterTests.test_nms_keeps_highest_confidence_duplicate) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 0.041s
+
+OK

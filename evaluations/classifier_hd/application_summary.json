@@ -1,0 +1,9 @@
+{
+  "tests": 67,
+  "passed": 67,
+  "failed": [],
+  "temporary_files": "TemporaryDirectory fixtures, uploads and browser profile removed after run.",
+  "memory": "Process RSS sampled every 10 ms, all models and cache included; brief peaks may be missed.",
+  "timing": "One cold process model-load measurement; HTTP cases warm after offline calls; 3 repetitions only for 1024x768 reference; other sizes n=1.",
+  "accuracy": "Not measured: fixtures have no independent classifier labels. Passing technical checks does not satisfy data/accuracy rubric requirements."
+}

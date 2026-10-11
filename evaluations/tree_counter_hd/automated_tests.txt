@@ -1,0 +1,14 @@
+test_empty_predictions_and_labels (test_evaluation_pack.EvaluationPackTests.test_empty_predictions_and_labels) ... ok
+test_multiple_predictions_cannot_match_same_tree (test_evaluation_pack.EvaluationPackTests.test_multiple_predictions_cannot_match_same_tree) ... ok
+test_transformed_box_follows_pixels_on_non_square_image (test_evaluation_pack.EvaluationPackTests.test_transformed_box_follows_pixels_on_non_square_image) ... ok
+test_unmatched_prediction_and_missed_tree_are_both_counted (test_evaluation_pack.EvaluationPackTests.test_unmatched_prediction_and_missed_tree_are_both_counted) ... ok
+test_empty_truth_relative_error_is_undefined_not_zero (test_hd_metrics.HDMetricTests.test_empty_truth_relative_error_is_undefined_not_zero) ... ok
+test_nonoverlapping_detection_has_zero_ap (test_hd_metrics.HDMetricTests.test_nonoverlapping_detection_has_zero_ap) ... ok
+test_perfect_detection_has_perfect_ap (test_hd_metrics.HDMetricTests.test_perfect_detection_has_perfect_ap) ... ok
+test_count_uses_shared_tiles_and_removes_cross_tile_duplicate (test_tree_counter.TreeCounterTests.test_count_uses_shared_tiles_and_removes_cross_tile_duplicate) ... ok
+test_nms_keeps_highest_confidence_duplicate (test_tree_counter.TreeCounterTests.test_nms_keeps_highest_confidence_duplicate) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.007s
+
+OK

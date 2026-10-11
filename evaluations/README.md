@@ -1,5 +1,36 @@
 # Model Evaluation Guide
 
+For the replacement dataset, use the [local benchmark review tool](new_benchmark/README.md). Existing inspected images are development data; final testing requires unseen surveys and reviewed labels.
+
+The application now uses the validation-selected confidence 0.10; see the
+[deployment checks](tree_counter_hd/DEPLOYMENT.md). Tables below retain historical
+results and their original configurations.
+
+## Binary and category classifier evaluation
+
+The current [binary notebook](notebooks/Binary_Mangrove_Evaluation.ipynb) and
+[category notebook](notebooks/Mangrove_Species_Evaluation.ipynb) include current
+checkpoint audits, source inventory, tile/probability diagnostics and 67 real or
+controlled application checks. [Evidence and reproducibility](classifier_hd/README.md)
+explain which requirements remain blocked. Full HD compliance and independent
+classifier accuracy are **not yet established** because reference labels and
+training-source/mapping provenance are missing.
+
+## Specification-based tree-counter evaluation
+
+The [new tree-counter notebook](notebooks/YOLO_Tree_Counter_Evaluation.ipynb)
+and [supporting evidence](tree_counter_hd/README.md) address the supplied HD
+specification. They include app-path metrics, validation-only comparisons,
+full detection metrics, tiling/negative diagnostics, and real Flask HTTP tests.
+The [rubric audit](tree_counter_hd/specification_audit.csv) records remaining gaps;
+full HD compliance is not claimed.
+
+**New source-quality concern:** inspected original training, validation and test
+images contain visible red crown markers. Together with site overlap, this limits
+interpretation of the historical baseline. The validation-only marker diagnostic
+and required clean-data follow-up are documented in the new notebook. Historical
+results below are retained as records, not promoted to clean-image accuracy claims.
+
 ## Additional external photo benchmark
 
 The [tree-counter evaluation pack](../tree-counting-model/evaluation_pack/README.md)

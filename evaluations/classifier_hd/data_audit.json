@@ -1,0 +1,16 @@
+{
+  "fresh_source_images": 527,
+  "labelled_binary_rows": 0,
+  "labelled_species_rows": 0,
+  "missing_expected_datasets": [
+    "TrainingData",
+    "test"
+  ],
+  "exact_duplicate_excess": 0,
+  "near_duplicate_candidate_pairs": 13,
+  "historical_training_manifest_available": false,
+  "split_status": "BLOCKED: no verified original training membership or independent labelled source/site holdout.",
+  "binary_mapping": "0 Non-Mangrove, 1 Mangrove: consistent with legacy notebook code; checkpoint carries no class metadata.",
+  "species_mapping": "0 orange, 1 red, 2 yellow: serving fallback only; original dataset/checkpoint mapping metadata missing.",
+  "not_eligible": "NEON crown boxes and synthetic tree labels do not establish mangrove presence or Orange/Red/Yellow labels."
+}

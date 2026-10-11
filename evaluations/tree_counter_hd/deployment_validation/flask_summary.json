@@ -1,0 +1,19 @@
+{
+  "configuration": "deployed",
+  "settings": {
+    "tile_size": 640,
+    "overlap": 64,
+    "confidence": 0.1,
+    "iou": 0.45
+  },
+  "startup_seconds": 1.3350314998533577,
+  "tests": 18,
+  "passed": 18,
+  "failed": [],
+  "screenshot_url": "http://127.0.0.1:5052/analyze/hd_original_0.jpeg",
+  "model_sha256": "8e40eb9b2807cc482eabe86c716bc48dca10910ac12fe94ccd3d0cb945813b1a",
+  "memory_method": "Process RSS sampled every 10 ms; includes all model weights and allocator cache. May miss sub-10-ms peaks; not GPU memory.",
+  "timing_method": "Local HTTP upload through rendered result, all three models enabled; direct parity inference warms the model first. Startup measured separately.",
+  "performance_target": "Not agreed; measurements reported without pass/fail speed claim.",
+  "fresh_accuracy": "No accuracy metric: fresh image has no reviewed reference labels."
+}

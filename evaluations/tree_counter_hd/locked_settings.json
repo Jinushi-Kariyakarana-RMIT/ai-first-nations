@@ -1,0 +1,19 @@
+{
+  "locked_utc": "2026-10-11T08:20:31.861898+00:00",
+  "baseline": {
+    "confidence": 0.15,
+    "iou": 0.45,
+    "tile_size": 640,
+    "overlap": 64
+  },
+  "candidate": {
+    "confidence": 0.1,
+    "iou": 0.45,
+    "tile_size": 640,
+    "overlap": 64
+  },
+  "validation_mae": 5.333333333333333,
+  "model_sha256": "8e40eb9b2807cc482eabe86c716bc48dca10910ac12fe94ccd3d0cb945813b1a",
+  "selected_using": "18 original validation images only; original site-overlap caveat applies.",
+  "deployment": "Candidate is evaluation-only. Production Flask settings remain unchanged."
+}

@@ -1,0 +1,5 @@
+{
+  "automated_test_exit_code": 0,
+  "passed_tests": 16,
+  "meaning": "Known-answer metric and software tests, not measured model accuracy."
+}

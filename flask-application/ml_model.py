@@ -1,4 +1,5 @@
 import os
+from copy import copy
 from pathlib import Path
 
 import numpy as np
@@ -216,6 +217,14 @@ def load_model():
     return model, mangrove_type, gpu
 
 
+def configure_subset_transforms(train_set, val_set, train_transform, val_transform):
+    """Keep subset transforms independent while retaining the same split indices."""
+    train_set.dataset = copy(train_set.dataset)
+    val_set.dataset = copy(val_set.dataset)
+    train_set.dataset.transform = train_transform
+    val_set.dataset.transform = val_transform
+
+
 def train_model(num_epochs_stage1=50, num_epochs_stage2=50, save_model=True):
     if not DATASET_PATH.exists():
         raise FileNotFoundError(f"Dataset path not found: {DATASET_PATH}")
@@ -256,8 +265,7 @@ def train_model(num_epochs_stage1=50, num_epochs_stage2=50, save_model=True):
                              [0.229, 0.224, 0.225])
     ])
 
-    train_set.dataset.transform = train_transform
-    val_set.dataset.transform = val_transform
+    configure_subset_transforms(train_set, val_set, train_transform, val_transform)
 
     print(f"Total train set size: {len(train_set)} | Total validation set size: {len(val_set)}")
 

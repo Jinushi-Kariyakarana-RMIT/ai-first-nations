@@ -1,37 +1,44 @@
 {% extends 'base.html' %}
-
 {% block title %}About{% endblock %}
-
 {% block body %}
-<section class="hero">
-    <h1>About Mangrove AI</h1>
-    <p>A practical AI First Nations tool for analysing drone and aerial imagery in support of mangrove monitoring and environmental work.</p>
+<section class="about-hero" aria-labelledby="about-title">
+    <p class="about-eyebrow">AI First Nations · Mangrove monitoring</p>
+    <h1 id="about-title">Understand your aerial imagery.</h1>
+    <p class="about-intro">Mangrove AI brings vegetation detection, classification and tree counting into one image analysis workflow. Turn a drone photograph into results you can inspect and share.</p>
+    <a href="{{ url_for('upload') }}" class="btn btn-primary">Analyse an Image <span aria-hidden="true">→</span></a>
+    <p class="about-file-hint">JPG, JPEG or PNG · Up to 50 MB per image</p>
 </section>
 
-<section class="page-section">
-    <h2>What It Does</h2>
-    <p>Mangrove AI uses a staged machine-learning pipeline to detect mangrove vegetation and classify supported mangrove categories. A standalone tree-counting module is being developed to estimate visible trees across aerial imagery.</p>
+<section class="page-section" aria-labelledby="capabilities-title">
+    <h2 id="capabilities-title">Three tools, one analysis</h2>
+    <p class="section-intro">Upload once to check for mangrove vegetation, explore its category and estimate visible tree crowns.</p>
+    {% include '_capabilities.html' %}
 </section>
 
-<section class="page-section">
-    <h2>Analysis Capabilities</h2>
-    <div class="capability-grid">
-        <article class="capability-item"><h3>Mangrove Detection</h3><p>Checks whether mangrove vegetation is visible.</p></article>
-        <article class="capability-item"><h3>Mangrove Classification</h3><p>Reports one of the currently supported dataset categories.</p></article>
-        <article class="capability-item"><h3>Tree Counting</h3><p>Estimates visible trees independently of classification.</p><span class="status-label">Experimental</span></article>
+<section class="page-section workflow" aria-labelledby="workflow-title">
+    <h2 id="workflow-title">From image to insight</h2>
+    <p class="section-intro">Large images are divided into smaller tiles for analysis. The tree counter runs independently of mangrove classification, then removes duplicate detections where tiles overlap.</p>
+    {% include '_workflow.html' %}
+</section>
+
+<section class="page-section about-results" aria-labelledby="results-title">
+    <div>
+        <p class="about-eyebrow">Your results</p>
+        <h2 id="results-title">See what the model found.</h2>
+        <p>Review the original image alongside marked tree crowns, see the estimated count and download the annotated image for your records.</p>
     </div>
+    <dl class="about-result-guide">
+        <div><dt>Mangrove detection</dt><dd>Whether the image contains mangrove vegetation, with a model confidence score.</dd></div>
+        <div><dt>Mangrove category</dt><dd>A supported dataset category when classification is applicable. Categories do not confirm biological species.</dd></div>
+        <div><dt>Estimated trees</dt><dd>Visible tree crowns across all tree types. Review the marked crowns when a verified count is needed.</dd></div>
+    </dl>
 </section>
 
-<section class="page-section workflow">
-    <h2>How It Works</h2>
-    <ol class="workflow-list" aria-label="Analysis workflow">
-        <li>Upload</li><li>Tile</li><li>Detect</li><li>Classify</li><li>Count</li><li>Results</li>
-    </ol>
-</section>
-
-<section class="page-section">
-    <h2>Environmental Application</h2>
-    <p>Consistent analysis of drone imagery can support vegetation monitoring, restoration assessment and future change-detection or carbon/GIS studies. Results remain model estimates and should be interpreted alongside field knowledge.</p>
-    <a href="{{ url_for('upload') }}" class="btn btn-primary">Analyse an Image</a>
+<section class="page-section about-footer" aria-labelledby="purpose-title">
+    <div>
+        <h2 id="purpose-title">Support observation on the ground.</h2>
+        <p>Use the results alongside local knowledge and field observations for vegetation monitoring and restoration assessment. Each count describes one image; overlapping photographs may show the same trees.</p>
+    </div>
+    <a href="{{ url_for('upload') }}" class="btn btn-primary">Start an Analysis</a>
 </section>
 {% endblock %}

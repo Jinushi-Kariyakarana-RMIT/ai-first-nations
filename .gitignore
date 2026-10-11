@@ -32,3 +32,16 @@ __pycache__/
 # Generated dataset configs contain local absolute paths
 /tree-counting-model/evaluation_pack/**/data.yaml
 /tree-counting-model/mock_dataset/data.yaml
+
+# Temporary evaluation uploads and browser review artifacts
+/evaluations/tree_counter_hd/**/app_uploads/
+/evaluations/tree_counter_hd/qa_*.png
+/evaluations/tree_counter_hd/**/*.log
+
+# Local annotation records and frozen private benchmark manifests
+/evaluations/new_benchmark/*.sqlite3*
+/evaluations/new_benchmark/reviewed_manifest.csv
+/evaluations/new_benchmark/test_lock.json
+/evaluations/new_benchmark/holdout_review.json
+/evaluations/new_benchmark/category_mapping.json
+/evaluations/new_benchmark/results/

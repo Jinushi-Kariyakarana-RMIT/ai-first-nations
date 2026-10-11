@@ -900,3 +900,32 @@ img {
     .recent-result { margin-left: 68px; }
     .result-actions { align-items: stretch; flex-direction: column; }
 }
+
+/* About uses the same green palette and components as Analyse. */
+.about-hero {
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: clamp(24px, 4vw, 42px);
+    text-align: left;
+}
+.about-eyebrow { color: var(--primary-dark); font-size: .78rem; font-weight: 750; letter-spacing: .04em; margin-bottom: 14px; }
+.about-hero h1 { max-width: 20ch; }
+.about-intro { max-width: 65ch; margin-bottom: 24px; font-size: 1.05rem; }
+.about-hero .about-file-hint { font-size: .8rem; color: var(--muted); margin: 12px 0 0; }
+.section-intro { max-width: 78ch; color: var(--muted); margin-bottom: 22px; }
+.capability-item { display: flex; flex-direction: column; align-items: flex-start; }
+.capability-item .status-label { margin-top: auto; }
+.capability-item p { margin-bottom: 16px; }
+.about-results { display: grid; grid-template-columns: 1fr 1.2fr; gap: 36px; padding: 30px; background: var(--surface-soft); border-radius: 12px; }
+.about-result-guide div + div { border-top: 1px solid var(--border); padding-top: 16px; margin-top: 16px; }
+.about-result-guide dt { font-weight: 700; color: var(--primary-dark); margin-bottom: 4px; }
+.about-result-guide dd { color: var(--muted); font-size: .92rem; }
+.about-footer { display: flex; align-items: center; gap: 28px; }
+.about-footer div { flex: 1; }
+.about-footer p { margin: 0; max-width: 70ch; }
+.about-footer .btn { flex-shrink: 0; }
+@media (max-width: 760px) {
+    .about-results { grid-template-columns: 1fr; gap: 16px; padding: 22px; }
+    .about-footer { align-items: flex-start; flex-direction: column; }
+}

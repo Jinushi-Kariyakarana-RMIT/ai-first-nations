@@ -1,0 +1,25 @@
+{
+  "seed": 42,
+  "accuracy_gate": "Reviewed labels, verified checkpoint mapping and training exclusion; frozen source/site-separated validation and test manifests required before scoring.",
+  "binary_experiments": [
+    "Validation-only threshold selection for recall/precision trade-off",
+    "Validation-only temperature scaling minimizing log loss; independent test Brier/ECE comparison"
+  ],
+  "species_experiments": [
+    "Validation-only temperature scaling minimizing log loss",
+    "Compare mean tile probabilities against mean tile logits on labelled validation sources"
+  ],
+  "selection": "Register grids, objective and tie rule before inference on a locked final test set; no selection is made in this run.",
+  "status": "NOT RUN: labelled independent validation/test sources unavailable. Sensitivity diagnostics below are not improvement experiments.",
+  "targets_binary": {
+    "source_recall": 0.95,
+    "source_precision": 0.9,
+    "macro_f1": 0.9
+  },
+  "targets_species": {
+    "macro_f1": 0.9,
+    "per_class_recall": 0.85,
+    "balanced_accuracy": 0.9
+  },
+  "targets_status": "Proposed in supplied rubrics, not pre-agreed production acceptance limits."
+}

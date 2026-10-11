@@ -42,38 +42,12 @@
 
 <section class="page-section" aria-labelledby="capabilities-title">
     <h2 id="capabilities-title">Analysis Capabilities</h2>
-    <div class="capability-grid">
-        <article class="capability-item">
-            <span class="capability-icon" aria-hidden="true">01</span>
-            <h3>Mangrove Detection</h3>
-            <p>Identify whether an aerial image contains mangrove vegetation.</p>
-            <span class="status-label status-available">Available</span>
-        </article>
-        <article class="capability-item">
-            <span class="capability-icon" aria-hidden="true">02</span>
-            <h3>Species Classification</h3>
-            <p>Classify detected mangrove imagery into supported species or categories.</p>
-            <span class="status-label status-available">Available</span>
-        </article>
-        <article class="capability-item">
-            <span class="capability-icon" aria-hidden="true">03</span>
-            <h3>Tree Counting</h3>
-            <p>Estimate visible tree crowns from aerial imagery.</p>
-            <span class="status-label">Experimental</span>
-        </article>
-    </div>
+    {% include '_capabilities.html' %}
 </section>
 
 <section class="page-section workflow" aria-labelledby="workflow-title">
     <h2 id="workflow-title">How Analysis Works</h2>
-    <ol class="workflow-list" aria-label="Analysis workflow">
-        <li class="is-current"><span>01</span><strong>Upload</strong></li>
-        <li><span>02</span><strong>Tile</strong></li>
-        <li><span>03</span><strong>Detect</strong></li>
-        <li><span>04</span><strong>Classify</strong></li>
-        <li><span>05</span><strong>Count</strong></li>
-        <li><span>06</span><strong>Results</strong></li>
-    </ol>
+    {% include '_workflow.html' %}
 </section>
 
 {% if recent_uploads %}

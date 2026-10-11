@@ -112,7 +112,7 @@ def initialize_models():
 
     try:
         tree_counter_model = load_tree_counter_model()
-        print("Experimental tree counter ready.")
+        print("Tree counter loaded; estimates require manual review.")
     except Exception as e:
         print(f"Warning: Error loading tree counter: {e}")
         tree_counter_model = None
@@ -216,16 +216,9 @@ def analyze(name):
             analysis_result['mangrove_error'] = "Mangrove detection could not be completed."
             print(f"Binary analysis exception: {e}")
     elif model is not None:
-        try:
-            classification, _, error = predict_mangrove(filepath, model, mangrove_type, gpu)
-            if error:
-                analysis_result['mangrove_error'] = "Mangrove classification could not be completed."
-                print(f"Analysis error: {error}")
-            else:
-                analysis_result['multi_class'] = classification
-        except Exception as e:
-            analysis_result['mangrove_error'] = "Mangrove classification could not be completed."
-            print(f"Exception during analysis: {e}")
+        # Classification requires a positive upstream mangrove decision.
+        analysis_result['mangrove_error'] = "Mangrove detection is unavailable; classification was not performed."
+
     else:
         print("Warning: Mangrove analysis models are unavailable.")
 

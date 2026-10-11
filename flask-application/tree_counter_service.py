@@ -12,8 +12,10 @@ TREE_COUNTER_MODEL_PATH = TREE_COUNTER_DIR / "best_tree_counter.pt"
 if str(TREE_COUNTER_DIR) not in sys.path:
     sys.path.insert(0, str(TREE_COUNTER_DIR))
 
-from tree_counter import count_trees  # noqa: E402
+from tree_counter import DEFAULT_CONFIDENCE, count_trees  # noqa: E402
 
+
+TREE_COUNTER_SETTINGS = dict(tile_size=640, overlap=64, confidence=DEFAULT_CONFIDENCE, iou=0.45)
 
 def load_tree_counter_model():
     if not TREE_COUNTER_MODEL_PATH.exists():
@@ -36,9 +38,6 @@ def predict_tree_count(image_path, model, overlay_path):
     return count_trees(
         image_path=image_path,
         model=model,
-        tile_size=640,
-        overlap=64,
-        confidence=0.15,
-        iou=0.45,
+        **TREE_COUNTER_SETTINGS,
         overlay_path=overlay_path,
     )

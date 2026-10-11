@@ -1,0 +1,4342 @@
+[
+  {
+    "image_id": "source_0_reference",
+    "model": "binary",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.0014869308797642589,
+      0.9985130429267883
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_0_reference",
+    "model": "binary",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      0.4430205821990967,
+      0.5569794178009033
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_0_reference",
+    "model": "binary",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "probabilities": [
+      0.03002467192709446,
+      0.9699753522872925
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_0_reference",
+    "model": "binary",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      256,
+      512,
+      768
+    ],
+    "probabilities": [
+      0.00015821219130884856,
+      0.9998418092727661
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_0_reference",
+    "model": "binary",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      448,
+      256,
+      960,
+      768
+    ],
+    "probabilities": [
+      0.3720821142196655,
+      0.6279178261756897
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_0_reference",
+    "model": "binary",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      512,
+      256,
+      1024,
+      768
+    ],
+    "probabilities": [
+      0.14956684410572052,
+      0.8504331707954407
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_0_reference",
+    "model": "species",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.2022857815027237,
+      0.36474889516830444,
+      0.4329652786254883
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_0_reference",
+    "model": "species",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      0.0007549097063019872,
+      0.963365375995636,
+      0.035879768431186676
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_0_reference",
+    "model": "species",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "probabilities": [
+      0.0016932091675698757,
+      0.8416465520858765,
+      0.15666018426418304
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_0_reference",
+    "model": "species",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      256,
+      512,
+      768
+    ],
+    "probabilities": [
+      0.15908440947532654,
+      0.2035084366798401,
+      0.6374071836471558
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_0_reference",
+    "model": "species",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      448,
+      256,
+      960,
+      768
+    ],
+    "probabilities": [
+      0.04934459552168846,
+      0.7004634737968445,
+      0.2501918375492096
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_0_reference",
+    "model": "species",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      512,
+      256,
+      1024,
+      768
+    ],
+    "probabilities": [
+      0.0447918139398098,
+      0.7955387234687805,
+      0.15966951847076416
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_0_darker",
+    "model": "binary",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.0013078729389235377,
+      0.9986920952796936
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_0_darker",
+    "model": "binary",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      0.454012930393219,
+      0.5459870100021362
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_0_darker",
+    "model": "binary",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "probabilities": [
+      0.6728572249412537,
+      0.32714277505874634
+    ],
+    "label": "Non-Mangrove"
+  },
+  {
+    "image_id": "source_0_darker",
+    "model": "binary",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      256,
+      512,
+      768
+    ],
+    "probabilities": [
+      0.00013797236897516996,
+      0.9998619556427002
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_0_darker",
+    "model": "binary",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      448,
+      256,
+      960,
+      768
+    ],
+    "probabilities": [
+      0.6851952075958252,
+      0.3148048222064972
+    ],
+    "label": "Non-Mangrove"
+  },
+  {
+    "image_id": "source_0_darker",
+    "model": "binary",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      512,
+      256,
+      1024,
+      768
+    ],
+    "probabilities": [
+      0.8446205854415894,
+      0.15537938475608826
+    ],
+    "label": "Non-Mangrove"
+  },
+  {
+    "image_id": "source_0_darker",
+    "model": "species",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.08067919313907623,
+      0.2252103090286255,
+      0.6941104531288147
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_0_darker",
+    "model": "species",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      0.001133972080424428,
+      0.31662705540657043,
+      0.6822389364242554
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_0_darker",
+    "model": "species",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "probabilities": [
+      0.002675136085599661,
+      0.24583052098751068,
+      0.7514943480491638
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_0_darker",
+    "model": "species",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      256,
+      512,
+      768
+    ],
+    "probabilities": [
+      0.06931497901678085,
+      0.5834141969680786,
+      0.34727075695991516
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_0_darker",
+    "model": "species",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      448,
+      256,
+      960,
+      768
+    ],
+    "probabilities": [
+      0.012041565962135792,
+      0.12296425551176071,
+      0.8649941682815552
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_0_darker",
+    "model": "species",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      512,
+      256,
+      1024,
+      768
+    ],
+    "probabilities": [
+      0.01136973686516285,
+      0.17576560378074646,
+      0.8128646612167358
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_0_blur",
+    "model": "binary",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.02633577585220337,
+      0.9736642241477966
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_0_blur",
+    "model": "binary",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      0.011973705142736435,
+      0.9880262613296509
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_0_blur",
+    "model": "binary",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "probabilities": [
+      0.0009248044807463884,
+      0.999075174331665
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_0_blur",
+    "model": "binary",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      256,
+      512,
+      768
+    ],
+    "probabilities": [
+      0.0475156307220459,
+      0.9524843692779541
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_0_blur",
+    "model": "binary",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      448,
+      256,
+      960,
+      768
+    ],
+    "probabilities": [
+      0.0022245212458074093,
+      0.9977754950523376
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_0_blur",
+    "model": "binary",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      512,
+      256,
+      1024,
+      768
+    ],
+    "probabilities": [
+      0.0008875088533386588,
+      0.9991124272346497
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_0_blur",
+    "model": "species",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.18583843111991882,
+      0.5908175110816956,
+      0.22334405779838562
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_0_blur",
+    "model": "species",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      0.006527279503643513,
+      0.9721993207931519,
+      0.02127336710691452
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_0_blur",
+    "model": "species",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "probabilities": [
+      0.0074566020630300045,
+      0.9816795587539673,
+      0.010863854549825191
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_0_blur",
+    "model": "species",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      256,
+      512,
+      768
+    ],
+    "probabilities": [
+      0.012439658865332603,
+      0.9569688439369202,
+      0.030591482296586037
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_0_blur",
+    "model": "species",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      448,
+      256,
+      960,
+      768
+    ],
+    "probabilities": [
+      0.0013911582063883543,
+      0.9821552634239197,
+      0.0164535753428936
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_0_blur",
+    "model": "species",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      512,
+      256,
+      1024,
+      768
+    ],
+    "probabilities": [
+      0.001002501929178834,
+      0.9896746277809143,
+      0.009322898462414742
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_1_reference",
+    "model": "binary",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      8.174604772648308e-06,
+      0.999991774559021
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_1_reference",
+    "model": "binary",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      0.0222616046667099,
+      0.9777383804321289
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_1_reference",
+    "model": "binary",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "probabilities": [
+      0.001269458094611764,
+      0.998730480670929
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_1_reference",
+    "model": "binary",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      256,
+      512,
+      768
+    ],
+    "probabilities": [
+      0.002377590863034129,
+      0.9976224303245544
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_1_reference",
+    "model": "binary",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      256,
+      960,
+      768
+    ],
+    "probabilities": [
+      0.26436999440193176,
+      0.7356299757957458
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_1_reference",
+    "model": "binary",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      512,
+      256,
+      1024,
+      768
+    ],
+    "probabilities": [
+      0.24437932670116425,
+      0.7556206583976746
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_1_reference",
+    "model": "species",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.06239316985011101,
+      0.5108739733695984,
+      0.4267328977584839
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_1_reference",
+    "model": "species",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      0.016242852434515953,
+      0.9175584316253662,
+      0.06619872897863388
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_1_reference",
+    "model": "species",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "probabilities": [
+      0.08262735605239868,
+      0.8705741763114929,
+      0.046798527240753174
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_1_reference",
+    "model": "species",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      256,
+      512,
+      768
+    ],
+    "probabilities": [
+      0.09713584184646606,
+      0.4652743935585022,
+      0.43758976459503174
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_1_reference",
+    "model": "species",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      256,
+      960,
+      768
+    ],
+    "probabilities": [
+      0.04070732370018959,
+      0.7510184049606323,
+      0.20827427506446838
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_1_reference",
+    "model": "species",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      512,
+      256,
+      1024,
+      768
+    ],
+    "probabilities": [
+      0.055700551718473434,
+      0.7040684223175049,
+      0.240230992436409
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_1_darker",
+    "model": "binary",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.00018545088823884726,
+      0.9998145699501038
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_1_darker",
+    "model": "binary",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      8.577058906666934e-05,
+      0.9999141693115234
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_1_darker",
+    "model": "binary",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "probabilities": [
+      0.003386405296623707,
+      0.9966135621070862
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_1_darker",
+    "model": "binary",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      256,
+      512,
+      768
+    ],
+    "probabilities": [
+      0.0022066053934395313,
+      0.997793436050415
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_1_darker",
+    "model": "binary",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      256,
+      960,
+      768
+    ],
+    "probabilities": [
+      0.09558693319559097,
+      0.9044130444526672
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_1_darker",
+    "model": "binary",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      512,
+      256,
+      1024,
+      768
+    ],
+    "probabilities": [
+      0.007506558671593666,
+      0.9924934506416321
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_1_darker",
+    "model": "species",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.015586580149829388,
+      4.842614725930616e-05,
+      0.9843649864196777
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_1_darker",
+    "model": "species",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      0.028673021122813225,
+      0.0005167031195014715,
+      0.9708102345466614
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_1_darker",
+    "model": "species",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "probabilities": [
+      0.018926525488495827,
+      0.0001627954770810902,
+      0.9809107184410095
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_1_darker",
+    "model": "species",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      256,
+      512,
+      768
+    ],
+    "probabilities": [
+      0.0215874295681715,
+      0.002495978958904743,
+      0.9759165644645691
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_1_darker",
+    "model": "species",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      256,
+      960,
+      768
+    ],
+    "probabilities": [
+      0.013582408428192139,
+      0.03553304076194763,
+      0.9508845210075378
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_1_darker",
+    "model": "species",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      512,
+      256,
+      1024,
+      768
+    ],
+    "probabilities": [
+      0.001789624453522265,
+      0.0005803356762044132,
+      0.9976300001144409
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_1_blur",
+    "model": "binary",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      1.2842799151258077e-05,
+      0.9999871253967285
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_1_blur",
+    "model": "binary",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      0.00010605715215206146,
+      0.9998939037322998
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_1_blur",
+    "model": "binary",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "probabilities": [
+      4.2019753891509026e-05,
+      0.9999579191207886
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_1_blur",
+    "model": "binary",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      256,
+      512,
+      768
+    ],
+    "probabilities": [
+      7.8067765571177e-05,
+      0.9999219179153442
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_1_blur",
+    "model": "binary",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      256,
+      960,
+      768
+    ],
+    "probabilities": [
+      0.00016562275413889438,
+      0.9998342990875244
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_1_blur",
+    "model": "binary",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      512,
+      256,
+      1024,
+      768
+    ],
+    "probabilities": [
+      0.00043174572056159377,
+      0.9995682835578918
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_1_blur",
+    "model": "species",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.052508313208818436,
+      0.2475191354751587,
+      0.6999725103378296
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_1_blur",
+    "model": "species",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      0.0023593471851199865,
+      0.9892997741699219,
+      0.00834083091467619
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_1_blur",
+    "model": "species",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "probabilities": [
+      0.0372413694858551,
+      0.6219661235809326,
+      0.34079256653785706
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_1_blur",
+    "model": "species",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      256,
+      512,
+      768
+    ],
+    "probabilities": [
+      0.03934432938694954,
+      0.7015502452850342,
+      0.2591054141521454
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_1_blur",
+    "model": "species",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      256,
+      960,
+      768
+    ],
+    "probabilities": [
+      1.2600923582795076e-05,
+      0.9991989731788635,
+      0.0007884471560828388
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_1_blur",
+    "model": "species",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      512,
+      256,
+      1024,
+      768
+    ],
+    "probabilities": [
+      6.075630153645761e-05,
+      0.992512583732605,
+      0.007426631171256304
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_2_reference",
+    "model": "binary",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.7893968820571899,
+      0.21060313284397125
+    ],
+    "label": "Non-Mangrove"
+  },
+  {
+    "image_id": "source_2_reference",
+    "model": "binary",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      0.1956925243139267,
+      0.8043074607849121
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_2_reference",
+    "model": "binary",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "probabilities": [
+      0.6832911968231201,
+      0.3167088031768799
+    ],
+    "label": "Non-Mangrove"
+  },
+  {
+    "image_id": "source_2_reference",
+    "model": "binary",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      0,
+      256,
+      512,
+      768
+    ],
+    "probabilities": [
+      0.0007454341393895447,
+      0.9992545247077942
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_2_reference",
+    "model": "binary",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      448,
+      256,
+      960,
+      768
+    ],
+    "probabilities": [
+      0.2467368096113205,
+      0.7532631158828735
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_2_reference",
+    "model": "binary",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      512,
+      256,
+      1024,
+      768
+    ],
+    "probabilities": [
+      0.8315102458000183,
+      0.1684897094964981
+    ],
+    "label": "Non-Mangrove"
+  },
+  {
+    "image_id": "source_2_reference",
+    "model": "species",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.36687058210372925,
+      0.005450795870274305,
+      0.6276786923408508
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_2_reference",
+    "model": "species",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      0.022249193862080574,
+      0.9047740697860718,
+      0.07297682762145996
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_2_reference",
+    "model": "species",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "probabilities": [
+      0.017141034826636314,
+      0.9195055961608887,
+      0.06335332989692688
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_2_reference",
+    "model": "species",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      0,
+      256,
+      512,
+      768
+    ],
+    "probabilities": [
+      0.1562177836894989,
+      0.26127734780311584,
+      0.5825048685073853
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_2_reference",
+    "model": "species",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      448,
+      256,
+      960,
+      768
+    ],
+    "probabilities": [
+      0.07533949613571167,
+      0.6217964887619019,
+      0.3028639853000641
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_2_reference",
+    "model": "species",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      512,
+      256,
+      1024,
+      768
+    ],
+    "probabilities": [
+      0.15924738347530365,
+      0.7148336172103882,
+      0.12591905891895294
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_2_darker",
+    "model": "binary",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.058856524527072906,
+      0.9411435127258301
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_2_darker",
+    "model": "binary",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      0.8806810975074768,
+      0.11931891739368439
+    ],
+    "label": "Non-Mangrove"
+  },
+  {
+    "image_id": "source_2_darker",
+    "model": "binary",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "probabilities": [
+      0.9554239511489868,
+      0.04457608610391617
+    ],
+    "label": "Non-Mangrove"
+  },
+  {
+    "image_id": "source_2_darker",
+    "model": "binary",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      0,
+      256,
+      512,
+      768
+    ],
+    "probabilities": [
+      0.0006413042428903282,
+      0.9993587136268616
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_2_darker",
+    "model": "binary",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      448,
+      256,
+      960,
+      768
+    ],
+    "probabilities": [
+      0.2724112868309021,
+      0.7275887727737427
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_2_darker",
+    "model": "binary",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      512,
+      256,
+      1024,
+      768
+    ],
+    "probabilities": [
+      0.06331401318311691,
+      0.9366860389709473
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_2_darker",
+    "model": "species",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.0007195762009359896,
+      0.008703058585524559,
+      0.9905773401260376
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_2_darker",
+    "model": "species",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      0.00480719655752182,
+      0.3592754602432251,
+      0.6359173059463501
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_2_darker",
+    "model": "species",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "probabilities": [
+      0.006603643763810396,
+      0.18088631331920624,
+      0.8125100135803223
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_2_darker",
+    "model": "species",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      0,
+      256,
+      512,
+      768
+    ],
+    "probabilities": [
+      0.0032343692146241665,
+      0.26537278294563293,
+      0.7313928604125977
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_2_darker",
+    "model": "species",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      448,
+      256,
+      960,
+      768
+    ],
+    "probabilities": [
+      0.0012509982334449887,
+      0.49044087529182434,
+      0.5083081126213074
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_2_darker",
+    "model": "species",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      512,
+      256,
+      1024,
+      768
+    ],
+    "probabilities": [
+      0.0013025415828451514,
+      0.3342494070529938,
+      0.6644479632377625
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_2_blur",
+    "model": "binary",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.577671229839325,
+      0.4223287105560303
+    ],
+    "label": "Non-Mangrove"
+  },
+  {
+    "image_id": "source_2_blur",
+    "model": "binary",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      0.9906692504882812,
+      0.009330705739557743
+    ],
+    "label": "Non-Mangrove"
+  },
+  {
+    "image_id": "source_2_blur",
+    "model": "binary",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "probabilities": [
+      0.9420832395553589,
+      0.05791676044464111
+    ],
+    "label": "Non-Mangrove"
+  },
+  {
+    "image_id": "source_2_blur",
+    "model": "binary",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      0,
+      256,
+      512,
+      768
+    ],
+    "probabilities": [
+      0.3148128390312195,
+      0.6851871609687805
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_2_blur",
+    "model": "binary",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      448,
+      256,
+      960,
+      768
+    ],
+    "probabilities": [
+      0.38961324095726013,
+      0.6103867292404175
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "source_2_blur",
+    "model": "binary",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      512,
+      256,
+      1024,
+      768
+    ],
+    "probabilities": [
+      0.7679691910743713,
+      0.23203082382678986
+    ],
+    "label": "Non-Mangrove"
+  },
+  {
+    "image_id": "source_2_blur",
+    "model": "species",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.18027135729789734,
+      0.6252775192260742,
+      0.19445115327835083
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_2_blur",
+    "model": "species",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      0.012524380348622799,
+      0.9443554282188416,
+      0.043120235204696655
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_2_blur",
+    "model": "species",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      512,
+      0,
+      1024,
+      512
+    ],
+    "probabilities": [
+      0.0185282900929451,
+      0.9613877534866333,
+      0.020083939656615257
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_2_blur",
+    "model": "species",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      0,
+      256,
+      512,
+      768
+    ],
+    "probabilities": [
+      0.043358515948057175,
+      0.13819600641727448,
+      0.8184455037117004
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "source_2_blur",
+    "model": "species",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      448,
+      256,
+      960,
+      768
+    ],
+    "probabilities": [
+      0.022161031141877174,
+      0.9276412725448608,
+      0.05019771680235863
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "source_2_blur",
+    "model": "species",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "box": [
+      512,
+      256,
+      1024,
+      768
+    ],
+    "probabilities": [
+      0.08928870409727097,
+      0.7764735817909241,
+      0.13423772156238556
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "small",
+    "model": "binary",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      0,
+      180,
+      120
+    ],
+    "probabilities": [
+      0.4882940948009491,
+      0.5117059350013733
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "small",
+    "model": "species",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      0,
+      180,
+      120
+    ],
+    "probabilities": [
+      0.01876833103597164,
+      0.9654381275177002,
+      0.01579352840781212
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "edge",
+    "model": "binary",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.0030793927144259214,
+      0.9969205856323242
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "edge",
+    "model": "binary",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      1,
+      0,
+      513,
+      512
+    ],
+    "probabilities": [
+      0.00020881737873423845,
+      0.9997912049293518
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "edge",
+    "model": "binary",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      257,
+      512,
+      769
+    ],
+    "probabilities": [
+      0.0001295815163757652,
+      0.9998704195022583
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "edge",
+    "model": "binary",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      1,
+      257,
+      513,
+      769
+    ],
+    "probabilities": [
+      0.0001360882306471467,
+      0.999863862991333
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "edge",
+    "model": "species",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.02167833410203457,
+      0.4370388686656952,
+      0.5412827730178833
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "edge",
+    "model": "species",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      1,
+      0,
+      513,
+      512
+    ],
+    "probabilities": [
+      0.03063507378101349,
+      0.20583795011043549,
+      0.763526976108551
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "edge",
+    "model": "species",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      257,
+      512,
+      769
+    ],
+    "probabilities": [
+      0.004358240868896246,
+      0.04036774858832359,
+      0.9552740454673767
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "edge",
+    "model": "species",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      1,
+      257,
+      513,
+      769
+    ],
+    "probabilities": [
+      0.0034109842963516712,
+      0.01655498892068863,
+      0.9800339937210083
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "grayscale",
+    "model": "binary",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.9915213584899902,
+      0.008478658273816109
+    ],
+    "label": "Non-Mangrove"
+  },
+  {
+    "image_id": "grayscale",
+    "model": "species",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.06851112842559814,
+      0.03463088348507881,
+      0.8968579769134521
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "rgba",
+    "model": "binary",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.0021047955378890038,
+      0.9978951215744019
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "rgba",
+    "model": "species",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.13498975336551666,
+      0.19547004997730255,
+      0.6695401668548584
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      4.205680874630295e-14,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      1.8857194451771253e-12,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      896,
+      0,
+      1408,
+      512
+    ],
+    "probabilities": [
+      7.786812508811178e-14,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1344,
+      0,
+      1856,
+      512
+    ],
+    "probabilities": [
+      2.3927236060539148e-12,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1792,
+      0,
+      2304,
+      512
+    ],
+    "probabilities": [
+      7.054322132948182e-14,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2240,
+      0,
+      2752,
+      512
+    ],
+    "probabilities": [
+      2.45943369836521e-11,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 6,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2688,
+      0,
+      3200,
+      512
+    ],
+    "probabilities": [
+      1.9575240628455504e-07,
+      0.9999997615814209
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 7,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3136,
+      0,
+      3648,
+      512
+    ],
+    "probabilities": [
+      2.2072895594638098e-11,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 8,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3520,
+      0,
+      4032,
+      512
+    ],
+    "probabilities": [
+      1.0468709232824835e-10,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 9,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      448,
+      512,
+      960
+    ],
+    "probabilities": [
+      2.723618348270205e-14,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 10,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      448,
+      960,
+      960
+    ],
+    "probabilities": [
+      2.1965967239578887e-11,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 11,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      896,
+      448,
+      1408,
+      960
+    ],
+    "probabilities": [
+      4.531422556386692e-15,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 12,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1344,
+      448,
+      1856,
+      960
+    ],
+    "probabilities": [
+      2.0690351654195638e-09,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 13,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1792,
+      448,
+      2304,
+      960
+    ],
+    "probabilities": [
+      9.840043446729396e-09,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 14,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2240,
+      448,
+      2752,
+      960
+    ],
+    "probabilities": [
+      7.886660075007157e-14,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 15,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2688,
+      448,
+      3200,
+      960
+    ],
+    "probabilities": [
+      7.121584211233767e-09,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 16,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3136,
+      448,
+      3648,
+      960
+    ],
+    "probabilities": [
+      5.91103636307308e-15,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 17,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3520,
+      448,
+      4032,
+      960
+    ],
+    "probabilities": [
+      2.5071036131153216e-23,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 18,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      896,
+      512,
+      1408
+    ],
+    "probabilities": [
+      2.193765134828052e-12,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 19,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      896,
+      960,
+      1408
+    ],
+    "probabilities": [
+      1.3567122980617796e-09,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 20,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      896,
+      896,
+      1408,
+      1408
+    ],
+    "probabilities": [
+      9.04677742426443e-21,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 21,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1344,
+      896,
+      1856,
+      1408
+    ],
+    "probabilities": [
+      2.0782200849112087e-08,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 22,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1792,
+      896,
+      2304,
+      1408
+    ],
+    "probabilities": [
+      4.91162249760535e-11,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 23,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2240,
+      896,
+      2752,
+      1408
+    ],
+    "probabilities": [
+      1.0025552902711231e-15,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 24,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2688,
+      896,
+      3200,
+      1408
+    ],
+    "probabilities": [
+      4.3328749498209606e-17,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 25,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3136,
+      896,
+      3648,
+      1408
+    ],
+    "probabilities": [
+      8.350656290241282e-17,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 26,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3520,
+      896,
+      4032,
+      1408
+    ],
+    "probabilities": [
+      6.643028045806838e-19,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 27,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      1344,
+      512,
+      1856
+    ],
+    "probabilities": [
+      2.1956249318666465e-11,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 28,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      1344,
+      960,
+      1856
+    ],
+    "probabilities": [
+      1.5181363943739257e-09,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 29,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      896,
+      1344,
+      1408,
+      1856
+    ],
+    "probabilities": [
+      3.418767846596893e-08,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 30,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1344,
+      1344,
+      1856,
+      1856
+    ],
+    "probabilities": [
+      1.115283490560337e-10,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 31,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1792,
+      1344,
+      2304,
+      1856
+    ],
+    "probabilities": [
+      6.363357063499109e-10,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 32,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2240,
+      1344,
+      2752,
+      1856
+    ],
+    "probabilities": [
+      3.055816708073637e-14,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 33,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2688,
+      1344,
+      3200,
+      1856
+    ],
+    "probabilities": [
+      2.25593328866892e-16,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 34,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3136,
+      1344,
+      3648,
+      1856
+    ],
+    "probabilities": [
+      5.842883668620525e-15,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 35,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3520,
+      1344,
+      4032,
+      1856
+    ],
+    "probabilities": [
+      1.44071431657834e-15,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 36,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      1792,
+      512,
+      2304
+    ],
+    "probabilities": [
+      1.6586990114753064e-10,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 37,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      1792,
+      960,
+      2304
+    ],
+    "probabilities": [
+      5.499795514434013e-17,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 38,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      896,
+      1792,
+      1408,
+      2304
+    ],
+    "probabilities": [
+      1.244553544665905e-07,
+      0.9999998807907104
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 39,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1344,
+      1792,
+      1856,
+      2304
+    ],
+    "probabilities": [
+      4.4029790924327017e-10,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 40,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1792,
+      1792,
+      2304,
+      2304
+    ],
+    "probabilities": [
+      3.7971416375764955e-13,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 41,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2240,
+      1792,
+      2752,
+      2304
+    ],
+    "probabilities": [
+      3.625770694017658e-15,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 42,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2688,
+      1792,
+      3200,
+      2304
+    ],
+    "probabilities": [
+      1.810313463399799e-19,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 43,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3136,
+      1792,
+      3648,
+      2304
+    ],
+    "probabilities": [
+      4.033957612392669e-09,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 44,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3520,
+      1792,
+      4032,
+      2304
+    ],
+    "probabilities": [
+      1.4624390023629252e-12,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 45,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      2240,
+      512,
+      2752
+    ],
+    "probabilities": [
+      6.975751920546003e-11,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 46,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      2240,
+      960,
+      2752
+    ],
+    "probabilities": [
+      1.8089599913492793e-12,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 47,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      896,
+      2240,
+      1408,
+      2752
+    ],
+    "probabilities": [
+      1.3432298329174586e-10,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 48,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1344,
+      2240,
+      1856,
+      2752
+    ],
+    "probabilities": [
+      4.4960088711916424e-13,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 49,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1792,
+      2240,
+      2304,
+      2752
+    ],
+    "probabilities": [
+      1.234353175227909e-10,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 50,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2240,
+      2240,
+      2752,
+      2752
+    ],
+    "probabilities": [
+      2.4537286807437e-13,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 51,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2688,
+      2240,
+      3200,
+      2752
+    ],
+    "probabilities": [
+      3.444222310784381e-15,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 52,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3136,
+      2240,
+      3648,
+      2752
+    ],
+    "probabilities": [
+      7.329034019676328e-07,
+      0.9999992847442627
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 53,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3520,
+      2240,
+      4032,
+      2752
+    ],
+    "probabilities": [
+      9.720594148403608e-14,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 54,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      2512,
+      512,
+      3024
+    ],
+    "probabilities": [
+      5.14493063766535e-15,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 55,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      2512,
+      960,
+      3024
+    ],
+    "probabilities": [
+      5.05607871108954e-13,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 56,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      896,
+      2512,
+      1408,
+      3024
+    ],
+    "probabilities": [
+      1.3688990516618578e-15,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 57,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1344,
+      2512,
+      1856,
+      3024
+    ],
+    "probabilities": [
+      5.570766287502082e-16,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 58,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1792,
+      2512,
+      2304,
+      3024
+    ],
+    "probabilities": [
+      4.791177915156432e-15,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 59,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2240,
+      2512,
+      2752,
+      3024
+    ],
+    "probabilities": [
+      9.35349280667408e-12,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 60,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2688,
+      2512,
+      3200,
+      3024
+    ],
+    "probabilities": [
+      7.762319433057829e-13,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 61,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3136,
+      2512,
+      3648,
+      3024
+    ],
+    "probabilities": [
+      2.5356608902415284e-15,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "binary",
+    "tile_id": 62,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3520,
+      2512,
+      4032,
+      3024
+    ],
+    "probabilities": [
+      8.213664936997794e-14,
+      1.0
+    ],
+    "label": "Mangrove"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 0,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      0,
+      512,
+      512
+    ],
+    "probabilities": [
+      0.0990036129951477,
+      0.5644453763961792,
+      0.3365509808063507
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 1,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      0,
+      960,
+      512
+    ],
+    "probabilities": [
+      0.6009824275970459,
+      0.15266096591949463,
+      0.2463565319776535
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 2,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      896,
+      0,
+      1408,
+      512
+    ],
+    "probabilities": [
+      0.00023847214470151812,
+      1.6151036106748506e-05,
+      0.9997454285621643
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 3,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1344,
+      0,
+      1856,
+      512
+    ],
+    "probabilities": [
+      0.2664239704608917,
+      0.023959102109074593,
+      0.7096168994903564
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 4,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1792,
+      0,
+      2304,
+      512
+    ],
+    "probabilities": [
+      0.24813511967658997,
+      0.021772660315036774,
+      0.7300922274589539
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 5,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2240,
+      0,
+      2752,
+      512
+    ],
+    "probabilities": [
+      0.1501026451587677,
+      0.006111715454608202,
+      0.8437856435775757
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 6,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2688,
+      0,
+      3200,
+      512
+    ],
+    "probabilities": [
+      0.002352258423343301,
+      2.224268200734514e-06,
+      0.9976455569267273
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 7,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3136,
+      0,
+      3648,
+      512
+    ],
+    "probabilities": [
+      1.9412827896303497e-06,
+      9.6412395578227e-07,
+      0.9999971389770508
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 8,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3520,
+      0,
+      4032,
+      512
+    ],
+    "probabilities": [
+      0.9372755885124207,
+      0.00015246786642819643,
+      0.06257189065217972
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 9,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      448,
+      512,
+      960
+    ],
+    "probabilities": [
+      0.13983692228794098,
+      0.038797006011009216,
+      0.8213661313056946
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 10,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      448,
+      960,
+      960
+    ],
+    "probabilities": [
+      0.08966357260942459,
+      0.12959225475788116,
+      0.7807441353797913
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 11,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      896,
+      448,
+      1408,
+      960
+    ],
+    "probabilities": [
+      0.28852391242980957,
+      0.11117543280124664,
+      0.6003007292747498
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 12,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1344,
+      448,
+      1856,
+      960
+    ],
+    "probabilities": [
+      0.05827775597572327,
+      0.04878043010830879,
+      0.8929418325424194
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 13,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1792,
+      448,
+      2304,
+      960
+    ],
+    "probabilities": [
+      0.6119467616081238,
+      0.04939469322562218,
+      0.33865848183631897
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 14,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2240,
+      448,
+      2752,
+      960
+    ],
+    "probabilities": [
+      0.00041375510045327246,
+      0.0006126008811406791,
+      0.9989736080169678
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 15,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2688,
+      448,
+      3200,
+      960
+    ],
+    "probabilities": [
+      0.11034873127937317,
+      0.17072688043117523,
+      0.718924343585968
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 16,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3136,
+      448,
+      3648,
+      960
+    ],
+    "probabilities": [
+      0.4159857928752899,
+      0.17675065994262695,
+      0.40726351737976074
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 17,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3520,
+      448,
+      4032,
+      960
+    ],
+    "probabilities": [
+      0.6366535425186157,
+      0.22997795045375824,
+      0.13336852192878723
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 18,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      896,
+      512,
+      1408
+    ],
+    "probabilities": [
+      0.21698839962482452,
+      0.2641967535018921,
+      0.5188148617744446
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 19,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      896,
+      960,
+      1408
+    ],
+    "probabilities": [
+      0.6593685746192932,
+      0.046073608100414276,
+      0.2945578694343567
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 20,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      896,
+      896,
+      1408,
+      1408
+    ],
+    "probabilities": [
+      0.016507333144545555,
+      0.03202570974826813,
+      0.9514669179916382
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 21,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1344,
+      896,
+      1856,
+      1408
+    ],
+    "probabilities": [
+      0.0003033099346794188,
+      0.0006992386770434678,
+      0.9989975094795227
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 22,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1792,
+      896,
+      2304,
+      1408
+    ],
+    "probabilities": [
+      0.05816270038485527,
+      0.007089993450790644,
+      0.9347472786903381
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 23,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2240,
+      896,
+      2752,
+      1408
+    ],
+    "probabilities": [
+      0.05618066340684891,
+      0.06729760766029358,
+      0.8765217065811157
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 24,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2688,
+      896,
+      3200,
+      1408
+    ],
+    "probabilities": [
+      0.015463331714272499,
+      0.0017267290968447924,
+      0.9828099012374878
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 25,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3136,
+      896,
+      3648,
+      1408
+    ],
+    "probabilities": [
+      0.8423534631729126,
+      0.0038387326058000326,
+      0.1538078784942627
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 26,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3520,
+      896,
+      4032,
+      1408
+    ],
+    "probabilities": [
+      0.9891827702522278,
+      0.003513439791277051,
+      0.007303799502551556
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 27,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      1344,
+      512,
+      1856
+    ],
+    "probabilities": [
+      0.09203091263771057,
+      0.353892058134079,
+      0.5540769696235657
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 28,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      1344,
+      960,
+      1856
+    ],
+    "probabilities": [
+      0.8741268515586853,
+      0.016829440370202065,
+      0.1090436577796936
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 29,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      896,
+      1344,
+      1408,
+      1856
+    ],
+    "probabilities": [
+      0.0004018350737169385,
+      0.00019721219723578542,
+      0.9994009733200073
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 30,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1344,
+      1344,
+      1856,
+      1856
+    ],
+    "probabilities": [
+      0.00019784492906183004,
+      0.012719018384814262,
+      0.9870831966400146
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 31,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1792,
+      1344,
+      2304,
+      1856
+    ],
+    "probabilities": [
+      0.0025393401738256216,
+      0.005724199581891298,
+      0.9917364716529846
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 32,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2240,
+      1344,
+      2752,
+      1856
+    ],
+    "probabilities": [
+      0.00615735026076436,
+      0.008270001970231533,
+      0.9855726361274719
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 33,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2688,
+      1344,
+      3200,
+      1856
+    ],
+    "probabilities": [
+      0.517698347568512,
+      0.25579214096069336,
+      0.22650949656963348
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 34,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3136,
+      1344,
+      3648,
+      1856
+    ],
+    "probabilities": [
+      0.99830162525177,
+      0.0007033409783616662,
+      0.000994986854493618
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 35,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3520,
+      1344,
+      4032,
+      1856
+    ],
+    "probabilities": [
+      0.6511977314949036,
+      0.014501988887786865,
+      0.33430027961730957
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 36,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      1792,
+      512,
+      2304
+    ],
+    "probabilities": [
+      0.015022298321127892,
+      0.014186055399477482,
+      0.9707916975021362
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 37,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      1792,
+      960,
+      2304
+    ],
+    "probabilities": [
+      9.93663036297221e-08,
+      1.0813275608256845e-08,
+      0.9999998807907104
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 38,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      896,
+      1792,
+      1408,
+      2304
+    ],
+    "probabilities": [
+      0.019338559359312057,
+      0.022580772638320923,
+      0.9580807089805603
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 39,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1344,
+      1792,
+      1856,
+      2304
+    ],
+    "probabilities": [
+      0.8182024955749512,
+      0.0032734388951212168,
+      0.17852400243282318
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 40,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1792,
+      1792,
+      2304,
+      2304
+    ],
+    "probabilities": [
+      0.8747490644454956,
+      0.0575251430273056,
+      0.0677257850766182
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 41,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2240,
+      1792,
+      2752,
+      2304
+    ],
+    "probabilities": [
+      0.006775088142603636,
+      0.9037350416183472,
+      0.08948992937803268
+    ],
+    "label": "red"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 42,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2688,
+      1792,
+      3200,
+      2304
+    ],
+    "probabilities": [
+      0.003287632716819644,
+      0.0023536356166005135,
+      0.9943587183952332
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 43,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3136,
+      1792,
+      3648,
+      2304
+    ],
+    "probabilities": [
+      0.5174638628959656,
+      0.0038439356721937656,
+      0.4786921441555023
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 44,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3520,
+      1792,
+      4032,
+      2304
+    ],
+    "probabilities": [
+      0.9214117527008057,
+      0.001055226195603609,
+      0.07753299176692963
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 45,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      2240,
+      512,
+      2752
+    ],
+    "probabilities": [
+      0.8397626876831055,
+      0.017258385196328163,
+      0.14297893643379211
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 46,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      2240,
+      960,
+      2752
+    ],
+    "probabilities": [
+      2.8465068524496928e-08,
+      3.7685786935526266e-08,
+      0.9999998807907104
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 47,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      896,
+      2240,
+      1408,
+      2752
+    ],
+    "probabilities": [
+      4.822742880605801e-07,
+      2.1756096657554735e-07,
+      0.9999992847442627
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 48,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1344,
+      2240,
+      1856,
+      2752
+    ],
+    "probabilities": [
+      0.0029364379588514566,
+      0.0010943813249468803,
+      0.9959691762924194
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 49,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1792,
+      2240,
+      2304,
+      2752
+    ],
+    "probabilities": [
+      0.2549862861633301,
+      0.15419381856918335,
+      0.5908199548721313
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 50,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2240,
+      2240,
+      2752,
+      2752
+    ],
+    "probabilities": [
+      0.2425965517759323,
+      0.02173665724694729,
+      0.7356667518615723
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 51,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2688,
+      2240,
+      3200,
+      2752
+    ],
+    "probabilities": [
+      0.99957674741745,
+      0.00017098661919590086,
+      0.0002522164722904563
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 52,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3136,
+      2240,
+      3648,
+      2752
+    ],
+    "probabilities": [
+      0.8837190866470337,
+      0.01744478940963745,
+      0.09883605688810349
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 53,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3520,
+      2240,
+      4032,
+      2752
+    ],
+    "probabilities": [
+      0.8882246017456055,
+      0.10860844701528549,
+      0.0031670317985117435
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 54,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      0,
+      2512,
+      512,
+      3024
+    ],
+    "probabilities": [
+      0.8802124857902527,
+      5.064642027718946e-05,
+      0.11973682790994644
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 55,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      448,
+      2512,
+      960,
+      3024
+    ],
+    "probabilities": [
+      0.9940233826637268,
+      0.002767926547676325,
+      0.0032086072023957968
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 56,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      896,
+      2512,
+      1408,
+      3024
+    ],
+    "probabilities": [
+      2.2093315621418697e-08,
+      1.1983368963797147e-08,
+      1.0
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 57,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1344,
+      2512,
+      1856,
+      3024
+    ],
+    "probabilities": [
+      3.7863028268247945e-08,
+      1.3484812200204033e-07,
+      0.9999998807907104
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 58,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      1792,
+      2512,
+      2304,
+      3024
+    ],
+    "probabilities": [
+      0.526603102684021,
+      0.0028350334614515305,
+      0.4705619513988495
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 59,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2240,
+      2512,
+      2752,
+      3024
+    ],
+    "probabilities": [
+      0.0004503063973970711,
+      2.4300652512465604e-05,
+      0.9995254278182983
+    ],
+    "label": "yellow"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 60,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      2688,
+      2512,
+      3200,
+      3024
+    ],
+    "probabilities": [
+      0.9884915351867676,
+      0.002440663753077388,
+      0.009067832492291927
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 61,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3136,
+      2512,
+      3648,
+      3024
+    ],
+    "probabilities": [
+      0.995908260345459,
+      0.0019477721070870757,
+      0.002143965568393469
+    ],
+    "label": "orange"
+  },
+  {
+    "image_id": "full_resolution",
+    "model": "species",
+    "tile_id": 62,
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "box": [
+      3520,
+      2512,
+      4032,
+      3024
+    ],
+    "probabilities": [
+      0.9593584537506104,
+      0.0398738756775856,
+      0.0007677391986362636
+    ],
+    "label": "orange"
+  }
+]

@@ -1,0 +1,548 @@
+[
+  {
+    "id": "source_0_reference",
+    "model": "binary",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "variant": "reference",
+    "derived": true,
+    "label": "Mangrove",
+    "confidence": 0.8339434266090393,
+    "tiles": 6,
+    "tile_inference_seconds": 0.18642533314414322,
+    "probability": [
+      0.1660565584897995,
+      0.8339434266090393
+    ],
+    "tile_vote_agreement": 1.0,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "source_0_reference",
+    "model": "species",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "variant": "reference",
+    "derived": true,
+    "label": "red",
+    "confidence": 0.6448785662651062,
+    "tiles": 6,
+    "tile_inference_seconds": 0.15534604201093316,
+    "probability": [
+      0.07632578164339066,
+      0.6448785662651062,
+      0.27879562973976135
+    ],
+    "tile_vote_agreement": 0.6666666666666666,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "source_0_darker",
+    "model": "binary",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "variant": "darker",
+    "derived": true,
+    "label": "Mangrove",
+    "confidence": 0.5569779872894287,
+    "tiles": 6,
+    "tile_inference_seconds": 0.15415537497028708,
+    "probability": [
+      0.4430219233036041,
+      0.5569779872894287
+    ],
+    "tile_vote_agreement": 0.5,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "source_0_darker",
+    "model": "species",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "variant": "darker",
+    "derived": true,
+    "label": "yellow",
+    "confidence": 0.692162275314331,
+    "tiles": 6,
+    "tile_inference_seconds": 0.15392795903608203,
+    "probability": [
+      0.029535764828324318,
+      0.27830198407173157,
+      0.692162275314331
+    ],
+    "tile_vote_agreement": 0.8333333333333334,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "source_0_blur",
+    "model": "binary",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "variant": "blur",
+    "derived": true,
+    "label": "Mangrove",
+    "confidence": 0.985023021697998,
+    "tiles": 6,
+    "tile_inference_seconds": 0.15249212505295873,
+    "probability": [
+      0.014976989477872849,
+      0.985023021697998
+    ],
+    "tile_vote_agreement": 1.0,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "source_0_blur",
+    "model": "species",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "variant": "blur",
+    "derived": true,
+    "label": "red",
+    "confidence": 0.9122491478919983,
+    "tiles": 6,
+    "tile_inference_seconds": 0.1525334999896586,
+    "probability": [
+      0.035775937139987946,
+      0.9122491478919983,
+      0.05197487398982048
+    ],
+    "tile_vote_agreement": 1.0,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "source_1_reference",
+    "model": "binary",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "variant": "reference",
+    "derived": true,
+    "label": "Mangrove",
+    "confidence": 0.9108889102935791,
+    "tiles": 6,
+    "tile_inference_seconds": 0.15617591608315706,
+    "probability": [
+      0.08911102265119553,
+      0.9108889102935791
+    ],
+    "tile_vote_agreement": 1.0,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "source_1_reference",
+    "model": "species",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "variant": "reference",
+    "derived": true,
+    "label": "red",
+    "confidence": 0.7032279968261719,
+    "tiles": 6,
+    "tile_inference_seconds": 0.15453908313065767,
+    "probability": [
+      0.05913451313972473,
+      0.7032279968261719,
+      0.23763753473758698
+    ],
+    "tile_vote_agreement": 1.0,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "source_1_darker",
+    "model": "binary",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "variant": "darker",
+    "derived": true,
+    "label": "Mangrove",
+    "confidence": 0.9818403720855713,
+    "tiles": 6,
+    "tile_inference_seconds": 0.15421883296221495,
+    "probability": [
+      0.018159620463848114,
+      0.9818403720855713
+    ],
+    "tile_vote_agreement": 1.0,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "source_1_darker",
+    "model": "species",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "variant": "darker",
+    "derived": true,
+    "label": "yellow",
+    "confidence": 0.9767528176307678,
+    "tiles": 6,
+    "tile_inference_seconds": 0.15569291613064706,
+    "probability": [
+      0.016690930351614952,
+      0.006556213367730379,
+      0.9767528176307678
+    ],
+    "tile_vote_agreement": 1.0,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "source_1_blur",
+    "model": "binary",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "variant": "blur",
+    "derived": true,
+    "label": "Mangrove",
+    "confidence": 0.9998605251312256,
+    "tiles": 6,
+    "tile_inference_seconds": 0.151291707996279,
+    "probability": [
+      0.00013939266500528902,
+      0.9998605251312256
+    ],
+    "tile_vote_agreement": 1.0,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "source_1_blur",
+    "model": "species",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "variant": "blur",
+    "derived": true,
+    "label": "red",
+    "confidence": 0.7586744427680969,
+    "tiles": 6,
+    "tile_inference_seconds": 0.1554247080348432,
+    "probability": [
+      0.02192111872136593,
+      0.7586744427680969,
+      0.219404399394989
+    ],
+    "tile_vote_agreement": 0.8333333333333334,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "source_2_reference",
+    "model": "binary",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "variant": "reference",
+    "derived": true,
+    "label": "Mangrove",
+    "confidence": 0.5421044230461121,
+    "tiles": 6,
+    "tile_inference_seconds": 0.15674325008876622,
+    "probability": [
+      0.45789551734924316,
+      0.5421044230461121
+    ],
+    "tile_vote_agreement": 0.5,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "source_2_reference",
+    "model": "species",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "variant": "reference",
+    "derived": true,
+    "label": "red",
+    "confidence": 0.5712730288505554,
+    "tiles": 6,
+    "tile_inference_seconds": 0.1545742079615593,
+    "probability": [
+      0.1328442543745041,
+      0.5712730288505554,
+      0.29588279128074646
+    ],
+    "tile_vote_agreement": 0.6666666666666666,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "source_2_darker",
+    "model": "binary",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "variant": "darker",
+    "derived": true,
+    "label": "Mangrove",
+    "confidence": 0.6281120181083679,
+    "tiles": 6,
+    "tile_inference_seconds": 0.157280792016536,
+    "probability": [
+      0.37188804149627686,
+      0.6281120181083679
+    ],
+    "tile_vote_agreement": 0.6666666666666666,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "source_2_darker",
+    "model": "species",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "variant": "darker",
+    "derived": true,
+    "label": "yellow",
+    "confidence": 0.7238588929176331,
+    "tiles": 6,
+    "tile_inference_seconds": 0.1548000001348555,
+    "probability": [
+      0.002986388048157096,
+      0.2731546461582184,
+      0.7238588929176331
+    ],
+    "tile_vote_agreement": 1.0,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "source_2_blur",
+    "model": "binary",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "variant": "blur",
+    "derived": true,
+    "label": "Non-Mangrove",
+    "confidence": 0.6638031601905823,
+    "tiles": 6,
+    "tile_inference_seconds": 0.1503887081053108,
+    "probability": [
+      0.6638031601905823,
+      0.33619681000709534
+    ],
+    "tile_vote_agreement": 0.6666666666666666,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "source_2_blur",
+    "model": "species",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_014_AIFNMangroveSurvey-Create-Area-Route10/DJI_20260922114936_0184_V.JPG",
+    "variant": "blur",
+    "derived": true,
+    "label": "red",
+    "confidence": 0.7288885712623596,
+    "tiles": 6,
+    "tile_inference_seconds": 0.1519839579705149,
+    "probability": [
+      0.06102204695343971,
+      0.7288885712623596,
+      0.21008938550949097
+    ],
+    "tile_vote_agreement": 0.8333333333333334,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "small",
+    "model": "binary",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "variant": "small",
+    "derived": true,
+    "label": "Mangrove",
+    "confidence": 0.5117059350013733,
+    "tiles": 1,
+    "tile_inference_seconds": 0.031232457840815187,
+    "probability": [
+      0.4882940948009491,
+      0.5117059350013733
+    ],
+    "tile_vote_agreement": 1.0,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "small",
+    "model": "species",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "variant": "small",
+    "derived": true,
+    "label": "red",
+    "confidence": 0.9654381275177002,
+    "tiles": 1,
+    "tile_inference_seconds": 0.030970040941610932,
+    "probability": [
+      0.01876833103597164,
+      0.9654381275177002,
+      0.01579352840781212
+    ],
+    "tile_vote_agreement": 1.0,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "edge",
+    "model": "binary",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "variant": "edge",
+    "derived": true,
+    "label": "Mangrove",
+    "confidence": 0.9991114735603333,
+    "tiles": 4,
+    "tile_inference_seconds": 0.10513000003993511,
+    "probability": [
+      0.000888469978235662,
+      0.9991114735603333
+    ],
+    "tile_vote_agreement": 1.0,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "edge",
+    "model": "species",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "variant": "edge",
+    "derived": true,
+    "label": "yellow",
+    "confidence": 0.8100295066833496,
+    "tiles": 4,
+    "tile_inference_seconds": 0.10603099991567433,
+    "probability": [
+      0.015020658262073994,
+      0.17494988441467285,
+      0.8100295066833496
+    ],
+    "tile_vote_agreement": 1.0,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "grayscale",
+    "model": "binary",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "variant": "grayscale",
+    "derived": true,
+    "label": "Non-Mangrove",
+    "confidence": 0.9915213584899902,
+    "tiles": 1,
+    "tile_inference_seconds": 0.032685874961316586,
+    "probability": [
+      0.9915213584899902,
+      0.008478658273816109
+    ],
+    "tile_vote_agreement": 1.0,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "grayscale",
+    "model": "species",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "variant": "grayscale",
+    "derived": true,
+    "label": "yellow",
+    "confidence": 0.8968579769134521,
+    "tiles": 1,
+    "tile_inference_seconds": 0.033603375079110265,
+    "probability": [
+      0.06851112842559814,
+      0.03463088348507881,
+      0.8968579769134521
+    ],
+    "tile_vote_agreement": 1.0,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "rgba",
+    "model": "binary",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "variant": "rgba",
+    "derived": true,
+    "label": "Mangrove",
+    "confidence": 0.9978951215744019,
+    "tiles": 1,
+    "tile_inference_seconds": 0.035411792108789086,
+    "probability": [
+      0.0021047955378890038,
+      0.9978951215744019
+    ],
+    "tile_vote_agreement": 1.0,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "rgba",
+    "model": "species",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_010_AIFNMangroveSurvey-Create-Area-Route12/DJI_20260922113343_0001_V.JPG",
+    "variant": "rgba",
+    "derived": true,
+    "label": "yellow",
+    "confidence": 0.6695401668548584,
+    "tiles": 1,
+    "tile_inference_seconds": 0.035365540999919176,
+    "probability": [
+      0.13498975336551666,
+      0.19547004997730255,
+      0.6695401668548584
+    ],
+    "tile_vote_agreement": 1.0,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "full_resolution",
+    "model": "binary",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "variant": "original",
+    "derived": false,
+    "label": "Mangrove",
+    "confidence": 1.0,
+    "tiles": 63,
+    "tile_inference_seconds": 3.6315005829092115,
+    "probability": [
+      1.803124227706121e-08,
+      1.0
+    ],
+    "tile_vote_agreement": 1.0,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  },
+  {
+    "id": "full_resolution",
+    "model": "species",
+    "source": "Mourilyan_Harbour_Fresh_Test_Images/Mangroves  Images Drone MT4 Mourilyan Harbour/DJI_202609221125_012_AIFNMangroveSurvey-Create-Area-Route13/DJI_20260922114305_0010_V.JPG",
+    "variant": "original",
+    "derived": false,
+    "label": "yellow",
+    "confidence": 0.5637230277061462,
+    "tiles": 63,
+    "tile_inference_seconds": 3.5254826250020415,
+    "probability": [
+      0.36962583661079407,
+      0.06665115058422089,
+      0.5637230277061462
+    ],
+    "tile_vote_agreement": 0.5555555555555556,
+    "truth": null,
+    "accuracy": null,
+    "interpretation": "Unlabelled diagnostic; category output is conditional on mangrove input and is not a species claim."
+  }
+]

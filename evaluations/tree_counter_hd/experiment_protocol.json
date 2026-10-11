@@ -1,0 +1,105 @@
+{
+  "registered_utc": "2026-10-11T08:20:21.110208+00:00",
+  "candidates": [
+    {
+      "confidence": 0.1,
+      "iou": 0.45,
+      "tile_size": 640,
+      "overlap": 64
+    },
+    {
+      "confidence": 0.15,
+      "iou": 0.45,
+      "tile_size": 640,
+      "overlap": 64
+    },
+    {
+      "confidence": 0.2,
+      "iou": 0.45,
+      "tile_size": 640,
+      "overlap": 64
+    },
+    {
+      "confidence": 0.3,
+      "iou": 0.45,
+      "tile_size": 640,
+      "overlap": 64
+    },
+    {
+      "confidence": 0.4,
+      "iou": 0.45,
+      "tile_size": 640,
+      "overlap": 64
+    },
+    {
+      "confidence": 0.5,
+      "iou": 0.45,
+      "tile_size": 640,
+      "overlap": 64
+    },
+    {
+      "confidence": 0.6,
+      "iou": 0.45,
+      "tile_size": 640,
+      "overlap": 64
+    },
+    {
+      "confidence": 0.7,
+      "iou": 0.45,
+      "tile_size": 640,
+      "overlap": 64
+    },
+    {
+      "confidence": 0.8,
+      "iou": 0.45,
+      "tile_size": 640,
+      "overlap": 64
+    },
+    {
+      "confidence": 0.9,
+      "iou": 0.45,
+      "tile_size": 640,
+      "overlap": 64
+    },
+    {
+      "confidence": 0.15,
+      "iou": 0.3,
+      "tile_size": 640,
+      "overlap": 64
+    },
+    {
+      "confidence": 0.15,
+      "iou": 0.6,
+      "tile_size": 640,
+      "overlap": 64
+    },
+    {
+      "confidence": 0.15,
+      "iou": 0.7,
+      "tile_size": 640,
+      "overlap": 64
+    }
+  ],
+  "selection": "Minimum validation count MAE; tie prefers baseline, then closest settings.",
+  "validation_ids": [
+    "bp_262122_4_174541_4_19_jpg.rf.fb4b9be196e6f3d3f6a9d7359405faf6",
+    "cd_261941_4_174271_4_19_jpg.rf.f6cdbea4b7ad3e9aee4ef217174de4a1",
+    "hh_261904_4_174211_4_19_jpg.rf.ed0184ffbb30ac792381537e32be187e",
+    "hh_261908_4_174207_4_19_jpg.rf.09f9becfb6b95a264e02a624c2bbf0fb",
+    "hn_262082_4_174234_4_19_jpg.rf.9f348d5c1e847fd37f6761fc410bf08e",
+    "is_261996_4_174274_4_19_jpg.rf.3dc6256ab4bc230de669aedc328aa764",
+    "kg_261733_4_174522_4_19_jpg.rf.f5a9a0a6052a663f89c245464769254a",
+    "kn_261727_4_174546_4_19_jpg.rf.ddaf45e19c4e0f1123643641110b53e0",
+    "ng_261974_4_174541_4_19_jpg.rf.915c30544a4e17be56cfc1ea15b3899e",
+    "rc_261714_4_174452_4_19_jpg.rf.8fc1040c3aff944c3625c73745b40d32",
+    "rp_261739_4_174479_4_19_jpg.rf.92008c6f1b9ba3b81acd78a8618d8fa4",
+    "rp_261743_4_174479_4_19_jpg.rf.7af4f0ab4f260ec6d6a7231429ce60d3",
+    "sc_261904_4_174259_4_19_jpg.rf.b309104e9a55e9bff2ba0143bc433953",
+    "sg_262078_4_174318_4_19_jpg.rf.5c4dbecea3f46460a9534d7772e59149",
+    "st_261964_4_174517_4_19_jpg.rf.53abeb1a92e18ee683b067af15ac5ce6",
+    "vp_262092_4_174266_4_19_jpg.rf.6efbfb7c6b0f27db14f18283a6355126",
+    "wb_261498_4_174683_4_19_jpg.rf.62ff0aa54158e6c9d848ee0a2e161a0d",
+    "wm_262126_4_174157_4_19_jpg.rf.5baa21b9fc2ee28e5f817898c30807aa"
+  ],
+  "prohibition": "Do not select settings using original-test, external-test, stress, or fresh-survey outputs."
+}

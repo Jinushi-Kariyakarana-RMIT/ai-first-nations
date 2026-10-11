@@ -1,0 +1,10 @@
+id,overlap,expected,predicted,raw_count,removed,tiles
+composite_00,0,195,166,166,0,4
+composite_01,0,313,284,284,0,4
+composite_02,0,478,324,324,0,4
+composite_00,64,195,170,454,284,9
+composite_01,64,313,288,644,356,9
+composite_02,64,478,333,805,472,9
+composite_00,128,195,171,452,281,9
+composite_01,128,313,288,630,342,9
+composite_02,128,478,333,766,433,9

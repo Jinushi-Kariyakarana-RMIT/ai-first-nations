@@ -1,0 +1,10 @@
+criterion,marks,status,evidence_or_gap
+Research questions and evaluation design,5,Implemented,"Scope, independent evaluation unit, targets and protocol are documented."
+Dataset audit and annotation quality,10,Partial,527-source inventory and duplicate checks; independent classifier annotations missing.
+Leakage prevention and splits,15,Blocked,Original training membership unavailable; source/site-separated labelled holdout not verified.
+Reproducibility and model setup,10,Partial,"Exact weights, settings, versions and source hashes recorded; historical species class mapping remains unverified."
+Classification metrics and calibration,20,Blocked,"Tested metric implementation exists, but no independent labelled accuracy, calibration or curves can be calculated."
+"Robustness, confounding and failure analysis",15,Partial,Real-weight brightness/blur/channel/edge diagnostics; no labelled site/condition performance.
+Controlled improvement experiments,10,Blocked,Two comparisons specified per model; no labelled validation data for fair selection or final testing.
+Flask integration and operational tests,10,Implemented with limits,"Actual HTTP parity, gate/failure tests, warm timing and process memory; limited hardware/repetitions."
+Notebook clarity and conclusions,5,Implemented,"Ten-section executed notebooks, source-backed tables, figures and explicit incomplete HD status."

@@ -1,0 +1,138 @@
+{
+  "removed": [
+    {
+      "path": "evaluations/tree_counter_preparation",
+      "bytes": 2830594
+    },
+    {
+      "path": "tree-counting-model/evaluation_pack/source/rgb",
+      "bytes": 107893002
+    },
+    {
+      "path": "evaluations/tree_counter_hd/app_uploads",
+      "bytes": 28756005
+    },
+    {
+      "path": "evaluations/tree_counter_hd/deployment_validation/app_uploads",
+      "bytes": 28787966
+    },
+    {
+      "path": "evaluations/tree_counter_hd/fresh_drone_direct_overlay.jpg",
+      "bytes": 7971347
+    },
+    {
+      "path": "evaluations/tree_counter_hd/composite_direct_overlay.jpg",
+      "bytes": 572426
+    },
+    {
+      "path": "evaluations/tree_counter_hd/neon_direct_overlay.jpg",
+      "bytes": 53258
+    },
+    {
+      "path": "evaluations/tree_counter_hd/original_direct_overlay.jpg",
+      "bytes": 143258
+    },
+    {
+      "path": "evaluations/tree_counter_hd/qa_counting.png",
+      "bytes": 297474
+    },
+    {
+      "path": "evaluations/tree_counter_hd/qa_checklist.png",
+      "bytes": 97304
+    },
+    {
+      "path": "evaluations/tree_counter_hd/qa_detection.png",
+      "bytes": 325129
+    },
+    {
+      "path": "evaluations/tree_counter_hd/qa_overview.png",
+      "bytes": 289331
+    },
+    {
+      "path": "evaluations/tree_counter_hd/qa_conclusion.png",
+      "bytes": 285097
+    },
+    {
+      "path": "evaluations/tree_counter_hd/html_review.log",
+      "bytes": 5729
+    },
+    {
+      "path": "evaluations/tree_counter_hd/browser_capture.log",
+      "bytes": 1328
+    },
+    {
+      "path": "evaluations/tree_counter_hd/deployment_validation/fresh_drone_direct_overlay.jpg",
+      "bytes": 7983754
+    },
+    {
+      "path": "evaluations/tree_counter_hd/deployment_validation/composite_direct_overlay.jpg",
+      "bytes": 577509
+    },
+    {
+      "path": "evaluations/tree_counter_hd/deployment_validation/neon_direct_overlay.jpg",
+      "bytes": 53258
+    },
+    {
+      "path": "evaluations/tree_counter_hd/deployment_validation/original_direct_overlay.jpg",
+      "bytes": 144693
+    },
+    {
+      "path": "evaluations/tree_counter_hd/deployment_validation/browser_capture.log",
+      "bytes": 1350
+    },
+    {
+      "path": "flask-application/__pycache__",
+      "bytes": 55054
+    },
+    {
+      "path": "tree-counting-model/__pycache__",
+      "bytes": 65410
+    },
+    {
+      "path": "tests/__pycache__",
+      "bytes": 17087
+    },
+    {
+      "path": "evaluations/tree_counter_hd/__pycache__",
+      "bytes": 52433
+    },
+    {
+      "path": "/tmp/hd-review-counting.html",
+      "bytes": 455483
+    },
+    {
+      "path": "/tmp/hd-review-detection.html",
+      "bytes": 459736
+    },
+    {
+      "path": "/tmp/hd-review-checklist.html",
+      "bytes": 277881
+    },
+    {
+      "path": "/tmp/hd-review-conclusion.html",
+      "bytes": 290664
+    },
+    {
+      "path": "/tmp/ai-first-nations-hd-browser",
+      "bytes": 3153167
+    },
+    {
+      "path": "/tmp/ai-first-nations-hd-review",
+      "bytes": 2863641
+    },
+    {
+      "path": "/tmp/ai-first-nations-spec",
+      "bytes": 432263
+    },
+    {
+      "path": "/tmp/ai-first-nations-hd-browser.log",
+      "bytes": 1469
+    },
+    {
+      "path": "/tmp/ai-first-nations-diff-check.txt",
+      "bytes": 0
+    }
+  ],
+  "total_bytes": 195194100,
+  "preserved": "Application code, weights, user uploads, survey photos, labelled evaluation datasets, notebooks, reports and reproducibility scripts."
+}

@@ -36,7 +36,11 @@ each environment must place the evaluated checkpoint at that path.
 The output includes `estimated_trees`, `detected_crowns`, `tiles_processed`,
 `average_confidence`, and the optional `overlay_path`.
 
-The default confidence threshold is `0.15`, selected on the validation split
-for count accuracy. The first model is experimental and tends to undercount
-dense crowns; see `evaluations/notebooks/evaluate_tree_counter_model.ipynb`
-for evidence.
+The application and command-line default confidence threshold is `0.10`, selected
+on the 18-image validation split to reduce counting error. Tile size remains 640,
+overlap 64, and duplicate-removal IoU 0.45. The saved weights are unchanged.
+
+This is an experimental estimate requiring manual review: external-image
+performance remains poor and original-source annotation marks/site overlap limit
+the accuracy evidence. See `evaluations/notebooks/YOLO_Tree_Counter_Evaluation.ipynb`
+for baseline-versus-candidate results and remaining data requirements.

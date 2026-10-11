@@ -23,6 +23,7 @@ from image_tiler import tile_image  # noqa: E402
 
 
 DEFAULT_MODEL_PATH = MODULE_DIR / "best_tree_counter.pt"
+DEFAULT_CONFIDENCE = 0.10
 DEFAULT_DATASET_YAML = MODULE_DIR / "dataset1" / "data.yaml"
 
 
@@ -135,7 +136,7 @@ def count_trees(
     model_path=DEFAULT_MODEL_PATH,
     tile_size=640,
     overlap=64,
-    confidence=0.15,
+    confidence=DEFAULT_CONFIDENCE,
     iou=0.45,
     overlay_path=None,
     model=None,
@@ -206,7 +207,7 @@ def main():
     count_parser.add_argument("--model", default=str(DEFAULT_MODEL_PATH))
     count_parser.add_argument("--tile-size", type=int, default=640)
     count_parser.add_argument("--overlap", type=int, default=64)
-    count_parser.add_argument("--confidence", type=float, default=0.15)
+    count_parser.add_argument("--confidence", type=float, default=DEFAULT_CONFIDENCE)
     count_parser.add_argument("--iou", type=float, default=0.45)
     count_parser.add_argument("--overlay")
 

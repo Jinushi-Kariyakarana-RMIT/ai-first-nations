@@ -1,0 +1,11 @@
+criterion,marks,status,evidence,remaining_gap
+Research design,5,Implemented,Notebook sections 1 and 11,Operational hardware targets need agreement.
+Dataset and EDA,10,Partial,"Source manifests, label checks, EDA, marker diagnostic",Independent expert annotation review and clean source imagery remain missing.
+Leakage prevention,10,NOT MET for original split,split_audit.json; notebook section 3,Original site overlap and embedded annotation markers; no untouched labelled Mourilyan holdout.
+Model reproducibility,10,Implemented locally,"environment.json, requirements-lock.txt, model hash, original args/history",Recipients must obtain the exact saved weights and source images; cross-device equality not claimed.
+Detection evaluation,15,Implemented on available labels,"Official COCO AP@300, PR curves, operating P/R/F1, known-answer tests",No mangrove-specific ground-truth accuracy; AP config differs from historical defaults.
+Counting evaluation,15,Partial,"Per-image/tile CSVs, MAE/RMSE/bias/relative error, bootstrap, failure cases",No verified unique-tree survey totals or Mourilyan counts.
+Tiling and robustness,10,Partial,"Coverage, coordinate/NMS tests, composites, 970 saved paired stress cases, 12 negative crops",Full-field boundary crowns and reviewed shadow/water/vegetation strata still missing.
+Improvement experiments,10,Implemented with limitations,Validation-only confidence and NMS studies; marker diagnostic,Validation data have original-source contamination; candidate is not deployed.
+Flask validation,10,Implemented for baseline,"Real HTTP tests, exact count/overlay parity, screenshot, latency/RSS",No agreed speed/memory budget; fresh full-resolution runtime has one repetition; candidate not deployed.
+Presentation and conclusion,5,Executable notebook; validation recorded separately,"11-section notebook, interpreted figures, evidence files",No self-awarded mark or claim of complete HD compliance.
