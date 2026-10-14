@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-14",
+  "destination": "machine learning",
+  "unit_tests_passed": 30,
+  "real_checkpoint_load_upload_overlay": "passed",
+  "review_image_paths_checked": 527,
+  "missing_review_images": 0,
+  "overview_execution": "8 cells passed",
+  "binary_entry_execution": "4 cells passed",
+  "local_dataset_configs_updated": [
+    "machine learning/tree-counting-model/mock_dataset/data.yaml",
+    "machine learning/tree-counting-model/evaluation_pack/real_test/data.yaml",
+    "machine learning/tree-counting-model/evaluation_pack/mock_stress/flip_horizontal/data.yaml",
+    "machine learning/tree-counting-model/evaluation_pack/mock_stress/darker/data.yaml",
+    "machine learning/tree-counting-model/evaluation_pack/mock_stress/blur/data.yaml",
+    "machine learning/tree-counting-model/evaluation_pack/mock_stress/low_resolution/data.yaml",
+    "machine learning/tree-counting-model/evaluation_pack/mock_stress/rotate_90/data.yaml"
+  ],
+  "note": "Previously running servers must restart with new paths. No model weights or image bytes changed."
+}

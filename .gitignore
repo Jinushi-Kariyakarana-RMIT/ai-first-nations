@@ -11,7 +11,7 @@
 
 # second layer of security
 /ai-first-nations-data/*
-/flask-application/uploads/*
+/machine learning/flask-application/uploads/*
 
 # cache files
 __pycache__/
@@ -19,29 +19,29 @@ __pycache__/
 .ipynb_checkpoints/
 
 # Generated tree-counter training artifacts
-/runs/
+/machine learning/runs/
 /screenshots/
-/yolo11n.pt
-/tree-counting-model/best_tree_counter.pt
+/machine learning/yolo11n.pt
+/machine learning/tree-counting-model/best_tree_counter.pt
 *.cache
 
 # Local drone survey files and preparation cache
-/Mourilyan_Harbour_Fresh_Test_Images/
-/evaluations/tree_counter_preparation/
+/machine learning/Mourilyan_Harbour_Fresh_Test_Images/
+/machine learning/evaluations/tree_counter_preparation/
 
 # Generated dataset configs contain local absolute paths
-/tree-counting-model/evaluation_pack/**/data.yaml
-/tree-counting-model/mock_dataset/data.yaml
+/machine learning/tree-counting-model/evaluation_pack/**/data.yaml
+/machine learning/tree-counting-model/mock_dataset/data.yaml
 
 # Temporary evaluation uploads and browser review artifacts
-/evaluations/tree_counter_hd/**/app_uploads/
-/evaluations/tree_counter_hd/qa_*.png
-/evaluations/tree_counter_hd/**/*.log
+/machine learning/evaluations/tree_counter_hd/**/app_uploads/
+/machine learning/evaluations/tree_counter_hd/qa_*.png
+/machine learning/evaluations/tree_counter_hd/**/*.log
 
 # Local annotation records and frozen private benchmark manifests
-/evaluations/new_benchmark/*.sqlite3*
-/evaluations/new_benchmark/reviewed_manifest.csv
-/evaluations/new_benchmark/test_lock.json
-/evaluations/new_benchmark/holdout_review.json
-/evaluations/new_benchmark/category_mapping.json
-/evaluations/new_benchmark/results/
+/machine learning/evaluations/new_benchmark/*.sqlite3*
+/machine learning/evaluations/new_benchmark/reviewed_manifest.csv
+/machine learning/evaluations/new_benchmark/test_lock.json
+/machine learning/evaluations/new_benchmark/holdout_review.json
+/machine learning/evaluations/new_benchmark/category_mapping.json
+/machine learning/evaluations/new_benchmark/results/

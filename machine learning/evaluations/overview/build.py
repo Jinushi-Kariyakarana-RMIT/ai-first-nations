@@ -16,7 +16,7 @@ NOTEBOOKS = ROOT / 'evaluations/notebooks'
 setup = '''from pathlib import Path
 import sys
 from IPython.display import display, HTML
-root = next(p for p in (Path.cwd(), *Path.cwd().parents) if (p / 'evaluations/overview/evidence.py').is_file())
+root = next(p for p in (Path.cwd(), Path.cwd() / 'machine learning', *Path.cwd().parents) if (p / 'evaluations/overview/evidence.py').is_file())
 if str(root) not in sys.path:
     sys.path.insert(0, str(root))
 from evaluations.overview.evidence import Evidence

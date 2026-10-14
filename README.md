@@ -27,7 +27,7 @@ claim that each counted tree is a mangrove and does not expose GIS coordinates.
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-FLASK_RUN_PORT=5001 python -m flask --app flask-application/app.py run
+FLASK_RUN_PORT=5001 python -m flask --app "machine learning/flask-application/app.py" run
 ```
 
 Open `http://127.0.0.1:5001`.
@@ -35,9 +35,9 @@ Open `http://127.0.0.1:5001`.
 The Flask application loads these local model files without downloading
 ImageNet weights during inference:
 
-- `flask-application/bestBinary.pth`
-- `flask-application/best_mangrove_model.pth`
-- `tree-counting-model/best_tree_counter.pt`
+- `machine learning/flask-application/bestBinary.pth`
+- `machine learning/flask-application/best_mangrove_model.pth`
+- `machine learning/tree-counting-model/best_tree_counter.pt`
 
 Tree-counter weights are generated and ignored by Git. Place the evaluated
 checkpoint at the path above. If any model is missing, the remaining modules
@@ -46,7 +46,7 @@ continue running and the interface reports the unavailable component.
 ## Shared Image Tiler
 
 The previous `img-tiler/img-tiler.py` was an offline crop-and-save experiment.
-The shared `flask-application/image_tiler.py` works in memory and is used by all
+The shared `machine learning/flask-application/image_tiler.py` works in memory and is used by all
 three model paths. It supports configurable tile size and overlap, complete
 edge coverage, padding, optional empty-tile skipping and tile positions.
 
@@ -57,15 +57,15 @@ Current defaults:
   suppression.
 
 The executed tiler evaluation is in
-`evaluations/notebooks/evaluate_image_tiler.ipynb`.
+`machine learning/evaluations/notebooks/evaluate_image_tiler.ipynb`.
 
 ## Tree Counter
 
 Train the first baseline with:
 
 ```bash
-python tree-counting-model/tree_counter.py train \
-  --data tree-counting-model/dataset1/data.yaml \
+python "machine learning/tree-counting-model/tree_counter.py" train \
+  --data "machine learning/tree-counting-model/dataset1/data.yaml" \
   --epochs 30 \
   --device mps
 ```
@@ -73,12 +73,12 @@ python tree-counting-model/tree_counter.py train \
 The checked dataset contains 64 training, 18 validation and 9 test images,
 with 7,526 labelled crowns. All images are 640 x 640. Structural checks found
 no missing image-label pairs, malformed rows, empty labels or duplicate image
-hashes. See `evaluations/notebooks/evaluate_tree_counter_dataset.ipynb`.
+hashes. See `machine learning/evaluations/notebooks/evaluate_tree_counter_dataset.ipynb`.
 
 ### Evaluation results
 
 The deployed counter uses confidence 0.10. Start with the
-[evaluation overview](evaluations/notebooks/00_evaluation_overview.ipynb) for
+[evaluation overview](<machine learning/evaluations/notebooks/00_evaluation_overview.ipynb>) for
 saved application-path results, historical comparisons and limitations.
 The original dataset has site overlap and visible crown markers; it is not an
 untouched field holdout. Independent classifier accuracy remains unestablished.
@@ -87,15 +87,15 @@ untouched field holdout. Independent classifier accuracy remains unestablished.
 
 See the [project structure](docs/PROJECT_STRUCTURE.md) and
 [pipeline review](docs/PIPELINE_REVIEW.md). Legacy training experiments are in
-`notebooks/training/`; unused raster inputs are preserved locally in `data/legacy/`.
+`machine learning/notebooks/training/`; unused raster inputs are preserved locally in `machine learning/data/legacy/`.
 The application loads existing checkpoints only. Missing weights disable that
 component; startup never initiates training.
 
 ## Testing
 
 ```bash
-python -m unittest discover -s tests -v
-python -m compileall -q flask-application tree-counting-model tests
+python -m unittest discover -s "machine learning/tests" -v
+python -m compileall -q "machine learning/flask-application" "machine learning/tree-counting-model" "machine learning/tests"
 ```
 
 Use the component evaluation runners after changing datasets, tiling behaviour
