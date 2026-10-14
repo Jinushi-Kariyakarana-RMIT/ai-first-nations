@@ -47,7 +47,8 @@ class BenchmarkTests(unittest.TestCase):
     def test_export_keeps_review_provenance(self):
         benchmark.update_review('one','Non-Mangrove','Not applicable','Reviewer','Field verification')
         benchmark.export()
-        row=list(csv.DictReader((self.root/'reviewed_manifest.csv').open()))[0]
+        with (self.root/'reviewed_manifest.csv').open(newline='') as handle:
+            row=list(csv.DictReader(handle))[0]
         self.assertEqual(row['reviewer'],'Reviewer');self.assertEqual(row['binary_label'],'Non-Mangrove')
 
     def test_reviewed_binary_scoring_uses_reference_labels(self):

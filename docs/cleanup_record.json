@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-14",
+  "removed_caches": [
+    "flask-application/__pycache__",
+    "tree-counting-model/__pycache__",
+    "evaluations/__pycache__",
+    "evaluations/new_benchmark/__pycache__",
+    "evaluations/tree_counter_hd/__pycache__",
+    "evaluations/classifier_hd/__pycache__",
+    "evaluations/overview/__pycache__",
+    "evaluations/notebooks/.ipynb_checkpoints",
+    "tests/__pycache__"
+  ],
+  "moves": {
+    "notebooks/training/": "Three original training files; byte identity verified against HEAD",
+    "data/legacy/": "z20_data.png and z20_label.png retained locally"
+  },
+  "active_checkpoint_hashes": "All three unchanged",
+  "raw_images_deleted": false,
+  "historical_evidence_deleted": false
+}

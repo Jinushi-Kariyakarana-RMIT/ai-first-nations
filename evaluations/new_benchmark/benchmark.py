@@ -59,7 +59,8 @@ def update_review(identity,binary,species,reviewer,basis):
         con.execute('INSERT INTO history VALUES(?,?,?,?)',(identity,now(),json.dumps(dict(row)),json.dumps(values)))
 
 def import_sources(manifest):
-    rows=list(csv.DictReader(Path(manifest).open()))
+    with Path(manifest).open(newline='') as handle:
+        rows=list(csv.DictReader(handle))
     with database() as con:
         if (HERE/'test_lock.json').exists():raise ValueError('Final test is already frozen; start a separately versioned benchmark.')
         existing=list(con.execute('SELECT * FROM images'))

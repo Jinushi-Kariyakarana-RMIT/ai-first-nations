@@ -2,7 +2,7 @@
 
 Mangrove AI is an AI First Nations prototype for analysing drone and aerial
 imagery. It combines mangrove detection, mangrove-category classification and
-an experimental standalone visible-tree counter in one Flask application.
+a standalone visible-tree counter in one Flask application.
 
 ## Analysis Pipeline
 
@@ -75,28 +75,21 @@ with 7,526 labelled crowns. All images are 640 x 640. Structural checks found
 no missing image-label pairs, malformed rows, empty labels or duplicate image
 hashes. See `evaluations/notebooks/evaluate_tree_counter_dataset.ipynb`.
 
-### Experimental Baseline Results
+### Evaluation results
 
-The untouched nine-image test split produced:
+The deployed counter uses confidence 0.10. Start with the
+[evaluation overview](evaluations/notebooks/00_evaluation_overview.ipynb) for
+saved application-path results, historical comparisons and limitations.
+The original dataset has site overlap and visible crown markers; it is not an
+untouched field holdout. Independent classifier accuracy remains unestablished.
 
-| Metric | Result |
-| --- | ---: |
-| Precision | 0.789 |
-| Recall | 0.739 |
-| mAP50 | 0.779 |
-| mAP50-95 | 0.324 |
-| Count MAE | 15.56 trees/image |
-| Count RMSE | 24.25 trees/image |
-| Count MAPE | 15.74% |
-| Count bias | -14.89 trees/image |
+## Folder organisation
 
-The `0.15` inference threshold was selected using validation count MAE before
-test evaluation. The model undercounts dense scenes, so it is labelled
-**Experimental** in the application. The full reproducible evaluation is in
-`evaluations/notebooks/evaluate_tree_counter_model.ipynb`.
-
-All model results, evaluation criteria and known evidence gaps are summarized
-in `evaluations/README.md`.
+See the [project structure](docs/PROJECT_STRUCTURE.md) and
+[pipeline review](docs/PIPELINE_REVIEW.md). Legacy training experiments are in
+`notebooks/training/`; unused raster inputs are preserved locally in `data/legacy/`.
+The application loads existing checkpoints only. Missing weights disable that
+component; startup never initiates training.
 
 ## Testing
 
@@ -105,8 +98,8 @@ python -m unittest discover -s tests -v
 python -m compileall -q flask-application tree-counting-model tests
 ```
 
-The notebooks should also be executed top to bottom after changing datasets,
-tiling behavior or model weights.
+Use the component evaluation runners after changing datasets, tiling behaviour
+or weights. Do not execute historical training notebooks as an application check.
 
 ## Current Limitations
 

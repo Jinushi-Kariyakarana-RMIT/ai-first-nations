@@ -6,7 +6,7 @@
 <section class="results-header">
     <h1>Analysis Results</h1>
     <p class="result-filename">{{ filename }}</p>
-    <p class="result-status">{{ 'Analysis completed with a warning' if error else 'Analysis completed successfully' }}</p>
+    <p class="result-status">{{ 'Analysis completed with a warning' if error or partial_warning else 'Analysis completed successfully' }}</p>
 </section>
 
 {% if error %}
@@ -18,6 +18,8 @@
 {% set binary = result.binary if result.binary is defined else none %}
 {% set classification = result.multi_class if result.multi_class is defined else none %}
 {% set tree_count = result.tree_count if result.tree_count is defined else none %}
+
+{% if result.mangrove_error %}<div class="notice-box notice-danger" role="alert">{{ result.mangrove_error }}</div>{% endif %}
 
 <section class="result-grid" aria-label="Model results">
     <article class="analysis-card">

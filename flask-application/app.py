@@ -4,7 +4,7 @@ import secrets
 from datetime import datetime
 from werkzeug.utils import secure_filename
 from PIL import Image, UnidentifiedImageError
-from ml_model import load_or_train_model, predict_mangrove, predict_combined
+from ml_model import load_model, predict_combined
 from binary_detector import load_binary_model, predict_binary
 from tree_counter_service import load_tree_counter_model, predict_tree_count
 
@@ -94,7 +94,7 @@ def initialize_models():
 
     # Load multi-class model
     try:
-        model, mangrove_type, gpu = load_or_train_model()
+        model, mangrove_type, gpu = load_model()
         print("Multi-class ML model ready.")
     except Exception as e:
         print(f"Warning: Error preparing multi-class ML model: {e}")
@@ -130,7 +130,7 @@ def is_valid_image(filepath):
         with Image.open(filepath) as img:
             img.verify()
         return True
-    except (UnidentifiedImageError, OSError):
+    except (UnidentifiedImageError, OSError, Image.DecompressionBombError):
         return False
 
 
@@ -154,7 +154,9 @@ def upload():
             return redirect(request.url)
 
         if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
+            safe_name = secure_filename(file.filename)
+            stem, extension = os.path.splitext(safe_name)
+            filename = f'{stem[:100] or "image"}-{secrets.token_hex(8)}{extension.lower()}'
             filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             file.save(filepath)
 
@@ -183,9 +185,11 @@ def serve_file(name):
 
 @app.route('/analyze/<name>')
 def analyze(name):
+    if name != secure_filename(name):
+        return redirect(url_for('upload'))
     filepath = os.path.join(app.config['UPLOAD_FOLDER'], name)
 
-    if not os.path.exists(filepath):
+    if not os.path.isfile(filepath):
         flash(f'File not found: {name}')
         return redirect(url_for('upload'))
 
@@ -244,6 +248,11 @@ def analyze(name):
     if not modules_available and error_message is None:
         error_message = "Analysis models are currently unavailable. Please contact the project team."
 
+    partial_warning = (bool(analysis_result.get('mangrove_error'))
+                       or not analysis_result.get('binary')
+                       or (analysis_result['binary']['prediction'] == 'Mangrove'
+                           and not analysis_result.get('multi_class'))
+                       or analysis_result['tree_count'].get('status') != 'available')
     image_url = url_for('serve_file', name=name)
 
     record_upload(name, analysis_result, error_message)
@@ -253,7 +262,8 @@ def analyze(name):
         image_url=image_url,
         filename=name,
         result=analysis_result,
-        error=error_message
+        error=error_message,
+        partial_warning=partial_warning
     )
 
 

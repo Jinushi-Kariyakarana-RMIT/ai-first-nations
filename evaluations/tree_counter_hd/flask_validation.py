@@ -79,7 +79,8 @@ def run(serve=False, current=False):
                 elapsed=time.perf_counter()-began;stop.set();monitor.join()
             soup=BeautifulSoup(response.text,'html.parser');element=soup.select_one('.tree-count-value')
             count=int(element.get_text(strip=True)) if element else None
-            overlay_path=upload/(Path(filename).stem+'-tree-overlay.jpg')
+            stored_name=response.url.rsplit('/',1)[-1]
+            overlay_path=upload/(Path(stored_name).stem+'-tree-overlay.jpg')
             dimensions_match=overlay_path.exists() and Image.open(overlay_path).size==Image.open(path).size
             identical_overlay=overlay_path.exists() and digest(overlay_path)==digest(expected_overlay)
             passed=response.status_code==200 and count==direct['estimated_trees'] and dimensions_match and identical_overlay
