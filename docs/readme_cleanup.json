@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-14",
+  "removed_redundant_readmes": [
+    "notebooks/README.md",
+    "data/testing/marker_cleanup/README.md",
+    "data/testing/tree_challenges/README.md"
+  ],
+  "reason": "Purposes already covered by the workspace/data guide; .gitkeep retains generated-input directories",
+  "generated_cache_removed": ".pytest_cache",
+  "updated_command_guides": [
+    "machine learning/tree-counting-model/README.md",
+    "machine learning/data/testing/synthetic_trees/README.md",
+    "machine learning/data/testing/neon_benchmark/README.md",
+    "machine learning/evaluations/new_benchmark/README.md",
+    "machine learning/evaluations/tree_counter_hd/README.md",
+    "machine learning/evaluations/classifier_hd/README.md",
+    "machine learning/evaluations/README.md"
+  ],
+  "preserved": "Dataset licences/source documentation, fixture expectations, historical archive notice and component reproduction guides"
+}

@@ -241,18 +241,8 @@ def main():
         im.thumbnail((290, 240)); x, y = (i%4)*300, (i//4)*270
         sheet.paste(im,(x,y+25));d.text((x+3,y+5),f"{row['parent_id']}: {row['expected_count']}",fill='black')
     sheet.save(ROOT / 'label_preview.jpg')
-    # Inventory fresh images, keeping unknown labels distinct from zero trees.
-    fresh_root = HERE.parent / 'Mourilyan_Harbour_Fresh_Test_Images'
-    inventory = []
-    for p in sorted(fresh_root.rglob('*')):
-        if p.suffix.lower() not in {'.jpg', '.jpeg', '.png', '.tif', '.tiff'}:
-            continue
-        with Image.open(p) as im:
-            inventory.append(dict(image=str(p.relative_to(HERE.parent)), flight=p.parent.name,
-                                  width=im.width, height=im.height, label_status='unlabelled', expected_count=''))
-    if inventory:
-        with (ROOT / 'mourilyan_inventory.csv').open('w', newline='') as handle:
-            writer=csv.DictWriter(handle,fieldnames=list(inventory[0]));writer.writeheader();writer.writerows(inventory)
+    # Mourilyan photos are external manual-demo inputs; do not inventory them here.
+    # Existing mourilyan_inventory.csv is a historical snapshot only.
     print(json.dumps({k:v for k,v in audit.items() if k not in ['nearest_existing_dhash','source_box_clipping']},indent=2))
 
 

@@ -54,15 +54,13 @@ def run(serve=False, current=False):
         tests.append(dict(test=name,expected=expected,observed=str(observed),status='PASS' if passed else 'FAIL'))
     record('Checkpoint startup without training/download','All three local models available',
            'All models loaded under download/training guards',True)
-    # Representative small photo, familiar image, composite, and one fresh full-resolution drone image.
+    # Internal benchmark photos and composite only; external demos are not evaluation inputs.
     groups=samples();challenge=json.loads((evidence/'challenge_manifest.json').read_text())
-    fresh=sorted((PROJECT/'Mourilyan_Harbour_Fresh_Test_Images').rglob('*.JPG'))
     inputs=[('neon',PROJECT/groups['external'][0]['image']),('original',PROJECT/groups['test'][0]['image']),
             ('composite',PROJECT/challenge['composites'][1]['image'])]
-    if fresh:inputs.append(('fresh_drone',fresh[len(fresh)//2]))
     screenshot_url=None
     for kind,path in inputs:
-        repeats=3 if kind!='fresh_drone' else 1
+        repeats=3
         expected_overlay=output/f'{kind}_direct_overlay.jpg'
         direct=count_trees(path,model=module.tree_counter_model,overlay_path=expected_overlay,**settings)
         for repeat in range(repeats):

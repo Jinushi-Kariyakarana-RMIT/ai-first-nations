@@ -3,6 +3,7 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from evaluations.notebook_style import align_notebook
+from evaluations.layout_notice import apply_layout_notice
 from pathlib import Path
 import sys
 import nbformat as nbf
@@ -32,7 +33,7 @@ def code(text): return nbf.v4.new_code_cell(text)
 
 def save(name, cells):
     notebook = nbf.v4.new_notebook(cells=cells, metadata={'kernelspec': {'display_name': 'Python 3', 'language': 'python', 'name': 'python3'}})
-    align_notebook(notebook)
+    align_notebook(notebook); apply_layout_notice(notebook)
     manager = KernelManager(kernel_name='python3')
     manager.kernel_spec.argv[0] = sys.executable
     NotebookClient(notebook, km=manager, timeout=120, resources={'metadata': {'path': str(ROOT)}}).execute()

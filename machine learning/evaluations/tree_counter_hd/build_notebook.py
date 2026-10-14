@@ -3,6 +3,7 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from evaluations.notebook_style import align_notebook
+from evaluations.layout_notice import apply_layout_notice
 from pathlib import Path
 import textwrap
 import nbformat as nbf
@@ -501,6 +502,6 @@ if deployment_note.exists():
 nb=nbf.v4.new_notebook(cells=cells,metadata={'kernelspec':{'name':'python3','display_name':'Python 3','language':'python'}})
 nbf.validate(nb)
 path=ROOT/'evaluations/notebooks/YOLO_Tree_Counter_Evaluation.ipynb'
-align_notebook(nb)
+align_notebook(nb); apply_layout_notice(nb)
 nbf.write(nb,path)
 print(path)

@@ -1,7 +1,7 @@
 # Mock tree dataset
 
 For actual photo-based model evaluation, use the larger
-[evaluation pack](../evaluation_pack/README.md). This folder contains only
+[evaluation pack](../neon_benchmark/README.md). This folder contains only
 schematic software fixtures.
 
 These computer-drawn tree symbols have exact labels by construction. They are
@@ -28,8 +28,10 @@ but share the same generator and are not independent real-world samples.
 
 From the project root, reproduce the data and run the existing model:
 
+Commands below run from the **repository root**, with its virtual environment activated. See the root README for installation.
+
 ```bash
-.venv/bin/python tree-counting-model/mock_dataset.py --evaluate
+python "machine learning/tree-counting-model/mock_dataset.py" --evaluate
 ```
 
 The generator uses fixed seeds and validates unique images and in-bounds boxes.
@@ -41,6 +43,6 @@ For a simple app check, upload `test/images/test_0_sparse.png` and compare the
 reported count against 8. A mismatch is not an app failure: the existing model
 was trained on photographs and may not recognise these symbols.
 
-For meaningful accuracy evaluation, manually label a separate selection of the
-fresh Mourilyan Harbour photos, keep them out of training, and compare both
-counts and individual detections against those human-reviewed labels.
+For meaningful accuracy evaluation, obtain a separate approved, independently
+labelled dataset. The external Mourilyan photos are reserved for manual
+application trials and are not internal benchmark inputs.

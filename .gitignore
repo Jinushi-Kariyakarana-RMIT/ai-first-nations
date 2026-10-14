@@ -45,3 +45,8 @@ __pycache__/
 /machine learning/evaluations/new_benchmark/holdout_review.json
 /machine learning/evaluations/new_benchmark/category_mapping.json
 /machine learning/evaluations/new_benchmark/results/
+
+# Central data storage: local survey images and generated dataset configs
+/machine learning/data/testing/mourilyan_unlabelled/
+/machine learning/data/testing/neon_benchmark/**/data.yaml
+/machine learning/data/testing/synthetic_trees/data.yaml

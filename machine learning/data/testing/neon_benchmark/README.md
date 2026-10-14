@@ -1,3 +1,5 @@
+> **Current layout:** Mourilyan photos are external manual-demo inputs. Any 527-photo inventory or diagnostic results below are historical snapshots. See [current data availability](../../../evaluations/CURRENT_DATA_LAYOUT.md).
+
 # Tree counter evaluation pack
 
 This pack contains **1,164 labelled images**: **194 real aerial photographs**
@@ -101,22 +103,17 @@ not zero. They are not included in benchmark scores because no human-reviewed
 labels have been supplied. The photos have not been uploaded to an external
 annotation service or modified.
 
-For site-specific validation, begin with a time-spaced sample from all three
-routes, keep overlapping flight imagery together, and have an annotator draw
-one box around each distinguishable visible crown. Record ambiguous crowns and
-partial edge crowns consistently, and have a second reviewer resolve them.
-Keep a flight/site holdout before making crops. Adjacent frames and crops are
-not independent samples. Expand the sample based on observed error variation
-and the precision required for the intended decision; an arbitrary image total
-alone does not establish adequate coverage.
+For new site-specific accuracy evaluation, obtain a separate approved, independently labelled survey. The external Mourilyan folder is reserved for manual application trials.
 
 ## Reproduce
 
 From the project root:
 
+Commands below run from the **repository root**, with its virtual environment activated. See the root README for installation.
+
 ```bash
-.venv/bin/python tree-counting-model/prepare_evaluation_pack.py
-.venv/bin/python tree-counting-model/evaluate_prepared_pack.py
+python "machine learning/tree-counting-model/prepare_evaluation_pack.py"
+python "machine learning/tree-counting-model/evaluate_prepared_pack.py"
 ```
 
 Preparation downloads only the public dataset if not cached. The evaluator
@@ -130,3 +127,6 @@ Images are ignored by the repository's existing Git rules; preserve this
 folder or regenerate it after cloning. Approximate total size: 463 MB before
 the optional labelled previews. No existing training data or model weights
 were replaced, and no training was run.
+
+`source/README.md` is the preserved upstream dataset description. Its examples
+and figure paths refer to the original upstream repository, not this application.

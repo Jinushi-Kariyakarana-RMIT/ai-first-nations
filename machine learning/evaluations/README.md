@@ -1,3 +1,5 @@
+> **Current layout:** Mourilyan photos are external manual-demo inputs. Any 527-photo inventory or diagnostic results below are historical snapshots. See [current data availability](CURRENT_DATA_LAYOUT.md).
+
 # Model Evaluation Guide
 
 Start with [00_evaluation_overview.ipynb](notebooks/00_evaluation_overview.ipynb).
@@ -56,8 +58,10 @@ implementation files, not separate unpublished model accuracy claims.
 
 From the repository root:
 
+Commands below run from the **repository root**, with its virtual environment activated. See the root README for installation.
+
 ```bash
-.venv/bin/python evaluations/overview/build.py
+python "machine learning/evaluations/overview/build.py"
 ```
 
 This executes only the overview and binary compatibility entry, and exports their

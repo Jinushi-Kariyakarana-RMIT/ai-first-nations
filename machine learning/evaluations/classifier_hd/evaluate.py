@@ -29,20 +29,28 @@ def save(name,obj):
 def relative(path):return str(Path(path).relative_to(ROOT))
 
 def data_audit():
-    fresh=sorted((ROOT/'Mourilyan_Harbour_Fresh_Test_Images').rglob('*.JPG'))
+    source_root=ROOT/'data/testing/classifier_sources'
+    fresh=sorted(p for p in source_root.rglob('*') if p.is_file() and p.suffix.lower() in {'.jpg','.jpeg','.png'})
+    if not fresh:
+        raise FileNotFoundError('No internal classifier sources: add approved evaluation images to data/testing/classifier_sources. Mourilyan photos are external manual-demo inputs. Saved evidence has not been overwritten.')
     rows=[]
     for path in fresh:
         with Image.open(path) as im:
             width,height=im.size
             im.draft('RGB',(144,144));small=np.asarray(im.convert('L').resize((9,8)))
             dh=sum(int(b)<<i for i,b in enumerate((small[:,1:]>small[:,:-1]).flatten()))
-        rows.append(dict(source_image_id=path.stem,image_path=relative(path),site_id='Mourilyan Harbour',
+        rows.append(dict(source_image_id=path.stem,image_path=relative(path),site_id='Unverified source site',
                          survey_id=path.parent.name,metadata_basis='Folder and filename, not independently verified survey metadata',
                          width=width,height=height,sha256=sha(path),dhash=f'{dh:016x}',
                          binary_label='',species_label='',split='unassigned',annotation_provenance='',reviewer='',
                          training_exclusion_verified=False))
-    frame=pd.DataFrame(rows);frame.to_csv(OUT/'source_inventory.csv',index=False)
+    frame=pd.DataFrame(rows)
     template=OUT/'label_manifest.csv'
+    if template.exists():
+        previous=pd.read_csv(template,keep_default_na=False)
+        if set(previous.source_image_id)!=set(frame.source_image_id):
+            raise ValueError('New sources differ from the saved label manifest. Archive/version the old evidence and create a matching reviewed manifest before refreshing; nothing has been overwritten.')
+    frame.to_csv(OUT/'source_inventory.csv',index=False)
     if not template.exists():frame.to_csv(template,index=False)
     pairs=[]
     for i,a in enumerate(rows):

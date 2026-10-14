@@ -1,3 +1,5 @@
+> **Current layout:** Mourilyan photos are external manual-demo inputs. Any 527-photo inventory or diagnostic results below are historical snapshots. See [current data availability](../CURRENT_DATA_LAYOUT.md).
+
 # Alternative: build a new benchmark
 
 The historical drone dataset cannot be recovered. This workflow creates a new,
@@ -6,13 +8,13 @@ predictions and does not claim full HD compliance before the required evidence e
 
 ## Review locally
 
+Commands below run from the **repository root**, with its virtual environment activated. See the root README for installation.
+
 ```bash
-.venv/bin/python evaluations/new_benchmark/benchmark.py prepare
-.venv/bin/python evaluations/new_benchmark/benchmark.py serve
+python "machine learning/evaluations/new_benchmark/benchmark.py" serve
 ```
 
-Open http://127.0.0.1:5054. All 527 existing Mourilyan images are **development**
-candidates because some predictions have already been inspected. The reviewer sees
+Open http://127.0.0.1:5054. The historical 527 Mourilyan records are retained but excluded from the active review queue because their sources are no longer internal. Import an approved internal manifest before reviewing new images. The reviewer sees
 no model prediction, enters a label and supporting evidence, and can use Uncertain,
 Unknown or Mixed. A knowledgeable reviewer must confirm labels; arbitrary guesses
 cannot establish ground truth. Orange/Red/Yellow must not be inferred from colour alone.
@@ -22,7 +24,7 @@ Reviews and their history are stored locally in `reviews.sqlite3`, excluded from
 Export the complete labelled/provenance manifest with:
 
 ```bash
-.venv/bin/python evaluations/new_benchmark/benchmark.py export
+python "machine learning/evaluations/new_benchmark/benchmark.py" export
 ```
 
 The export is also local by default. No private source photos or reviewer records
@@ -35,7 +37,7 @@ workspace. Supply site/survey IDs, source provenance and evidence excluding trai
 use. Import separate validation and test sites:
 
 ```bash
-.venv/bin/python evaluations/new_benchmark/benchmark.py import --manifest PATH.csv
+python "machine learning/evaluations/new_benchmark/benchmark.py" import --manifest PATH.csv
 ```
 
 The importer rejects repeated image hashes and sites assigned to another split.
@@ -50,8 +52,8 @@ Start with multiple independent surveys and expand coverage based on uncertainty
 After review, freeze the test manifest and existing model hashes **before** scoring:
 
 ```bash
-.venv/bin/python evaluations/new_benchmark/benchmark.py freeze
-.venv/bin/python evaluations/new_benchmark/benchmark.py score --split test
+python "machine learning/evaluations/new_benchmark/benchmark.py" freeze
+python "machine learning/evaluations/new_benchmark/benchmark.py" score --split test
 ```
 
 Frozen labels cannot be edited. The evaluator verifies source/model hashes and
@@ -59,8 +61,8 @@ membership and will not overwrite a previous results folder. Test results must n
 be used to tune thresholds. Development and validation can be scored separately:
 
 ```bash
-.venv/bin/python evaluations/new_benchmark/benchmark.py score --split development
-.venv/bin/python evaluations/new_benchmark/benchmark.py score --split validation
+python "machine learning/evaluations/new_benchmark/benchmark.py" score --split development
+python "machine learning/evaluations/new_benchmark/benchmark.py" score --split validation
 ```
 
 Both binary classes and reviewed provenance are required. Uncertain binary labels
@@ -88,7 +90,7 @@ replace the live model.
 ## Current status
 
 - Review tool and evaluation machinery implemented and tested.
-- 527 development candidates prepared, **zero reviewed labels supplied so far**.
+- Historical snapshot: 527 development candidates were prepared with no reviewed labels. Those external demo sources are now excluded from the active queue; import an approved internal dataset.
 - No new independent accuracy claimed. Full HD completion awaits reviewed labels,
   unseen test surveys, mapping verification (or a replacement category model), and
   the remaining rubric experiments/uncertainty analysis.

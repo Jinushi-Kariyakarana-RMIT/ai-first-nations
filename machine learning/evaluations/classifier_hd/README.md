@@ -1,3 +1,5 @@
+> **Current layout:** Mourilyan photos are external manual-demo inputs. Any 527-photo inventory or diagnostic results below are historical snapshots. See [current data availability](../CURRENT_DATA_LAYOUT.md).
+
 # Binary and category classifier evaluation
 
 Open the executed notebooks:
@@ -14,11 +16,13 @@ The notebooks deliberately show these as blocked, not as zero accuracy or passes
 
 Use the project virtual environment and existing local model weights:
 
+Commands below run from the **repository root**, with its virtual environment activated. See the root README for installation.
+
 ```bash
-.venv/bin/python evaluations/classifier_hd/run_notebooks.py --refresh
+python "machine learning/evaluations/classifier_hd/run_notebooks.py" --refresh
 ```
 
-This inventories the 527 fresh images, runs actual-weight diagnostics and HTTP
+When approved internal classifier sources are present, this inventories those images and runs actual-weight diagnostics and HTTP
 checks on port 5053, verifies code/weight hashes, runs automated tests and executes
 both notebooks using the same interpreter. It does not train, download weights,
 change inference thresholds, upload imagery to a cloud service or stop the user's

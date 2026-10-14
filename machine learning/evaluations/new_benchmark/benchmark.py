@@ -34,11 +34,15 @@ def database():
 
 def prepare():
     inventory=ROOT/'evaluations/classifier_hd/source_inventory.csv'
+    with inventory.open(newline='') as handle:
+        rows=list(csv.DictReader(handle))
+    if not rows or any(not image_path(row).is_file() for row in rows):
+        raise ValueError('Historical inventory is not an active dataset. Import an explicit internal manifest; external Mourilyan demo photos are excluded. Existing reviews are preserved.')
     with database() as con:
-        for row in csv.DictReader(inventory.open()):
+        for row in rows:
             con.execute('INSERT OR IGNORE INTO images(id,image_path,sha256,site_id,survey_id,split,provenance) VALUES(?,?,?,?,?,?,?)',
-                        (row['source_image_id'],row['image_path'],row['sha256'],row['site_id'],row['survey_id'],'development','Existing inspected Mourilyan pool; not a blinded holdout.'))
-        print('Review candidates:',con.execute('SELECT count(*) FROM images').fetchone()[0])
+                        (row['source_image_id'],row['image_path'],row['sha256'],row['site_id'],row['survey_id'],'development','Imported internal source inventory; not a blinded holdout.'))
+
 
 def validate_review(binary,species,reviewer,basis):
     if binary not in BINARY or species not in SPECIES:raise ValueError('Choose valid labels.')
@@ -165,16 +169,24 @@ def create_app():
     @app.route('/')
     def index():
         with database() as con:
-            total=con.execute('SELECT count(*) FROM images').fetchone()[0]
-            reviewed=con.execute("SELECT count(*) FROM images WHERE reviewed_utc!=''").fetchone()[0]
-            identity=request.args.get('id')
-            row=con.execute('SELECT * FROM images WHERE id=?',(identity,)).fetchone() if identity else con.execute("SELECT * FROM images WHERE reviewed_utc='' AND frozen=0 ORDER BY split,id LIMIT 1").fetchone()
+            records=list(con.execute('SELECT * FROM images ORDER BY split,id'))
+        available=[]
+        for record in records:
+            try:
+                if image_path(record).is_file():available.append(record)
+            except ValueError:
+                pass
+        total=len(available)
+        reviewed=sum(bool(r['reviewed_utc']) for r in available)
+        unavailable=len(records)-total
+        identity=request.args.get('id')
+        row=next((r for r in available if r['id']==identity),None) if identity else next((r for r in available if not r['reviewed_utc'] and not r['frozen']),None)
         session.setdefault('csrf',secrets.token_urlsafe(32))
-        return render_template('review.html',row=row,total=total,reviewed=reviewed,binary=BINARY,species=SPECIES,csrf=session['csrf'])
+        return render_template('review.html',row=row,total=total,reviewed=reviewed,unavailable=unavailable,binary=BINARY,species=SPECIES,csrf=session['csrf'])
     @app.route('/image/<identity>')
     def image(identity):
         with database() as con:row=con.execute('SELECT * FROM images WHERE id=?',(identity,)).fetchone()
-        if row is None:abort(404)
+        if row is None or not image_path(row).is_file():abort(404)
         return send_file(image_path(row))
     @app.route('/review',methods=['POST'])
     def review():

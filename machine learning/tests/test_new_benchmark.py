@@ -16,6 +16,25 @@ class BenchmarkTests(unittest.TestCase):
     def tearDown(self):
         for p in reversed(self.patches):p.stop()
         self.temp.cleanup()
+    def test_missing_historical_sources_are_excluded_from_review_queue(self):
+        (self.root/'source.png').unlink()
+        from jinja2 import FileSystemLoader
+        app=benchmark.create_app()
+        app.jinja_loader=FileSystemLoader(str(Path(benchmark.__file__).parent/'templates'))
+        page=app.test_client().get('/').get_data(as_text=True)
+        self.assertIn('0 of 0 images reviewed',page)
+        self.assertIn('1 historical records',page)
+        with benchmark.database() as con:
+            self.assertEqual(con.execute('SELECT count(*) FROM images').fetchone()[0],1)
+
+    def test_prepare_rejects_missing_inventory_without_changing_reviews(self):
+        folder=self.root/'evaluations/classifier_hd';folder.mkdir(parents=True)
+        (folder/'source_inventory.csv').write_text('image_path\nmissing.png\n')
+        with self.assertRaisesRegex(ValueError,'Historical inventory'):
+            benchmark.prepare()
+        with benchmark.database() as con:
+            self.assertEqual(con.execute('SELECT count(*) FROM images').fetchone()[0],1)
+
     def test_no_initial_pseudo_labels(self):
         with benchmark.database() as con:r=con.execute('SELECT * FROM images').fetchone()
         self.assertEqual(r['binary_label'],'');self.assertEqual(r['reviewed_utc'],'')

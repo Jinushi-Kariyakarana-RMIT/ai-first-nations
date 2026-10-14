@@ -1,3 +1,5 @@
+> **Current layout:** Mourilyan photos are external manual-demo inputs. Any 527-photo inventory or diagnostic results below are historical snapshots. See [current data availability](../CURRENT_DATA_LAYOUT.md).
+
 # Tree-counter specification audit and executable evaluation
 
 Open `../notebooks/YOLO_Tree_Counter_Evaluation.ipynb`. The companion
@@ -13,8 +15,10 @@ evaluation dependencies from `requirements-lock.txt` if needed. The original
 `dataset1` images/labels and prepared NEON pack must be present. Regenerate the
 public pack with `tree-counting-model/prepare_evaluation_pack.py` if necessary.
 
+Commands below run from the **repository root**, with its virtual environment activated. See the root README for installation.
+
 ```bash
-.venv/bin/python evaluations/tree_counter_hd/run_notebook.py
+python "machine learning/evaluations/tree_counter_hd/run_notebook.py"
 ```
 
 This runner explicitly uses its own Python executable as the kernel; a global
@@ -83,7 +87,7 @@ The broader project-wide notebook reorganisation is deliberately deferred in
 
 See [deployment update](DEPLOYMENT.md). Confidence 0.10 is now the application
 default. Historical baseline tests explicitly use 0.15 in an isolated process.
-Run `.venv/bin/python evaluations/tree_counter_hd/flask_validation.py --current`
+Run `python "machine learning/evaluations/tree_counter_hd/flask_validation.py" --current`
 for current-application checks, saved separately in `deployment_validation/`.
 Temporary files removed are listed in `cleanup_record.json`; original TIFF download
 copies are fetched again by `prepare_evaluation_pack.py` if regeneration is needed.

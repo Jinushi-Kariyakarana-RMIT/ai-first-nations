@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-14",
+  "manual_demo_photos_outside_repo": 527,
+  "renamed_logo_exists": true,
+  "internal_demo_shortcuts_removed": true,
+  "broken_symlinks": [],
+  "unit_tests_passed": 32,
+  "application_http_status": 200,
+  "annotation_ui": "0 active candidates; 527 historical records preserved and excluded",
+  "notebooks": "Current-layout notice added to evaluation notebooks and five HTML previews; historical numerical outputs preserved",
+  "classifier_refresh": "Blocked until approved internal classifier sources are supplied; no demo inputs reused"
+}

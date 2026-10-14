@@ -1,32 +1,26 @@
-# Machine learning workspace
+# Machine learning — folder guide
 
-All application and machine-learning files are grouped here, preserving their
-relative layout so model loading, datasets, review records and evaluations agree.
-
-| Folder | Contents |
+| Folder | What it is for |
 |---|---|
-| `flask-application/` | Web application, classifier inference and saved classifier weights |
-| `tree-counting-model/` | Tree model, checkpoint, training dataset and external benchmark |
-| `evaluations/` | Evaluation notebooks, shared evaluators and saved results |
-| `notebooks/` | Historical training experiments and tiler fixtures |
-| `tests/` | Automated pipeline and metric tests |
-| `data/` | Preserved local legacy imagery |
-| `Mourilyan_Harbour_Fresh_Test_Images/` | Local survey images |
-| `runs/` | Local training history |
-| `yolo11n.pt` | Local base checkpoint for training |
+| **data/testing/** | All testing images and labels — start here to find test data |
+| **data/training/** | Images used for training and validation; separate from testing |
+| **data/legacy/** | Older unused imagery kept for reference |
+| **tests/** | Python checks that verify software works; this is test code, not a dataset |
+| **runs/** | Generated training outputs: saved checkpoints, logs and learning curves |
+| **notebooks/training/** | Historical interactive training experiments |
+| **evaluations/notebooks/** | Readable model evaluation reports; start with `00_evaluation_overview.ipynb` |
+| **evaluations/** | Evaluation scripts, metrics, evidence, rubric audits and label-review tools |
+| **tree-counting-model/** | Tree-counter implementation and deployed checkpoint |
+| **flask-application/** | The web application, classification code and deployed classifier weights |
 
-From the repository root:
+The old dataset names are **compatibility shortcuts**, not extra copies. All test
+image content lives in `data/testing/`; real training/validation images live in
+`data/training/`. Preview figures and overlays in evaluation folders are results,
+not additional input datasets. The root `yolo11n.pt` is a local base training model.
 
-```bash
-.venv/bin/python -m flask --app "machine learning/flask-application/app.py" run --port 5001
-.venv/bin/python -m unittest discover -s "machine learning/tests" -v
-.venv/bin/python "machine learning/evaluations/overview/build.py"
-```
+For setup and startup, use the [main README](../README.md). For server deployment,
+use the [deployment guide](../docs/DEPLOYMENT.md). Evaluation-specific commands
+are documented in `evaluations/README.md` and its component guides.
+Open notebooks with this ML workspace as the working directory.
 
-For older component README commands, change into this folder first and use
-`../.venv/bin/python` instead of `.venv/bin/python`. Open evaluation notebooks with
-this folder as the working directory. Historic output strings retain the original
-paths; regenerate measured evidence with the appropriate runner when needed.
-
-Stop/restart previously running application, notebook and review servers using
-the new paths; a process started before the move may still retain old paths.
+Mourilyan Harbour demo photos are stored separately in `../../Mourilyan_Harbour_Fresh_Test_Images/` (the DS Proejct folder), outside the repository. They are for manual application trials, not internal accuracy testing. Historical evaluation inventories retain their original paths; they are not current dataset manifests.

@@ -3,6 +3,7 @@ import sys
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from evaluations.notebook_style import align_notebook
+from evaluations.layout_notice import apply_layout_notice
 from pathlib import Path
 import json, shutil
 import nbformat as nbf
@@ -207,6 +208,6 @@ keys=['Source-level precision','Source-level recall','Macro F1','Balanced accura
 display(pd.DataFrame({'Criterion':keys,'Historical baseline':['Not independently verified']*6+['No equivalent classifier-specific evidence'], 'Current':['Blocked — independent labels required']*6+[f"{int((checks.status=='PASS').sum())}/{len(checks)} applicable checks passed"], 'Target':['See supplied rubric']*6+['All critical checks pass']}))
 ''')
  nb=nbf.v4.new_notebook(cells=cells,metadata={'kernelspec':{'name':'python3','display_name':'AI First Nations (.venv)','language':'python'}})
- align_notebook(nb)
+ align_notebook(nb); apply_layout_notice(nb)
  nbf.validate(nb);nbf.write(nb,ROOT/'evaluations/notebooks'/filename)
  print(filename)

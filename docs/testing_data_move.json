@@ -1,0 +1,117 @@
+{
+  "date": "2026-10-14",
+  "moves": [
+    {
+      "previous": "tree-counting-model/dataset1",
+      "canonical": "data/training/tree_counter"
+    },
+    {
+      "previous": "data/training/tree_counter/test",
+      "canonical": "data/testing/tree_counter"
+    },
+    {
+      "previous": "tree-counting-model/evaluation_pack",
+      "canonical": "data/testing/neon_benchmark"
+    },
+    {
+      "previous": "tree-counting-model/mock_dataset",
+      "canonical": "data/testing/synthetic_trees"
+    },
+    {
+      "previous": "notebooks/test_data",
+      "canonical": "data/testing/tiler_fixtures"
+    },
+    {
+      "previous": "Mourilyan_Harbour_Fresh_Test_Images",
+      "canonical": "data/testing/mourilyan_unlabelled"
+    },
+    {
+      "previous": "evaluations/tree_counter_hd/challenge_images",
+      "canonical": "data/testing/tree_challenges"
+    },
+    {
+      "previous": "evaluations/tree_counter_hd/marker_diagnostic/hh_261904_4_174211_4_19_jpg.rf.ed0184ffbb30ac792381537e32be187e.png",
+      "canonical": "data/testing/marker_cleanup/hh_261904_4_174211_4_19_jpg.rf.ed0184ffbb30ac792381537e32be187e.png"
+    },
+    {
+      "previous": "evaluations/tree_counter_hd/marker_diagnostic/st_261964_4_174517_4_19_jpg.rf.53abeb1a92e18ee683b067af15ac5ce6.png",
+      "canonical": "data/testing/marker_cleanup/st_261964_4_174517_4_19_jpg.rf.53abeb1a92e18ee683b067af15ac5ce6.png"
+    },
+    {
+      "previous": "evaluations/tree_counter_hd/marker_diagnostic/rc_261714_4_174452_4_19_jpg.rf.8fc1040c3aff944c3625c73745b40d32.png",
+      "canonical": "data/testing/marker_cleanup/rc_261714_4_174452_4_19_jpg.rf.8fc1040c3aff944c3625c73745b40d32.png"
+    },
+    {
+      "previous": "evaluations/tree_counter_hd/marker_diagnostic/hh_261908_4_174207_4_19_jpg.rf.09f9becfb6b95a264e02a624c2bbf0fb.png",
+      "canonical": "data/testing/marker_cleanup/hh_261908_4_174207_4_19_jpg.rf.09f9becfb6b95a264e02a624c2bbf0fb.png"
+    },
+    {
+      "previous": "evaluations/tree_counter_hd/marker_diagnostic/ng_261974_4_174541_4_19_jpg.rf.915c30544a4e17be56cfc1ea15b3899e.png",
+      "canonical": "data/testing/marker_cleanup/ng_261974_4_174541_4_19_jpg.rf.915c30544a4e17be56cfc1ea15b3899e.png"
+    },
+    {
+      "previous": "evaluations/tree_counter_hd/marker_diagnostic/rp_261739_4_174479_4_19_jpg.rf.92008c6f1b9ba3b81acd78a8618d8fa4.png",
+      "canonical": "data/testing/marker_cleanup/rp_261739_4_174479_4_19_jpg.rf.92008c6f1b9ba3b81acd78a8618d8fa4.png"
+    },
+    {
+      "previous": "evaluations/tree_counter_hd/marker_diagnostic/cd_261941_4_174271_4_19_jpg.rf.f6cdbea4b7ad3e9aee4ef217174de4a1.png",
+      "canonical": "data/testing/marker_cleanup/cd_261941_4_174271_4_19_jpg.rf.f6cdbea4b7ad3e9aee4ef217174de4a1.png"
+    },
+    {
+      "previous": "evaluations/tree_counter_hd/marker_diagnostic/wb_261498_4_174683_4_19_jpg.rf.62ff0aa54158e6c9d848ee0a2e161a0d.png",
+      "canonical": "data/testing/marker_cleanup/wb_261498_4_174683_4_19_jpg.rf.62ff0aa54158e6c9d848ee0a2e161a0d.png"
+    },
+    {
+      "previous": "evaluations/tree_counter_hd/marker_diagnostic/hn_262082_4_174234_4_19_jpg.rf.9f348d5c1e847fd37f6761fc410bf08e.png",
+      "canonical": "data/testing/marker_cleanup/hn_262082_4_174234_4_19_jpg.rf.9f348d5c1e847fd37f6761fc410bf08e.png"
+    },
+    {
+      "previous": "evaluations/tree_counter_hd/marker_diagnostic/sc_261904_4_174259_4_19_jpg.rf.b309104e9a55e9bff2ba0143bc433953.png",
+      "canonical": "data/testing/marker_cleanup/sc_261904_4_174259_4_19_jpg.rf.b309104e9a55e9bff2ba0143bc433953.png"
+    },
+    {
+      "previous": "evaluations/tree_counter_hd/marker_diagnostic/rp_261743_4_174479_4_19_jpg.rf.7af4f0ab4f260ec6d6a7231429ce60d3.png",
+      "canonical": "data/testing/marker_cleanup/rp_261743_4_174479_4_19_jpg.rf.7af4f0ab4f260ec6d6a7231429ce60d3.png"
+    },
+    {
+      "previous": "evaluations/tree_counter_hd/marker_diagnostic/vp_262092_4_174266_4_19_jpg.rf.6efbfb7c6b0f27db14f18283a6355126.png",
+      "canonical": "data/testing/marker_cleanup/vp_262092_4_174266_4_19_jpg.rf.6efbfb7c6b0f27db14f18283a6355126.png"
+    },
+    {
+      "previous": "evaluations/tree_counter_hd/marker_diagnostic/sg_262078_4_174318_4_19_jpg.rf.5c4dbecea3f46460a9534d7772e59149.png",
+      "canonical": "data/testing/marker_cleanup/sg_262078_4_174318_4_19_jpg.rf.5c4dbecea3f46460a9534d7772e59149.png"
+    },
+    {
+      "previous": "evaluations/tree_counter_hd/marker_diagnostic/kg_261733_4_174522_4_19_jpg.rf.f5a9a0a6052a663f89c245464769254a.png",
+      "canonical": "data/testing/marker_cleanup/kg_261733_4_174522_4_19_jpg.rf.f5a9a0a6052a663f89c245464769254a.png"
+    },
+    {
+      "previous": "evaluations/tree_counter_hd/marker_diagnostic/is_261996_4_174274_4_19_jpg.rf.3dc6256ab4bc230de669aedc328aa764.png",
+      "canonical": "data/testing/marker_cleanup/is_261996_4_174274_4_19_jpg.rf.3dc6256ab4bc230de669aedc328aa764.png"
+    },
+    {
+      "previous": "evaluations/tree_counter_hd/marker_diagnostic/bp_262122_4_174541_4_19_jpg.rf.fb4b9be196e6f3d3f6a9d7359405faf6.png",
+      "canonical": "data/testing/marker_cleanup/bp_262122_4_174541_4_19_jpg.rf.fb4b9be196e6f3d3f6a9d7359405faf6.png"
+    },
+    {
+      "previous": "evaluations/tree_counter_hd/marker_diagnostic/wm_262126_4_174157_4_19_jpg.rf.5baa21b9fc2ee28e5f817898c30807aa.png",
+      "canonical": "data/testing/marker_cleanup/wm_262126_4_174157_4_19_jpg.rf.5baa21b9fc2ee28e5f817898c30807aa.png"
+    },
+    {
+      "previous": "evaluations/tree_counter_hd/marker_diagnostic/kn_261727_4_174546_4_19_jpg.rf.ddaf45e19c4e0f1123643641110b53e0.png",
+      "canonical": "data/testing/marker_cleanup/kn_261727_4_174546_4_19_jpg.rf.ddaf45e19c4e0f1123643641110b53e0.png"
+    }
+  ],
+  "compatibility": "Relative symlinks preserve older notebooks and recorded paths; no duplicate file content.",
+  "validation": {
+    "unit_tests_passed": 30,
+    "dataset_sizes": {
+      "train": 64,
+      "valid": 18,
+      "test": 9,
+      "external": 194
+    },
+    "review_image_paths_valid": 527,
+    "broken_symlinks": 0
+  }
+}

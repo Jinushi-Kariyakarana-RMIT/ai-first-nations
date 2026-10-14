@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-14",
+  "readme_local_links": "passed",
+  "application_pins": "8 packages match local environment",
+  "waitress_version": "3.0.2",
+  "waitress_check": "Isolated single-thread server: all three models loaded; /analyse and /about returned 200; test server stopped afterwards",
+  "limits": "No fresh environment install, recipient-host, HTTPS/proxy or concurrent-load validation performed. Existing application server was not interrupted."
+}
