@@ -1,0 +1,20 @@
+{
+  "checked_utc": "2026-10-11T11:55:38.745586+00:00",
+  "notebooks": {
+    "00_evaluation_overview": {
+      "executed_code_cells": 7,
+      "errors": 0
+    },
+    "evaluate_binary_detector": {
+      "executed_code_cells": 3,
+      "errors": 0
+    }
+  },
+  "existing_unit_tests_passed": 25,
+  "archive_byte_identical_to_previous_notebook": true,
+  "historical_archive_sha256": "3ab4765aeff7db4cd297228d9b160e851966353543440f96e1d75fe3b97d42e0",
+  "notebook_links": "Checked: all local markdown links in both entry notebooks resolve",
+  "visual_review": "Inspected rendered overview in local headless Chrome at 1600x3600; tables fit, headings left aligned, all sections visible. Temporary screenshot removed.",
+  "scope": "Presentation refresh only. Detailed model evaluations not rerun; application, weights, private review database and recorded accuracy artifacts unchanged.",
+  "alignment_update": "2026-10-13: presentation-only alignment applied to all 13 notebooks, including archive; previous byte-identity check predates this formatting change."
+}

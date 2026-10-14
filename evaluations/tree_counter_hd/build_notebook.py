@@ -1,4 +1,8 @@
 """Build the requested, executable tree-counter evaluation notebook."""
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+from evaluations.notebook_style import align_notebook
 from pathlib import Path
 import textwrap
 import nbformat as nbf
@@ -497,5 +501,6 @@ if deployment_note.exists():
 nb=nbf.v4.new_notebook(cells=cells,metadata={'kernelspec':{'name':'python3','display_name':'Python 3','language':'python'}})
 nbf.validate(nb)
 path=ROOT/'evaluations/notebooks/YOLO_Tree_Counter_Evaluation.ipynb'
+align_notebook(nb)
 nbf.write(nb,path)
 print(path)

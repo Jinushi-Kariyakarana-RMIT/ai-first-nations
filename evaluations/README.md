@@ -1,114 +1,72 @@
 # Model Evaluation Guide
 
-For the replacement dataset, use the [local benchmark review tool](new_benchmark/README.md). Existing inspected images are development data; final testing requires unseen surveys and reviewed labels.
+Start with [00_evaluation_overview.ipynb](notebooks/00_evaluation_overview.ipynb).
+It reads saved evidence through shared code, separates historical and deployed
+configurations, and links to the detailed notebooks. It does not rerun inference.
 
-The application now uses the validation-selected confidence 0.10; see the
-[deployment checks](tree_counter_hd/DEPLOYMENT.md). Tables below retain historical
-results and their original configurations.
+## Current evidence
 
-## Binary and category classifier evaluation
+The binary detector, category classifier and tree counter are integrated features.
+Independent classifier accuracy and full HD compliance remain unestablished.
+Tree results have dataset limitations documented in the overview and detailed
+notebook. Software checks confirm application behaviour, not field accuracy.
 
-The current [binary notebook](notebooks/Binary_Mangrove_Evaluation.ipynb) and
-[category notebook](notebooks/Mangrove_Species_Evaluation.ipynb) include current
-checkpoint audits, source inventory, tile/probability diagnostics and 67 real or
-controlled application checks. [Evidence and reproducibility](classifier_hd/README.md)
-explain which requirements remain blocked. Full HD compliance and independent
-classifier accuracy are **not yet established** because reference labels and
-training-source/mapping provenance are missing.
+- [Binary evaluation](notebooks/Binary_Mangrove_Evaluation.ipynb): source/checkpoint
+  audits, diagnostics, application checks and missing-label requirements.
+- [Category evaluation](notebooks/Mangrove_Species_Evaluation.ipynb): the same
+  shared evaluation framework, including the unresolved class-mapping provenance.
+- [Tree evaluation](notebooks/YOLO_Tree_Counter_Evaluation.ipynb): application-path
+  detection/counting metrics, validation experiments, robustness and rubric audit.
+  The candidate confidence 0.10 is now deployed; see [deployment checks](tree_counter_hd/DEPLOYMENT.md).
+- [Combined pipeline](notebooks/evaluate_combined_pipeline.ipynb): readiness only;
+  no independently scored end-to-end dataset.
+- [Tree dataset](notebooks/evaluate_tree_counter_dataset.ipynb) and
+  [image tiler](notebooks/evaluate_image_tiler.ipynb): dataset and preprocessing checks.
 
-## Specification-based tree-counter evaluation
+Principal results are collected in the overview; detailed results remain in their
+component notebooks. The overview reads saved JSON artifacts rather than copied
+metric constants. Each execution includes source hashes. Read it as a snapshot,
+not a live health check or a fresh model evaluation.
 
-The [new tree-counter notebook](notebooks/YOLO_Tree_Counter_Evaluation.ipynb)
-and [supporting evidence](tree_counter_hd/README.md) address the supplied HD
-specification. They include app-path metrics, validation-only comparisons,
-full detection metrics, tiling/negative diagnostics, and real Flask HTTP tests.
-The [rubric audit](tree_counter_hd/specification_audit.csv) records remaining gaps;
-full HD compliance is not claimed.
+## Historical evidence
 
-**New source-quality concern:** inspected original training, validation and test
-images contain visible red crown markers. Together with site overlap, this limits
-interpretation of the historical baseline. The validation-only marker diagnostic
-and required clean-data follow-up are documented in the new notebook. Historical
-results below are retained as records, not promoted to clean-image accuracy claims.
+- [Original binary training notebook](archive/evaluate_binary_detector_historical.ipynb)
+  is preserved with presentation-only heading alignment. Its unavailable Windows data paths and inconsistent
+  saved test counts cannot be repaired without the original data. It is not a
+  supported current evaluation runner. The [old entry point](notebooks/evaluate_binary_detector.ipynb)
+  now safely loads the shared audit and links to the current evaluation.
+- [Direct-YOLO notebook](notebooks/evaluate_tree_counter_model.ipynb) preserves
+  historical results from different inference settings. Do not substitute these
+  for the deployed application-path results in the overview.
+- [Legacy category readiness notebook](notebooks/evaluate_multiclass_classifier.ipynb)
+  remains available; use the detailed category notebook for current evidence.
+- [Recovery audit](classifier_hd/DATA_RECOVERY.md) explains why the old training
+  data and reported results cannot be independently reconstructed.
 
-## Additional external photo benchmark
+## What remains outside notebooks
 
-The [tree-counter evaluation pack](../tree-counting-model/evaluation_pack/README.md)
-contains 194 real NEON photographs with 6,633 published crown annotations and
-970 labelled stress variants. See its [completed results](../tree-counting-model/evaluation_pack/results/RESULTS.md).
-This separate external benchmark uses the application's actual tiled counting
-path. It does not replace the historical notebook results below and is not a
-Mourilyan-specific accuracy evaluation.
+Shared evaluation/metric code and saved predictions remain in `classifier_hd/`
+and `tree_counter_hd/`. [External benchmark preparation](../tree-counting-model/evaluation_pack/README.md)
+retains source provenance and derived stress cases. [The review workflow](new_benchmark/README.md)
+manages independent labels and frozen test sets; private review records stay local.
+Automated software tests remain in `tests/`. These are supporting evidence and
+implementation files, not separate unpublished model accuracy claims.
 
-This folder is the single source of truth for Mangrove AI evaluation. It keeps
-the evaluation criteria, executed evidence and known gaps together so another
-team member can understand what has been tested without reading the training
-code first.
+## Safe refresh
 
-## Current Readiness
-
-| Component | Evidence | Main result | Status |
-| --- | --- | --- | --- |
-| Binary mangrove detector | Executed tile-level test | Accuracy 98.96%, macro F1 98.89% | Needs a flight-level external test |
-| Mangrove category classifier | No labelled test data in this repository | No defensible test metric | Not evaluated |
-| Tree crown detector | 9 test images, 759 crowns | Precision 78.9%, recall 73.9%, mAP50 77.9% | Experimental |
-| Tree count | Same 9 test images | MAE 15.56, MAPE 15.74%, bias -14.89 trees/image | Experimental; undercounts |
-| Image tiler | Synthetic and repository fixtures | No uncovered pixels; expected tiles reproduced | Preprocessing checks passed |
-| Combined web pipeline | No labelled end-to-end test set | No end-to-end metric | Not evaluated |
-
-**Overall decision:** the current application is suitable for continued
-development and controlled demonstrations, but the models are not yet
-validated for unattended real-world monitoring.
-
-## Important Interpretation
-
-The binary detector's 98.96% score is a tile-level result. Original images
-were tiled before the random train/validation/test split, so neighboring tiles
-from the same flight may occur in more than one split. This can make the score
-more optimistic than performance on a fresh flight.
-
-The tree-counter split contains no exact duplicate images, but all eight test
-site prefixes also occur in training. Its nine-image test result therefore has
-limited evidence of performance at a new geographic location.
-
-The multi-class model file exists, but there is no executed, reproducible test
-result or labelled test dataset in this repository. A saved model is not proof
-of accuracy.
-
-## Folder Contents
-
-- `evaluation_criteria.md`: metrics and acceptance checks expected for each model.
-- `notebooks/evaluate_binary_detector.ipynb`: training and recorded binary test evidence.
-- `notebooks/evaluate_multiclass_classifier.ipynb`: reproducible readiness check for the missing multi-class evaluation data.
-- `notebooks/evaluate_tree_counter_dataset.ipynb`: dataset structure and annotation checks.
-- `notebooks/evaluate_tree_counter_model.ipynb`: tree detection and counting metrics.
-- `notebooks/evaluate_image_tiler.ipynb`: preprocessing coverage and tile correctness.
-- `notebooks/evaluate_combined_pipeline.ipynb`: readiness check for an end-to-end labelled evaluation set.
-
-## Metric Meanings
-
-- **Precision:** how many predicted objects or classes are correct.
-- **Recall:** how many labelled objects or classes the model finds.
-- **F1:** balance between precision and recall.
-- **mAP50:** object-detection quality at an intersection-over-union threshold of 0.50.
-- **mAP50-95:** stricter object localisation quality across multiple thresholds.
-- **MAE:** average absolute counting error in trees per image.
-- **MAPE:** average absolute counting error as a percentage of the true count.
-- **Bias:** signed average error; a negative value means systematic undercounting.
-
-## Re-running Evaluations
-
-Run notebooks from the repository root so they can locate the application,
-datasets and model weights consistently:
+From the repository root:
 
 ```bash
-source .venv/bin/activate
-jupyter nbconvert --execute --to notebook --inplace evaluations/notebooks/<notebook>.ipynb
+.venv/bin/python evaluations/overview/build.py
 ```
 
-Do not overwrite the recorded model results until the replacement evaluation:
+This executes only the overview and binary compatibility entry, and exports their
+HTML previews to `evaluations/overview/`. It reads existing evidence without
+training, modifying checkpoints, starting servers or touching annotation records.
+Do not run every historical notebook with a wildcard: some contain training code.
 
-1. uses a split grouped by flight, site and date before tiling;
-2. preserves an untouched external test set;
-3. records the exact model checksum and inference thresholds; and
-4. evaluates the same tiled inference path used by the web application.
+For new measured results, follow the separate [classifier](classifier_hd/README.md)
+and [tree](tree_counter_hd/README.md) reproduction instructions, then refresh the
+overview. Those workflows require their stated data, weights and environment.
+The [replacement benchmark workflow](new_benchmark/README.md) is the next step
+for independently labelled unseen surveys.

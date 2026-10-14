@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head><meta charset="utf-8"/>
+<head><base href="../notebooks/"><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Notebook</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
@@ -7795,14 +7795,29 @@ a.anchor-link {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<main>
+<main><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_notebook-left-alignment" id="cell-id=e304c5b5">
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output" data-mime-type="text/html" tabindex="0">
+<style id="notebook-left-alignment">h1,h2,h3,h4,h5,h6,th {text-align:left !important;} .dataframe th {text-align:left !important;}</style>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=e6008a04">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Mangrove-Category-(Species)-Evaluation">Mangrove Category (Species) Evaluation<a class="anchor-link" href="#Mangrove-Category-(Species)-Evaluation">¶</a></h1><p><strong>Decision: technical verification completed; independent predictive evaluation blocked. Full HD compliance is not achieved.</strong></p>
+<h1 style="text-align: left;">Mangrove Category (Species) Evaluation</h1>
+**Decision: technical verification completed; independent predictive evaluation blocked. Full HD compliance is not achieved.**
+
 <p>This notebook follows the supplied proposed rubric, which is not an official RMIT marking scheme. It evaluates the exact saved EfficientNet-B0 checkpoint and application path. Missing reference labels are never replaced with model predictions or synthetic accuracy scores. The other classifier has its own companion notebook.</p>
 <p>The application remains available. Technical availability and scientifically verified field accuracy are separate conclusions.</p>
 </div>
@@ -7815,7 +7830,9 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Alternative-adopted:-create-a-new-benchmark">Alternative adopted: create a new benchmark<a class="anchor-link" href="#Alternative-adopted:-create-a-new-benchmark">¶</a></h3><p>The original labelled drone dataset cannot be recovered. A new local <a href="../new_benchmark/README.md">benchmark review workflow</a> now replaces the recovery dependency.</p>
+<h3 style="text-align: left;">Alternative adopted: create a new benchmark</h3>
+The original labelled drone dataset cannot be recovered. A new local [benchmark review workflow](../new_benchmark/README.md) now replaces the recovery dependency.
+
 <p>Run <code>.venv/bin/python evaluations/new_benchmark/benchmark.py serve</code> and open **<a href="http://127.0.0.1:5054**">http://127.0.0.1:5054**</a>. The 527 inspected Mourilyan images are development candidates, not a newly blinded test set. Reviewers supply labels and their evidence without seeing model predictions; Unknown/Uncertain/Mixed remain explicit.</p>
 <p>Import unseen validation/test surveys separately. The workflow rejects exact duplicate images and cross-split site reuse, requires a documented overlap/provenance review, freezes final-test membership and checkpoint hashes, and scores only reviewed sources. Category scoring additionally requires evidence verifying the saved class mapping; otherwise a new category model must be trained from independently labelled data.</p>
 <p><strong>Current independent accuracy remains unmeasured.</strong> The tool is ready, but zero reference labels have been supplied. Completing the HD rubric still requires the reviewed benchmark and the planned validation-only experiments, subgroup/uncertainty analysis and final test. Software checks are not substitutes for that evidence.</p>
@@ -7829,7 +7846,9 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Historical-provenance-recovered-%E2%80%94-11-October-2026">Historical provenance recovered — 11 October 2026<a class="anchor-link" href="#Historical-provenance-recovered-%E2%80%94-11-October-2026">¶</a></h3><p>The previous team report, <a href="../specifications/AI_FirstNations_178DSUG.pdf">AI_FirstNations_178DSUG.pdf</a>, provides historical dataset and performance claims that were absent from the current evaluation notebooks:</p>
+<h3 style="text-align: left;">Historical provenance recovered — 11 October 2026</h3>
+The previous team report, [AI_FirstNations_178DSUG.pdf](../specifications/AI_FirstNations_178DSUG.pdf), provides historical dataset and performance claims that were absent from the current evaluation notebooks:
+
 <ul>
 <li>Page 4 reports <strong>477 labelled drone images</strong>: Orange 156, Red 83, Yellow 238, from Darwin and Innisfail. Page 8 instead describes 425 images used for model development; the subset membership is not supplied.</li>
 <li>The category training script was committed by <strong>Jake Dyl</strong> in <code>8b418a5</code>. It points to <code>C:\Users\FSOS\Music\split_mangrove_images</code> and <code>C:\Users\FSOS\Music\internship\test</code>. Binary notebook paths point to <code>C:\Users\FSOS\Music\zow\man</code> and <code>...\non</code>.</li>
@@ -7842,43 +7861,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6c020df8">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">json</span><span class="o">,</span><span class="w"> </span><span class="nn">sys</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">PIL</span><span class="w"> </span><span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">ImageDraw</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">display</span> <span class="k">as</span> <span class="n">_display</span><span class="p">,</span> <span class="n">HTML</span><span class="p">,</span> <span class="n">Markdown</span><span class="p">,</span> <span class="n">Image</span> <span class="k">as</span> <span class="n">DisplayImage</span>
-<span class="n">ROOT</span><span class="o">=</span><span class="nb">next</span><span class="p">(</span><span class="n">p</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="p">[</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">(),</span><span class="o">*</span><span class="n">Path</span><span class="o">.</span><span class="n">cwd</span><span class="p">()</span><span class="o">.</span><span class="n">parents</span><span class="p">]</span> <span class="k">if</span> <span class="p">(</span><span class="n">p</span><span class="o">/</span><span class="s1">'flask-application'</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">())</span>
-<span class="n">OUT</span><span class="o">=</span><span class="n">ROOT</span><span class="o">/</span><span class="s1">'evaluations/classifier_hd'</span>
-<span class="n">MODE</span><span class="o">=</span><span class="s1">'species'</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">read</span><span class="p">(</span><span class="n">name</span><span class="p">):</span> <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">((</span><span class="n">OUT</span><span class="o">/</span><span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">())</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">display</span><span class="p">(</span><span class="o">*</span><span class="n">objects</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">objects</span><span class="p">:</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">):</span>
-            <span class="n">soup</span><span class="o">=</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">obj</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="n">justify</span><span class="o">=</span><span class="s1">'left'</span><span class="p">),</span><span class="s1">'html.parser'</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s1">'th,td'</span><span class="p">):</span><span class="n">element</span><span class="p">[</span><span class="s1">'style'</span><span class="p">]</span><span class="o">=</span><span class="s1">'text-align: left;'</span>
-            <span class="n">_display</span><span class="p">(</span><span class="n">HTML</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">soup</span><span class="p">)))</span>
-        <span class="k">else</span><span class="p">:</span><span class="n">_display</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
-<span class="n">audit</span><span class="o">=</span><span class="n">read</span><span class="p">(</span><span class="s1">'data_audit.json'</span><span class="p">);</span><span class="n">environment</span><span class="o">=</span><span class="n">read</span><span class="p">(</span><span class="s1">'environment.json'</span><span class="p">);</span><span class="n">application</span><span class="o">=</span><span class="n">read</span><span class="p">(</span><span class="s1">'application_summary.json'</span><span class="p">)</span>
-<span class="n">inventory</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">OUT</span><span class="o">/</span><span class="s1">'source_inventory.csv'</span><span class="p">);</span><span class="n">predictions</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">read</span><span class="p">(</span><span class="s1">'unlabelled_predictions.json'</span><span class="p">))</span>
-<span class="n">checks</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">OUT</span><span class="o">/</span><span class="s1">'application_checks.csv'</span><span class="p">);</span><span class="n">checks</span><span class="o">=</span><span class="n">checks</span><span class="p">[</span><span class="n">checks</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="n">MODE</span><span class="p">,</span><span class="s1">'both'</span><span class="p">])]</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'figure.figsize'</span><span class="p">:(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span><span class="s1">'font.size'</span><span class="p">:</span><span class="mi">11</span><span class="p">,</span><span class="s1">'axes.spines.top'</span><span class="p">:</span><span class="kc">False</span><span class="p">,</span><span class="s1">'axes.spines.right'</span><span class="p">:</span><span class="kc">False</span><span class="p">,</span><span class="s1">'axes.titlelocation'</span><span class="p">:</span><span class="s1">'left'</span><span class="p">,</span><span class="s1">'figure.dpi'</span><span class="p">:</span><span class="mi">110</span><span class="p">})</span>
-<span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([{</span><span class="s1">'Ground-truth images'</span><span class="p">:</span><span class="n">audit</span><span class="p">[</span><span class="s1">'labelled_'</span><span class="o">+</span><span class="n">MODE</span><span class="o">+</span><span class="s1">'_rows'</span><span class="p">],</span> <span class="s1">'Application checks passed'</span><span class="p">:</span><span class="nb">int</span><span class="p">((</span><span class="n">checks</span><span class="o">.</span><span class="n">status</span><span class="o">==</span><span class="s1">'PASS'</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()),</span><span class="s1">'Application checks total'</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">checks</span><span class="p">),</span><span class="s1">'HD compliance'</span><span class="p">:</span><span class="s1">'Not met — missing independent labelled evaluation'</span><span class="p">}]))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=6c020df8">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -7889,10 +7872,10 @@ a.anchor-link {
 <table border="1" class="dataframe">
 <thead>
 <tr style="text-align: left;">
-<th style="text-align: left;">Ground-truth images</th>
-<th style="text-align: left;">Application checks passed</th>
-<th style="text-align: left;">Application checks total</th>
-<th style="text-align: left;">HD compliance</th>
+<th style=";text-align: left !important;">Ground-truth images</th>
+<th style=";text-align: left !important;">Application checks passed</th>
+<th style=";text-align: left !important;">Application checks total</th>
+<th style=";text-align: left !important;">HD compliance</th>
 </tr>
 </thead>
 <tbody>
@@ -7915,27 +7898,15 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1.-Research-design">1. Research design<a class="anchor-link" href="#1.-Research-design">¶</a></h2><p>Questions: Does the saved model work on independent source images? Do errors vary by site and conditions? Are confidence scores calibrated? Does tile averaging give reliable source-image decisions? Does Flask reproduce the exact offline probabilities?</p>
+<h2 style="text-align: left;">1. Research design</h2>
+Questions: Does the saved model work on independent source images? Do errors vary by site and conditions? Are confidence scores calibrated? Does tile averaging give reliable source-image decisions? Does Flask reproduce the exact offline probabilities?
+
 <p>The predictive evaluation unit is an <strong>independent source image</strong>, with separate tile diagnostics. Split sources/sites before tiling and freeze the final test set. Image siblings and adjacent frames must not cross partitions. Proposed rubric targets are not agreed production acceptance limits.</p>
 <p><strong>Reproduce:</strong> use the project <code>.venv</code> and run <code>.venv/bin/python evaluations/classifier_hd/run_notebooks.py --refresh</code>. This reruns saved-model diagnostics and actual HTTP checks once, then executes both notebooks. Without <code>--refresh</code>, saved evidence is validated against code/weight hashes before notebook execution. Temporary test fixtures are deleted automatically; the user's running app is untouched. Test server port 5053 must be free.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=65da924a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">protocol</span><span class="o">=</span><span class="n">read</span><span class="p">(</span><span class="s1">'experiment_protocol.json'</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">protocol</span><span class="p">[</span><span class="s1">'targets_'</span><span class="o">+</span><span class="n">MODE</span><span class="p">]]))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=65da924a">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -7946,9 +7917,9 @@ a.anchor-link {
 <table border="1" class="dataframe">
 <thead>
 <tr style="text-align: left;">
-<th style="text-align: left;">macro_f1</th>
-<th style="text-align: left;">per_class_recall</th>
-<th style="text-align: left;">balanced_accuracy</th>
+<th style=";text-align: left !important;">macro_f1</th>
+<th style=";text-align: left !important;">per_class_recall</th>
+<th style=";text-align: left !important;">balanced_accuracy</th>
 </tr>
 </thead>
 <tbody>
@@ -7970,31 +7941,14 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="2.-Dataset-audit">2. Dataset audit<a class="anchor-link" href="#2.-Dataset-audit">¶</a></h2><p>The inventory contains 527 fresh Mourilyan source photographs. Folder names and filenames identify candidate route/date groups; they do not establish independent training exclusion. Both classifier label columns are blank. NEON tree-crown boxes are not mangrove-presence or category annotations and cannot be reused as classifier ground truth.</p>
+<h2 style="text-align: left;">2. Dataset audit</h2>
+The inventory contains 527 fresh Mourilyan source photographs. Folder names and filenames identify candidate route/date groups; they do not establish independent training exclusion. Both classifier label columns are blank. NEON tree-crown boxes are not mangrove-presence or category annotations and cannot be reused as classifier ground truth.
+
 <p>The label collection sheet is <code>label_manifest.csv</code>. It preserves source ID/path, site/survey group, image hash, intended split, reviewer, annotation provenance and training-exclusion confirmation. Reviewers must provide labels; the evaluation never guesses them.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2fa8bc3f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([{</span><span class="s1">'Source images'</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">inventory</span><span class="p">),</span><span class="s1">'Binary labels'</span><span class="p">:</span><span class="n">audit</span><span class="p">[</span><span class="s1">'labelled_binary_rows'</span><span class="p">],</span><span class="s1">'Category labels'</span><span class="p">:</span><span class="n">audit</span><span class="p">[</span><span class="s1">'labelled_species_rows'</span><span class="p">],</span><span class="s1">'Exact duplicate excess'</span><span class="p">:</span><span class="n">audit</span><span class="p">[</span><span class="s1">'exact_duplicate_excess'</span><span class="p">],</span><span class="s1">'Near-duplicate candidate pairs'</span><span class="p">:</span><span class="n">audit</span><span class="p">[</span><span class="s1">'near_duplicate_candidate_pairs'</span><span class="p">]}]))</span>
-<span class="n">counts</span><span class="o">=</span><span class="n">inventory</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'survey_id'</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
-<span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mf">3.5</span><span class="p">));</span><span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">'-'</span><span class="p">,</span><span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'Route'</span><span class="p">,</span><span class="s1">'Route '</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">counts</span><span class="o">.</span><span class="n">index</span><span class="p">],</span><span class="n">counts</span><span class="o">.</span><span class="n">values</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'#246b63'</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">'Original images (not independent test samples)'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Available source images by folder group'</span><span class="p">);</span><span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">counts</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">*</span><span class="mf">1.2</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">counts</span><span class="o">.</span><span class="n">values</span><span class="p">):</span><span class="n">ax</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">value</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">),</span><span class="n">va</span><span class="o">=</span><span class="s1">'center'</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">display</span><span class="p">(</span><span class="n">inventory</span><span class="p">[[</span><span class="s1">'source_image_id'</span><span class="p">,</span><span class="s1">'survey_id'</span><span class="p">,</span><span class="s1">'width'</span><span class="p">,</span><span class="s1">'height'</span><span class="p">]]</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=2fa8bc3f">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -8005,11 +7959,11 @@ a.anchor-link {
 <table border="1" class="dataframe">
 <thead>
 <tr style="text-align: left;">
-<th style="text-align: left;">Source images</th>
-<th style="text-align: left;">Binary labels</th>
-<th style="text-align: left;">Category labels</th>
-<th style="text-align: left;">Exact duplicate excess</th>
-<th style="text-align: left;">Near-duplicate candidate pairs</th>
+<th style=";text-align: left !important;">Source images</th>
+<th style=";text-align: left !important;">Binary labels</th>
+<th style=";text-align: left !important;">Category labels</th>
+<th style=";text-align: left !important;">Exact duplicate excess</th>
+<th style=";text-align: left !important;">Near-duplicate candidate pairs</th>
 </tr>
 </thead>
 <tbody>
@@ -8036,10 +7990,10 @@ a.anchor-link {
 <table border="1" class="dataframe">
 <thead>
 <tr style="text-align: left;">
-<th style="text-align: left;">source_image_id</th>
-<th style="text-align: left;">survey_id</th>
-<th style="text-align: left;">width</th>
-<th style="text-align: left;">height</th>
+<th style=";text-align: left !important;">source_image_id</th>
+<th style=";text-align: left !important;">survey_id</th>
+<th style=";text-align: left !important;">width</th>
+<th style=";text-align: left !important;">height</th>
 </tr>
 </thead>
 <tbody>
@@ -8090,26 +8044,7 @@ a.anchor-link {
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f615b764">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">chosen</span><span class="o">=</span><span class="n">inventory</span><span class="o">.</span><span class="n">iloc</span><span class="p">[[</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">inventory</span><span class="p">)</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">inventory</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
-<span class="n">fig</span><span class="p">,</span><span class="n">axes</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mf">3.5</span><span class="p">))</span>
-<span class="k">for</span> <span class="n">ax</span><span class="p">,(</span><span class="n">_</span><span class="p">,</span><span class="n">row</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span><span class="n">chosen</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()):</span>
-    <span class="k">with</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">ROOT</span><span class="o">/</span><span class="n">row</span><span class="o">.</span><span class="n">image_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">image</span><span class="p">:</span>
-        <span class="n">image</span><span class="o">.</span><span class="n">thumbnail</span><span class="p">((</span><span class="mi">600</span><span class="p">,</span><span class="mi">450</span><span class="p">));</span><span class="n">ax</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">survey_id</span><span class="p">)</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">'-'</span><span class="p">,</span><span class="mi">1</span><span class="p">)[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'Route'</span><span class="p">,</span><span class="s1">'Route '</span><span class="p">),</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">11</span><span class="p">);</span><span class="n">ax</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">'off'</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">suptitle</span><span class="p">(</span><span class="s1">'Source previews — unlabelled, not scored test examples'</span><span class="p">,</span><span class="n">x</span><span class="o">=</span><span class="mf">.01</span><span class="p">,</span><span class="n">ha</span><span class="o">=</span><span class="s1">'left'</span><span class="p">);</span><span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=f615b764">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -8129,27 +8064,14 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="3.-Split-integrity">3. Split integrity<a class="anchor-link" href="#3.-Split-integrity">¶</a></h2><p><strong>Not met.</strong> No original training-source registry is available to prove training exclusion. No independent labelled validation/test split is established. Exact SHA-256 and 64-bit difference hashes are recorded for the fresh inventory; near-duplicate candidates use Hamming distance ≤6. Geographical overlap and temporally adjacent frames still require survey metadata and human review.</p>
+<h2 style="text-align: left;">3. Split integrity</h2>
+**Not met.** No original training-source registry is available to prove training exclusion. No independent labelled validation/test split is established. Exact SHA-256 and 64-bit difference hashes are recorded for the fresh inventory; near-duplicate candidates use Hamming distance ≤6. Geographical overlap and temporally adjacent frames still require survey metadata and human review.
+
 <p>The legacy binary notebook tiled first and randomly split tiles. Its saved tile totals (41,632) imply 6,246 test tiles under its split code, whereas the saved report lists 5,286. Those outputs remain historical, not a reproducible independent baseline. The classifier readiness notebook contains no scored test set.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=711cecde">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">legacy</span><span class="o">=</span><span class="n">read</span><span class="p">(</span><span class="s1">'previous_evaluation_audit.json'</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([{</span><span class="s1">'Item'</span><span class="p">:</span><span class="n">key</span><span class="p">,</span><span class="s1">'Evidence'</span><span class="p">:</span><span class="nb">str</span><span class="p">(</span><span class="n">value</span><span class="p">)}</span> <span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">value</span> <span class="ow">in</span> <span class="n">legacy</span><span class="p">[</span><span class="n">MODE</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()]))</span>
-<span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">OUT</span><span class="o">/</span><span class="s1">'near_duplicate_candidates.csv'</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=711cecde">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -8160,8 +8082,8 @@ a.anchor-link {
 <table border="1" class="dataframe">
 <thead>
 <tr style="text-align: left;">
-<th style="text-align: left;">Item</th>
-<th style="text-align: left;">Evidence</th>
+<th style=";text-align: left !important;">Item</th>
+<th style=";text-align: left !important;">Evidence</th>
 </tr>
 </thead>
 <tbody>
@@ -8179,10 +8101,10 @@ a.anchor-link {
 <table border="1" class="dataframe">
 <thead>
 <tr style="text-align: left;">
-<th style="text-align: left;">first</th>
-<th style="text-align: left;">second</th>
-<th style="text-align: left;">dhash_distance</th>
-<th style="text-align: left;">interpretation</th>
+<th style=";text-align: left !important;">first</th>
+<th style=";text-align: left !important;">second</th>
+<th style=";text-align: left !important;">dhash_distance</th>
+<th style=";text-align: left !important;">interpretation</th>
 </tr>
 </thead>
 <tbody>
@@ -8229,27 +8151,14 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="4.-Model-reproducibility">4. Model reproducibility<a class="anchor-link" href="#4.-Model-reproducibility">¶</a></h2><p>Both models use EfficientNet-B0 with a 128-unit hidden classifier head. Inference converts to RGB, tiles at 512×512 with 64-pixel overlap, resizes each tile to 224×224 and uses ImageNet normalization. Tile softmax probabilities are averaged at source-image level. Batch size is 64; seed is 42. Exact checkpoint hashes, code hashes and package versions are saved.</p>
+<h2 style="text-align: left;">4. Model reproducibility</h2>
+Both models use EfficientNet-B0 with a 128-unit hidden classifier head. Inference converts to RGB, tiles at 512×512 with 64-pixel overlap, resizes each tile to 224×224 and uses ImageNet normalization. Tile softmax probabilities are averaged at source-image level. Batch size is 64; seed is 42. Exact checkpoint hashes, code hashes and package versions are saved.
+
 <p>Binary class order agrees with the historical code. <strong>Species class order is the serving fallback <code>orange, red, yellow</code>, not a verified training-label mapping.</strong> A state dictionary alone cannot prove semantic label order. These names are dataset categories, not confirmed biological species.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=c9cb99a1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">model</span><span class="o">=</span><span class="n">environment</span><span class="p">[</span><span class="n">MODE</span><span class="p">]</span>
-<span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([{</span><span class="s1">'Item'</span><span class="p">:</span><span class="s1">'Model SHA-256'</span><span class="p">,</span><span class="s1">'Value'</span><span class="p">:</span><span class="n">model</span><span class="p">[</span><span class="s1">'sha256'</span><span class="p">]},{</span><span class="s1">'Item'</span><span class="p">:</span><span class="s1">'Class order'</span><span class="p">,</span><span class="s1">'Value'</span><span class="p">:</span><span class="nb">str</span><span class="p">(</span><span class="n">model</span><span class="p">[</span><span class="s1">'labels'</span><span class="p">])},{</span><span class="s1">'Item'</span><span class="p">:</span><span class="s1">'Device'</span><span class="p">,</span><span class="s1">'Value'</span><span class="p">:</span><span class="n">environment</span><span class="p">[</span><span class="s1">'device'</span><span class="p">]},{</span><span class="s1">'Item'</span><span class="p">:</span><span class="s1">'Head'</span><span class="p">,</span><span class="s1">'Value'</span><span class="p">:</span><span class="n">model</span><span class="p">[</span><span class="s1">'architecture'</span><span class="p">]},{</span><span class="s1">'Item'</span><span class="p">:</span><span class="s1">'Transforms'</span><span class="p">,</span><span class="s1">'Value'</span><span class="p">:</span><span class="n">environment</span><span class="p">[</span><span class="s1">'transforms'</span><span class="p">]}]))</span>
-<span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([{</span><span class="s1">'Package'</span><span class="p">:</span><span class="n">k</span><span class="p">,</span><span class="s1">'Version'</span><span class="p">:</span><span class="n">v</span><span class="p">}</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span><span class="n">v</span> <span class="ow">in</span> <span class="n">environment</span><span class="p">[</span><span class="s1">'versions'</span><span class="p">]</span><span class="o">.</span><span class="n">items</span><span class="p">()]))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=c9cb99a1">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -8260,8 +8169,8 @@ a.anchor-link {
 <table border="1" class="dataframe">
 <thead>
 <tr style="text-align: left;">
-<th style="text-align: left;">Item</th>
-<th style="text-align: left;">Value</th>
+<th style=";text-align: left !important;">Item</th>
+<th style=";text-align: left !important;">Value</th>
 </tr>
 </thead>
 <tbody>
@@ -8295,8 +8204,8 @@ a.anchor-link {
 <table border="1" class="dataframe">
 <thead>
 <tr style="text-align: left;">
-<th style="text-align: left;">Package</th>
-<th style="text-align: left;">Version</th>
+<th style=";text-align: left !important;">Package</th>
+<th style=";text-align: left !important;">Version</th>
 </tr>
 </thead>
 <tbody>
@@ -8369,28 +8278,15 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="5.-Core-predictive-metrics-and-calibration">5. Core predictive metrics and calibration<a class="anchor-link" href="#5.-Core-predictive-metrics-and-calibration">¶</a></h2><p><strong>Blocked: independent labels are missing.</strong> Accuracy, confusion matrices, class precision/recall/F1, balanced accuracy, ROC/PR curves and calibration cannot be computed defensibly from these unlabelled images.</p>
+<h2 style="text-align: left;">5. Core predictive metrics and calibration</h2>
+**Blocked: independent labels are missing.** Accuracy, confusion matrices, class precision/recall/F1, balanced accuracy, ROC/PR curves and calibration cannot be computed defensibly from these unlabelled images.
+
 <p><code>metrics.py</code> implements all core classification metrics. Undefined metrics are JSON <code>null</code>, not zero. Binary Mangrove is positive. PR area uses average precision (step integral). Binary Brier uses Mangrove probability; multiclass Brier sums squared errors across the three classes (range 0–2). ECE uses ten equal-width bins of top-class confidence. A class with no positives/negatives has undefined ROC/PR area. These definitions and known-answer tests are software evidence, not model scores.</p>
 <p>No ROC curve, reliability diagram or confusion matrix is fabricated. After independent labels exist, report source-level metrics separately from tile metrics, include support and confidence intervals resampling entire independent sources/sites, and plot correct versus incorrect confidence.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=55479e5a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">metric_names</span><span class="o">=</span><span class="p">[</span><span class="s1">'Independent test images'</span><span class="p">,</span><span class="s1">'Overall accuracy'</span><span class="p">,</span><span class="s1">'Macro F1'</span><span class="p">,</span><span class="s1">'Balanced accuracy'</span><span class="p">,</span><span class="s1">'Per-class precision / recall / F1'</span><span class="p">,</span><span class="s1">'ROC-AUC / average precision'</span><span class="p">,</span><span class="s1">'Brier / ECE / log loss'</span><span class="p">,</span><span class="s1">'Full-image accuracy'</span><span class="p">,</span><span class="s1">'Held-out-site performance'</span><span class="p">]</span>
-<span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'Metric'</span><span class="p">:</span><span class="n">metric_names</span><span class="p">,</span><span class="s1">'Current result'</span><span class="p">:[</span><span class="s1">'Not measured — required labels and independence evidence missing'</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">metric_names</span><span class="p">)}))</span>
-<span class="n">validation</span><span class="o">=</span><span class="n">read</span><span class="p">(</span><span class="s1">'verification.json'</span><span class="p">);</span><span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span><span class="n">validation</span><span class="p">]))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=55479e5a">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -8401,8 +8297,8 @@ a.anchor-link {
 <table border="1" class="dataframe">
 <thead>
 <tr style="text-align: left;">
-<th style="text-align: left;">Metric</th>
-<th style="text-align: left;">Current result</th>
+<th style=";text-align: left !important;">Metric</th>
+<th style=";text-align: left !important;">Current result</th>
 </tr>
 </thead>
 <tbody>
@@ -8452,9 +8348,9 @@ a.anchor-link {
 <table border="1" class="dataframe">
 <thead>
 <tr style="text-align: left;">
-<th style="text-align: left;">automated_test_exit_code</th>
-<th style="text-align: left;">passed_tests</th>
-<th style="text-align: left;">meaning</th>
+<th style=";text-align: left !important;">automated_test_exit_code</th>
+<th style=";text-align: left !important;">passed_tests</th>
+<th style=";text-align: left !important;">meaning</th>
 </tr>
 </thead>
 <tbody>
@@ -8476,28 +8372,14 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="6.-Tile-to-image-analysis">6. Tile-to-image analysis<a class="anchor-link" href="#6.-Tile-to-image-analysis">¶</a></h2><p>For each technical fixture, collect all tile probabilities and coordinates, calculate their arithmetic mean independently and compare it with the deployed source-level function. Record lineage in <code>tile_predictions.json</code>. The input suite includes three source photos with reference, darker and blurred variants, small/edge-sized images, grayscale, RGBA and one full-resolution source.</p>
+<h2 style="text-align: left;">6. Tile-to-image analysis</h2>
+For each technical fixture, collect all tile probabilities and coordinates, calculate their arithmetic mean independently and compare it with the deployed source-level function. Record lineage in `tile_predictions.json`. The input suite includes three source photos with reference, darker and blurred variants, small/edge-sized images, grayscale, RGBA and one full-resolution source.
+
 <p>These are 14 technical cases derived from only three source images, not 14 independent accuracy samples. Species is run directly on every diagnostic input to inspect software behaviour; only eligible binary-positive images are classified through the real application.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=536670a6">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">frame</span><span class="o">=</span><span class="n">predictions</span><span class="p">[</span><span class="n">predictions</span><span class="o">.</span><span class="n">model</span><span class="o">==</span><span class="n">MODE</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">display</span><span class="p">(</span><span class="n">frame</span><span class="p">[[</span><span class="s1">'id'</span><span class="p">,</span><span class="s1">'variant'</span><span class="p">,</span><span class="s1">'tiles'</span><span class="p">,</span><span class="s1">'label'</span><span class="p">,</span><span class="s1">'confidence'</span><span class="p">,</span><span class="s1">'tile_vote_agreement'</span><span class="p">]]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">OUT</span><span class="o">/</span><span class="s1">'tiler_coverage.csv'</span><span class="p">))</span>
-<span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">));</span><span class="n">ax</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">frame</span><span class="o">.</span><span class="n">id</span><span class="p">,</span><span class="n">frame</span><span class="o">.</span><span class="n">tile_vote_agreement</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'#246b63'</span><span class="p">);</span><span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">'Fraction of tile labels agreeing with aggregated label'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Tile agreement is consistency, not accuracy'</span><span class="p">);</span><span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=536670a6">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -8508,12 +8390,12 @@ a.anchor-link {
 <table border="1" class="dataframe">
 <thead>
 <tr style="text-align: left;">
-<th style="text-align: left;">id</th>
-<th style="text-align: left;">variant</th>
-<th style="text-align: left;">tiles</th>
-<th style="text-align: left;">label</th>
-<th style="text-align: left;">confidence</th>
-<th style="text-align: left;">tile_vote_agreement</th>
+<th style=";text-align: left !important;">id</th>
+<th style=";text-align: left !important;">variant</th>
+<th style=";text-align: left !important;">tiles</th>
+<th style=";text-align: left !important;">label</th>
+<th style=";text-align: left !important;">confidence</th>
+<th style=";text-align: left !important;">tile_vote_agreement</th>
 </tr>
 </thead>
 <tbody>
@@ -8639,10 +8521,10 @@ a.anchor-link {
 <table border="1" class="dataframe">
 <thead>
 <tr style="text-align: left;">
-<th style="text-align: left;">width</th>
-<th style="text-align: left;">height</th>
-<th style="text-align: left;">tiles</th>
-<th style="text-align: left;">uncovered_pixels</th>
+<th style=";text-align: left !important;">width</th>
+<th style=";text-align: left !important;">height</th>
+<th style=";text-align: left !important;">tiles</th>
+<th style=";text-align: left !important;">uncovered_pixels</th>
 </tr>
 </thead>
 <tbody>
@@ -8706,31 +8588,14 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="7.-Robustness-and-failure-analysis">7. Robustness and failure analysis<a class="anchor-link" href="#7.-Robustness-and-failure-analysis">¶</a></h2><p>Measure probability/label sensitivity to darker and blurred versions paired with their reference source. Brightness is multiplied by 0.55; blur uses a 3-pixel Gaussian radius on 1024×768 derivatives. These are artificial conditions, not labelled field subgroups. No accuracy, false-positive rate, minority-class recall or cross-site performance is inferred from them.</p>
+<h2 style="text-align: left;">7. Robustness and failure analysis</h2>
+Measure probability/label sensitivity to darker and blurred versions paired with their reference source. Brightness is multiplied by 0.55; blur uses a 3-pixel Gaussian radius on 1024×768 derivatives. These are artificial conditions, not labelled field subgroups. No accuracy, false-positive rate, minority-class recall or cross-site performance is inferred from them.
+
 <p>Real water/mud/other-vegetation negatives and reviewed Orange/Red/Yellow examples remain required. Unsupported and mixed-category scenes cannot be validated from a single model-assigned image label.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=cdf56b83">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">paired</span><span class="o">=</span><span class="n">frame</span><span class="p">[</span><span class="n">frame</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">'source_'</span><span class="p">)]</span><span class="o">.</span><span class="n">copy</span><span class="p">();</span><span class="n">paired</span><span class="p">[</span><span class="s1">'source_group'</span><span class="p">]</span><span class="o">=</span><span class="n">paired</span><span class="o">.</span><span class="n">id</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">extract</span><span class="p">(</span><span class="sa">r</span><span class="s1">'(source_\d+)'</span><span class="p">)</span>
-<span class="n">fig</span><span class="p">,</span><span class="n">axes</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mf">3.8</span><span class="p">),</span><span class="n">sharey</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">ax</span><span class="p">,(</span><span class="n">source</span><span class="p">,</span><span class="n">group</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">axes</span><span class="p">,</span><span class="n">paired</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'source_group'</span><span class="p">)):</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">group</span><span class="o">.</span><span class="n">variant</span><span class="p">,</span><span class="n">group</span><span class="o">.</span><span class="n">confidence</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="p">[</span><span class="s1">'#246b63'</span><span class="p">,</span><span class="s1">'#b37635'</span><span class="p">,</span><span class="s1">'#7a8791'</span><span class="p">])</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="n">title</span><span class="o">=</span><span class="n">source</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">'_'</span><span class="p">,</span><span class="s1">' '</span><span class="p">),</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">'Image condition'</span><span class="p">)</span>
-<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">'Top-class model confidence'</span><span class="p">);</span><span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">display</span><span class="p">(</span><span class="n">paired</span><span class="p">[[</span><span class="s1">'source_group'</span><span class="p">,</span><span class="s1">'variant'</span><span class="p">,</span><span class="s1">'label'</span><span class="p">,</span><span class="s1">'confidence'</span><span class="p">]]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">4</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=cdf56b83">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -8747,10 +8612,10 @@ a.anchor-link {
 <table border="1" class="dataframe">
 <thead>
 <tr style="text-align: left;">
-<th style="text-align: left;">source_group</th>
-<th style="text-align: left;">variant</th>
-<th style="text-align: left;">label</th>
-<th style="text-align: left;">confidence</th>
+<th style=";text-align: left !important;">source_group</th>
+<th style=";text-align: left !important;">variant</th>
+<th style=";text-align: left !important;">label</th>
+<th style=";text-align: left !important;">confidence</th>
 </tr>
 </thead>
 <tbody>
@@ -8832,26 +8697,14 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="8.-Controlled-improvements">8. Controlled improvements<a class="anchor-link" href="#8.-Controlled-improvements">¶</a></h2><p>The two predictive comparisons below are registered as a plan, <strong>not completed experiments</strong>. Both need independent labelled validation data; the final test set must remain untouched. No threshold, calibration temperature, aggregation or checkpoint was selected using these unlabelled cases.</p>
+<h2 style="text-align: left;">8. Controlled improvements</h2>
+The two predictive comparisons below are registered as a plan, **not completed experiments**. Both need independent labelled validation data; the final test set must remain untouched. No threshold, calibration temperature, aggregation or checkpoint was selected using these unlabelled cases.
+
 <p>Two verified engineering repairs were completed separately: training and validation now have independent transform objects, and missing binary detection no longer permits category inference. These changes cannot repair the provenance or training of the inherited checkpoint and do not establish an accuracy improvement.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=4050c469">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'Planned comparison'</span><span class="p">:</span><span class="n">protocol</span><span class="p">[</span><span class="n">MODE</span><span class="o">+</span><span class="s1">'_experiments'</span><span class="p">],</span><span class="s1">'Status'</span><span class="p">:[</span><span class="s1">'Blocked — labelled validation/test set required'</span><span class="p">]</span><span class="o">*</span><span class="mi">2</span><span class="p">}))</span>
-<span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">read</span><span class="p">(</span><span class="s1">'repairs.json'</span><span class="p">))[[</span><span class="s1">'file'</span><span class="p">,</span><span class="s1">'issue'</span><span class="p">]])</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=4050c469">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -8862,8 +8715,8 @@ a.anchor-link {
 <table border="1" class="dataframe">
 <thead>
 <tr style="text-align: left;">
-<th style="text-align: left;">Planned comparison</th>
-<th style="text-align: left;">Status</th>
+<th style=";text-align: left !important;">Planned comparison</th>
+<th style=";text-align: left !important;">Status</th>
 </tr>
 </thead>
 <tbody>
@@ -8885,8 +8738,8 @@ a.anchor-link {
 <table border="1" class="dataframe">
 <thead>
 <tr style="text-align: left;">
-<th style="text-align: left;">file</th>
-<th style="text-align: left;">issue</th>
+<th style=";text-align: left !important;">file</th>
+<th style=";text-align: left !important;">issue</th>
 </tr>
 </thead>
 <tbody>
@@ -8911,34 +8764,14 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="9.-Flask-end-to-end-verification">9. Flask end-to-end verification<a class="anchor-link" href="#9.-Flask-end-to-end-verification">¶</a></h2><p>Real localhost HTTP requests follow upload → image validation → shared tiler → saved classifiers → source aggregation → template context → rendered results. Compare labels and probabilities with independent direct calls at absolute tolerance 1e-6. Tree counting stays enabled for normal HTTP requests, so measured latency/RSS describes the complete application, not classifier-only performance.</p>
+<h2 style="text-align: left;">9. Flask end-to-end verification</h2>
+Real localhost HTTP requests follow upload → image validation → shared tiler → saved classifiers → source aggregation → template context → rendered results. Compare labels and probabilities with independent direct calls at absolute tolerance 1e-6. Tree counting stays enabled for normal HTTP requests, so measured latency/RSS describes the complete application, not classifier-only performance.
+
 <p>Controlled branch tests force upstream decisions to exercise rejection, confidence boundaries, unavailable models and exceptions; these are explicitly identified separately from real unmodified-model predictions. Missing checkpoints are simulated using isolated paths without moving user weights. Temporary fixtures, uploads and browser profiles are deleted on exit.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=2c504a93">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">checks</span><span class="p">[[</span><span class="s1">'test'</span><span class="p">,</span><span class="s1">'status'</span><span class="p">,</span><span class="s1">'kind'</span><span class="p">,</span><span class="s1">'expected'</span><span class="p">,</span><span class="s1">'observed'</span><span class="p">]])</span>
-<span class="n">timing</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">OUT</span><span class="o">/</span><span class="s1">'latency_memory.csv'</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">timing</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
-<span class="n">fig</span><span class="p">,</span><span class="n">axes</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">11</span><span class="p">,</span><span class="mf">4.5</span><span class="p">))</span>
-<span class="n">grouped</span><span class="o">=</span><span class="n">timing</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">'id'</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">seconds</span><span class="o">=</span><span class="p">(</span><span class="s1">'seconds'</span><span class="p">,</span><span class="s1">'median'</span><span class="p">),</span><span class="n">memory</span><span class="o">=</span><span class="p">(</span><span class="s1">'peak_process_rss_mb'</span><span class="p">,</span><span class="s1">'max'</span><span class="p">),</span><span class="n">n</span><span class="o">=</span><span class="p">(</span><span class="s1">'seconds'</span><span class="p">,</span><span class="s1">'size'</span><span class="p">))</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">'seconds'</span><span class="p">)</span>
-<span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1"> (n=</span><span class="si">{</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">n</span><span class="p">)</span><span class="si">}</span><span class="s1">)'</span> <span class="k">for</span> <span class="n">name</span><span class="p">,</span><span class="n">row</span> <span class="ow">in</span> <span class="n">grouped</span><span class="o">.</span><span class="n">iterrows</span><span class="p">()]</span>
-<span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span><span class="n">grouped</span><span class="o">.</span><span class="n">seconds</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'#246b63'</span><span class="p">);</span><span class="n">axes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">'Median warm HTTP seconds'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'Full application response time'</span><span class="p">)</span>
-<span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">barh</span><span class="p">(</span><span class="n">labels</span><span class="p">,</span><span class="n">grouped</span><span class="o">.</span><span class="n">memory</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'#7a8791'</span><span class="p">);</span><span class="n">axes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">'Maximum sampled process RSS (MiB)'</span><span class="p">,</span><span class="n">title</span><span class="o">=</span><span class="s1">'All models and allocator cache included'</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span><span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="k">if</span> <span class="p">(</span><span class="n">OUT</span><span class="o">/</span><span class="s1">'flask_result.png'</span><span class="p">)</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span><span class="n">display</span><span class="p">(</span><span class="n">DisplayImage</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">OUT</span><span class="o">/</span><span class="s1">'flask_result.png'</span><span class="p">),</span><span class="n">width</span><span class="o">=</span><span class="mi">1000</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=2c504a93">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -8949,11 +8782,11 @@ a.anchor-link {
 <table border="1" class="dataframe">
 <thead>
 <tr style="text-align: left;">
-<th style="text-align: left;">test</th>
-<th style="text-align: left;">status</th>
-<th style="text-align: left;">kind</th>
-<th style="text-align: left;">expected</th>
-<th style="text-align: left;">observed</th>
+<th style=";text-align: left !important;">test</th>
+<th style=";text-align: left !important;">status</th>
+<th style=";text-align: left !important;">kind</th>
+<th style=";text-align: left !important;">expected</th>
+<th style=";text-align: left !important;">observed</th>
 </tr>
 </thead>
 <tbody>
@@ -9275,13 +9108,13 @@ a.anchor-link {
 <table border="1" class="dataframe">
 <thead>
 <tr style="text-align: left;">
-<th style="text-align: left;">id</th>
-<th style="text-align: left;">repeat</th>
-<th style="text-align: left;">seconds</th>
-<th style="text-align: left;">peak_process_rss_mb</th>
-<th style="text-align: left;">width</th>
-<th style="text-align: left;">height</th>
-<th style="text-align: left;">kind</th>
+<th style=";text-align: left !important;">id</th>
+<th style=";text-align: left !important;">repeat</th>
+<th style=";text-align: left !important;">seconds</th>
+<th style=";text-align: left !important;">peak_process_rss_mb</th>
+<th style=";text-align: left !important;">width</th>
+<th style=";text-align: left !important;">height</th>
+<th style=";text-align: left !important;">kind</th>
 </tr>
 </thead>
 <tbody>
@@ -9393,28 +9226,15 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="10.-Conclusions-and-readiness">10. Conclusions and readiness<a class="anchor-link" href="#10.-Conclusions-and-readiness">¶</a></h2><p><strong>Functionality: available, with the recorded software checks. Full HD evaluation: not yet met.</strong> The old binary notebook had a potentially leaking tile split and inconsistent saved counts; the old category notebook was only a readiness check. This notebook adds current-weight reproducibility, source inventory, duplicate screening, real prediction parity, probability sensitivity and measured application behaviour.</p>
+<h2 style="text-align: left;">10. Conclusions and readiness</h2>
+**Functionality: available, with the recorded software checks. Full HD evaluation: not yet met.** The old binary notebook had a potentially leaking tile split and inconsistent saved counts; the old category notebook was only a readiness check. This notebook adds current-weight reproducibility, source inventory, duplicate screening, real prediction parity, probability sensitivity and measured application behaviour.
+
 <p>It does <strong>not</strong> add independent accuracy evidence: reviewed labels, original training membership and verified category mapping are still missing. Complete the source/site-separated dataset first, then execute the planned comparisons, calibration, full-image/site metrics and uncertainty analysis. Do not describe the historical 98.96% binary score or an inherited approximately 97% category claim as fresh-survey accuracy.</p>
 <p>All metric targets below remain unassessed, not failed zero scores. A rigorous evaluation may report poor model accuracy and still meet an academic standard, but missing non-negotiable evidence cannot be replaced with more software checks.</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f2bcb5f7">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">OUT</span><span class="o">/</span><span class="s1">'specification_audit.csv'</span><span class="p">))</span>
-<span class="n">keys</span><span class="o">=</span><span class="p">[</span><span class="s1">'Source-level precision'</span><span class="p">,</span><span class="s1">'Source-level recall'</span><span class="p">,</span><span class="s1">'Macro F1'</span><span class="p">,</span><span class="s1">'Balanced accuracy'</span><span class="p">,</span><span class="s1">'Calibration'</span><span class="p">,</span><span class="s1">'Held-out site'</span><span class="p">,</span><span class="s1">'Flask numeric parity'</span><span class="p">]</span>
-<span class="n">display</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">'Criterion'</span><span class="p">:</span><span class="n">keys</span><span class="p">,</span><span class="s1">'Historical baseline'</span><span class="p">:[</span><span class="s1">'Not independently verified'</span><span class="p">]</span><span class="o">*</span><span class="mi">6</span><span class="o">+</span><span class="p">[</span><span class="s1">'No equivalent classifier-specific evidence'</span><span class="p">],</span> <span class="s1">'Current'</span><span class="p">:[</span><span class="s1">'Blocked — independent labels required'</span><span class="p">]</span><span class="o">*</span><span class="mi">6</span><span class="o">+</span><span class="p">[</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">int</span><span class="p">((</span><span class="n">checks</span><span class="o">.</span><span class="n">status</span><span class="o">==</span><span class="s1">'PASS'</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">checks</span><span class="p">)</span><span class="si">}</span><span class="s2"> applicable checks passed"</span><span class="p">],</span> <span class="s1">'Target'</span><span class="p">:[</span><span class="s1">'See supplied rubric'</span><span class="p">]</span><span class="o">*</span><span class="mi">6</span><span class="o">+</span><span class="p">[</span><span class="s1">'All critical checks pass'</span><span class="p">]}))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=f2bcb5f7">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -9425,10 +9245,10 @@ a.anchor-link {
 <table border="1" class="dataframe">
 <thead>
 <tr style="text-align: left;">
-<th style="text-align: left;">criterion</th>
-<th style="text-align: left;">marks</th>
-<th style="text-align: left;">status</th>
-<th style="text-align: left;">evidence_or_gap</th>
+<th style=";text-align: left !important;">criterion</th>
+<th style=";text-align: left !important;">marks</th>
+<th style=";text-align: left !important;">status</th>
+<th style=";text-align: left !important;">evidence_or_gap</th>
 </tr>
 </thead>
 <tbody>
@@ -9496,10 +9316,10 @@ a.anchor-link {
 <table border="1" class="dataframe">
 <thead>
 <tr style="text-align: left;">
-<th style="text-align: left;">Criterion</th>
-<th style="text-align: left;">Historical baseline</th>
-<th style="text-align: left;">Current</th>
-<th style="text-align: left;">Target</th>
+<th style=";text-align: left !important;">Criterion</th>
+<th style=";text-align: left !important;">Historical baseline</th>
+<th style=";text-align: left !important;">Current</th>
+<th style=";text-align: left !important;">Target</th>
 </tr>
 </thead>
 <tbody>

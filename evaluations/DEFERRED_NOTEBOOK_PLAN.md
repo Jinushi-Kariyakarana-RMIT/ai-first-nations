@@ -1,19 +1,26 @@
-# Deferred project-wide notebook consistency plan
+# Notebook consistency plan — implemented
 
-Saved at the user's request, 11 October 2026. Do not execute this broader
-reorganisation until requested. The current priority is the tree-counter
-evaluation against the supplied HD specification.
+Executed at the user's request on 11 October 2026, as a presentation and entry-point
+consolidation. Application code, deployed weights, private labels and saved model
+measurements were not changed or rerun.
 
-Later:
-- Add `00_evaluation_overview.ipynb` as the entry point for all model results.
-- Keep detailed component notebooks and let them call shared evaluation code.
-- Load overview tables from saved results rather than manually copy metrics.
-- Separate historical direct-YOLO scores from current Flask-path scores.
-- Integrate external benchmark preparation and current-app control results.
-- Resolve binary-notebook source paths and inconsistent saved dataset counts.
-- Keep multiclass and combined-pipeline accuracy marked not evaluated until
-  independently labelled data exists.
-- Retain software tests in `tests/`; do not turn them into model accuracy claims.
+- Added `notebooks/00_evaluation_overview.ipynb` as the common entry point.
+- Retained detailed component notebooks and their shared evaluation implementations.
+- Added `overview/evidence.py` to load summary tables from saved source artifacts,
+  with source hashes and a deployment/configuration consistency check.
+- Separated historical direct-YOLO records from application-path measurements.
+- Included external benchmark provenance and separate application control results.
+- Replaced the unsafe legacy binary entry with a read-only audit/redirect; preserved
+  its historical content in `archive/evaluate_binary_detector_historical.ipynb`.
+- Removed outdated readiness scores from the guide. Original binary dataset paths
+  and contradictory counts remain unresolved historical evidence, not silently
+  repaired or promoted to current accuracy. Current notebooks use relative paths.
+- Kept independent classifier and combined-pipeline accuracy marked not evaluated.
+- Kept software tests outside notebooks and distinct from model accuracy.
 
-The requested tree-specific `YOLO_Tree_Counter_Evaluation.ipynb` is current work,
-not execution of the broader overview/reorganisation plan.
+Refresh only the lightweight entry points with:
+`.venv/bin/python evaluations/overview/build.py`.
+
+Outstanding scientific requirements (reviewed labels, independent surveys and
+category mapping provenance) belong to the replacement benchmark workflow;
+completing this notebook organisation does not establish full HD compliance.
