@@ -1,9 +1,0 @@
-site,images,image_crown_total,predicted_image_total,bias
-bp,1,86,91,5.0
-bs,1,7,7,0.0
-cd,1,64,65,1.0
-cl,1,105,84,-21.0
-cr,1,109,70,-39.0
-el,1,175,158,-17.0
-vp,2,124,114,-5.0
-wm,1,89,82,-7.0

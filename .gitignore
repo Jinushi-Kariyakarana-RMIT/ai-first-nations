@@ -22,7 +22,6 @@ __pycache__/
 /machine learning/runs/
 /screenshots/
 /machine learning/yolo11n.pt
-/machine learning/tree-counting-model/best_tree_counter.pt
 *.cache
 
 # Local drone survey files and preparation cache
@@ -50,3 +49,8 @@ __pycache__/
 /machine learning/data/testing/mourilyan_unlabelled/
 /machine learning/data/testing/neon_benchmark/**/data.yaml
 /machine learning/data/testing/synthetic_trees/data.yaml
+
+# Local environment and credentials
+.venv/
+.env
+.pytest_cache/

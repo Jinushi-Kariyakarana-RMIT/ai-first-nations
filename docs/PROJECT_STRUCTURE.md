@@ -1,76 +1,37 @@
-# Current project structure
-
-Updated 14 October 2026. This is the current layout; older move/check records in
-`docs/` describe the state at the time they were written.
+# Application folder guide
 
 ```text
-DS Proejct/
-├── AI first nation logo.png              Renamed original logo image
-├── Mourilyan_Harbour_Fresh_Test_Images/   527 photos for manual application trials
-└── ai-first-nations/                     Git repository
-    ├── README.md                        Project introduction and launch instructions
-    ├── requirements-app.txt             Pinned application dependencies
-    ├── requirements.txt                 Broader historical research dependencies
-    ├── docs/                            Architecture, changes and verification records
-    └── machine learning/
-        ├── README.md                    Workspace guide
-        ├── data/
-        │   ├── testing/
-        │   │   ├── tree_counter/        Original labelled tree test split
-        │   │   ├── neon_benchmark/      External labelled benchmark and stress variants
-        │   │   ├── synthetic_trees/     Synthetic software-check fixtures
-        │   │   ├── tiler_fixtures/      Image-splitting fixtures
-        │   │   ├── tree_challenges/     Composite/negative diagnostic inputs
-        │   │   └── marker_cleanup/      Inpainted diagnostic inputs
-        │   ├── training/tree_counter/   Original train/validation splits and YOLO config
-        │   └── legacy/                  Preserved unused raster inputs
-        ├── tests/                       Automated software/metric test code
-        ├── runs/detect/                 Generated training checkpoints and logs
-        ├── notebooks/training/          Historical training experiments
-        ├── evaluations/
-        │   ├── notebooks/               Detailed reports and overview notebook
-        │   ├── overview/                Summary loader, builder and HTML exports
-        │   ├── classifier_hd/           Saved classifier evidence and evaluation code
-        │   ├── tree_counter_hd/         Saved tree evidence and evaluation code
-        │   ├── new_benchmark/           Internal label-review and benchmark workflow
-        │   ├── archive/                 Historical evaluation notebook
-        │   └── specifications/          Rubric PDFs
-        ├── tree-counting-model/         Tree-counter code and deployed tree checkpoint
-        ├── flask-application/
-        │   ├── templates/               HTML pages
-        │   ├── static/                  Styles and existing application assets
-        │   └── uploads/                 User uploads and generated overlays
-        └── yolo11n.pt                   Local base checkpoint for training
+ai-first-nations/
+├── README.md                       Start here: features and local setup
+├── requirements-app.txt            Application dependencies
+├── requirements.txt                Same dependencies for standard tooling
+├── docs/
+│   ├── DEPLOYMENT.md                Organisation server setup and operations
+│   ├── PROJECT_STRUCTURE.md         This guide
+│   ├── EVALUATION_SUMMARY.md        Evidence and known limitations
+│   └── model-checksums.json         Exact saved-model fingerprints
+└── machine learning/
+    ├── README.md                   Runtime components
+    ├── flask-application/
+    │   ├── *.py                    Flask, classifiers and image tiling
+    │   ├── *.pth                   Two classifier checkpoints
+    │   ├── templates/              Web pages
+    │   ├── static/                 Styles and application logo
+    │   └── uploads/                Local user photos and overlays; excluded from Git
+    ├── tree-counting-model/
+    │   ├── tree_counter.py         YOLO counting and duplicate removal
+    │   └── best_tree_counter.pt    Included YOLO checkpoint
+    └── tests/                     Application and tree-counting regression checks
 ```
 
-**Mourilyan photos and the renamed logo are outside Git.** The photos are for
-manually uploading into the application, not internal testing, training or
-annotation candidates. There is no internal shortcut to that photo folder.
-The logo rename does not replace or modify existing web assets.
+`.venv/` is your local Python environment and is excluded from Git.
 
-The remaining dataset shortcuts are intentional, contain no duplicate content,
-and preserve old notebooks/configurations:
+## Separate developer material
 
-| Shortcut inside `machine learning/` | Actual data |
-|---|---|
-| `tree-counting-model/dataset1` | `data/training/tree_counter` |
-| `data/training/tree_counter/test` | `data/testing/tree_counter` |
-| `tree-counting-model/evaluation_pack` | `data/testing/neon_benchmark` |
-| `tree-counting-model/mock_dataset` | `data/testing/synthetic_trees` |
-| `notebooks/test_data` | `data/testing/tiler_fixtures` |
-| `evaluations/tree_counter_hd/challenge_images` | `data/testing/tree_challenges` |
-| Individual marker-diagnostic PNG links | `data/testing/marker_cleanup` |
+On the original development computer, these sibling folders are outside the app repository:
 
-Historical inventories, notebook outputs and private review records are retained
-as evidence. References to the old 527-photo pool in those snapshots are historical,
-not an active dataset. The review tool excludes unavailable historical images.
-Classifier evidence refresh requires approved internal classifier sources; it
-stops before writing results when those sources are absent. Do not put the demo
-folder back into that workflow merely to make a refresh pass.
+- `ai-first-nations-research-archive-2026-10-15/`: preserved datasets, notebooks, runs, evaluation reports, research tests and matching source snapshot. It includes the latest manual trial. Not needed by app users.
+- `Mourilyan_Harbour_Fresh_Test_Images/`: original drone photos for manual demonstrations. Not an internal labelled benchmark.
+- `AI first nation logo.png`: original logo; the application already includes its display asset.
 
-Runtime: upload → validation → binary detection → category classification when
-positive; independently, tree detection → duplicate suppression → crown count and
-overlay. Startup loads saved models and does not train.
-
-For business users and local startup, read the root README. Technical server
-configuration and handover checks are in [DEPLOYMENT.md](DEPLOYMENT.md).
+The archive is local, not a remote backup. Historical research files remain in Git history; this cleanup simplifies the current checkout without rewriting history.

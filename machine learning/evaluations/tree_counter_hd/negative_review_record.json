@@ -1,8 +1,0 @@
-{
-  "reviewer": "AI assistant visual review, not independent human expert",
-  "reviewed_image": "negative_review.jpg",
-  "samples": 12,
-  "finding": "Ground, rock, low vegetation and fallen branches; no obvious standing tree crowns at this crop scale.",
-  "label_source": "Zero intersection with all published source crown annotations.",
-  "limitations": "Low shrubs and ambiguous vegetation are not field verified. These derived negatives do not establish false-positive rates over complete new surveys."
-}

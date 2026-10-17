@@ -1,6 +1,6 @@
 # Deployment and technical handover
 
-This guide starts after the README's local setup and checkpoint installation.
+This guide starts after the README's local setup.
 The existing local application has been verified. The deployment configuration
 below is a starting configuration to validate on the recipient's infrastructure,
 not a claim that their server, network or concurrent workload has been tested.
@@ -14,7 +14,7 @@ dependency installation on a new machine has not been verified.
 - Repository access and the agreed release branch/commit. The current working
   branch is `feature/mangrove-ai-enhancements`; record the exact commit with
   `git rev-parse HEAD` rather than relying on a moving branch indefinitely.
-- The separately supplied tree checkpoint and both classifier checkpoints.
+- All three checkpoints included in the repository.
 - Python/package availability for the target OS and architecture. The application
   pins reflect the local macOS ARM64/Python 3.14.7 environment. If a package has no
   compatible wheel on your host, establish and test a compatible environment;
@@ -25,12 +25,7 @@ dependency installation on a new machine has not been verified.
   sizes. There is no established hardware minimum or response-time SLA. GPU use
   is optional; do not assume the application selects the same device for every model.
 
-Checkpoint SHA-256 references are recorded in
-`../machine learning/evaluations/classifier_hd/environment.json` and
-`../machine learning/evaluations/tree_counter_hd/deployment_validation/flask_summary.json`.
-Compare supplied model files against those records before calling them the evaluated
-checkpoints. A functional startup with a different checkpoint is not evidence of
-the same model performance.
+Checkpoint SHA-256 references are recorded in [model-checksums.json](model-checksums.json). Verify model files against these fingerprints when transferring or updating a release.
 
 ## Server startup example
 
@@ -111,29 +106,18 @@ required to establish local survey accuracy.
 From the repository root, with the environment activated:
 
 ```bash
-python -m pip install pandas scipy scikit-image psutil requests beautifulsoup4 pycocotools nbformat nbclient nbconvert ipykernel
 python -m unittest discover -s "machine learning/tests" -v
 python -m compileall -q "machine learning/flask-application" "machine learning/tree-counting-model" "machine learning/tests"
 ```
 
-The test dependencies supplement `requirements-app.txt`. Saved component environment
-records describe previous evaluation runs, not a complete portable environment lock.
-Do not run every historical notebook as a startup check; some contain training code.
-The lightweight overview can be refreshed without rerunning model evaluation:
-
-```bash
-python "machine learning/evaluations/overview/build.py"
-```
-
-Evaluation dataset shortcuts are relative symbolic links. Preserve symlinks when
-copying the workspace; Windows Git setups may require symlink support for evaluation
-work. The application inference path does not require those dataset shortcuts.
+The retained tests use the application dependencies and generate temporary fixtures.
+Research notebooks and datasets are not required for startup or these checks.
 
 ## Troubleshooting
 
 | Symptom | Action |
 |---|---|
-| Tree counting unavailable | Supply the evaluated `best_tree_counter.pt` at the README path; restart and inspect the loading error |
+| Tree counting unavailable | Restore the included `best_tree_counter.pt` at the README path; restart and inspect the loading error |
 | Classifier unavailable | Check classifier file presence, hashes and compatible Torch/Torchvision packages |
 | `TrainingData` missing message | Existing classifier inference can still load; do not start training merely to suppress this message |
 | Package cannot install | Check target Python/OS/architecture compatibility; the recorded local environment is not a universal lock |
@@ -142,4 +126,3 @@ work. The application inference path does not require those dataset shortcuts.
 | Partial-failure warning | Inspect the affected result card and server log; other model outputs may still be available |
 | Upload rejected | Use a readable JPG/JPEG/PNG below 50 MB; very large decoded images may also be rejected |
 | Out of memory or slow response | Measure a smaller representative image and host resources; do not increase concurrency without testing |
-| Classifier evaluation refresh stops | Approved internal sources are absent or differ from the saved manifest; follow the evaluation workflow, not the external demo-photo folder |

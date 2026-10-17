@@ -47,25 +47,20 @@ python -m pip install -r requirements-app.txt
 
 On Windows PowerShell, use `python` instead of `python3` and activate with
 `.venv\Scripts\Activate.ps1`. The remaining `python` commands are the same.
-`requirements-app.txt` contains the application dependencies; the broader
-`requirements.txt` also includes historical research dependencies.
+Both requirements files install the same application dependencies. Research dependencies are kept in the separate research archive.
 
-### Supply the model files
+### Model files
 
-A clone alone does **not** include the tree checkpoint. Obtain the evaluated
-`best_tree_counter.pt` from the project maintainer through your agreed file-transfer
-channel. Do not replace it with the base `yolo11n.pt` training model.
+All three saved checkpoints are included in this application handover:
 
-| Model | Required location | Delivery |
-|---|---|---|
-| Binary detector | `machine learning/flask-application/bestBinary.pth` | Tracked in Git |
-| Category classifier | `machine learning/flask-application/best_mangrove_model.pth` | Tracked in Git |
-| Tree counter | `machine learning/tree-counting-model/best_tree_counter.pt` | Supplied separately; ignored by Git |
+| Model | Location |
+|---|---|
+| Binary detector | `machine learning/flask-application/bestBinary.pth` |
+| Category classifier | `machine learning/flask-application/best_mangrove_model.pth` |
+| Tree counter | `machine learning/tree-counting-model/best_tree_counter.pt` |
 
-Startup loads saved models; it does not train. Missing or incompatible checkpoints
-disable the affected feature. A missing original `TrainingData` folder does not
-prevent inference with the existing classifiers; category provenance remains a
-known evaluation limitation.
+Startup loads these files without training. Their SHA-256 fingerprints are in
+[model-checksums.json](docs/model-checksums.json). Missing or incompatible files disable the affected feature.
 
 ### Start the application
 
@@ -95,35 +90,21 @@ Public or multi-user deployment has **not** been validated by the local checks.
 
 | Location | Purpose |
 |---|---|
-| `machine learning/flask-application/` | Web application and classification code |
-| `machine learning/tree-counting-model/` | Tree-counter implementation and checkpoint |
-| `machine learning/data/testing/` | Internal evaluation images and labels |
-| `machine learning/data/training/` | Training/validation images |
-| `machine learning/tests/` | Automated software tests |
-| `machine learning/evaluations/` | Evaluation scripts, evidence and reports |
-| `machine learning/notebooks/training/` | Historical experiments |
-| `machine learning/runs/` | Local generated training outputs |
+| `machine learning/flask-application/` | Web pages, application code and classification models |
+| `machine learning/tree-counting-model/` | Tree counting code and saved model |
+| `machine learning/tests/` | Small application regression tests; no research datasets needed |
+| `docs/` | Deployment, folder guide, model fingerprints and evaluation summary |
 
-See the [complete folder guide](docs/PROJECT_STRUCTURE.md). Compatibility shortcuts
-preserve old dataset paths without duplicating images. Local datasets and generated
-weights are not all delivered by Git.
+See the [folder guide](docs/PROJECT_STRUCTURE.md) and [evaluation summary](docs/EVALUATION_SUMMARY.md).
+Research datasets, notebooks, training runs and historical reports are preserved
+in a separate local archive. They are not needed to run the application.
+The Mourilyan demo photos remain outside the repository; users can upload their own images.
 
-On the original development computer, `DS Proejct/Mourilyan_Harbour_Fresh_Test_Images/`
-contains standalone manual-demo photos, and `DS Proejct/AI first nation logo.png`
-is the renamed original logo. Both are **outside this repository**, are not shipped
-by cloning, and are not required for startup. The demo photos are excluded from
-internal evaluation and annotation workflows.
+## Verify the application
 
-## Evidence and verification
+```bash
+python -m unittest discover -s "machine learning/tests" -v
+```
 
-Start with the [evaluation overview](<machine learning/evaluations/notebooks/00_evaluation_overview.ipynb>).
-Saved scores retain their dataset limitations; moving files or passing software
-tests does not establish new predictive accuracy. Read
-[current dataset availability](<machine learning/evaluations/CURRENT_DATA_LAYOUT.md>)
-before rerunning evaluations. Classifier refresh is blocked until approved internal
-sources are supplied; the external demo folder is not a replacement benchmark.
-
-The latest local software run passed **32 automated tests**. Running those tests
-requires evaluation dependencies beyond the application-only environment; see
-[verification instructions](docs/DEPLOYMENT.md#technical-verification).
-For common startup problems, see [troubleshooting](docs/DEPLOYMENT.md#troubleshooting).
+These are software checks, not measurements of model accuracy. See
+[troubleshooting](docs/DEPLOYMENT.md#troubleshooting) for setup issues.

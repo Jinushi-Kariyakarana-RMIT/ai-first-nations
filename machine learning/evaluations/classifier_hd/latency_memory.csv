@@ -1,9 +1,0 @@
-id,repeat,seconds,peak_process_rss_mb,width,height,kind
-source_0_reference,1,0.46294995793141425,1093.078125,1024,768,warm HTTP; all three models enabled
-source_0_reference,2,0.8811045419424772,1093.9375,1024,768,warm HTTP; all three models enabled
-source_0_reference,3,0.876493499847129,1093.953125,1024,768,warm HTTP; all three models enabled
-small,1,0.37624470912851393,1039.453125,180,120,warm HTTP; all three models enabled
-edge,1,0.8042711659800261,1044.109375,513,769,warm HTTP; all three models enabled
-grayscale,1,0.22260754206217825,875.609375,512,512,warm HTTP; all three models enabled
-rgba,1,0.40181945892982185,875.609375,512,512,warm HTTP; all three models enabled
-full_resolution,1,13.78281983314082,2316.796875,4032,3024,warm HTTP; all three models enabled
